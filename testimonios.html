@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TESTIMONIOS - Digitalmenteprochile.cl</title>
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    /* ============================
+       SECCIÓN: TESTIMONIOS
+       Archivo: testimonios.html
+       ============================ */
+
+    body { margin-top: 72px; }
+
+    .testimonios {
+      padding: 88px 0;
+      background: var(--blanco);
+    }
+
+    .testimonios__header {
+      text-align: center;
+      margin-bottom: 60px;
+    }
+
+    .testimonios__header .section-subtitle {
+      margin: 0 auto;
+    }
+
+    /* Métricas de satisfacción */
+    .testimonios__trust {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 20px;
+      margin-bottom: 60px;
+    }
+
+    .trust-item {
+      text-align: center;
+      padding: 28px 20px;
+      background: var(--gris-claro);
+      border-radius: 10px;
+      border-bottom: 3px solid var(--naranja);
+    }
+
+    .trust-item__num {
+      font-family: var(--font-display);
+      font-size: 36px;
+      font-weight: 900;
+      color: var(--naranja);
+      display: block;
+      line-height: 1;
+    }
+
+    .trust-item__label {
+      font-size: 13px;
+      color: var(--gris-medio);
+      font-weight: 600;
+      margin-top: 8px;
+      display: block;
+    }
+
+    /* Grid de testimonios */
+    .testimonios__grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-bottom: 48px;
+    }
+
+    .testimonio-card {
+      background: var(--blanco);
+      border: 1.5px solid #E8E8E8;
+      border-radius: 12px;
+      padding: 32px;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      transition: all 0.25s;
+    }
+
+    .testimonio-card:hover {
+      box-shadow: 0 8px 28px rgba(255,107,0,0.1);
+      border-color: var(--naranja);
+      transform: translateY(-3px);
+    }
+
+    /* Testimonio destacado */
+    .testimonio-card--featured {
+      background: var(--negro);
+      border-color: var(--negro);
+      grid-row: span 1;
+    }
+
+    .testimonio-card--featured:hover {
+      box-shadow: 0 8px 28px rgba(0,0,0,0.25);
+      border-color: var(--naranja);
+    }
+
+    /* Comilla decorativa */
+    .testimonio-card__quote-icon {
+      font-size: 48px;
+      line-height: 1;
+      color: var(--naranja);
+      font-family: Georgia, serif;
+      margin-bottom: 16px;
+      display: block;
+      opacity: 0.6;
+    }
+
+    .testimonio-card--featured .testimonio-card__quote-icon {
+      opacity: 0.8;
+    }
+
+    /* Estrellas */
+    .testimonio-card__stars {
+      color: var(--naranja);
+      font-size: 16px;
+      letter-spacing: 2px;
+      margin-bottom: 16px;
+    }
+
+    /* Texto del testimonio */
+    .testimonio-card__text {
+      font-size: 15px;
+      color: var(--gris-oscuro);
+      line-height: 1.75;
+      margin-bottom: 24px;
+      flex: 1;
+    }
+
+    .testimonio-card--featured .testimonio-card__text {
+      color: rgba(255,255,255,0.85);
+    }
+
+    /* Autor */
+    .testimonio-card__author {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      border-top: 1px solid #F0F0F0;
+      padding-top: 20px;
+      margin-top: auto;
+    }
+
+    .testimonio-card--featured .testimonio-card__author {
+      border-top-color: rgba(255,255,255,0.15);
+    }
+
+    .author-avatar {
+      width: 46px;
+      height: 46px;
+      border-radius: 50%;
+      background: var(--naranja);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-display);
+      font-weight: 900;
+      font-size: 16px;
+      color: var(--blanco);
+      flex-shrink: 0;
+    }
+
+    .testimonio-card--featured .author-avatar {
+      background: var(--naranja);
+    }
+
+    .author-info strong {
+      display: block;
+      font-family: var(--font-display);
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--negro);
+    }
+
+    .testimonio-card--featured .author-info strong {
+      color: var(--blanco);
+    }
+
+    .author-info span {
+      font-size: 12px;
+      color: var(--gris-medio);
+    }
+
+    .testimonio-card--featured .author-info span {
+      color: rgba(255,255,255,0.6);
+    }
+
+    .author-tag {
+      margin-left: auto;
+      background: var(--naranja-suave);
+      color: var(--naranja);
+      font-family: var(--font-display);
+      font-size: 10px;
+      font-weight: 700;
+      padding: 4px 10px;
+      border-radius: 20px;
+      letter-spacing: 0.5px;
+      text-transform: uppercase;
+    }
+
+    .testimonio-card--featured .author-tag {
+      background: rgba(255,107,0,0.2);
+      color: var(--naranja);
+    }
+
+    /* Franja de logos de medios / certificaciones */
+    .testimonios__media {
+      background: var(--naranja-suave);
+      border-radius: 12px;
+      padding: 32px 40px;
+      display: flex;
+      align-items: center;
+      gap: 40px;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
+
+    .testimonios__media p {
+      font-family: var(--font-display);
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--gris-medio);
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      white-space: nowrap;
+    }
+
+    .media-badges {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    .media-badge {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      background: var(--blanco);
+      border: 1.5px solid #E8D0BE;
+      padding: 8px 16px;
+      border-radius: 8px;
+      font-family: var(--font-display);
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--naranja);
+    }
+
+    @media (max-width: 900px) {
+      .testimonios__grid { grid-template-columns: 1fr 1fr; }
+      .testimonios__trust { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 600px) {
+      .testimonios__grid { grid-template-columns: 1fr; }
+      .testimonios__trust { grid-template-columns: 1fr 1fr; }
+      .testimonios__media { flex-direction: column; align-items: flex-start; gap: 20px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ============================
+     TESTIMONIOS
+     ============================ -->
+<section class="testimonios section-pad" id="testimonios">
+  <div class="container">
+
+    <!-- Encabezado -->
+    <div class="testimonios__header">
+      <div class="section-label">Testimonios</div>
+      <h2 class="section-title">Lo que dicen nuestros <span>clientes</span></h2>
+      <div class="orange-divider" style="margin: 16px auto 20px;"></div>
+      <p class="section-subtitle">
+        Más de 200 empresas, emprendedores y artistas han confiado en nosotros para crecer en el mundo digital.
+      </p>
+    </div>
+
+    <!-- Métricas de satisfacción -->
+    <div class="testimonios__trust">
+      <div class="trust-item">
+        <span class="trust-item__num">4.9★</span>
+        <span class="trust-item__label">Calificación promedio</span>
+      </div>
+      <div class="trust-item">
+        <span class="trust-item__num">200+</span>
+        <span class="trust-item__label">Clientes satisfechos</span>
+      </div>
+      <div class="trust-item">
+        <span class="trust-item__num">98%</span>
+        <span class="trust-item__label">Tasa de retención</span>
+      </div>
+      <div class="trust-item">
+        <span class="trust-item__num">8 años</span>
+        <span class="trust-item__label">De experiencia</span>
+      </div>
+    </div>
+
+    <!-- Grid de testimonios -->
+    <div class="testimonios__grid">
+
+      <!-- Testimonio 1 - Empresa -->
+      <div class="testimonio-card">
+        <span class="testimonio-card__quote-icon">"</span>
+        <div class="testimonio-card__stars">★★★★★</div>
+        <p class="testimonio-card__text">
+          Empezamos con ellos sin tener nada digital y en 6 meses triplicamos nuestras consultas a través de Instagram. El equipo es súper profesional y siempre disponible. Lo mejor que hicimos para nuestro negocio.
+        </p>
+        <div class="testimonio-card__author">
+          <div class="author-avatar">MR</div>
+          <div class="author-info">
+            <strong>María Rodríguez</strong>
+            <span>Dueña, Clínica Dental Santiago</span>
+          </div>
+          <span class="author-tag">Empresa</span>
+        </div>
+      </div>
+
+      <!-- Testimonio 2 - Músico (DESTACADO) -->
+      <div class="testimonio-card testimonio-card--featured">
+        <span class="testimonio-card__quote-icon">"</span>
+        <div class="testimonio-card__stars">★★★★★</div>
+        <p class="testimonio-card__text">
+          Lanzamos mi primer sencillo con DigitalmentePro y llegamos a más de 800 mil streams en el primer mes. Entramos en 12 playlists editoriales de Spotify. Son los mejores para músicos en Chile, sin duda.
+        </p>
+        <div class="testimonio-card__author">
+          <div class="author-avatar">JP</div>
+          <div class="author-info">
+            <strong>Javier Pizarro</strong>
+            <span>Artista musical, Urban Pop</span>
+          </div>
+          <span class="author-tag">🎵 Músico</span>
+        </div>
+      </div>
+
+      <!-- Testimonio 3 -->
+      <div class="testimonio-card">
+        <span class="testimonio-card__quote-icon">"</span>
+        <div class="testimonio-card__stars">★★★★★</div>
+        <p class="testimonio-card__text">
+          Las campañas de Google Ads bajaron nuestro costo por lead en un 40%. El equipo entiende el negocio, no solo las métricas. Hace un año renovamos contrato y no lo pensamos dos veces.
+        </p>
+        <div class="testimonio-card__author">
+          <div class="author-avatar">CP</div>
+          <div class="author-info">
+            <strong>Carlos Pinto</strong>
+            <span>Director, Inmobiliaria CP</span>
+          </div>
+          <span class="author-tag">Empresa</span>
+        </div>
+      </div>
+
+      <!-- Testimonio 4 -->
+      <div class="testimonio-card">
+        <span class="testimonio-card__quote-icon">"</span>
+        <div class="testimonio-card__stars">★★★★★</div>
+        <p class="testimonio-card__text">
+          Como emprendedora nueva, no sabía por dónde empezar en redes. Me dieron una estrategia clara, me enseñaron y ahora tengo 15 mil seguidores y vendo todos los meses solo por Instagram.
+        </p>
+        <div class="testimonio-card__author">
+          <div class="author-avatar">VA</div>
+          <div class="author-info">
+            <strong>Valentina Arce</strong>
+            <span>Emprendedora, Moda Sostenible</span>
+          </div>
+          <span class="author-tag">Emprendimiento</span>
+        </div>
+      </div>
+
+      <!-- Testimonio 5 - Banda -->
+      <div class="testimonio-card">
+        <span class="testimonio-card__quote-icon">"</span>
+        <div class="testimonio-card__stars">★★★★★</div>
+        <p class="testimonio-card__text">
+          Nuestra banda tenía presencia cero en digital. Hoy tenemos más de 50 mil oyentes mensuales en Spotify y llenamos los shows. La inversión en DigitalmentePro se pagó sola al segundo mes.
+        </p>
+        <div class="testimonio-card__author">
+          <div class="author-avatar">BN</div>
+          <div class="author-info">
+            <strong>Bruno Navarro</strong>
+            <span>Vocalista, Banda "Los Nómades"</span>
+          </div>
+          <span class="author-tag">🎵 Banda</span>
+        </div>
+      </div>
+
+      <!-- Testimonio 6 -->
+      <div class="testimonio-card">
+        <span class="testimonio-card__quote-icon">"</span>
+        <div class="testimonio-card__stars">★★★★★</div>
+        <p class="testimonio-card__text">
+          Llevamos 2 años con ellos y el crecimiento ha sido sostenido. Lo que más valoro es que siempre me explican el por qué de cada decisión y me dan reportes claros y honestos cada mes.
+        </p>
+        <div class="testimonio-card__author">
+          <div class="author-avatar">DF</div>
+          <div class="author-info">
+            <strong>Diego Fuentes</strong>
+            <span>Gerente, Restaurante Casa 1900</span>
+          </div>
+          <span class="author-tag">Gastronomía</span>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Franja de reconocimientos -->
+    <div class="testimonios__media">
+      <p>Reconocimientos:</p>
+      <div class="media-badges">
+        <div class="media-badge">🏆 Top Agency Chile 2024</div>
+        <div class="media-badge">⭐ Google Partner</div>
+        <div class="media-badge">✅ Meta Business Partner</div>
+        <div class="media-badge">🎵 Spotify for Artists Certified</div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+</body>
+</html>
