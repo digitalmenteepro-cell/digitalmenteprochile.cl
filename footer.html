@@ -1,0 +1,612 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>FOOTER - Digitalmenteprochile.cl</title>
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    /* ============================
+       SECCIÓN: FOOTER
+       Archivo: footer.html
+       ============================ */
+
+    body { margin-top: 72px; }
+
+    /* ---- CONTACTO (pre-footer) ---- */
+    .contacto {
+      padding: 88px 0;
+      background: var(--gris-claro);
+    }
+
+    .contacto__layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 72px;
+      align-items: start;
+    }
+
+    .contacto__info .section-subtitle {
+      margin-bottom: 36px;
+    }
+
+    .contact-data {
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+      margin-bottom: 36px;
+    }
+
+    .contact-data-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 14px;
+    }
+
+    .contact-data-item__icon {
+      width: 44px;
+      height: 44px;
+      background: var(--naranja-suave);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 18px;
+      flex-shrink: 0;
+    }
+
+    .contact-data-item__body strong {
+      display: block;
+      font-family: var(--font-display);
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--negro);
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-bottom: 3px;
+    }
+
+    .contact-data-item__body a,
+    .contact-data-item__body span {
+      font-size: 14px;
+      color: var(--gris-medio);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .contact-data-item__body a:hover {
+      color: var(--naranja);
+    }
+
+    /* Redes en contacto */
+    .contacto__social {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .social-link {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      padding: 10px 16px;
+      border-radius: 6px;
+      font-family: var(--font-display);
+      font-size: 13px;
+      font-weight: 700;
+      text-decoration: none;
+      transition: all 0.2s;
+      border: 1.5px solid #E0E0E0;
+      color: var(--negro);
+    }
+
+    .social-link:hover {
+      border-color: var(--naranja);
+      color: var(--naranja);
+      background: var(--naranja-suave);
+    }
+
+    /* Formulario */
+    .contacto__form {
+      background: var(--blanco);
+      border-radius: 12px;
+      padding: 40px 36px;
+      box-shadow: 0 4px 24px rgba(0,0,0,0.06);
+      border: 1.5px solid #E8E8E8;
+    }
+
+    .contacto__form h3 {
+      font-family: var(--font-display);
+      font-size: 20px;
+      font-weight: 800;
+      color: var(--negro);
+      margin-bottom: 24px;
+    }
+
+    .form-group {
+      margin-bottom: 18px;
+    }
+
+    .form-group label {
+      display: block;
+      font-family: var(--font-display);
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--negro);
+      text-transform: uppercase;
+      letter-spacing: 0.8px;
+      margin-bottom: 7px;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+      padding: 13px 16px;
+      border: 1.5px solid #E0E0E0;
+      border-radius: 6px;
+      font-family: var(--font-body);
+      font-size: 14px;
+      color: var(--negro);
+      background: var(--blanco);
+      transition: border-color 0.2s, box-shadow 0.2s;
+      outline: none;
+      appearance: none;
+    }
+
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      border-color: var(--naranja);
+      box-shadow: 0 0 0 3px rgba(255,107,0,0.12);
+    }
+
+    .form-group textarea {
+      resize: vertical;
+      min-height: 100px;
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+    }
+
+    .form-submit {
+      margin-top: 8px;
+    }
+
+    .form-submit .btn-primary {
+      width: 100%;
+      text-align: center;
+      padding: 15px;
+      font-size: 15px;
+    }
+
+    .form-note {
+      text-align: center;
+      font-size: 12px;
+      color: var(--gris-medio);
+      margin-top: 12px;
+    }
+
+    /* ---- FOOTER FINAL ---- */
+    .footer {
+      background: var(--negro);
+      padding: 56px 0 0;
+    }
+
+    .footer__main {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr 1fr;
+      gap: 48px;
+      padding-bottom: 48px;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+    }
+
+    /* Logo footer */
+    .footer__brand-logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      text-decoration: none;
+      margin-bottom: 16px;
+    }
+
+    .footer__logo-icon {
+      width: 44px;
+      height: 44px;
+      background: var(--naranja);
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-display);
+      font-weight: 900;
+      font-size: 18px;
+      color: var(--blanco);
+      flex-shrink: 0;
+    }
+
+    .footer__logo-text {
+      display: flex;
+      flex-direction: column;
+      line-height: 1.1;
+    }
+
+    .footer__logo-text strong {
+      font-family: var(--font-display);
+      font-weight: 900;
+      font-size: 14px;
+      color: var(--blanco);
+    }
+
+    .footer__logo-text span {
+      font-family: var(--font-display);
+      font-weight: 600;
+      font-size: 10px;
+      color: var(--naranja);
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+    }
+
+    .footer__brand-desc {
+      font-size: 13px;
+      color: rgba(255,255,255,0.55);
+      line-height: 1.7;
+      margin-bottom: 24px;
+      max-width: 280px;
+    }
+
+    .footer__social {
+      display: flex;
+      gap: 8px;
+    }
+
+    .footer__social a {
+      width: 36px;
+      height: 36px;
+      background: rgba(255,255,255,0.08);
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 16px;
+      text-decoration: none;
+      transition: background 0.2s;
+    }
+
+    .footer__social a:hover {
+      background: var(--naranja);
+    }
+
+    /* Columnas de links */
+    .footer__col-title {
+      font-family: var(--font-display);
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--blanco);
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      margin-bottom: 20px;
+    }
+
+    .footer__links {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .footer__links a {
+      font-size: 13px;
+      color: rgba(255,255,255,0.55);
+      text-decoration: none;
+      transition: color 0.2s;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .footer__links a:hover {
+      color: var(--naranja);
+    }
+
+    .footer__links a::before {
+      content: '→';
+      font-size: 11px;
+      opacity: 0.5;
+    }
+
+    /* Datos de contacto en footer */
+    .footer__contact-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .footer__contact-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+      font-size: 13px;
+      color: rgba(255,255,255,0.55);
+    }
+
+    .footer__contact-list li span:first-child {
+      flex-shrink: 0;
+    }
+
+    .footer__contact-list a {
+      color: rgba(255,255,255,0.55);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .footer__contact-list a:hover {
+      color: var(--naranja);
+    }
+
+    /* Barra inferior */
+    .footer__bottom {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 20px 0;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .footer__bottom p {
+      font-size: 12px;
+      color: rgba(255,255,255,0.35);
+    }
+
+    .footer__bottom p a {
+      color: var(--naranja);
+      text-decoration: none;
+    }
+
+    .footer__bottom-links {
+      display: flex;
+      gap: 20px;
+    }
+
+    .footer__bottom-links a {
+      font-size: 12px;
+      color: rgba(255,255,255,0.35);
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .footer__bottom-links a:hover {
+      color: var(--naranja);
+    }
+
+    @media (max-width: 960px) {
+      .footer__main { grid-template-columns: 1fr 1fr; gap: 36px; }
+      .contacto__layout { grid-template-columns: 1fr; gap: 40px; }
+    }
+    @media (max-width: 600px) {
+      .footer__main { grid-template-columns: 1fr; gap: 28px; }
+      .footer__bottom { flex-direction: column; align-items: flex-start; }
+      .form-row { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ============================
+     SECCIÓN DE CONTACTO (Pre-footer)
+     ============================ -->
+<section class="contacto section-pad" id="contacto">
+  <div class="container">
+    <div class="contacto__layout">
+
+      <!-- Info de contacto -->
+      <div class="contacto__info">
+        <div class="section-label">Contacto</div>
+        <h2 class="section-title">Hablemos de tu <span>proyecto</span></h2>
+        <div class="orange-divider"></div>
+        <p class="section-subtitle">
+          Cuéntanos en qué etapa está tu negocio o carrera musical y te diseñamos una estrategia a medida. Primera consulta sin costo.
+        </p>
+
+        <div class="contact-data">
+          <div class="contact-data-item">
+            <div class="contact-data-item__icon">📍</div>
+            <div class="contact-data-item__body">
+              <strong>Dirección</strong>
+              <span>Santiago, Región Metropolitana, Chile</span>
+            </div>
+          </div>
+          <div class="contact-data-item">
+            <div class="contact-data-item__icon">📞</div>
+            <div class="contact-data-item__body">
+              <strong>Teléfono / WhatsApp</strong>
+              <a href="tel:+56912345678">+56 9 1234 5678</a>
+            </div>
+          </div>
+          <div class="contact-data-item">
+            <div class="contact-data-item__icon">✉️</div>
+            <div class="contact-data-item__body">
+              <strong>Email</strong>
+              <a href="mailto:hola@digitalmenteprochile.cl">hola@digitalmenteprochile.cl</a>
+            </div>
+          </div>
+          <div class="contact-data-item">
+            <div class="contact-data-item__icon">🕐</div>
+            <div class="contact-data-item__body">
+              <strong>Horario de atención</strong>
+              <span>Lunes a Viernes, 9:00 – 18:30 hrs</span>
+            </div>
+          </div>
+          <div class="contact-data-item">
+            <div class="contact-data-item__icon">🌐</div>
+            <div class="contact-data-item__body">
+              <strong>Sitio Web</strong>
+              <a href="https://www.digitalmenteprochile.cl" target="_blank">www.digitalmenteprochile.cl</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Redes sociales -->
+        <div class="contacto__social">
+          <a href="#" class="social-link">📸 Instagram</a>
+          <a href="#" class="social-link">📘 Facebook</a>
+          <a href="#" class="social-link">🎵 TikTok</a>
+          <a href="#" class="social-link">💼 LinkedIn</a>
+        </div>
+      </div>
+
+      <!-- Formulario -->
+      <div class="contacto__form">
+        <h3>Envíanos un mensaje ✉️</h3>
+
+        <div class="form-row">
+          <div class="form-group">
+            <label>Nombre</label>
+            <input type="text" placeholder="Tu nombre" />
+          </div>
+          <div class="form-group">
+            <label>Apellido</label>
+            <input type="text" placeholder="Tu apellido" />
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label>Email</label>
+          <input type="email" placeholder="tu@correo.cl" />
+        </div>
+
+        <div class="form-group">
+          <label>Teléfono (WhatsApp)</label>
+          <input type="tel" placeholder="+56 9 0000 0000" />
+        </div>
+
+        <div class="form-group">
+          <label>¿En qué te podemos ayudar?</label>
+          <select>
+            <option value="">Selecciona un servicio...</option>
+            <option>Gestión de Redes Sociales</option>
+            <option>Marketing Digital para Empresa</option>
+            <option>Marketing para Músico / Artista</option>
+            <option>Creación de Contenido</option>
+            <option>Diseño Web</option>
+            <option>Consultoría Digital</option>
+            <option>Otro</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label>Mensaje</label>
+          <textarea placeholder="Cuéntanos brevemente sobre tu proyecto o negocio..."></textarea>
+        </div>
+
+        <div class="form-submit">
+          <button class="btn-primary">Enviar Mensaje →</button>
+        </div>
+        <p class="form-note">🔒 Tus datos están seguros. No enviamos spam.</p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ============================
+     FOOTER FINAL
+     ============================ -->
+<footer class="footer" id="footer">
+  <div class="container">
+    <div class="footer__main">
+
+      <!-- Brand -->
+      <div class="footer__brand">
+        <a href="#inicio" class="footer__brand-logo">
+          <div class="footer__logo-icon">DP</div>
+          <div class="footer__logo-text">
+            <strong>Digitalmente</strong>
+            <span>ProChile.cl</span>
+          </div>
+        </a>
+        <p class="footer__brand-desc">
+          Agencia de marketing digital en Chile. Potenciamos empresas y artistas con estrategia, contenido y resultados reales desde 2016.
+        </p>
+        <div class="footer__social">
+          <a href="#" aria-label="Instagram">📸</a>
+          <a href="#" aria-label="Facebook">📘</a>
+          <a href="#" aria-label="TikTok">🎵</a>
+          <a href="#" aria-label="LinkedIn">💼</a>
+          <a href="#" aria-label="YouTube">▶️</a>
+        </div>
+      </div>
+
+      <!-- Servicios -->
+      <div class="footer__col">
+        <h4 class="footer__col-title">Servicios</h4>
+        <ul class="footer__links">
+          <li><a href="#servicios">Redes Sociales</a></li>
+          <li><a href="#marketing">Marketing Digital</a></li>
+          <li><a href="#contenido">Creación de Contenido</a></li>
+          <li><a href="#marketing">Para Músicos</a></li>
+          <li><a href="#servicios">Diseño Web</a></li>
+          <li><a href="#servicios">Consultoría</a></li>
+        </ul>
+      </div>
+
+      <!-- Empresa -->
+      <div class="footer__col">
+        <h4 class="footer__col-title">Empresa</h4>
+        <ul class="footer__links">
+          <li><a href="#">Quiénes Somos</a></li>
+          <li><a href="#">Nuestro Equipo</a></li>
+          <li><a href="#testimonios">Casos de Éxito</a></li>
+          <li><a href="#">Blog Digital</a></li>
+          <li><a href="#contacto">Trabaja con Nosotros</a></li>
+        </ul>
+      </div>
+
+      <!-- Contacto -->
+      <div class="footer__col">
+        <h4 class="footer__col-title">Contacto</h4>
+        <ul class="footer__contact-list">
+          <li>
+            <span>📍</span>
+            <span>Santiago, Chile</span>
+          </li>
+          <li>
+            <span>📞</span>
+            <a href="tel:+56912345678">+56 9 1234 5678</a>
+          </li>
+          <li>
+            <span>✉️</span>
+            <a href="mailto:hola@digitalmenteprochile.cl">hola@digitalmenteprochile.cl</a>
+          </li>
+          <li>
+            <span>🌐</span>
+            <a href="https://www.digitalmenteprochile.cl">digitalmenteprochile.cl</a>
+          </li>
+          <li>
+            <span>🕐</span>
+            <span>Lun–Vie 9:00–18:30</span>
+          </li>
+        </ul>
+      </div>
+
+    </div>
+
+    <!-- Barra inferior -->
+    <div class="footer__bottom">
+      <p>© 2024 <a href="#">DigitalmentePro Chile</a>. Todos los derechos reservados.</p>
+      <div class="footer__bottom-links">
+        <a href="#">Política de Privacidad</a>
+        <a href="#">Términos de Servicio</a>
+        <a href="#">Cookies</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+</body>
+</html>
