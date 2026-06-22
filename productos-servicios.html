@@ -1,0 +1,340 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PRODUCTOS Y SERVICIOS - Digitalmenteprochile.cl</title>
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    /* ============================
+       SECCIÓN: PRODUCTOS Y SERVICIOS
+       Archivo: productos-servicios.html
+       ============================ */
+
+    body { margin-top: 72px; }
+
+    .servicios {
+      padding: 88px 0;
+      background: var(--blanco);
+    }
+
+    .servicios__header {
+      text-align: center;
+      margin-bottom: 60px;
+    }
+
+    .servicios__header .section-subtitle {
+      margin: 0 auto;
+    }
+
+    /* Grid de servicios */
+    .servicios__grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 28px;
+      margin-bottom: 60px;
+    }
+
+    .servicio-card {
+      background: var(--blanco);
+      border: 1.5px solid #E8E8E8;
+      border-radius: 10px;
+      padding: 36px 30px;
+      position: relative;
+      overflow: hidden;
+      transition: all 0.25s;
+    }
+
+    .servicio-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 4px;
+      background: var(--naranja);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.3s;
+    }
+
+    .servicio-card:hover {
+      border-color: #FFD6B0;
+      box-shadow: 0 8px 32px rgba(255,107,0,0.12);
+      transform: translateY(-4px);
+    }
+
+    .servicio-card:hover::before {
+      transform: scaleX(1);
+    }
+
+    /* Destacado */
+    .servicio-card--featured {
+      background: var(--negro);
+      border-color: var(--negro);
+    }
+
+    .servicio-card--featured::before {
+      background: var(--naranja);
+      transform: scaleX(1);
+    }
+
+    .servicio-card--featured .servicio-card__num,
+    .servicio-card--featured .servicio-card__title,
+    .servicio-card--featured .servicio-card__desc,
+    .servicio-card--featured .servicio-card__list li {
+      color: var(--blanco);
+    }
+
+    .servicio-card--featured .servicio-card__list li::before {
+      color: var(--naranja);
+    }
+
+    .servicio-card--featured .servicio-card__tag {
+      background: var(--naranja);
+      color: var(--blanco);
+    }
+
+    .servicio-card--featured:hover {
+      box-shadow: 0 8px 32px rgba(0,0,0,0.25);
+    }
+
+    .servicio-card__num {
+      font-family: var(--font-display);
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--naranja);
+      letter-spacing: 1px;
+      margin-bottom: 16px;
+    }
+
+    .servicio-card__icon {
+      font-size: 36px;
+      margin-bottom: 16px;
+      display: block;
+    }
+
+    .servicio-card__title {
+      font-family: var(--font-display);
+      font-size: 20px;
+      font-weight: 800;
+      color: var(--negro);
+      margin-bottom: 12px;
+      line-height: 1.2;
+    }
+
+    .servicio-card__desc {
+      font-size: 14px;
+      color: var(--gris-medio);
+      line-height: 1.65;
+      margin-bottom: 20px;
+    }
+
+    .servicio-card__list {
+      list-style: none;
+      margin-bottom: 28px;
+    }
+
+    .servicio-card__list li {
+      font-size: 13px;
+      color: var(--gris-oscuro);
+      padding: 5px 0;
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+    }
+
+    .servicio-card__list li::before {
+      content: '✓';
+      color: var(--naranja);
+      font-weight: 700;
+      flex-shrink: 0;
+      margin-top: 1px;
+    }
+
+    .servicio-card__tag {
+      display: inline-block;
+      background: var(--naranja-suave);
+      color: var(--naranja);
+      font-family: var(--font-display);
+      font-size: 11px;
+      font-weight: 700;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      padding: 5px 12px;
+      border-radius: 3px;
+    }
+
+    /* Franja CTA */
+    .servicios__cta {
+      background: var(--naranja);
+      border-radius: 12px;
+      padding: 52px 48px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 32px;
+      flex-wrap: wrap;
+    }
+
+    .servicios__cta-text h3 {
+      font-family: var(--font-display);
+      font-size: 28px;
+      font-weight: 900;
+      color: var(--blanco);
+      margin-bottom: 8px;
+    }
+
+    .servicios__cta-text p {
+      font-size: 16px;
+      color: rgba(255,255,255,0.85);
+    }
+
+    .servicios__cta .btn-outline {
+      border-color: var(--blanco);
+      color: var(--blanco);
+      flex-shrink: 0;
+    }
+
+    .servicios__cta .btn-outline:hover {
+      background: var(--blanco);
+      color: var(--naranja);
+    }
+
+    @media (max-width: 900px) {
+      .servicios__grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (max-width: 600px) {
+      .servicios__grid { grid-template-columns: 1fr; }
+      .servicios__cta { padding: 36px 28px; }
+      .servicios__cta-text h3 { font-size: 22px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ============================
+     PRODUCTOS Y SERVICIOS
+     ============================ -->
+<section class="servicios section-pad" id="servicios">
+  <div class="container">
+
+    <!-- Encabezado -->
+    <div class="servicios__header">
+      <div class="section-label">Nuestros Servicios</div>
+      <h2 class="section-title">Todo lo que tu marca <span>necesita</span></h2>
+      <div class="orange-divider" style="margin: 16px auto 20px;"></div>
+      <p class="section-subtitle">
+        Soluciones digitales completas para empresas, emprendedores y artistas que quieren crecer con estrategia y resultados medibles.
+      </p>
+    </div>
+
+    <!-- Grid de servicios -->
+    <div class="servicios__grid">
+
+      <!-- Servicio 1 -->
+      <div class="servicio-card">
+        <span class="servicio-card__num">01</span>
+        <span class="servicio-card__icon">📱</span>
+        <h3 class="servicio-card__title">Gestión de Redes Sociales</h3>
+        <p class="servicio-card__desc">Administramos y hacemos crecer tu presencia en todas las plataformas con contenido estratégico y consistente.</p>
+        <ul class="servicio-card__list">
+          <li>Instagram, Facebook, TikTok, LinkedIn</li>
+          <li>Calendario editorial mensual</li>
+          <li>Diseño gráfico y copywriting</li>
+          <li>Reportes de rendimiento</li>
+        </ul>
+        <span class="servicio-card__tag">Más popular</span>
+      </div>
+
+      <!-- Servicio 2 - DESTACADO -->
+      <div class="servicio-card servicio-card--featured">
+        <span class="servicio-card__num">02</span>
+        <span class="servicio-card__icon">🚀</span>
+        <h3 class="servicio-card__title">Marketing Digital Integral</h3>
+        <p class="servicio-card__desc">Estrategia completa que une todos los canales digitales para hacer crecer tu negocio de forma sostenible.</p>
+        <ul class="servicio-card__list">
+          <li>Plan estratégico 360°</li>
+          <li>Google Ads y Meta Ads</li>
+          <li>SEO y posicionamiento</li>
+          <li>Embudo de conversión</li>
+        </ul>
+        <span class="servicio-card__tag">⭐ Recomendado</span>
+      </div>
+
+      <!-- Servicio 3 -->
+      <div class="servicio-card">
+        <span class="servicio-card__num">03</span>
+        <span class="servicio-card__icon">🎥</span>
+        <h3 class="servicio-card__title">Creación de Contenido</h3>
+        <p class="servicio-card__desc">Producción de contenido audiovisual y gráfico que comunica el valor real de tu marca o proyecto artístico.</p>
+        <ul class="servicio-card__list">
+          <li>Fotografía y video profesional</li>
+          <li>Reels y TikToks virales</li>
+          <li>Diseño de marca visual</li>
+          <li>Guiones y storytelling</li>
+        </ul>
+        <span class="servicio-card__tag">Creativo</span>
+      </div>
+
+      <!-- Servicio 4 -->
+      <div class="servicio-card">
+        <span class="servicio-card__num">04</span>
+        <span class="servicio-card__icon">🎵</span>
+        <h3 class="servicio-card__title">Marketing para Músicos</h3>
+        <p class="servicio-card__desc">Hacemos crecer tu carrera musical con estrategias digitales diseñadas para artistas y bandas.</p>
+        <ul class="servicio-card__list">
+          <li>Estrategia de lanzamiento</li>
+          <li>Pitching en playlists</li>
+          <li>Promoción en Spotify y YouTube</li>
+          <li>Campañas de fanbase</li>
+        </ul>
+        <span class="servicio-card__tag">Artistas</span>
+      </div>
+
+      <!-- Servicio 5 -->
+      <div class="servicio-card">
+        <span class="servicio-card__num">05</span>
+        <span class="servicio-card__icon">🌐</span>
+        <h3 class="servicio-card__title">Diseño Web & Landing Pages</h3>
+        <p class="servicio-card__desc">Sitios web y páginas de aterrizaje optimizadas para convertir visitas en clientes reales.</p>
+        <ul class="servicio-card__list">
+          <li>Diseño moderno y responsive</li>
+          <li>Optimización de velocidad</li>
+          <li>Integración con redes y CRM</li>
+          <li>Analítica y seguimiento</li>
+        </ul>
+        <span class="servicio-card__tag">Web</span>
+      </div>
+
+      <!-- Servicio 6 -->
+      <div class="servicio-card">
+        <span class="servicio-card__num">06</span>
+        <span class="servicio-card__icon">📊</span>
+        <h3 class="servicio-card__title">Consultoría & Estrategia</h3>
+        <p class="servicio-card__desc">Analizamos tu negocio y diseñamos un plan digital a medida con objetivos claros y plazos reales.</p>
+        <ul class="servicio-card__list">
+          <li>Diagnóstico digital gratuito</li>
+          <li>Plan de acción 90 días</li>
+          <li>Benchmarking de competencia</li>
+          <li>Seguimiento mensual</li>
+        </ul>
+        <span class="servicio-card__tag">Consultoría</span>
+      </div>
+
+    </div>
+
+    <!-- CTA inferior -->
+    <div class="servicios__cta">
+      <div class="servicios__cta-text">
+        <h3>¿No sabes por dónde empezar?</h3>
+        <p>Agenda una consulta gratuita de 30 minutos y te orientamos sin compromiso.</p>
+      </div>
+      <a href="#contacto" class="btn-outline">Agendar Consulta Gratis →</a>
+    </div>
+
+  </div>
+</section>
+
+</body>
+</html>
