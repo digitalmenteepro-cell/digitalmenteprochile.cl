@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>REDES SOCIALES - Digitalmenteprochile.cl</title>
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    /* ============================
+       SECCIÓN: REDES SOCIALES
+       Archivo: redes-sociales.html
+       ============================ */
+
+    body { margin-top: 72px; }
+
+    .redes {
+      padding: 88px 0;
+      background: var(--gris-claro);
+    }
+
+    .redes__layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 72px;
+      align-items: center;
+    }
+
+    /* Columna texto */
+    .redes__text .section-subtitle {
+      margin-bottom: 32px;
+    }
+
+    .redes__platforms {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      margin-bottom: 36px;
+    }
+
+    .platform-row {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      background: var(--blanco);
+      border-radius: 8px;
+      padding: 14px 18px;
+      border: 1.5px solid #E8E8E8;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+
+    .platform-row:hover {
+      border-color: var(--naranja);
+      box-shadow: 0 3px 14px rgba(255,107,0,0.1);
+    }
+
+    .platform-row__icon {
+      font-size: 24px;
+      width: 40px;
+      text-align: center;
+      flex-shrink: 0;
+    }
+
+    .platform-row__info {
+      flex: 1;
+    }
+
+    .platform-row__info strong {
+      display: block;
+      font-family: var(--font-display);
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--negro);
+      margin-bottom: 2px;
+    }
+
+    .platform-row__info span {
+      font-size: 12px;
+      color: var(--gris-medio);
+    }
+
+    .platform-row__badge {
+      font-family: var(--font-display);
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--naranja);
+      background: var(--naranja-suave);
+      padding: 4px 10px;
+      border-radius: 20px;
+    }
+
+    /* Columna visual derecha */
+    .redes__panel {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    /* Panel de estadísticas simulado */
+    .redes__stats-panel {
+      background: var(--blanco);
+      border-radius: 14px;
+      padding: 28px;
+      box-shadow: 0 6px 28px rgba(0,0,0,0.07);
+      border: 1.5px solid #E8E8E8;
+    }
+
+    .redes__stats-panel h4 {
+      font-family: var(--font-display);
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--gris-medio);
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 20px;
+    }
+
+    .stats-row {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin-bottom: 20px;
+    }
+
+    .stat-box {
+      text-align: center;
+      background: var(--gris-claro);
+      border-radius: 8px;
+      padding: 16px 10px;
+    }
+
+    .stat-box__num {
+      font-family: var(--font-display);
+      font-size: 22px;
+      font-weight: 900;
+      color: var(--naranja);
+      display: block;
+    }
+
+    .stat-box__label {
+      font-size: 11px;
+      color: var(--gris-medio);
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      margin-top: 4px;
+      display: block;
+    }
+
+    /* Barra de crecimiento */
+    .growth-bars {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+    }
+
+    .growth-bar {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .growth-bar__label {
+      font-size: 12px;
+      font-weight: 600;
+      color: var(--gris-oscuro);
+      width: 100px;
+      flex-shrink: 0;
+    }
+
+    .growth-bar__track {
+      flex: 1;
+      height: 8px;
+      background: #F0F0F0;
+      border-radius: 4px;
+      overflow: hidden;
+    }
+
+    .growth-bar__fill {
+      height: 100%;
+      background: var(--naranja);
+      border-radius: 4px;
+      transition: width 1s ease;
+    }
+
+    .growth-bar__val {
+      font-size: 12px;
+      font-weight: 700;
+      color: var(--negro);
+      width: 36px;
+      text-align: right;
+    }
+
+    /* Proceso de trabajo */
+    .redes__proceso {
+      background: var(--negro);
+      border-radius: 14px;
+      padding: 28px;
+    }
+
+    .redes__proceso h4 {
+      font-family: var(--font-display);
+      font-size: 15px;
+      font-weight: 800;
+      color: var(--blanco);
+      margin-bottom: 20px;
+    }
+
+    .proceso-steps {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .proceso-step {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .proceso-step__num {
+      width: 32px;
+      height: 32px;
+      background: var(--naranja);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-display);
+      font-size: 13px;
+      font-weight: 900;
+      color: var(--blanco);
+      flex-shrink: 0;
+    }
+
+    .proceso-step p {
+      font-size: 13px;
+      color: rgba(255,255,255,0.8);
+      line-height: 1.4;
+    }
+
+    @media (max-width: 860px) {
+      .redes__layout { grid-template-columns: 1fr; gap: 40px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ============================
+     REDES SOCIALES
+     ============================ -->
+<section class="redes section-pad" id="redes">
+  <div class="container">
+
+    <div class="redes__layout">
+
+      <!-- Texto izquierdo -->
+      <div class="redes__text">
+        <div class="section-label">Redes Sociales</div>
+        <h2 class="section-title">Presencia digital<br><span>que genera impacto</span></h2>
+        <div class="orange-divider"></div>
+        <p class="section-subtitle">
+          Gestionamos tus cuentas con estrategia real: publicaciones pensadas para tu audiencia, diseño consistente con tu marca y resultados que puedes medir.
+        </p>
+
+        <!-- Plataformas -->
+        <div class="redes__platforms">
+          <div class="platform-row">
+            <div class="platform-row__icon">📸</div>
+            <div class="platform-row__info">
+              <strong>Instagram</strong>
+              <span>Feed, Stories, Reels y colaboraciones</span>
+            </div>
+            <span class="platform-row__badge">Activo</span>
+          </div>
+          <div class="platform-row">
+            <div class="platform-row__icon">📘</div>
+            <div class="platform-row__info">
+              <strong>Facebook</strong>
+              <span>Posts, Grupos y Facebook Ads</span>
+            </div>
+            <span class="platform-row__badge">Activo</span>
+          </div>
+          <div class="platform-row">
+            <div class="platform-row__icon">🎵</div>
+            <div class="platform-row__info">
+              <strong>TikTok</strong>
+              <span>Videos virales y tendencias</span>
+            </div>
+            <span class="platform-row__badge">Activo</span>
+          </div>
+          <div class="platform-row">
+            <div class="platform-row__icon">💼</div>
+            <div class="platform-row__info">
+              <strong>LinkedIn</strong>
+              <span>B2B, marca empleadora y networking</span>
+            </div>
+            <span class="platform-row__badge">Activo</span>
+          </div>
+          <div class="platform-row">
+            <div class="platform-row__icon">▶️</div>
+            <div class="platform-row__info">
+              <strong>YouTube</strong>
+              <span>Canal, SEO de video y comunidad</span>
+            </div>
+            <span class="platform-row__badge">Activo</span>
+          </div>
+        </div>
+
+        <a href="#contacto" class="btn-primary">Quiero gestionar mis redes →</a>
+      </div>
+
+      <!-- Panel visual derecho -->
+      <div class="redes__panel">
+
+        <!-- Panel de estadísticas -->
+        <div class="redes__stats-panel">
+          <h4>📊 Resultados promedio de clientes</h4>
+          <div class="stats-row">
+            <div class="stat-box">
+              <span class="stat-box__num">+340%</span>
+              <span class="stat-box__label">Alcance</span>
+            </div>
+            <div class="stat-box">
+              <span class="stat-box__num">+180%</span>
+              <span class="stat-box__label">Interacción</span>
+            </div>
+            <div class="stat-box">
+              <span class="stat-box__num">+90%</span>
+              <span class="stat-box__label">Seguidores</span>
+            </div>
+          </div>
+
+          <div class="growth-bars">
+            <div class="growth-bar">
+              <span class="growth-bar__label">Instagram</span>
+              <div class="growth-bar__track">
+                <div class="growth-bar__fill" style="width: 88%;"></div>
+              </div>
+              <span class="growth-bar__val">88%</span>
+            </div>
+            <div class="growth-bar">
+              <span class="growth-bar__label">TikTok</span>
+              <div class="growth-bar__track">
+                <div class="growth-bar__fill" style="width: 75%;"></div>
+              </div>
+              <span class="growth-bar__val">75%</span>
+            </div>
+            <div class="growth-bar">
+              <span class="growth-bar__label">Facebook</span>
+              <div class="growth-bar__track">
+                <div class="growth-bar__fill" style="width: 65%;"></div>
+              </div>
+              <span class="growth-bar__val">65%</span>
+            </div>
+            <div class="growth-bar">
+              <span class="growth-bar__label">LinkedIn</span>
+              <div class="growth-bar__track">
+                <div class="growth-bar__fill" style="width: 60%;"></div>
+              </div>
+              <span class="growth-bar__val">60%</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Proceso de trabajo -->
+        <div class="redes__proceso">
+          <h4>Nuestro proceso de trabajo</h4>
+          <div class="proceso-steps">
+            <div class="proceso-step">
+              <div class="proceso-step__num">1</div>
+              <p>Auditoría de cuentas y diagnóstico de marca</p>
+            </div>
+            <div class="proceso-step">
+              <div class="proceso-step__num">2</div>
+              <p>Definición de audiencia objetivo y tono de comunicación</p>
+            </div>
+            <div class="proceso-step">
+              <div class="proceso-step__num">3</div>
+              <p>Calendario editorial mensual y producción de contenido</p>
+            </div>
+            <div class="proceso-step">
+              <div class="proceso-step__num">4</div>
+              <p>Publicación, comunidad y respuesta activa</p>
+            </div>
+            <div class="proceso-step">
+              <div class="proceso-step__num">5</div>
+              <p>Reporte de métricas y ajuste de estrategia</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+</body>
+</html>
