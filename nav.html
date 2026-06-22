@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>NAV - Digitalmenteprochile.cl</title>
+  <style>
+    /* ============================
+       VARIABLES DE COLOR
+       Extraídas del logo oficial
+       ============================ */
+    :root {
+      --naranja:        #F47920; /* Color principal del logo */
+      --naranja-oscuro: #D4660F;
+      --negro:          #1A1A1A;
+      --blanco:         #FFFFFF;
+      --gris-medio:     #888888;
+      --font-display:   'Segoe UI', Arial, sans-serif;
+      --font-body:      'Segoe UI', Arial, sans-serif;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: var(--font-body);
+      background: #f5f5f5;
+    }
+
+    /* ============================
+       SECCIÓN: NAVEGACIÓN (NAV)
+       ============================ */
+
+    .navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background: var(--blanco);
+      border-bottom: 3px solid var(--naranja);
+      z-index: 1000;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+    }
+
+    .navbar__inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 72px;
+      max-width: 1160px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* Logo con imagen real */
+    .navbar__logo {
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+      flex-shrink: 0;
+    }
+
+    .navbar__logo img {
+      height: 52px;       /* Ajustado al alto del nav (72px) con margen cómodo */
+      width: auto;
+      display: block;
+      object-fit: contain;
+    }
+
+    /* Links */
+    .navbar__links {
+      display: flex;
+      align-items: center;
+      gap: 32px;
+      list-style: none;
+    }
+
+    .navbar__links a {
+      font-family: var(--font-display);
+      font-weight: 600;
+      font-size: 14px;
+      color: var(--negro);
+      text-decoration: none;
+      letter-spacing: 0.3px;
+      transition: color 0.2s;
+      position: relative;
+    }
+
+    .navbar__links a::after {
+      content: '';
+      position: absolute;
+      bottom: -4px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--naranja);
+      transition: width 0.2s;
+    }
+
+    .navbar__links a:hover {
+      color: var(--naranja);
+    }
+
+    .navbar__links a:hover::after {
+      width: 100%;
+    }
+
+    /* CTA Navbar */
+    .navbar__cta {
+      background: var(--naranja) !important;
+      color: var(--blanco) !important;
+      padding: 10px 22px;
+      border-radius: 4px;
+      font-weight: 700 !important;
+      transition: background 0.2s !important;
+    }
+
+    .navbar__cta::after {
+      display: none !important;
+    }
+
+    .navbar__cta:hover {
+      background: var(--naranja-oscuro) !important;
+      color: var(--blanco) !important;
+    }
+
+    /* Hamburger mobile */
+    .navbar__toggle {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 4px;
+    }
+
+    .navbar__toggle span {
+      display: block;
+      width: 26px;
+      height: 2.5px;
+      background: var(--negro);
+      border-radius: 2px;
+      transition: all 0.25s;
+    }
+
+    @media (max-width: 820px) {
+      .navbar__toggle { display: flex; }
+
+      .navbar__links {
+        display: none;
+        position: absolute;
+        top: 72px;
+        left: 0;
+        width: 100%;
+        background: var(--blanco);
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 20px 24px 28px;
+        gap: 20px;
+        border-top: 1px solid #eee;
+        box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+      }
+
+      .navbar__links.open {
+        display: flex;
+      }
+
+      .navbar__links a {
+        font-size: 15px;
+      }
+
+      .navbar__logo img {
+        height: 44px;
+      }
+    }
+
+    /* Demo */
+    .demo-spacer { height: 72px; }
+    .demo-note {
+      text-align: center;
+      padding: 40px 24px;
+      font-family: var(--font-body);
+      color: var(--gris-medio);
+      font-size: 14px;
+    }
+    .demo-note strong { color: var(--naranja); }
+  </style>
+</head>
+<body>
+
+<!-- ============================
+     NAVEGACIÓN PRINCIPAL
+     Copiar el <nav> completo a index.html
+     ============================ -->
+<nav class="navbar" id="nav">
+  <div class="navbar__inner">
+
+    <!-- Logo imagen real -->
+    <a href="index.html" class="navbar__logo" aria-label="Digitalmente ProChile - Inicio">
+      <img
+        src="https://raw.githubusercontent.com/digitalmenteepro-cell/digitalmenteprochile.cl/refs/heads/main/images/Logo.PNG"
+        alt="Digitalmente ProChile"
+      />
+    </a>
+
+    <!-- Menú hamburguesa (mobile) -->
+    <button class="navbar__toggle" onclick="toggleMenu()" aria-label="Abrir menú">
+      <span></span><span></span><span></span>
+    </button>
+
+    <!-- Links -->
+    <ul class="navbar__links" id="nav-menu">
+      <li><a href="#servicios">Servicios</a></li>
+      <li><a href="#redes">Redes Sociales</a></li>
+      <li><a href="#contenido">Contenido</a></li>
+      <li><a href="#marketing">Marketing</a></li>
+      <li><a href="#testimonios">Testimonios</a></li>
+      <li><a href="#contacto" class="navbar__cta">Contáctanos</a></li>
+    </ul>
+
+  </div>
+</nav>
+
+<div class="demo-spacer"></div>
+
+<div class="demo-note">
+  <strong>SECCIÓN: NAV</strong> — Archivo: <code>nav.html</code><br>
+  Logo oficial cargado desde el repositorio. Altura ajustada a <strong>52px</strong> dentro del nav de 72px.
+</div>
+
+<script>
+  function toggleMenu() {
+    const menu = document.getElementById('nav-menu');
+    menu.classList.toggle('open');
+  }
+</script>
+</body>
+</html>
