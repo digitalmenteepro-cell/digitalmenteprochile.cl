@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>PORTADA - Digitalmenteprochile.cl</title>
+  <style>
+    :root {
+      --naranja:        #F47920;
+      --naranja-oscuro: #D4660F;
+      --naranja-suave:  #FFF3EA;
+      --negro:          #1A1A1A;
+      --blanco:         #FFFFFF;
+      --gris-claro:     #F7F7F7;
+      --gris-medio:     #888888;
+      --gris-oscuro:    #444444;
+      --font-display:   'Segoe UI', Arial, sans-serif;
+      --font-body:      'Segoe UI', Arial, sans-serif;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: var(--font-body);
+      background: var(--blanco);
+      margin-top: 72px;
+    }
+
+    /* ── HERO ─────────────────────────────────── */
+    .hero {
+      position: relative;
+      min-height: calc(100vh - 72px);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      background: var(--blanco);
+    }
+
+    /* Acento diagonal fondo */
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, var(--naranja-suave) 0%, var(--blanco) 55%);
+      z-index: 0;
+    }
+
+    /* Línea naranja lateral derecha */
+    .hero::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: 6px;
+      height: 100%;
+      background: var(--naranja);
+      z-index: 0;
+    }
+
+    .hero__inner {
+      position: relative;
+      z-index: 1;
+      width: 100%;
+      max-width: 1160px;
+      margin: 0 auto;
+      padding: 48px 24px 56px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0;
+    }
+
+    /* ── Tag ── */
+    .hero__tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: var(--naranja-suave);
+      border: 1.5px solid var(--naranja);
+      color: var(--naranja);
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 11px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      padding: 6px 16px;
+      border-radius: 3px;
+      margin-bottom: 28px;
+    }
+
+    .hero__tag::before {
+      content: '●';
+      font-size: 7px;
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.3; }
+    }
+
+    /* ── Imagen principal ── */
+    .hero__img-wrap {
+      width: 100%;
+      max-width: 860px;
+      margin: 0 auto 36px;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 8px 40px rgba(244,121,32,0.18), 0 2px 12px rgba(0,0,0,0.08);
+      border: 2.5px solid var(--naranja);
+      line-height: 0;
+    }
+
+    .hero__img-wrap img {
+      width: 100%;
+      height: auto;
+      display: block;
+      object-fit: cover;
+    }
+
+    /* ── CTA Buttons ── */
+    .hero__actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      justify-content: center;
+      margin-bottom: 44px;
+    }
+
+    .btn-primary {
+      background: var(--naranja);
+      color: var(--blanco);
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 15px;
+      padding: 14px 32px;
+      border-radius: 5px;
+      text-decoration: none;
+      transition: background 0.2s, transform 0.15s;
+      display: inline-block;
+      letter-spacing: 0.3px;
+    }
+
+    .btn-primary:hover {
+      background: var(--naranja-oscuro);
+      transform: translateY(-2px);
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--naranja);
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 15px;
+      padding: 13px 32px;
+      border-radius: 5px;
+      border: 2px solid var(--naranja);
+      text-decoration: none;
+      transition: background 0.2s, color 0.2s, transform 0.15s;
+      display: inline-block;
+      letter-spacing: 0.3px;
+    }
+
+    .btn-outline:hover {
+      background: var(--naranja);
+      color: var(--blanco);
+      transform: translateY(-2px);
+    }
+
+    /* ── Stats ── */
+    .hero__stats {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0;
+      justify-content: center;
+      border: 1.5px solid #EEDDD0;
+      border-radius: 10px;
+      overflow: hidden;
+      background: var(--blanco);
+      box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+    }
+
+    .stat {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 20px 40px;
+      position: relative;
+    }
+
+    .stat + .stat::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 20%;
+      height: 60%;
+      width: 1.5px;
+      background: #EEDDD0;
+    }
+
+    .stat__num {
+      font-family: var(--font-display);
+      font-weight: 900;
+      font-size: 34px;
+      color: var(--naranja);
+      line-height: 1;
+      letter-spacing: -1px;
+    }
+
+    .stat__label {
+      font-size: 12px;
+      color: var(--gris-medio);
+      font-weight: 600;
+      margin-top: 5px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    /* ── Banda de confianza ── */
+    .hero__clients {
+      width: 100%;
+      background: var(--gris-claro);
+      border-top: 1px solid #E8E8E8;
+      padding: 20px 24px;
+      margin-top: 0;
+    }
+
+    .hero__clients-inner {
+      max-width: 1160px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .hero__clients p {
+      font-family: var(--font-display);
+      font-size: 11px;
+      font-weight: 700;
+      color: var(--gris-medio);
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      white-space: nowrap;
+    }
+
+    .hero__clients-logos {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+      justify-content: center;
+    }
+
+    .client-pill {
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 13px;
+      color: var(--gris-oscuro);
+      background: var(--blanco);
+      border: 1.5px solid #DDD;
+      padding: 6px 16px;
+      border-radius: 30px;
+    }
+
+    /* ── Responsive ── */
+    @media (max-width: 600px) {
+      .hero__inner { padding: 36px 16px 40px; }
+      .hero__img-wrap { border-radius: 10px; }
+      .stat { padding: 16px 22px; }
+      .stat__num { font-size: 26px; }
+      .btn-primary, .btn-outline { font-size: 14px; padding: 12px 22px; }
+    }
+
+    @media (max-width: 380px) {
+      .stat + .stat::before { display: none; }
+      .hero__stats { flex-direction: column; border-radius: 10px; }
+      .stat { border-bottom: 1.5px solid #EEDDD0; }
+      .stat:last-child { border-bottom: none; }
+    }
+  </style>
+</head>
+<body>
+
+<section class="hero" id="inicio">
+  <div class="hero__inner">
+
+    <!-- Tag animado -->
+    <div class="hero__tag">Agencia Digital en Chile</div>
+
+    <!-- Imagen principal de oferta -->
+    <div class="hero__img-wrap">
+      <img
+        src="https://raw.githubusercontent.com/digitalmenteepro-cell/digitalmenteprochile.cl/refs/heads/main/images/oferta%203.PNG"
+        alt="Oferta de servicios digitales - Digitalmente ProChile"
+        loading="eager"
+      />
+    </div>
+
+    <!-- Botones CTA -->
+    <div class="hero__actions">
+      <a href="#servicios" class="btn-primary">Ver Servicios</a>
+      <a href="#contacto" class="btn-outline">Hablar con un Experto</a>
+    </div>
+
+    <!-- Estadísticas -->
+    <div class="hero__stats">
+      <div class="stat">
+        <span class="stat__num">+200</span>
+        <span class="stat__label">Clientes</span>
+      </div>
+      <div class="stat">
+        <span class="stat__num">8+</span>
+        <span class="stat__label">Años exp.</span>
+      </div>
+      <div class="stat">
+        <span class="stat__num">98%</span>
+        <span class="stat__label">Satisfacción</span>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- Banda de confianza -->
+<div class="hero__clients">
+  <div class="hero__clients-inner">
+    <p>Confían en nosotros:</p>
+    <div class="hero__clients-logos">
+      <span class="client-pill">Empresas PYME</span>
+      <span class="client-pill">Startups</span>
+      <span class="client-pill">Músicos</span>
+      <span class="client-pill">Artistas</span>
+      <span class="client-pill">Emprendedores</span>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>
