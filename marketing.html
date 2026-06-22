@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MARKETING - Digitalmenteprochile.cl</title>
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    /* ============================
+       SECCIÓN: MARKETING COMPLETO
+       Archivo: marketing.html
+       ============================ */
+
+    body { margin-top: 72px; }
+
+    .marketing {
+      padding: 88px 0;
+      background: var(--gris-claro);
+    }
+
+    .marketing__header {
+      text-align: center;
+      margin-bottom: 56px;
+    }
+
+    .marketing__header .section-subtitle {
+      margin: 0 auto;
+    }
+
+    /* Toggle Empresa / Músico */
+    .marketing__toggle {
+      display: flex;
+      justify-content: center;
+      margin-bottom: 52px;
+    }
+
+    .toggle-group {
+      display: flex;
+      background: #E8E8E8;
+      border-radius: 8px;
+      padding: 5px;
+      gap: 4px;
+    }
+
+    .toggle-btn {
+      font-family: var(--font-display);
+      font-size: 14px;
+      font-weight: 700;
+      padding: 12px 28px;
+      border-radius: 6px;
+      border: none;
+      background: transparent;
+      color: var(--gris-medio);
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .toggle-btn.active {
+      background: var(--naranja);
+      color: var(--blanco);
+      box-shadow: 0 3px 10px rgba(255,107,0,0.35);
+    }
+
+    /* Bloques para cada audiencia */
+    .marketing__block {
+      display: none;
+    }
+
+    .marketing__block.visible {
+      display: block;
+    }
+
+    /* Layout 2 columnas */
+    .marketing__layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+      margin-bottom: 52px;
+    }
+
+    /* Card de servicio de marketing */
+    .mkt-card {
+      background: var(--blanco);
+      border-radius: 10px;
+      padding: 32px;
+      border: 1.5px solid #E8E8E8;
+      transition: all 0.25s;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .mkt-card:hover {
+      border-color: var(--naranja);
+      box-shadow: 0 6px 24px rgba(255,107,0,0.1);
+      transform: translateY(-3px);
+    }
+
+    .mkt-card__header {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 16px;
+    }
+
+    .mkt-card__icon {
+      font-size: 28px;
+      width: 52px;
+      height: 52px;
+      background: var(--naranja-suave);
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .mkt-card__header h3 {
+      font-family: var(--font-display);
+      font-size: 17px;
+      font-weight: 800;
+      color: var(--negro);
+      line-height: 1.2;
+    }
+
+    .mkt-card__desc {
+      font-size: 14px;
+      color: var(--gris-medio);
+      line-height: 1.65;
+      margin-bottom: 20px;
+      flex: 1;
+    }
+
+    .mkt-card__includes {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 7px;
+    }
+
+    .mkt-card__includes li {
+      font-size: 13px;
+      color: var(--gris-oscuro);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .mkt-card__includes li::before {
+      content: '▸';
+      color: var(--naranja);
+      font-size: 12px;
+      flex-shrink: 0;
+    }
+
+    /* Panel de resultados esperados */
+    .marketing__results {
+      background: var(--naranja);
+      border-radius: 14px;
+      padding: 48px;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+      gap: 24px;
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .result-item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    .result-item__num {
+      font-family: var(--font-display);
+      font-size: 42px;
+      font-weight: 900;
+      color: var(--blanco);
+      line-height: 1;
+    }
+
+    .result-item__label {
+      font-size: 13px;
+      color: rgba(255,255,255,0.8);
+      margin-top: 6px;
+      font-weight: 600;
+      text-align: center;
+    }
+
+    .result-item__divider {
+      width: 32px;
+      height: 2px;
+      background: rgba(255,255,255,0.4);
+      margin: 10px auto;
+    }
+
+    /* CTA Plan */
+    .marketing__plan {
+      background: var(--blanco);
+      border-radius: 12px;
+      border: 2px solid var(--naranja);
+      padding: 40px 48px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 32px;
+      flex-wrap: wrap;
+    }
+
+    .marketing__plan-text h3 {
+      font-family: var(--font-display);
+      font-size: 22px;
+      font-weight: 900;
+      color: var(--negro);
+      margin-bottom: 6px;
+    }
+
+    .marketing__plan-text p {
+      font-size: 15px;
+      color: var(--gris-medio);
+    }
+
+    .marketing__plan-text p strong {
+      color: var(--naranja);
+    }
+
+    @media (max-width: 860px) {
+      .marketing__layout { grid-template-columns: 1fr; }
+      .marketing__results { grid-template-columns: repeat(2, 1fr); padding: 32px 28px; }
+    }
+    @media (max-width: 560px) {
+      .marketing__results { grid-template-columns: 1fr 1fr; }
+      .marketing__plan { padding: 28px 24px; flex-direction: column; align-items: flex-start; }
+      .toggle-btn { padding: 10px 18px; font-size: 13px; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ============================
+     MARKETING COMPLETO
+     ============================ -->
+<section class="marketing section-pad" id="marketing">
+  <div class="container">
+
+    <!-- Encabezado -->
+    <div class="marketing__header">
+      <div class="section-label">Marketing Digital</div>
+      <h2 class="section-title">Estrategias que <span>generan resultados</span></h2>
+      <div class="orange-divider" style="margin: 16px auto 20px;"></div>
+      <p class="section-subtitle">
+        Planes de marketing diseñados específicamente para empresas y para artistas musicales. Selecciona tu perfil y descubre lo que hacemos por ti.
+      </p>
+    </div>
+
+    <!-- Toggle -->
+    <div class="marketing__toggle">
+      <div class="toggle-group">
+        <button class="toggle-btn active" onclick="showBlock('empresas', this)">🏢 Empresas & Negocios</button>
+        <button class="toggle-btn" onclick="showBlock('musicos', this)">🎵 Músicos & Artistas</button>
+      </div>
+    </div>
+
+    <!-- ===== BLOQUE EMPRESAS ===== -->
+    <div class="marketing__block visible" id="block-empresas">
+
+      <div class="marketing__layout">
+        <div class="mkt-card">
+          <div class="mkt-card__header">
+            <div class="mkt-card__icon">🎯</div>
+            <h3>Publicidad Digital (SEM)</h3>
+          </div>
+          <p class="mkt-card__desc">Campañas pagadas en Google y Meta que llevan clientes calificados directo a tu negocio con máximo retorno de inversión.</p>
+          <ul class="mkt-card__includes">
+            <li>Google Ads (Search, Display, YouTube)</li>
+            <li>Meta Ads (Facebook e Instagram)</li>
+            <li>Retargeting y audiencias personalizadas</li>
+            <li>Optimización semanal de campañas</li>
+            <li>Reportes de inversión y ROI</li>
+          </ul>
+        </div>
+
+        <div class="mkt-card">
+          <div class="mkt-card__header">
+            <div class="mkt-card__icon">🔍</div>
+            <h3>SEO & Posicionamiento</h3>
+          </div>
+          <p class="mkt-card__desc">Aparecer en Google cuando te buscan. Optimizamos tu presencia orgánica para atraer clientes sin pagar por cada click.</p>
+          <ul class="mkt-card__includes">
+            <li>Auditoría técnica del sitio web</li>
+            <li>Investigación de palabras clave</li>
+            <li>Optimización on-page y off-page</li>
+            <li>Creación de contenido SEO</li>
+            <li>Seguimiento de posiciones</li>
+          </ul>
+        </div>
+
+        <div class="mkt-card">
+          <div class="mkt-card__header">
+            <div class="mkt-card__icon">📧</div>
+            <h3>Email Marketing & Automatización</h3>
+          </div>
+          <p class="mkt-card__desc">Fideliza a tus clientes y genera ventas recurrentes con campañas de email segmentadas y flujos automatizados.</p>
+          <ul class="mkt-card__includes">
+            <li>Diseño de newsletters mensuales</li>
+            <li>Secuencias de bienvenida y venta</li>
+            <li>Segmentación de base de datos</li>
+            <li>A/B testing de asuntos y contenido</li>
+            <li>Métricas de apertura y conversión</li>
+          </ul>
+        </div>
+
+        <div class="mkt-card">
+          <div class="mkt-card__header">
+            <div class="mkt-card__icon">🛒</div>
+            <h3>E-Commerce & Ventas Online</h3>
+          </div>
+          <p class="mkt-card__desc">Estrategia completa para vender en línea: tienda, catálogo, pagos y campañas que mueven el stock.</p>
+          <ul class="mkt-card__includes">
+            <li>Configuración de tienda online</li>
+            <li>Catálogo y fichas de producto</li>
+            <li>Campañas de Shopping Ads</li>
+            <li>Recuperación de carritos abandonados</li>
+            <li>Análisis de conversión y ventas</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="marketing__results">
+        <div class="result-item">
+          <div class="result-item__num">3.5x</div>
+          <div class="result-item__divider"></div>
+          <div class="result-item__label">ROI promedio en campañas</div>
+        </div>
+        <div class="result-item">
+          <div class="result-item__num">+60%</div>
+          <div class="result-item__divider"></div>
+          <div class="result-item__label">Más tráfico web orgánico</div>
+        </div>
+        <div class="result-item">
+          <div class="result-item__num">-30%</div>
+          <div class="result-item__divider"></div>
+          <div class="result-item__label">Costo por lead</div>
+        </div>
+        <div class="result-item">
+          <div class="result-item__num">+45%</div>
+          <div class="result-item__divider"></div>
+          <div class="result-item__label">Tasa de conversión</div>
+        </div>
+      </div>
+
+      <div class="marketing__plan">
+        <div class="marketing__plan-text">
+          <h3>Plan de Marketing para tu empresa</h3>
+          <p>Diagnóstico gratuito + Propuesta personalizada en <strong>48 horas</strong>. Sin compromiso.</p>
+        </div>
+        <a href="#contacto" class="btn-primary">Solicitar Plan Gratuito →</a>
+      </div>
+
+    </div>
+
+    <!-- ===== BLOQUE MÚSICOS ===== -->
+    <div class="marketing__block" id="block-musicos">
+
+      <div class="marketing__layout">
+        <div class="mkt-card">
+          <div class="mkt-card__header">
+            <div class="mkt-card__icon">🎤</div>
+            <h3>Lanzamiento de Sencillo o Álbum</h3>
+          </div>
+          <p class="mkt-card__desc">Campaña completa para el lanzamiento de tu música: estrategia pre-release, día de lanzamiento y post-release para maximizar el impacto.</p>
+          <ul class="mkt-card__includes">
+            <li>Plan de lanzamiento en 3 fases</li>
+            <li>Campaña en Meta y TikTok Ads</li>
+            <li>Pitching a playlists editoriales</li>
+            <li>Press release y difusión en medios</li>
+            <li>Reporte post-lanzamiento</li>
+          </ul>
+        </div>
+
+        <div class="mkt-card">
+          <div class="mkt-card__header">
+            <div class="mkt-card__icon">📊</div>
+            <h3>Crecimiento en Streaming</h3>
+          </div>
+          <p class="mkt-card__desc">Aumenta tus reproducciones y seguidores en Spotify, Apple Music, YouTube Music y demás plataformas de forma orgánica y sostenida.</p>
+          <ul class="mkt-card__includes">
+            <li>Optimización de perfil en Spotify</li>
+            <li>Pitching a playlist curadores</li>
+            <li>Campañas de Canvas y Discovery Mode</li>
+            <li>Estrategia de YouTube Music</li>
+            <li>Análisis de Spotify for Artists</li>
+          </ul>
+        </div>
+
+        <div class="mkt-card">
+          <div class="mkt-card__header">
+            <div class="mkt-card__icon">🌐</div>
+            <h3>Presencia Digital del Artista</h3>
+          </div>
+          <p class="mkt-card__desc">Construimos y gestionamos tu imagen digital: redes sociales, EPK, sitio web y todos los puntos de contacto con tus fans y la industria.</p>
+          <ul class="mkt-card__includes">
+            <li>EPK digital profesional</li>
+            <li>Gestión de redes sociales</li>
+            <li>Web del artista (bio + links)</li>
+            <li>Comunidad y fanbase activa</li>
+            <li>Estrategia de contenido musical</li>
+          </ul>
+        </div>
+
+        <div class="mkt-card">
+          <div class="mkt-card__header">
+            <div class="mkt-card__icon">🎫</div>
+            <h3>Difusión de Eventos y Shows</h3>
+          </div>
+          <p class="mkt-card__desc">Campañas digitales para llenar tu próximo concierto, show en vivo o presentación. Desde la venta anticipada hasta el cierre.</p>
+          <ul class="mkt-card__includes">
+            <li>Campaña publicitaria para el evento</li>
+            <li>Venta de entradas online</li>
+            <li>Cobertura antes, durante y después</li>
+            <li>Retargeting a asistentes</li>
+            <li>Contenido de after-show</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="marketing__results">
+        <div class="result-item">
+          <div class="result-item__num">+500K</div>
+          <div class="result-item__divider"></div>
+          <div class="result-item__label">Streams por lanzamiento</div>
+        </div>
+        <div class="result-item">
+          <div class="result-item__num">+200%</div>
+          <div class="result-item__divider"></div>
+          <div class="result-item__label">Crecimiento en Spotify</div>
+        </div>
+        <div class="result-item">
+          <div class="result-item__num">30+</div>
+          <div class="result-item__divider"></div>
+          <div class="result-item__label">Playlists conseguidas</div>
+        </div>
+        <div class="result-item">
+          <div class="result-item__num">95%</div>
+          <div class="result-item__divider"></div>
+          <div class="result-item__label">Shows con sold out</div>
+        </div>
+      </div>
+
+      <div class="marketing__plan">
+        <div class="marketing__plan-text">
+          <h3>Haz crecer tu carrera musical</h3>
+          <p>Cuéntanos tu proyecto y te armamos una estrategia en <strong>48 horas</strong>. Primera consulta sin costo.</p>
+        </div>
+        <a href="#contacto" class="btn-primary">Hablar con un Experto →</a>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<script>
+function showBlock(type, btn) {
+  document.querySelectorAll('.marketing__block').forEach(b => b.classList.remove('visible'));
+  document.querySelectorAll('.toggle-btn').forEach(b => b.classList.remove('active'));
+  document.getElementById('block-' + type).classList.add('visible');
+  btn.classList.add('active');
+}
+</script>
+</body>
+</html>
