@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CREACIÓN DE CONTENIDO - Digitalmenteprochile.cl</title>
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    /* ============================
+       SECCIÓN: CREACIÓN DE CONTENIDO
+       Archivo: creacion-contenido.html
+       ============================ */
+
+    body { margin-top: 72px; }
+
+    .contenido {
+      padding: 88px 0;
+      background: var(--blanco);
+    }
+
+    .contenido__header {
+      text-align: center;
+      margin-bottom: 64px;
+    }
+
+    .contenido__header .section-subtitle {
+      margin: 0 auto;
+    }
+
+    /* Tabs de categorías */
+    .contenido__tabs {
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+      flex-wrap: wrap;
+      margin-bottom: 48px;
+    }
+
+    .tab-btn {
+      font-family: var(--font-display);
+      font-size: 13px;
+      font-weight: 700;
+      padding: 10px 22px;
+      border-radius: 4px;
+      border: 1.5px solid #E8E8E8;
+      background: var(--blanco);
+      color: var(--gris-oscuro);
+      cursor: pointer;
+      transition: all 0.2s;
+    }
+
+    .tab-btn:hover,
+    .tab-btn.active {
+      background: var(--naranja);
+      color: var(--blanco);
+      border-color: var(--naranja);
+    }
+
+    /* Grid de tipos de contenido */
+    .contenido__grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      margin-bottom: 64px;
+    }
+
+    .contenido-item {
+      position: relative;
+      border-radius: 10px;
+      overflow: hidden;
+      background: var(--gris-claro);
+      border: 1.5px solid #E8E8E8;
+      transition: all 0.25s;
+    }
+
+    .contenido-item:hover {
+      box-shadow: 0 10px 36px rgba(255,107,0,0.14);
+      border-color: var(--naranja);
+      transform: translateY(-3px);
+    }
+
+    .contenido-item--large {
+      grid-column: span 2;
+    }
+
+    .contenido-item__visual {
+      height: 160px;
+      background: linear-gradient(135deg, var(--naranja-suave) 0%, #FFE4CC 100%);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 56px;
+      position: relative;
+    }
+
+    .contenido-item--large .contenido-item__visual {
+      height: 200px;
+    }
+
+    .contenido-item__visual-badge {
+      position: absolute;
+      top: 14px;
+      right: 14px;
+      background: var(--naranja);
+      color: var(--blanco);
+      font-family: var(--font-display);
+      font-size: 11px;
+      font-weight: 700;
+      padding: 5px 12px;
+      border-radius: 20px;
+      letter-spacing: 0.5px;
+    }
+
+    .contenido-item__body {
+      padding: 24px;
+    }
+
+    .contenido-item__body h3 {
+      font-family: var(--font-display);
+      font-size: 17px;
+      font-weight: 800;
+      color: var(--negro);
+      margin-bottom: 8px;
+    }
+
+    .contenido-item__body p {
+      font-size: 13px;
+      color: var(--gris-medio);
+      line-height: 1.6;
+      margin-bottom: 16px;
+    }
+
+    .contenido-item__tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    .tag {
+      font-size: 11px;
+      font-weight: 600;
+      background: var(--naranja-suave);
+      color: var(--naranja);
+      padding: 3px 10px;
+      border-radius: 20px;
+      font-family: var(--font-display);
+    }
+
+    /* Sección del proceso creativo */
+    .contenido__proceso {
+      background: var(--negro);
+      border-radius: 16px;
+      padding: 52px 48px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: center;
+    }
+
+    .contenido__proceso-text h3 {
+      font-family: var(--font-display);
+      font-size: 30px;
+      font-weight: 900;
+      color: var(--blanco);
+      margin-bottom: 12px;
+      line-height: 1.2;
+    }
+
+    .contenido__proceso-text h3 em {
+      font-style: normal;
+      color: var(--naranja);
+    }
+
+    .contenido__proceso-text p {
+      color: rgba(255,255,255,0.7);
+      font-size: 15px;
+      line-height: 1.7;
+      margin-bottom: 28px;
+    }
+
+    .contenido__proceso-steps {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+
+    .proceso-mini {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.12);
+      border-radius: 8px;
+      padding: 18px;
+    }
+
+    .proceso-mini__icon {
+      font-size: 22px;
+      margin-bottom: 8px;
+      display: block;
+    }
+
+    .proceso-mini h4 {
+      font-family: var(--font-display);
+      font-size: 13px;
+      font-weight: 700;
+      color: var(--blanco);
+      margin-bottom: 4px;
+    }
+
+    .proceso-mini p {
+      font-size: 12px;
+      color: rgba(255,255,255,0.55);
+      line-height: 1.4;
+    }
+
+    @media (max-width: 900px) {
+      .contenido__grid { grid-template-columns: 1fr 1fr; }
+      .contenido-item--large { grid-column: span 2; }
+      .contenido__proceso { grid-template-columns: 1fr; gap: 36px; padding: 36px 28px; }
+    }
+    @media (max-width: 600px) {
+      .contenido__grid { grid-template-columns: 1fr; }
+      .contenido-item--large { grid-column: span 1; }
+      .contenido__proceso-steps { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ============================
+     CREACIÓN DE CONTENIDO
+     ============================ -->
+<section class="contenido section-pad" id="contenido">
+  <div class="container">
+
+    <!-- Encabezado -->
+    <div class="contenido__header">
+      <div class="section-label">Contenido Digital</div>
+      <h2 class="section-title">Contenido que <span>conecta</span> y convierte</h2>
+      <div class="orange-divider" style="margin: 16px auto 20px;"></div>
+      <p class="section-subtitle">
+        Creamos piezas visuales, audiovisuales y escritas que representan tu marca con identidad propia y generan resultados reales.
+      </p>
+    </div>
+
+    <!-- Tabs -->
+    <div class="contenido__tabs">
+      <button class="tab-btn active">Todo</button>
+      <button class="tab-btn">Video</button>
+      <button class="tab-btn">Diseño Gráfico</button>
+      <button class="tab-btn">Fotografía</button>
+      <button class="tab-btn">Copywriting</button>
+      <button class="tab-btn">Música</button>
+    </div>
+
+    <!-- Grid de contenido -->
+    <div class="contenido__grid">
+
+      <div class="contenido-item contenido-item--large">
+        <div class="contenido-item__visual">
+          🎬
+          <span class="contenido-item__visual-badge">🔥 Más pedido</span>
+        </div>
+        <div class="contenido-item__body">
+          <h3>Reels y Videos Virales</h3>
+          <p>Producción completa de videos cortos para Instagram y TikTok. Guión, grabación, edición con tendencias actuales y subtítulos. Formato vertical optimizado para cada plataforma.</p>
+          <div class="contenido-item__tags">
+            <span class="tag">Instagram Reels</span>
+            <span class="tag">TikTok</span>
+            <span class="tag">YouTube Shorts</span>
+            <span class="tag">Edición Pro</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="contenido-item">
+        <div class="contenido-item__visual">📐</div>
+        <div class="contenido-item__body">
+          <h3>Diseño Gráfico</h3>
+          <p>Posts, stories, banners, flyers y branding visual coherente con tu identidad de marca.</p>
+          <div class="contenido-item__tags">
+            <span class="tag">Posts</span>
+            <span class="tag">Stories</span>
+            <span class="tag">Branding</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="contenido-item">
+        <div class="contenido-item__visual">📷</div>
+        <div class="contenido-item__body">
+          <h3>Fotografía Profesional</h3>
+          <p>Sesiones de producto, lifestyle y retrato para tu feed y material de marketing.</p>
+          <div class="contenido-item__tags">
+            <span class="tag">Producto</span>
+            <span class="tag">Lifestyle</span>
+            <span class="tag">Retrato</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="contenido-item">
+        <div class="contenido-item__visual">✍️</div>
+        <div class="contenido-item__body">
+          <h3>Copywriting & Redacción</h3>
+          <p>Textos que venden: captions, newsletters, páginas web y guiones de video con voz de marca.</p>
+          <div class="contenido-item__tags">
+            <span class="tag">Captions</span>
+            <span class="tag">Blog</span>
+            <span class="tag">Email</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="contenido-item">
+        <div class="contenido-item__visual">🎶
+          <span class="contenido-item__visual-badge">Artistas</span>
+        </div>
+        <div class="contenido-item__body">
+          <h3>Contenido para Músicos</h3>
+          <p>EPK digital, clips de lanzamiento, visualizers y material para prensa especializada musical.</p>
+          <div class="contenido-item__tags">
+            <span class="tag">EPK</span>
+            <span class="tag">Visualizer</span>
+            <span class="tag">Press Kit</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="contenido-item">
+        <div class="contenido-item__visual">📊</div>
+        <div class="contenido-item__body">
+          <h3>Infografías & Carruseles</h3>
+          <p>Contenido educativo e informativo en formato carrusel o infografía para mayor alcance y guardados.</p>
+          <div class="contenido-item__tags">
+            <span class="tag">Carrusel</span>
+            <span class="tag">Infografía</span>
+            <span class="tag">Educativo</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Proceso creativo -->
+    <div class="contenido__proceso">
+      <div class="contenido__proceso-text">
+        <h3>Contenido con<br><em>propósito y estrategia</em></h3>
+        <p>No creamos contenido por crear. Cada pieza tiene un objetivo claro dentro de tu estrategia digital: atraer, conectar, convertir o fidelizar.</p>
+        <a href="#contacto" class="btn-primary">Quiero contenido profesional</a>
+      </div>
+      <div class="contenido__proceso-steps">
+        <div class="proceso-mini">
+          <span class="proceso-mini__icon">🔍</span>
+          <h4>Investigación</h4>
+          <p>Analizamos tu marca, audiencia y competencia.</p>
+        </div>
+        <div class="proceso-mini">
+          <span class="proceso-mini__icon">📋</span>
+          <h4>Guión y Brief</h4>
+          <p>Planificamos cada pieza con objetivo claro.</p>
+        </div>
+        <div class="proceso-mini">
+          <span class="proceso-mini__icon">🎨</span>
+          <h4>Producción</h4>
+          <p>Diseño, grabación y edición profesional.</p>
+        </div>
+        <div class="proceso-mini">
+          <span class="proceso-mini__icon">🚀</span>
+          <h4>Publicación</h4>
+          <p>Timing óptimo y seguimiento de resultados.</p>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+</body>
+</html>
