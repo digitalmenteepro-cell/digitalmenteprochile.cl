@@ -1,0 +1,207 @@
+<style>
+  /* =====================================================
+     DIGITALMENTE PRO — PORTADA
+     Imagen completa + animación sutil + botón CTA
+     ===================================================== */
+
+  .dp-hero {
+    width: 100%;
+    background: #fffaf6;
+  }
+
+  .dp-hero__wrap {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+  }
+
+  .dp-hero__media {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+  }
+
+  .dp-hero__image {
+    display: block;
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    object-position: center;
+    transform-origin: center center;
+    animation:
+      heroReveal 0.9s ease-out both,
+      heroFloatZoom 14s ease-in-out 1s infinite alternate;
+    will-change: transform, opacity;
+  }
+
+  .dp-hero__cta {
+    position: absolute;
+    right: clamp(16px, 3vw, 42px);
+    bottom: clamp(16px, 2.4vw, 32px);
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    min-height: 46px;
+    padding: 0 22px;
+
+    border: 1px solid rgba(255, 255, 255, 0.48);
+    border-radius: 999px;
+
+    background: rgba(255, 106, 19, 0.90);
+    color: #ffffff;
+
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+    font-size: 14px;
+    font-weight: 800;
+    line-height: 1;
+    text-decoration: none;
+    white-space: nowrap;
+
+    box-shadow: 0 10px 26px rgba(75, 34, 12, 0.18);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+
+    opacity: 0;
+    animation:
+      ctaReveal 0.8s ease-out 0.5s forwards,
+      ctaFloat 3.6s ease-in-out 1.5s infinite;
+
+    transition:
+      transform 0.2s ease,
+      background 0.2s ease,
+      box-shadow 0.2s ease;
+  }
+
+  .dp-hero__cta:hover {
+    background: #f45f08;
+    transform: translateY(-2px) scale(1.02);
+    box-shadow: 0 14px 30px rgba(75, 34, 12, 0.24);
+  }
+
+  .dp-hero__cta:focus-visible {
+    outline: 3px solid rgba(255,255,255,0.95);
+    outline-offset: 3px;
+  }
+
+  /* Animaciones */
+  @keyframes heroReveal {
+    from {
+      opacity: 0;
+      transform: scale(1.015) translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: scale(1) translateY(0);
+    }
+  }
+
+  @keyframes heroFloatZoom {
+    0% {
+      transform: scale(1) translateY(0);
+    }
+    100% {
+      transform: scale(1.02) translateY(-4px);
+    }
+  }
+
+  @keyframes ctaReveal {
+    from {
+      opacity: 0;
+      transform: translateY(12px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes ctaFloat {
+    0%, 100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-3px);
+    }
+  }
+
+  /* Tablet */
+  @media (max-width: 900px) {
+    .dp-hero__cta {
+      right: 20px;
+      bottom: 20px;
+      min-height: 42px;
+      padding: 0 18px;
+      font-size: 13px;
+    }
+  }
+
+  /* Móvil */
+  @media (max-width: 650px) {
+    .dp-hero__cta {
+      right: 14px;
+      bottom: 14px;
+      min-height: 38px;
+      padding: 0 15px;
+      font-size: 11.5px;
+      font-weight: 800;
+      background: rgba(255, 106, 19, 0.88);
+      box-shadow: 0 7px 18px rgba(75, 34, 12, 0.16);
+    }
+
+    .dp-hero__image {
+      animation:
+        heroReveal 0.8s ease-out both,
+        heroFloatZoom 12s ease-in-out 1s infinite alternate;
+    }
+  }
+
+  /* Teléfonos angostos */
+  @media (max-width: 380px) {
+    .dp-hero__cta {
+      right: 10px;
+      bottom: 10px;
+      min-height: 36px;
+      padding: 0 13px;
+      font-size: 10.5px;
+    }
+  }
+
+  /* Accesibilidad */
+  @media (prefers-reduced-motion: reduce) {
+    .dp-hero__image,
+    .dp-hero__cta {
+      animation: none !important;
+      transition: none !important;
+      opacity: 1 !important;
+      transform: none !important;
+    }
+  }
+</style>
+
+<section class="dp-hero" aria-label="Digitalmente Pro">
+  <div class="dp-hero__wrap">
+
+    <div class="dp-hero__media">
+      <img
+        class="dp-hero__image"
+        src="https://raw.githubusercontent.com/digitalmenteepro-cell/digitalmenteprochile.cl/refs/heads/main/images/Portada%202.0.png"
+        alt="Digitalmente Pro - Haz que tu marca se haga escuchar"
+        loading="eager"
+        fetchpriority="high"
+      >
+    </div>
+
+    <a
+      class="dp-hero__cta"
+      href="https://wa.me/56987689361?text=Hola%20%F0%9F%91%8B%20Quiero%20hacer%20crecer%20mi%20negocio%20con%20Digitalmente%20Pro."
+      target="_blank"
+      rel="noopener"
+      aria-label="Quiero hacer crecer mi negocio por WhatsApp"
+    >
+      Quiero hacer crecer mi negocio
+    </a>
+
+  </div>
+</section>
