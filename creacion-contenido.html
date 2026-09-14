@@ -1,378 +1,2217 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>CREACIÓN DE CONTENIDO - Digitalmenteprochile.cl</title>
-  <link rel="stylesheet" href="styles.css" />
+
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <meta
+    name="robots"
+    content="noindex, nofollow"
+  >
+
+  <title>
+    Creación de Contenido | Digitalmente Pro
+  </title>
+
+
   <style>
-    /* ============================
-       SECCIÓN: CREACIÓN DE CONTENIDO
-       Archivo: creacion-contenido.html
-       ============================ */
 
-    body { margin-top: 72px; }
+    /* =====================================================
+       DIGITALMENTE PRO
+       CREACIÓN DE CONTENIDO
+       ===================================================== */
 
-    .contenido {
-      padding: 88px 0;
-      background: var(--blanco);
+    :root {
+
+      --orange: #ff6a13;
+      --orange-dark: #ed5700;
+      --orange-light: #ff9557;
+
+      --cream: #fffaf6;
+      --cream-soft: #fff3eb;
+
+      --white: #ffffff;
+
+      --dark: #151515;
+
+      --text: #141414;
+      --text-soft: #626262;
+
+      --border: #efdfd3;
+
+      --green: #0aa75b;
+
     }
 
-    .contenido__header {
-      text-align: center;
-      margin-bottom: 64px;
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
     }
 
-    .contenido__header .section-subtitle {
-      margin: 0 auto;
+
+    html {
+      scroll-behavior: smooth;
     }
 
-    /* Tabs de categorías */
-    .contenido__tabs {
-      display: flex;
-      justify-content: center;
-      gap: 8px;
-      flex-wrap: wrap;
-      margin-bottom: 48px;
+
+    body {
+
+      font-family:
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        Arial,
+        sans-serif;
+
+      background:
+        var(--white);
+
+      color:
+        var(--text);
+
+      overflow-x:
+        hidden;
+
     }
 
-    .tab-btn {
-      font-family: var(--font-display);
-      font-size: 13px;
-      font-weight: 700;
-      padding: 10px 22px;
-      border-radius: 4px;
-      border: 1.5px solid #E8E8E8;
-      background: var(--blanco);
-      color: var(--gris-oscuro);
-      cursor: pointer;
-      transition: all 0.2s;
+
+    a {
+      color: inherit;
+      text-decoration: none;
     }
 
-    .tab-btn:hover,
-    .tab-btn.active {
-      background: var(--naranja);
-      color: var(--blanco);
-      border-color: var(--naranja);
-    }
 
-    /* Grid de tipos de contenido */
-    .contenido__grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 24px;
-      margin-bottom: 64px;
-    }
+    /* =====================================================
+       SECCIÓN
+       ===================================================== */
 
-    .contenido-item {
+    .content {
+
       position: relative;
-      border-radius: 10px;
+
       overflow: hidden;
-      background: var(--gris-claro);
-      border: 1.5px solid #E8E8E8;
-      transition: all 0.25s;
+
+      padding:
+        110px 0;
+
+      background:
+
+        radial-gradient(
+          circle at 90% 5%,
+          rgba(255,106,19,.09),
+          transparent 26%
+        ),
+
+        #ffffff;
+
     }
 
-    .contenido-item:hover {
-      box-shadow: 0 10px 36px rgba(255,107,0,0.14);
-      border-color: var(--naranja);
-      transform: translateY(-3px);
+
+    .content::before {
+
+      content: "";
+
+      position: absolute;
+
+      left: -250px;
+      bottom: 130px;
+
+      width: 480px;
+      height: 480px;
+
+      border-radius: 50%;
+
+      background:
+        rgba(255,106,19,.055);
+
     }
 
-    .contenido-item--large {
-      grid-column: span 2;
+
+    .content__container {
+
+      position: relative;
+
+      z-index: 2;
+
+      width:
+        min(
+          1180px,
+          calc(100% - 40px)
+        );
+
+      margin:
+        0 auto;
+
     }
 
-    .contenido-item__visual {
-      height: 160px;
-      background: linear-gradient(135deg, var(--naranja-suave) 0%, #FFE4CC 100%);
+
+    /* =====================================================
+       CABECERA
+       ===================================================== */
+
+    .content__header {
+
+      display: grid;
+
+      grid-template-columns:
+        1.05fr .95fr;
+
+      gap:
+        60px;
+
+      align-items:
+        end;
+
+      margin-bottom:
+        62px;
+
+    }
+
+
+    .content__eyebrow {
+
+      display: inline-flex;
+
+      align-items: center;
+
+      gap: 9px;
+
+      margin-bottom: 17px;
+
+      color:
+        var(--orange-dark);
+
+      font-size: 12px;
+
+      font-weight: 900;
+
+      letter-spacing: 2px;
+
+      text-transform: uppercase;
+
+    }
+
+
+    .content__eyebrow::before {
+
+      content: "";
+
+      display: block;
+
+      width: 8px;
+      height: 8px;
+
+      border-radius: 50%;
+
+      background:
+        var(--orange);
+
+      box-shadow:
+        0 0 0 6px
+        rgba(255,106,19,.10);
+
+    }
+
+
+    .content__title {
+
+      max-width: 720px;
+
+      font-size:
+        clamp(
+          44px,
+          5.7vw,
+          70px
+        );
+
+      line-height: .98;
+
+      letter-spacing: -3.5px;
+
+      font-weight: 900;
+
+    }
+
+
+    .content__title span {
+
+      color:
+        var(--orange);
+
+    }
+
+
+    .content__description {
+
+      max-width: 520px;
+
+      padding-bottom: 5px;
+
+      color:
+        var(--text-soft);
+
+      font-size: 17px;
+
+      line-height: 1.75;
+
+    }
+
+
+    /* =====================================================
+       FILTROS VISUALES
+       ===================================================== */
+
+    .content__categories {
+
       display: flex;
+
+      flex-wrap: wrap;
+
+      gap: 9px;
+
+      margin-bottom: 34px;
+
+    }
+
+
+    .category {
+
+      min-height: 38px;
+
+      padding: 0 15px;
+
+      display: inline-flex;
+
+      align-items: center;
+
+      justify-content: center;
+
+      border-radius: 999px;
+
+      border:
+        1px solid var(--border);
+
+      background:
+        #ffffff;
+
+      color:
+        #6d594c;
+
+      font-size: 12px;
+
+      font-weight: 750;
+
+    }
+
+
+    .category--active {
+
+      background:
+        var(--orange);
+
+      border-color:
+        var(--orange);
+
+      color:
+        #ffffff;
+
+      box-shadow:
+        0 8px 20px
+        rgba(255,106,19,.18);
+
+    }
+
+
+    /* =====================================================
+       GRID PRINCIPAL
+       ===================================================== */
+
+    .content__grid {
+
+      display: grid;
+
+      grid-template-columns:
+        repeat(12, 1fr);
+
+      gap: 18px;
+
+    }
+
+
+    .content-card {
+
+      position: relative;
+
+      overflow: hidden;
+
+      min-height: 410px;
+
+      padding: 28px;
+
+      display: flex;
+
+      flex-direction: column;
+
+      justify-content: flex-end;
+
+      border-radius: 27px;
+
+      border:
+        1px solid var(--border);
+
+      background:
+        #fff9f5;
+
+      transition:
+        transform .25s ease,
+        box-shadow .25s ease,
+        border-color .25s ease;
+
+    }
+
+
+    .content-card:hover {
+
+      transform:
+        translateY(-6px);
+
+      border-color:
+        #efc2a5;
+
+      box-shadow:
+        0 25px 46px
+        rgba(150,80,35,.10);
+
+    }
+
+
+    .content-card--large {
+
+      grid-column: span 7;
+
+    }
+
+
+    .content-card--medium {
+
+      grid-column: span 5;
+
+    }
+
+
+    .content-card--half {
+
+      grid-column: span 6;
+
+    }
+
+
+    /* =====================================================
+       FONDOS VISUALES
+       ===================================================== */
+
+    .content-card__visual {
+
+      position: absolute;
+
+      inset: 0;
+
+      overflow: hidden;
+
+    }
+
+
+    .content-card__visual::after {
+
+      content: "";
+
+      position: absolute;
+
+      inset: 0;
+
+      background:
+
+        linear-gradient(
+          180deg,
+          rgba(0,0,0,0) 15%,
+          rgba(0,0,0,.05) 45%,
+          rgba(0,0,0,.80) 100%
+        );
+
+    }
+
+
+    /* VIDEO */
+
+    .visual-video {
+
+      background:
+
+        radial-gradient(
+          circle at 72% 20%,
+          rgba(255,255,255,.23),
+          transparent 22%
+        ),
+
+        linear-gradient(
+          135deg,
+          #ff6a13 0%,
+          #ff9c61 100%
+        );
+
+    }
+
+
+    .video-phone {
+
+      position: absolute;
+
+      top: 36px;
+      right: 48px;
+
+      width: 175px;
+      height: 310px;
+
+      padding: 10px;
+
+      border-radius: 28px;
+
+      background: #1b1b1b;
+
+      box-shadow:
+        0 24px 50px
+        rgba(0,0,0,.22);
+
+      transform:
+        rotate(5deg);
+
+    }
+
+
+    .video-phone__screen {
+
+      position: relative;
+
+      width: 100%;
+      height: 100%;
+
+      overflow: hidden;
+
+      border-radius: 21px;
+
+      background:
+
+        linear-gradient(
+          145deg,
+          #ffb07e,
+          #ff6a13
+        );
+
+    }
+
+
+    .video-phone__screen::before {
+
+      content: "REEL";
+
+      position: absolute;
+
+      top: 20px;
+      left: 20px;
+
+      color: #ffffff;
+
+      font-size: 11px;
+
+      font-weight: 900;
+
+      letter-spacing: 2px;
+
+    }
+
+
+    .video-phone__play {
+
+      position: absolute;
+
+      top: 50%;
+      left: 50%;
+
+      width: 55px;
+      height: 55px;
+
+      display: flex;
+
       align-items: center;
       justify-content: center;
-      font-size: 56px;
-      position: relative;
+
+      transform:
+        translate(-50%, -50%);
+
+      border-radius: 50%;
+
+      background:
+        rgba(255,255,255,.92);
+
+      color:
+        var(--orange);
+
+      font-size: 20px;
+
+      padding-left: 3px;
+
     }
 
-    .contenido-item--large .contenido-item__visual {
-      height: 200px;
+
+    /* FOTOGRAFÍA */
+
+    .visual-photo {
+
+      background:
+
+        linear-gradient(
+          135deg,
+          #fff2e9,
+          #ffd8bf
+        );
+
     }
 
-    .contenido-item__visual-badge {
+
+    .camera-frame {
+
       position: absolute;
-      top: 14px;
-      right: 14px;
-      background: var(--naranja);
-      color: var(--blanco);
-      font-family: var(--font-display);
-      font-size: 11px;
-      font-weight: 700;
-      padding: 5px 12px;
-      border-radius: 20px;
-      letter-spacing: 0.5px;
+
+      width: 260px;
+      height: 190px;
+
+      top: 47px;
+      left: 50%;
+
+      transform:
+        translateX(-50%)
+        rotate(-3deg);
+
+      background:
+        #ffffff;
+
+      border-radius: 18px;
+
+      box-shadow:
+        0 20px 45px
+        rgba(100,50,20,.14);
+
+      padding: 12px;
+
     }
 
-    .contenido-item__body {
-      padding: 24px;
-    }
 
-    .contenido-item__body h3 {
-      font-family: var(--font-display);
-      font-size: 17px;
-      font-weight: 800;
-      color: var(--negro);
-      margin-bottom: 8px;
-    }
+    .camera-image {
 
-    .contenido-item__body p {
-      font-size: 13px;
-      color: var(--gris-medio);
-      line-height: 1.6;
-      margin-bottom: 16px;
-    }
+      width: 100%;
+      height: 100%;
 
-    .contenido-item__tags {
+      border-radius: 12px;
+
       display: flex;
-      flex-wrap: wrap;
-      gap: 6px;
-    }
 
-    .tag {
-      font-size: 11px;
-      font-weight: 600;
-      background: var(--naranja-suave);
-      color: var(--naranja);
-      padding: 3px 10px;
-      border-radius: 20px;
-      font-family: var(--font-display);
-    }
-
-    /* Sección del proceso creativo */
-    .contenido__proceso {
-      background: var(--negro);
-      border-radius: 16px;
-      padding: 52px 48px;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 60px;
       align-items: center;
+      justify-content: center;
+
+      background:
+
+        radial-gradient(
+          circle at 70% 25%,
+          #ffb286,
+          transparent 20%
+        ),
+
+        linear-gradient(
+          135deg,
+          #ff6a13,
+          #ffad7a
+        );
+
     }
 
-    .contenido__proceso-text h3 {
-      font-family: var(--font-display);
-      font-size: 30px;
-      font-weight: 900;
-      color: var(--blanco);
-      margin-bottom: 12px;
-      line-height: 1.2;
+
+    .camera-image span {
+
+      width: 72px;
+      height: 72px;
+
+      border-radius: 50%;
+
+      border:
+        10px solid rgba(255,255,255,.9);
+
+      box-shadow:
+        inset 0 0 0 7px
+        rgba(0,0,0,.15);
+
     }
 
-    .contenido__proceso-text h3 em {
-      font-style: normal;
-      color: var(--naranja);
+
+    /* DISEÑO */
+
+    .visual-design {
+
+      background:
+
+        linear-gradient(
+          145deg,
+          #161616,
+          #292929
+        );
+
     }
 
-    .contenido__proceso-text p {
-      color: rgba(255,255,255,0.7);
-      font-size: 15px;
-      line-height: 1.7;
-      margin-bottom: 28px;
+
+    .design-poster {
+
+      position: absolute;
+
+      top: 36px;
+      right: 45px;
+
+      width: 205px;
+      height: 255px;
+
+      padding: 22px;
+
+      border-radius: 20px;
+
+      background:
+        var(--orange);
+
+      transform:
+        rotate(4deg);
+
+      box-shadow:
+        0 25px 50px
+        rgba(0,0,0,.28);
+
     }
 
-    .contenido__proceso-steps {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 16px;
+
+    .design-poster small {
+
+      color:
+        rgba(255,255,255,.75);
+
+      font-size: 9px;
+
+      font-weight: 800;
+
+      letter-spacing: 1.5px;
+
     }
 
-    .proceso-mini {
-      background: rgba(255,255,255,0.06);
-      border: 1px solid rgba(255,255,255,0.12);
-      border-radius: 8px;
-      padding: 18px;
-    }
 
-    .proceso-mini__icon {
-      font-size: 22px;
-      margin-bottom: 8px;
+    .design-poster strong {
+
       display: block;
+
+      margin-top: 35px;
+
+      color: #ffffff;
+
+      font-size: 29px;
+
+      line-height: .95;
+
+      letter-spacing: -1.4px;
+
     }
 
-    .proceso-mini h4 {
-      font-family: var(--font-display);
+
+    .design-poster i {
+
+      position: absolute;
+
+      left: 22px;
+      bottom: 24px;
+
+      width: 55px;
+      height: 6px;
+
+      border-radius: 999px;
+
+      background:
+        rgba(255,255,255,.8);
+
+    }
+
+
+    /* CAMPAÑA */
+
+    .visual-campaign {
+
+      background:
+
+        linear-gradient(
+          135deg,
+          #fff7f1,
+          #ffe4d1
+        );
+
+    }
+
+
+    .campaign-window {
+
+      position: absolute;
+
+      top: 43px;
+      left: 50%;
+
+      width: 290px;
+
+      transform:
+        translateX(-50%);
+
+      padding: 17px;
+
+      border-radius: 20px;
+
+      background: #ffffff;
+
+      box-shadow:
+        0 23px 48px
+        rgba(100,50,20,.12);
+
+    }
+
+
+    .campaign-window__top {
+
+      display: flex;
+
+      gap: 5px;
+
+      margin-bottom: 18px;
+
+    }
+
+
+    .campaign-window__top i {
+
+      width: 7px;
+      height: 7px;
+
+      border-radius: 50%;
+
+      background:
+        #ded8d3;
+
+    }
+
+
+    .campaign-window__main {
+
+      height: 68px;
+
+      padding: 15px;
+
+      border-radius: 14px;
+
+      background:
+        var(--orange);
+
+      color:
+        #ffffff;
+
       font-size: 13px;
+
+      font-weight: 800;
+
+    }
+
+
+    .campaign-bars {
+
+      height: 75px;
+
+      display: flex;
+
+      align-items: flex-end;
+
+      gap: 6px;
+
+      margin-top: 14px;
+
+    }
+
+
+    .campaign-bars span {
+
+      flex: 1;
+
+      border-radius:
+        6px 6px 2px 2px;
+
+      background:
+        #ff9860;
+
+    }
+
+
+    .campaign-bars span:nth-child(1) {
+      height: 35%;
+    }
+
+
+    .campaign-bars span:nth-child(2) {
+      height: 52%;
+    }
+
+
+    .campaign-bars span:nth-child(3) {
+      height: 45%;
+    }
+
+
+    .campaign-bars span:nth-child(4) {
+      height: 70%;
+    }
+
+
+    .campaign-bars span:nth-child(5) {
+      height: 88%;
+    }
+
+
+    /* =====================================================
+       CONTENIDO TEXTO TARJETAS
+       ===================================================== */
+
+    .content-card__body {
+
+      position: relative;
+
+      z-index: 3;
+
+      color:
+        #ffffff;
+
+    }
+
+
+    .content-card__tag {
+
+      display: inline-flex;
+
+      min-height: 28px;
+
+      padding: 0 11px;
+
+      align-items: center;
+
+      border-radius: 999px;
+
+      background:
+        rgba(255,255,255,.16);
+
+      backdrop-filter:
+        blur(10px);
+
+      color: #ffffff;
+
+      font-size: 10px;
+
+      font-weight: 900;
+
+      letter-spacing: 1px;
+
+      text-transform: uppercase;
+
+      margin-bottom: 12px;
+
+    }
+
+
+    .content-card h3 {
+
+      max-width: 440px;
+
+      font-size:
+        clamp(
+          25px,
+          3vw,
+          35px
+        );
+
+      line-height: 1.02;
+
+      letter-spacing: -1.3px;
+
+    }
+
+
+    .content-card__body p {
+
+      max-width: 460px;
+
+      margin-top: 10px;
+
+      color:
+        rgba(255,255,255,.82);
+
+      font-size: 13px;
+
+      line-height: 1.6;
+
+    }
+
+
+    .content-card__formats {
+
+      display: flex;
+
+      flex-wrap: wrap;
+
+      gap: 7px;
+
+      margin-top: 17px;
+
+    }
+
+
+    .content-card__formats span {
+
+      padding: 6px 10px;
+
+      border-radius: 999px;
+
+      border:
+        1px solid
+        rgba(255,255,255,.18);
+
+      background:
+        rgba(255,255,255,.09);
+
+      color:
+        rgba(255,255,255,.9);
+
+      font-size: 10px;
+
       font-weight: 700;
-      color: var(--blanco);
-      margin-bottom: 4px;
+
     }
 
-    .proceso-mini p {
+
+    /* =====================================================
+       PROCESO
+       ===================================================== */
+
+    .content__process {
+
+      position: relative;
+
+      overflow: hidden;
+
+      margin-top: 65px;
+
+      padding: 58px;
+
+      display: grid;
+
+      grid-template-columns:
+        .85fr 1.15fr;
+
+      gap: 60px;
+
+      align-items: center;
+
+      border-radius: 31px;
+
+      background:
+        var(--dark);
+
+      color:
+        #ffffff;
+
+    }
+
+
+    .content__process::after {
+
+      content: "CREATE";
+
+      position: absolute;
+
+      right: -35px;
+      bottom: -65px;
+
+      color:
+        rgba(255,255,255,.035);
+
+      font-size: 150px;
+
+      font-weight: 900;
+
+      line-height: 1;
+
+      letter-spacing: -9px;
+
+    }
+
+
+    .process__intro {
+
+      position: relative;
+
+      z-index: 2;
+
+    }
+
+
+    .process__eyebrow {
+
+      color:
+        #ff9557;
+
+      font-size: 11px;
+
+      font-weight: 900;
+
+      letter-spacing: 1.8px;
+
+      text-transform: uppercase;
+
+    }
+
+
+    .process__intro h3 {
+
+      margin-top: 13px;
+
+      max-width: 430px;
+
+      font-size:
+        clamp(
+          32px,
+          4.2vw,
+          50px
+        );
+
+      line-height: 1.02;
+
+      letter-spacing: -2px;
+
+    }
+
+
+    .process__intro p {
+
+      margin-top: 16px;
+
+      max-width: 430px;
+
+      color:
+        #b5b5b5;
+
+      font-size: 14px;
+
+      line-height: 1.7;
+
+    }
+
+
+    .process__button {
+
+      min-height: 52px;
+
+      padding: 0 22px;
+
+      display: inline-flex;
+
+      align-items: center;
+      justify-content: center;
+
+      margin-top: 24px;
+
+      border-radius: 999px;
+
+      background:
+        var(--orange);
+
+      color: #ffffff;
+
+      font-size: 13px;
+
+      font-weight: 800;
+
+      transition:
+        transform .2s ease,
+        background .2s ease;
+
+    }
+
+
+    .process__button:hover {
+
+      transform:
+        translateY(-2px);
+
+      background:
+        var(--orange-dark);
+
+    }
+
+
+    /* =====================================================
+       PASOS
+       ===================================================== */
+
+    .process__steps {
+
+      position: relative;
+
+      z-index: 2;
+
+      display: grid;
+
+      grid-template-columns:
+        1fr 1fr;
+
+      gap: 11px;
+
+    }
+
+
+    .process-step {
+
+      min-height: 150px;
+
+      padding: 20px;
+
+      border-radius: 18px;
+
+      border:
+        1px solid
+        rgba(255,255,255,.12);
+
+      background:
+        rgba(255,255,255,.045);
+
+    }
+
+
+    .process-step__number {
+
+      color:
+        var(--orange);
+
+      font-size: 11px;
+
+      font-weight: 900;
+
+      letter-spacing: 1px;
+
+    }
+
+
+    .process-step h4 {
+
+      margin-top: 18px;
+
+      font-size: 16px;
+
+    }
+
+
+    .process-step p {
+
+      margin-top: 7px;
+
+      color:
+        #a5a5a5;
+
       font-size: 12px;
-      color: rgba(255,255,255,0.55);
-      line-height: 1.4;
+
+      line-height: 1.55;
+
     }
 
-    @media (max-width: 900px) {
-      .contenido__grid { grid-template-columns: 1fr 1fr; }
-      .contenido-item--large { grid-column: span 2; }
-      .contenido__proceso { grid-template-columns: 1fr; gap: 36px; padding: 36px 28px; }
+
+    /* =====================================================
+       CTA FINAL
+       ===================================================== */
+
+    .content__cta {
+
+      margin-top: 55px;
+
+      padding: 45px 50px;
+
+      display: flex;
+
+      align-items: center;
+
+      justify-content: space-between;
+
+      gap: 40px;
+
+      border-radius: 27px;
+
+      border:
+        1px solid #f0d8c7;
+
+      background:
+
+        linear-gradient(
+          135deg,
+          #fff2e8,
+          #fffaf6
+        );
+
     }
-    @media (max-width: 600px) {
-      .contenido__grid { grid-template-columns: 1fr; }
-      .contenido-item--large { grid-column: span 1; }
-      .contenido__proceso-steps { grid-template-columns: 1fr; }
+
+
+    .content__cta-text {
+
+      max-width: 650px;
+
     }
+
+
+    .content__cta small {
+
+      color:
+        var(--orange-dark);
+
+      font-size: 10px;
+
+      font-weight: 900;
+
+      letter-spacing: 1.6px;
+
+      text-transform: uppercase;
+
+    }
+
+
+    .content__cta h3 {
+
+      margin-top: 9px;
+
+      font-size:
+        clamp(
+          26px,
+          3.4vw,
+          39px
+        );
+
+      line-height: 1.05;
+
+      letter-spacing: -1.4px;
+
+    }
+
+
+    .content__cta p {
+
+      margin-top: 10px;
+
+      color:
+        var(--text-soft);
+
+      font-size: 14px;
+
+      line-height: 1.6;
+
+    }
+
+
+    .content__cta-button {
+
+      flex-shrink: 0;
+
+      min-height: 54px;
+
+      padding: 0 23px;
+
+      display: inline-flex;
+
+      align-items: center;
+      justify-content: center;
+
+      border-radius: 999px;
+
+      background:
+        var(--orange);
+
+      color: #ffffff;
+
+      font-size: 14px;
+
+      font-weight: 800;
+
+      box-shadow:
+        0 12px 27px
+        rgba(255,106,19,.18);
+
+      transition:
+        transform .2s ease,
+        background .2s ease;
+
+    }
+
+
+    .content__cta-button:hover {
+
+      transform:
+        translateY(-2px);
+
+      background:
+        var(--orange-dark);
+
+    }
+
+
+    /* =====================================================
+       TABLET
+       ===================================================== */
+
+    @media
+    (max-width: 960px) {
+
+
+      .content__header {
+
+        grid-template-columns: 1fr;
+
+        gap: 20px;
+
+      }
+
+
+      .content-card--large,
+      .content-card--medium,
+      .content-card--half {
+
+        grid-column: span 6;
+
+      }
+
+
+      .content__process {
+
+        grid-template-columns: 1fr;
+
+        gap: 40px;
+
+      }
+
+
+      .content__cta {
+
+        flex-direction: column;
+
+        align-items: flex-start;
+
+      }
+
+    }
+
+
+    /* =====================================================
+       MOBILE
+       ===================================================== */
+
+    @media
+    (max-width: 650px) {
+
+
+      .content {
+
+        padding:
+          78px 0;
+
+      }
+
+
+      .content__container {
+
+        width:
+          calc(100% - 28px);
+
+      }
+
+
+      .content__title {
+
+        font-size:
+          clamp(
+            42px,
+            13vw,
+            58px
+          );
+
+        letter-spacing:
+          -2.8px;
+
+      }
+
+
+      .content__description {
+
+        font-size:
+          16px;
+
+      }
+
+
+      .content-card--large,
+      .content-card--medium,
+      .content-card--half {
+
+        grid-column:
+          span 12;
+
+      }
+
+
+      .content-card {
+
+        min-height:
+          390px;
+
+      }
+
+
+      .video-phone {
+
+        width:
+          145px;
+
+        height:
+          255px;
+
+        right:
+          30px;
+
+      }
+
+
+      .camera-frame {
+
+        width:
+          220px;
+
+        height:
+          165px;
+
+      }
+
+
+      .design-poster {
+
+        width:
+          175px;
+
+        height:
+          225px;
+
+        right:
+          30px;
+
+      }
+
+
+      .campaign-window {
+
+        width:
+          240px;
+
+      }
+
+
+      .content__process {
+
+        margin-top:
+          45px;
+
+        padding:
+          38px 25px;
+
+      }
+
+
+      .process__steps {
+
+        grid-template-columns:
+          1fr;
+
+      }
+
+
+      .content__cta {
+
+        margin-top:
+          40px;
+
+        padding:
+          35px 24px;
+
+      }
+
+
+      .content__cta-button {
+
+        width:
+          100%;
+
+      }
+
+    }
+
   </style>
+
 </head>
+
+
 <body>
 
-<!-- ============================
-     CREACIÓN DE CONTENIDO
-     ============================ -->
-<section class="contenido section-pad" id="contenido">
-  <div class="container">
 
-    <!-- Encabezado -->
-    <div class="contenido__header">
-      <div class="section-label">Contenido Digital</div>
-      <h2 class="section-title">Contenido que <span>conecta</span> y convierte</h2>
-      <div class="orange-divider" style="margin: 16px auto 20px;"></div>
-      <p class="section-subtitle">
-        Creamos piezas visuales, audiovisuales y escritas que representan tu marca con identidad propia y generan resultados reales.
-      </p>
+  <!-- =====================================================
+       CREACIÓN DE CONTENIDO
+       ===================================================== -->
+
+  <section
+    class="content"
+    id="contenido"
+  >
+
+
+    <div class="content__container">
+
+
+      <!-- =================================================
+           CABECERA
+           ================================================= -->
+
+      <div class="content__header">
+
+
+        <div>
+
+
+          <div class="content__eyebrow">
+
+            Contenido Audiovisual
+
+          </div>
+
+
+          <h1 class="content__title">
+
+            Creamos contenido que hace que tu marca
+
+            <span>
+              se vea profesional.
+            </span>
+
+          </h1>
+
+
+        </div>
+
+
+        <p class="content__description">
+
+          Fotografía, video, reels y piezas visuales creadas
+          para comunicar mejor tu negocio y construir
+          una presencia digital coherente con tu marca.
+
+        </p>
+
+
+      </div>
+
+
+      <!-- =================================================
+           CATEGORÍAS
+           ================================================= -->
+
+      <div class="content__categories">
+
+        <span class="category category--active">
+          Contenido
+        </span>
+
+        <span class="category">
+          Video
+        </span>
+
+        <span class="category">
+          Fotografía
+        </span>
+
+        <span class="category">
+          Diseño
+        </span>
+
+        <span class="category">
+          Redes Sociales
+        </span>
+
+      </div>
+
+
+      <!-- =================================================
+           GRID
+           ================================================= -->
+
+      <div class="content__grid">
+
+
+        <!-- VIDEO -->
+
+        <article
+          class="
+            content-card
+            content-card--large
+          "
+        >
+
+
+          <div
+            class="
+              content-card__visual
+              visual-video
+            "
+          >
+
+
+            <div class="video-phone">
+
+              <div class="video-phone__screen">
+
+                <div class="video-phone__play">
+                  ▶
+                </div>
+
+              </div>
+
+            </div>
+
+
+          </div>
+
+
+          <div class="content-card__body">
+
+
+            <span class="content-card__tag">
+              Video
+            </span>
+
+
+            <h3>
+
+              Reels y videos para redes sociales.
+
+            </h3>
+
+
+            <p>
+
+              Producción de contenido vertical pensado
+              para mostrar productos, servicios,
+              empresas y marcas.
+
+            </p>
+
+
+            <div class="content-card__formats">
+
+              <span>
+                Reels
+              </span>
+
+              <span>
+                TikTok
+              </span>
+
+              <span>
+                Shorts
+              </span>
+
+              <span>
+                Publicidad
+              </span>
+
+            </div>
+
+
+          </div>
+
+
+        </article>
+
+
+        <!-- FOTOGRAFÍA -->
+
+        <article
+          class="
+            content-card
+            content-card--medium
+          "
+        >
+
+
+          <div
+            class="
+              content-card__visual
+              visual-photo
+            "
+          >
+
+
+            <div class="camera-frame">
+
+              <div class="camera-image">
+
+                <span></span>
+
+              </div>
+
+            </div>
+
+
+          </div>
+
+
+          <div class="content-card__body">
+
+
+            <span class="content-card__tag">
+              Fotografía
+            </span>
+
+
+            <h3>
+
+              Fotografía profesional.
+
+            </h3>
+
+
+            <p>
+
+              Imágenes pensadas para productos,
+              redes sociales, campañas
+              y comunicación comercial.
+
+            </p>
+
+
+            <div class="content-card__formats">
+
+              <span>
+                Producto
+              </span>
+
+              <span>
+                Comercio
+              </span>
+
+              <span>
+                Empresas
+              </span>
+
+            </div>
+
+
+          </div>
+
+
+        </article>
+
+
+        <!-- DISEÑO -->
+
+        <article
+          class="
+            content-card
+            content-card--half
+          "
+        >
+
+
+          <div
+            class="
+              content-card__visual
+              visual-design
+            "
+          >
+
+
+            <div class="design-poster">
+
+              <small>
+                DIGITALMENTE PRO
+              </small>
+
+              <strong>
+
+                Diseño que comunica.
+
+              </strong>
+
+              <i></i>
+
+            </div>
+
+
+          </div>
+
+
+          <div class="content-card__body">
+
+
+            <span class="content-card__tag">
+              Diseño
+            </span>
+
+
+            <h3>
+
+              Piezas visuales para tu marca.
+
+            </h3>
+
+
+            <p>
+
+              Diseños limpios y profesionales
+              para publicaciones, historias,
+              promociones y campañas digitales.
+
+            </p>
+
+
+            <div class="content-card__formats">
+
+              <span>
+                Feed
+              </span>
+
+              <span>
+                Historias
+              </span>
+
+              <span>
+                Publicidad
+              </span>
+
+            </div>
+
+
+          </div>
+
+
+        </article>
+
+
+        <!-- CAMPAÑAS -->
+
+        <article
+          class="
+            content-card
+            content-card--half
+          "
+        >
+
+
+          <div
+            class="
+              content-card__visual
+              visual-campaign
+            "
+          >
+
+
+            <div class="campaign-window">
+
+
+              <div class="campaign-window__top">
+
+                <i></i>
+                <i></i>
+                <i></i>
+
+              </div>
+
+
+              <div class="campaign-window__main">
+
+                Contenido para campañas
+
+              </div>
+
+
+              <div class="campaign-bars">
+
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+
+              </div>
+
+
+            </div>
+
+
+          </div>
+
+
+          <div class="content-card__body">
+
+
+            <span class="content-card__tag">
+              Publicidad
+            </span>
+
+
+            <h3>
+
+              Creatividades para campañas digitales.
+
+            </h3>
+
+
+            <p>
+
+              Imágenes y videos preparados para trabajar
+              junto a campañas de Meta Ads
+              y otras acciones de marketing.
+
+            </p>
+
+
+            <div class="content-card__formats">
+
+              <span>
+                Meta Ads
+              </span>
+
+              <span>
+                Videos
+              </span>
+
+              <span>
+                Creatividades
+              </span>
+
+            </div>
+
+
+          </div>
+
+
+        </article>
+
+
+      </div>
+
+
+      <!-- =================================================
+           PROCESO
+           ================================================= -->
+
+      <div class="content__process">
+
+
+        <div class="process__intro">
+
+
+          <span class="process__eyebrow">
+
+            Nuestro proceso creativo
+
+          </span>
+
+
+          <h3>
+
+            No se trata solo de grabar.
+            Se trata de comunicar.
+
+          </h3>
+
+
+          <p>
+
+            Cada pieza parte desde una idea clara:
+            qué queremos mostrar, a quién queremos llegar
+            y qué mensaje necesita comunicar la marca.
+
+          </p>
+
+
+          <a
+            href="https://wa.me/56987689361"
+            target="_blank"
+            rel="noopener"
+            class="process__button"
+          >
+
+            Quiero crear contenido →
+
+          </a>
+
+
+        </div>
+
+
+        <div class="process__steps">
+
+
+          <article class="process-step">
+
+            <span class="process-step__number">
+              01
+            </span>
+
+            <h4>
+              Idea
+            </h4>
+
+            <p>
+              Definimos qué queremos comunicar
+              y cuál será el objetivo del contenido.
+            </p>
+
+          </article>
+
+
+          <article class="process-step">
+
+            <span class="process-step__number">
+              02
+            </span>
+
+            <h4>
+              Planificación
+            </h4>
+
+            <p>
+              Organizamos tomas, formatos,
+              guion y elementos necesarios.
+            </p>
+
+          </article>
+
+
+          <article class="process-step">
+
+            <span class="process-step__number">
+              03
+            </span>
+
+            <h4>
+              Producción
+            </h4>
+
+            <p>
+              Realizamos fotografía,
+              grabación y creación visual.
+            </p>
+
+          </article>
+
+
+          <article class="process-step">
+
+            <span class="process-step__number">
+              04
+            </span>
+
+            <h4>
+              Edición
+            </h4>
+
+            <p>
+              Preparamos la pieza final
+              para el formato donde será utilizada.
+            </p>
+
+          </article>
+
+
+        </div>
+
+
+      </div>
+
+
+      <!-- =================================================
+           CTA
+           ================================================= -->
+
+      <div class="content__cta">
+
+
+        <div class="content__cta-text">
+
+
+          <small>
+            Contenido profesional
+          </small>
+
+
+          <h3>
+
+            Hagamos que tu negocio se vea
+            como realmente merece.
+
+          </h3>
+
+
+          <p>
+
+            Cuéntanos qué necesitas grabar, fotografiar
+            o comunicar y veamos juntos el formato
+            más adecuado para tu proyecto.
+
+          </p>
+
+
+        </div>
+
+
+        <a
+          href="https://wa.me/56987689361?text=Hola%20%F0%9F%91%8B%20Me%20interesa%20el%20servicio%20de%20creaci%C3%B3n%20de%20contenido%20de%20Digitalmente%20Pro."
+          target="_blank"
+          rel="noopener"
+          class="content__cta-button"
+        >
+
+          Cotizar contenido →
+
+        </a>
+
+
+      </div>
+
+
     </div>
 
-    <!-- Tabs -->
-    <div class="contenido__tabs">
-      <button class="tab-btn active">Todo</button>
-      <button class="tab-btn">Video</button>
-      <button class="tab-btn">Diseño Gráfico</button>
-      <button class="tab-btn">Fotografía</button>
-      <button class="tab-btn">Copywriting</button>
-      <button class="tab-btn">Música</button>
-    </div>
 
-    <!-- Grid de contenido -->
-    <div class="contenido__grid">
+  </section>
 
-      <div class="contenido-item contenido-item--large">
-        <div class="contenido-item__visual">
-          🎬
-          <span class="contenido-item__visual-badge">🔥 Más pedido</span>
-        </div>
-        <div class="contenido-item__body">
-          <h3>Reels y Videos Virales</h3>
-          <p>Producción completa de videos cortos para Instagram y TikTok. Guión, grabación, edición con tendencias actuales y subtítulos. Formato vertical optimizado para cada plataforma.</p>
-          <div class="contenido-item__tags">
-            <span class="tag">Instagram Reels</span>
-            <span class="tag">TikTok</span>
-            <span class="tag">YouTube Shorts</span>
-            <span class="tag">Edición Pro</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="contenido-item">
-        <div class="contenido-item__visual">📐</div>
-        <div class="contenido-item__body">
-          <h3>Diseño Gráfico</h3>
-          <p>Posts, stories, banners, flyers y branding visual coherente con tu identidad de marca.</p>
-          <div class="contenido-item__tags">
-            <span class="tag">Posts</span>
-            <span class="tag">Stories</span>
-            <span class="tag">Branding</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="contenido-item">
-        <div class="contenido-item__visual">📷</div>
-        <div class="contenido-item__body">
-          <h3>Fotografía Profesional</h3>
-          <p>Sesiones de producto, lifestyle y retrato para tu feed y material de marketing.</p>
-          <div class="contenido-item__tags">
-            <span class="tag">Producto</span>
-            <span class="tag">Lifestyle</span>
-            <span class="tag">Retrato</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="contenido-item">
-        <div class="contenido-item__visual">✍️</div>
-        <div class="contenido-item__body">
-          <h3>Copywriting & Redacción</h3>
-          <p>Textos que venden: captions, newsletters, páginas web y guiones de video con voz de marca.</p>
-          <div class="contenido-item__tags">
-            <span class="tag">Captions</span>
-            <span class="tag">Blog</span>
-            <span class="tag">Email</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="contenido-item">
-        <div class="contenido-item__visual">🎶
-          <span class="contenido-item__visual-badge">Artistas</span>
-        </div>
-        <div class="contenido-item__body">
-          <h3>Contenido para Músicos</h3>
-          <p>EPK digital, clips de lanzamiento, visualizers y material para prensa especializada musical.</p>
-          <div class="contenido-item__tags">
-            <span class="tag">EPK</span>
-            <span class="tag">Visualizer</span>
-            <span class="tag">Press Kit</span>
-          </div>
-        </div>
-      </div>
-
-      <div class="contenido-item">
-        <div class="contenido-item__visual">📊</div>
-        <div class="contenido-item__body">
-          <h3>Infografías & Carruseles</h3>
-          <p>Contenido educativo e informativo en formato carrusel o infografía para mayor alcance y guardados.</p>
-          <div class="contenido-item__tags">
-            <span class="tag">Carrusel</span>
-            <span class="tag">Infografía</span>
-            <span class="tag">Educativo</span>
-          </div>
-        </div>
-      </div>
-
-    </div>
-
-    <!-- Proceso creativo -->
-    <div class="contenido__proceso">
-      <div class="contenido__proceso-text">
-        <h3>Contenido con<br><em>propósito y estrategia</em></h3>
-        <p>No creamos contenido por crear. Cada pieza tiene un objetivo claro dentro de tu estrategia digital: atraer, conectar, convertir o fidelizar.</p>
-        <a href="#contacto" class="btn-primary">Quiero contenido profesional</a>
-      </div>
-      <div class="contenido__proceso-steps">
-        <div class="proceso-mini">
-          <span class="proceso-mini__icon">🔍</span>
-          <h4>Investigación</h4>
-          <p>Analizamos tu marca, audiencia y competencia.</p>
-        </div>
-        <div class="proceso-mini">
-          <span class="proceso-mini__icon">📋</span>
-          <h4>Guión y Brief</h4>
-          <p>Planificamos cada pieza con objetivo claro.</p>
-        </div>
-        <div class="proceso-mini">
-          <span class="proceso-mini__icon">🎨</span>
-          <h4>Producción</h4>
-          <p>Diseño, grabación y edición profesional.</p>
-        </div>
-        <div class="proceso-mini">
-          <span class="proceso-mini__icon">🚀</span>
-          <h4>Publicación</h4>
-          <p>Timing óptimo y seguimiento de resultados.</p>
-        </div>
-      </div>
-    </div>
-
-  </div>
-</section>
 
 </body>
 </html>
