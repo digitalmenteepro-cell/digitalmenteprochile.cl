@@ -1,340 +1,1645 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>PRODUCTOS Y SERVICIOS - Digitalmenteprochile.cl</title>
-  <link rel="stylesheet" href="styles.css" />
+
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <!--
+    Componente visual.
+    La página principal index.html será la que posicionaremos.
+  -->
+  <meta
+    name="robots"
+    content="noindex, nofollow"
+  >
+
+  <title>
+    Servicios | Digitalmente Pro
+  </title>
+
+
   <style>
-    /* ============================
-       SECCIÓN: PRODUCTOS Y SERVICIOS
-       Archivo: productos-servicios.html
-       ============================ */
 
-    body { margin-top: 72px; }
+    /* =====================================================
+       DIGITALMENTE PRO
+       PRODUCTOS Y SERVICIOS
+       ===================================================== */
 
-    .servicios {
-      padding: 88px 0;
-      background: var(--blanco);
+    :root {
+
+      --orange: #ff6a13;
+      --orange-dark: #ed5700;
+      --orange-light: #ff9557;
+
+      --cream: #fffaf6;
+      --cream-soft: #fff4ec;
+
+      --white: #ffffff;
+
+      --text: #141414;
+      --text-soft: #606060;
+
+      --border: #efdfd3;
+
+      --green: #0aa75b;
+
     }
 
-    .servicios__header {
-      text-align: center;
-      margin-bottom: 60px;
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
     }
 
-    .servicios__header .section-subtitle {
-      margin: 0 auto;
+
+    html {
+      scroll-behavior: smooth;
     }
 
-    /* Grid de servicios */
-    .servicios__grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 28px;
-      margin-bottom: 60px;
+
+    body {
+
+      font-family:
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        Arial,
+        sans-serif;
+
+      background:
+        var(--white);
+
+      color:
+        var(--text);
+
     }
 
-    .servicio-card {
-      background: var(--blanco);
-      border: 1.5px solid #E8E8E8;
-      border-radius: 10px;
-      padding: 36px 30px;
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+
+    /* =====================================================
+       SECCIÓN PRINCIPAL
+       ===================================================== */
+
+    .services {
+
       position: relative;
+
       overflow: hidden;
-      transition: all 0.25s;
+
+      padding:
+        110px 0;
+
+      background:
+
+        radial-gradient(
+          circle at 92% 5%,
+          rgba(255,106,19,.08),
+          transparent 24%
+        ),
+
+        #ffffff;
+
     }
 
-    .servicio-card::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 4px;
-      background: var(--naranja);
-      transform: scaleX(0);
-      transform-origin: left;
-      transition: transform 0.3s;
+
+    .services__container {
+
+      width:
+        min(
+          1180px,
+          calc(100% - 40px)
+        );
+
+      margin:
+        0 auto;
+
     }
 
-    .servicio-card:hover {
-      border-color: #FFD6B0;
-      box-shadow: 0 8px 32px rgba(255,107,0,0.12);
-      transform: translateY(-4px);
+
+    /* =====================================================
+       CABECERA
+       ===================================================== */
+
+    .services__header {
+
+      display:
+        grid;
+
+      grid-template-columns:
+        1.05fr .95fr;
+
+      gap:
+        60px;
+
+      align-items:
+        end;
+
+      margin-bottom:
+        58px;
+
     }
 
-    .servicio-card:hover::before {
-      transform: scaleX(1);
+
+    .services__eyebrow {
+
+      display:
+        inline-flex;
+
+      align-items:
+        center;
+
+      gap:
+        9px;
+
+      margin-bottom:
+        17px;
+
+      color:
+        var(--orange-dark);
+
+      font-size:
+        12px;
+
+      font-weight:
+        900;
+
+      letter-spacing:
+        2px;
+
+      text-transform:
+        uppercase;
+
     }
 
-    /* Destacado */
-    .servicio-card--featured {
-      background: var(--negro);
-      border-color: var(--negro);
+
+    .services__eyebrow::before {
+
+      content: "";
+
+      width:
+        8px;
+
+      height:
+        8px;
+
+      border-radius:
+        50%;
+
+      background:
+        var(--orange);
+
+      box-shadow:
+        0 0 0 6px
+        rgba(255,106,19,.10);
+
     }
 
-    .servicio-card--featured::before {
-      background: var(--naranja);
-      transform: scaleX(1);
+
+    .services__title {
+
+      max-width:
+        720px;
+
+      font-size:
+        clamp(
+          44px,
+          5.6vw,
+          70px
+        );
+
+      line-height:
+        .98;
+
+      letter-spacing:
+        -3.5px;
+
+      font-weight:
+        900;
+
     }
 
-    .servicio-card--featured .servicio-card__num,
-    .servicio-card--featured .servicio-card__title,
-    .servicio-card--featured .servicio-card__desc,
-    .servicio-card--featured .servicio-card__list li {
-      color: var(--blanco);
+
+    .services__title span {
+
+      color:
+        var(--orange);
+
     }
 
-    .servicio-card--featured .servicio-card__list li::before {
-      color: var(--naranja);
+
+    .services__description {
+
+      max-width:
+        520px;
+
+      color:
+        var(--text-soft);
+
+      font-size:
+        17px;
+
+      line-height:
+        1.75;
+
+      padding-bottom:
+        6px;
+
     }
 
-    .servicio-card--featured .servicio-card__tag {
-      background: var(--naranja);
-      color: var(--blanco);
+
+    /* =====================================================
+       GRID
+       ===================================================== */
+
+    .services__grid {
+
+      display:
+        grid;
+
+      grid-template-columns:
+        repeat(3, 1fr);
+
+      gap:
+        18px;
+
     }
 
-    .servicio-card--featured:hover {
-      box-shadow: 0 8px 32px rgba(0,0,0,0.25);
+
+    /* =====================================================
+       TARJETA
+       ===================================================== */
+
+    .service-card {
+
+      position:
+        relative;
+
+      min-height:
+        340px;
+
+      padding:
+        30px;
+
+      display:
+        flex;
+
+      flex-direction:
+        column;
+
+      overflow:
+        hidden;
+
+      background:
+
+        linear-gradient(
+          180deg,
+          #ffffff 0%,
+          #fff9f5 100%
+        );
+
+      border:
+        1px solid
+        var(--border);
+
+      border-radius:
+        25px;
+
+      transition:
+        transform .25s ease,
+        border-color .25s ease,
+        box-shadow .25s ease;
+
     }
 
-    .servicio-card__num {
-      font-family: var(--font-display);
-      font-size: 13px;
-      font-weight: 700;
-      color: var(--naranja);
-      letter-spacing: 1px;
-      margin-bottom: 16px;
+
+    .service-card::after {
+
+      content: "";
+
+      position:
+        absolute;
+
+      width:
+        150px;
+
+      height:
+        150px;
+
+      right:
+        -65px;
+
+      top:
+        -65px;
+
+      border-radius:
+        50%;
+
+      background:
+        rgba(255,106,19,.08);
+
+      transition:
+        transform .3s ease;
+
     }
 
-    .servicio-card__icon {
-      font-size: 36px;
-      margin-bottom: 16px;
-      display: block;
+
+    .service-card:hover {
+
+      transform:
+        translateY(-7px);
+
+      border-color:
+        #efc4a7;
+
+      box-shadow:
+        0 24px 45px
+        rgba(163,83,31,.10);
+
     }
 
-    .servicio-card__title {
-      font-family: var(--font-display);
-      font-size: 20px;
-      font-weight: 800;
-      color: var(--negro);
-      margin-bottom: 12px;
-      line-height: 1.2;
+
+    .service-card:hover::after {
+
+      transform:
+        scale(1.25);
+
     }
 
-    .servicio-card__desc {
-      font-size: 14px;
-      color: var(--gris-medio);
-      line-height: 1.65;
-      margin-bottom: 20px;
+
+    /* =====================================================
+       DESTACADA
+       ===================================================== */
+
+    .service-card--featured {
+
+      color:
+        #ffffff;
+
+      background:
+
+        radial-gradient(
+          circle at 100% 0%,
+          rgba(255,255,255,.16),
+          transparent 32%
+        ),
+
+        linear-gradient(
+          135deg,
+          var(--orange) 0%,
+          var(--orange-light) 100%
+        );
+
+      border-color:
+        transparent;
+
+      box-shadow:
+        0 22px 45px
+        rgba(255,106,19,.18);
+
     }
 
-    .servicio-card__list {
-      list-style: none;
-      margin-bottom: 28px;
+
+    .service-card--featured::after {
+
+      background:
+        rgba(255,255,255,.12);
+
     }
 
-    .servicio-card__list li {
-      font-size: 13px;
-      color: var(--gris-oscuro);
-      padding: 5px 0;
-      display: flex;
-      align-items: flex-start;
-      gap: 8px;
+
+    .service-card--featured:hover {
+
+      border-color:
+        transparent;
+
+      box-shadow:
+        0 30px 55px
+        rgba(255,106,19,.25);
+
     }
 
-    .servicio-card__list li::before {
-      content: '✓';
-      color: var(--naranja);
-      font-weight: 700;
-      flex-shrink: 0;
-      margin-top: 1px;
+
+    /* =====================================================
+       PARTE SUPERIOR TARJETA
+       ===================================================== */
+
+    .service-card__top {
+
+      position:
+        relative;
+
+      z-index:
+        2;
+
+      display:
+        flex;
+
+      justify-content:
+        space-between;
+
+      align-items:
+        center;
+
+      margin-bottom:
+        44px;
+
     }
 
-    .servicio-card__tag {
-      display: inline-block;
-      background: var(--naranja-suave);
-      color: var(--naranja);
-      font-family: var(--font-display);
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: 1px;
-      text-transform: uppercase;
-      padding: 5px 12px;
-      border-radius: 3px;
+
+    .service-card__number {
+
+      color:
+        var(--orange);
+
+      font-size:
+        12px;
+
+      font-weight:
+        900;
+
+      letter-spacing:
+        1px;
+
     }
 
-    /* Franja CTA */
-    .servicios__cta {
-      background: var(--naranja);
-      border-radius: 12px;
-      padding: 52px 48px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 32px;
-      flex-wrap: wrap;
+
+    .service-card--featured
+    .service-card__number {
+
+      color:
+        #ffffff;
+
     }
 
-    .servicios__cta-text h3 {
-      font-family: var(--font-display);
-      font-size: 28px;
-      font-weight: 900;
-      color: var(--blanco);
-      margin-bottom: 8px;
+
+    .service-card__pill {
+
+      display:
+        inline-flex;
+
+      align-items:
+        center;
+
+      min-height:
+        29px;
+
+      padding:
+        0 11px;
+
+      border-radius:
+        999px;
+
+      background:
+        #fff1e7;
+
+      color:
+        var(--orange-dark);
+
+      font-size:
+        10px;
+
+      font-weight:
+        800;
+
+      letter-spacing:
+        .7px;
+
+      text-transform:
+        uppercase;
+
     }
 
-    .servicios__cta-text p {
-      font-size: 16px;
-      color: rgba(255,255,255,0.85);
+
+    .service-card--featured
+    .service-card__pill {
+
+      background:
+        rgba(255,255,255,.17);
+
+      color:
+        #ffffff;
+
     }
 
-    .servicios__cta .btn-outline {
-      border-color: var(--blanco);
-      color: var(--blanco);
-      flex-shrink: 0;
+
+    /* =====================================================
+       CONTENIDO
+       ===================================================== */
+
+    .service-card h3 {
+
+      position:
+        relative;
+
+      z-index:
+        2;
+
+      margin-bottom:
+        13px;
+
+      font-size:
+        24px;
+
+      line-height:
+        1.08;
+
+      letter-spacing:
+        -.8px;
+
     }
 
-    .servicios__cta .btn-outline:hover {
-      background: var(--blanco);
-      color: var(--naranja);
+
+    .service-card__description {
+
+      position:
+        relative;
+
+      z-index:
+        2;
+
+      color:
+        var(--text-soft);
+
+      font-size:
+        14px;
+
+      line-height:
+        1.65;
+
+      margin-bottom:
+        23px;
+
     }
 
-    @media (max-width: 900px) {
-      .servicios__grid { grid-template-columns: repeat(2, 1fr); }
+
+    .service-card--featured
+    .service-card__description {
+
+      color:
+        rgba(255,255,255,.88);
+
     }
-    @media (max-width: 600px) {
-      .servicios__grid { grid-template-columns: 1fr; }
-      .servicios__cta { padding: 36px 28px; }
-      .servicios__cta-text h3 { font-size: 22px; }
+
+
+    /* =====================================================
+       LISTA
+       ===================================================== */
+
+    .service-card__list {
+
+      position:
+        relative;
+
+      z-index:
+        2;
+
+      list-style:
+        none;
+
+      display:
+        grid;
+
+      gap:
+        9px;
+
+      margin-bottom:
+        27px;
+
     }
+
+
+    .service-card__list li {
+
+      display:
+        flex;
+
+      gap:
+        9px;
+
+      align-items:
+        flex-start;
+
+      color:
+        #545454;
+
+      font-size:
+        13px;
+
+      line-height:
+        1.45;
+
+    }
+
+
+    .service-card__list li::before {
+
+      content:
+        "✓";
+
+      color:
+        var(--orange);
+
+      font-weight:
+        900;
+
+    }
+
+
+    .service-card--featured
+    .service-card__list li {
+
+      color:
+        rgba(255,255,255,.92);
+
+    }
+
+
+    .service-card--featured
+    .service-card__list li::before {
+
+      color:
+        #ffffff;
+
+    }
+
+
+    /* =====================================================
+       LINK
+       ===================================================== */
+
+    .service-card__link {
+
+      position:
+        relative;
+
+      z-index:
+        2;
+
+      margin-top:
+        auto;
+
+      display:
+        inline-flex;
+
+      align-items:
+        center;
+
+      gap:
+        8px;
+
+      color:
+        var(--orange-dark);
+
+      font-size:
+        13px;
+
+      font-weight:
+        800;
+
+    }
+
+
+    .service-card__link span {
+
+      transition:
+        transform .2s ease;
+
+    }
+
+
+    .service-card:hover
+    .service-card__link span {
+
+      transform:
+        translateX(4px);
+
+    }
+
+
+    .service-card--featured
+    .service-card__link {
+
+      color:
+        #ffffff;
+
+    }
+
+
+    /* =====================================================
+       CTA INFERIOR
+       ===================================================== */
+
+    .services__cta {
+
+      position:
+        relative;
+
+      overflow:
+        hidden;
+
+      margin-top:
+        55px;
+
+      padding:
+        55px;
+
+      display:
+        flex;
+
+      justify-content:
+        space-between;
+
+      align-items:
+        center;
+
+      gap:
+        40px;
+
+      background:
+        #151515;
+
+      color:
+        #ffffff;
+
+      border-radius:
+        30px;
+
+    }
+
+
+    .services__cta::after {
+
+      content:
+        "PRO";
+
+      position:
+        absolute;
+
+      right:
+        -20px;
+
+      bottom:
+        -75px;
+
+      color:
+        rgba(255,255,255,.045);
+
+      font-size:
+        190px;
+
+      font-weight:
+        900;
+
+      letter-spacing:
+        -12px;
+
+      line-height:
+        1;
+
+    }
+
+
+    .services__cta-content {
+
+      position:
+        relative;
+
+      z-index:
+        2;
+
+      max-width:
+        630px;
+
+    }
+
+
+    .services__cta-tag {
+
+      display:
+        inline-block;
+
+      margin-bottom:
+        12px;
+
+      color:
+        #ff9252;
+
+      font-size:
+        11px;
+
+      font-weight:
+        900;
+
+      letter-spacing:
+        1.8px;
+
+      text-transform:
+        uppercase;
+
+    }
+
+
+    .services__cta h3 {
+
+      font-size:
+        clamp(
+          30px,
+          4vw,
+          46px
+        );
+
+      line-height:
+        1.03;
+
+      letter-spacing:
+        -1.8px;
+
+    }
+
+
+    .services__cta p {
+
+      max-width:
+        560px;
+
+      margin-top:
+        13px;
+
+      color:
+        #bdbdbd;
+
+      font-size:
+        15px;
+
+      line-height:
+        1.65;
+
+    }
+
+
+    .services__cta-actions {
+
+      position:
+        relative;
+
+      z-index:
+        2;
+
+      flex-shrink:
+        0;
+
+    }
+
+
+    .services__cta-button {
+
+      min-height:
+        54px;
+
+      padding:
+        0 23px;
+
+      display:
+        inline-flex;
+
+      align-items:
+        center;
+
+      justify-content:
+        center;
+
+      border-radius:
+        999px;
+
+      background:
+        var(--orange);
+
+      color:
+        #ffffff;
+
+      font-size:
+        14px;
+
+      font-weight:
+        800;
+
+      transition:
+        transform .2s ease,
+        background .2s ease;
+
+    }
+
+
+    .services__cta-button:hover {
+
+      transform:
+        translateY(-2px);
+
+      background:
+        var(--orange-dark);
+
+    }
+
+
+    /* =====================================================
+       RESPONSIVE
+       ===================================================== */
+
+    @media
+    (max-width: 960px) {
+
+
+      .services__header {
+
+        grid-template-columns:
+          1fr;
+
+        gap:
+          20px;
+
+      }
+
+
+      .services__grid {
+
+        grid-template-columns:
+          1fr 1fr;
+
+      }
+
+
+      .services__cta {
+
+        flex-direction:
+          column;
+
+        align-items:
+          flex-start;
+
+      }
+
+    }
+
+
+    @media
+    (max-width: 650px) {
+
+
+      .services {
+
+        padding:
+          78px 0;
+
+      }
+
+
+      .services__container {
+
+        width:
+          calc(100% - 28px);
+
+      }
+
+
+      .services__title {
+
+        font-size:
+          clamp(
+            42px,
+            13vw,
+            57px
+          );
+
+        letter-spacing:
+          -2.8px;
+
+      }
+
+
+      .services__description {
+
+        font-size:
+          16px;
+
+      }
+
+
+      .services__grid {
+
+        grid-template-columns:
+          1fr;
+
+      }
+
+
+      .service-card {
+
+        min-height:
+          320px;
+
+      }
+
+
+      .services__cta {
+
+        margin-top:
+          38px;
+
+        padding:
+          38px 25px;
+
+      }
+
+
+      .services__cta-actions {
+
+        width:
+          100%;
+
+      }
+
+
+      .services__cta-button {
+
+        width:
+          100%;
+
+      }
+
+    }
+
   </style>
+
 </head>
+
+
 <body>
 
-<!-- ============================
-     PRODUCTOS Y SERVICIOS
-     ============================ -->
-<section class="servicios section-pad" id="servicios">
-  <div class="container">
 
-    <!-- Encabezado -->
-    <div class="servicios__header">
-      <div class="section-label">Nuestros Servicios</div>
-      <h2 class="section-title">Todo lo que tu marca <span>necesita</span></h2>
-      <div class="orange-divider" style="margin: 16px auto 20px;"></div>
-      <p class="section-subtitle">
-        Soluciones digitales completas para empresas, emprendedores y artistas que quieren crecer con estrategia y resultados medibles.
-      </p>
+  <!-- =====================================================
+       PRODUCTOS Y SERVICIOS
+       ===================================================== -->
+
+  <section
+    class="services"
+    id="servicios"
+  >
+
+
+    <div class="services__container">
+
+
+      <!-- =================================================
+           HEADER
+           ================================================= -->
+
+      <div class="services__header">
+
+
+        <div>
+
+
+          <div class="services__eyebrow">
+
+            Servicios Digitalmente Pro
+
+          </div>
+
+
+          <h1 class="services__title">
+
+            Todo lo que tu negocio necesita para
+
+            <span>
+              crecer en digital.
+            </span>
+
+          </h1>
+
+
+        </div>
+
+
+        <p class="services__description">
+
+          Combinamos estrategia, publicidad, contenido
+          y tecnología para crear soluciones digitales
+          pensadas para necesidades comerciales reales.
+
+        </p>
+
+
+      </div>
+
+
+      <!-- =================================================
+           TARJETAS
+           ================================================= -->
+
+      <div class="services__grid">
+
+
+        <!-- 01 MARKETING DIGITAL -->
+
+        <article class="service-card">
+
+
+          <div class="service-card__top">
+
+            <span class="service-card__number">
+              01
+            </span>
+
+            <span class="service-card__pill">
+              Publicidad
+            </span>
+
+          </div>
+
+
+          <h3>
+            Marketing Digital
+          </h3>
+
+
+          <p class="service-card__description">
+
+            Campañas publicitarias y estrategias digitales
+            orientadas a conectar tu empresa con potenciales clientes.
+
+          </p>
+
+
+          <ul class="service-card__list">
+
+            <li>
+              Meta Ads
+            </li>
+
+            <li>
+              Google Ads
+            </li>
+
+            <li>
+              Campañas de alcance y mensajes
+            </li>
+
+            <li>
+              Análisis y optimización
+            </li>
+
+          </ul>
+
+
+          <a
+            href="marketing.html"
+            class="service-card__link"
+          >
+
+            Conocer servicio
+
+            <span>
+              →
+            </span>
+
+          </a>
+
+
+        </article>
+
+
+        <!-- 02 E-COMMERCE -->
+
+        <article
+          class="
+            service-card
+            service-card--featured
+          "
+        >
+
+
+          <div class="service-card__top">
+
+            <span class="service-card__number">
+              02
+            </span>
+
+            <span class="service-card__pill">
+              E-commerce
+            </span>
+
+          </div>
+
+
+          <h3>
+            Tiendas Online
+          </h3>
+
+
+          <p class="service-card__description">
+
+            Creamos y optimizamos tiendas online
+            para ofrecer una experiencia de compra
+            profesional, rápida y sencilla.
+
+          </p>
+
+
+          <ul class="service-card__list">
+
+            <li>
+              Shopify
+            </li>
+
+            <li>
+              Diseño y estructura comercial
+            </li>
+
+            <li>
+              Optimización de experiencia de compra
+            </li>
+
+            <li>
+              Integraciones digitales
+            </li>
+
+          </ul>
+
+
+          <a
+            href="#contacto"
+            class="service-card__link"
+          >
+
+            Quiero una tienda online
+
+            <span>
+              →
+            </span>
+
+          </a>
+
+
+        </article>
+
+
+        <!-- 03 DESARROLLO WEB -->
+
+        <article class="service-card">
+
+
+          <div class="service-card__top">
+
+            <span class="service-card__number">
+              03
+            </span>
+
+            <span class="service-card__pill">
+              Web
+            </span>
+
+          </div>
+
+
+          <h3>
+            Desarrollo Web
+          </h3>
+
+
+          <p class="service-card__description">
+
+            Diseñamos sitios web modernos,
+            rápidos y adaptados a celulares
+            para empresas y emprendimientos.
+
+          </p>
+
+
+          <ul class="service-card__list">
+
+            <li>
+              Landing pages
+            </li>
+
+            <li>
+              Sitios corporativos
+            </li>
+
+            <li>
+              Diseño responsive
+            </li>
+
+            <li>
+              Optimización SEO técnica
+            </li>
+
+          </ul>
+
+
+          <a
+            href="#contacto"
+            class="service-card__link"
+          >
+
+            Ver desarrollo web
+
+            <span>
+              →
+            </span>
+
+          </a>
+
+
+        </article>
+
+
+        <!-- 04 CONTENIDO -->
+
+        <article class="service-card">
+
+
+          <div class="service-card__top">
+
+            <span class="service-card__number">
+              04
+            </span>
+
+            <span class="service-card__pill">
+              Audiovisual
+            </span>
+
+          </div>
+
+
+          <h3>
+            Contenido Audiovisual
+          </h3>
+
+
+          <p class="service-card__description">
+
+            Creamos contenido visual profesional
+            pensado para redes sociales, campañas
+            y comunicación de marca.
+
+          </p>
+
+
+          <ul class="service-card__list">
+
+            <li>
+              Fotografía profesional
+            </li>
+
+            <li>
+              Reels y videos
+            </li>
+
+            <li>
+              Contenido para campañas
+            </li>
+
+            <li>
+              Producción para redes sociales
+            </li>
+
+          </ul>
+
+
+          <a
+            href="creacion-contenido.html"
+            class="service-card__link"
+          >
+
+            Ver contenido
+
+            <span>
+              →
+            </span>
+
+          </a>
+
+
+        </article>
+
+
+        <!-- 05 REDES -->
+
+        <article class="service-card">
+
+
+          <div class="service-card__top">
+
+            <span class="service-card__number">
+              05
+            </span>
+
+            <span class="service-card__pill">
+              Social Media
+            </span>
+
+          </div>
+
+
+          <h3>
+            Redes Sociales
+          </h3>
+
+
+          <p class="service-card__description">
+
+            Ayudamos a mantener una presencia
+            digital constante, profesional
+            y coherente con tu negocio.
+
+          </p>
+
+
+          <ul class="service-card__list">
+
+            <li>
+              Instagram
+            </li>
+
+            <li>
+              Facebook
+            </li>
+
+            <li>
+              Contenido y publicaciones
+            </li>
+
+            <li>
+              Gestión de campañas
+            </li>
+
+          </ul>
+
+
+          <a
+            href="redes-sociales.html"
+            class="service-card__link"
+          >
+
+            Ver redes sociales
+
+            <span>
+              →
+            </span>
+
+          </a>
+
+
+        </article>
+
+
+        <!-- 06 ESTRATEGIA -->
+
+        <article class="service-card">
+
+
+          <div class="service-card__top">
+
+            <span class="service-card__number">
+              06
+            </span>
+
+            <span class="service-card__pill">
+              Estrategia
+            </span>
+
+          </div>
+
+
+          <h3>
+            Estrategia Digital
+          </h3>
+
+
+          <p class="service-card__description">
+
+            Analizamos tu negocio y definimos
+            qué herramientas digitales tienen
+            más sentido para tus objetivos.
+
+          </p>
+
+
+          <ul class="service-card__list">
+
+            <li>
+              Diagnóstico digital
+            </li>
+
+            <li>
+              Análisis de presencia online
+            </li>
+
+            <li>
+              Definición de objetivos
+            </li>
+
+            <li>
+              Plan de implementación
+            </li>
+
+          </ul>
+
+
+          <a
+            href="#contacto"
+            class="service-card__link"
+          >
+
+            Conversar sobre mi negocio
+
+            <span>
+              →
+            </span>
+
+          </a>
+
+
+        </article>
+
+
+      </div>
+
+
+      <!-- =================================================
+           CTA
+           ================================================= -->
+
+      <div class="services__cta">
+
+
+        <div class="services__cta-content">
+
+
+          <span class="services__cta-tag">
+
+            ¿No sabes qué necesitas?
+
+          </span>
+
+
+          <h3>
+
+            Cuéntanos tu proyecto.
+            Nosotros te ayudamos a definir el camino.
+
+          </h3>
+
+
+          <p>
+
+            No todos los negocios necesitan las mismas herramientas.
+            Conversemos sobre tus objetivos y veamos qué solución
+            digital tiene más sentido para tu empresa.
+
+          </p>
+
+
+        </div>
+
+
+        <div class="services__cta-actions">
+
+
+          <a
+            href="https://wa.me/56987689361"
+            target="_blank"
+            rel="noopener"
+            class="services__cta-button"
+          >
+
+            Hablemos por WhatsApp →
+
+          </a>
+
+
+        </div>
+
+
+      </div>
+
+
     </div>
 
-    <!-- Grid de servicios -->
-    <div class="servicios__grid">
 
-      <!-- Servicio 1 -->
-      <div class="servicio-card">
-        <span class="servicio-card__num">01</span>
-        <span class="servicio-card__icon">📱</span>
-        <h3 class="servicio-card__title">Gestión de Redes Sociales</h3>
-        <p class="servicio-card__desc">Administramos y hacemos crecer tu presencia en todas las plataformas con contenido estratégico y consistente.</p>
-        <ul class="servicio-card__list">
-          <li>Instagram, Facebook, TikTok, LinkedIn</li>
-          <li>Calendario editorial mensual</li>
-          <li>Diseño gráfico y copywriting</li>
-          <li>Reportes de rendimiento</li>
-        </ul>
-        <span class="servicio-card__tag">Más popular</span>
-      </div>
+  </section>
 
-      <!-- Servicio 2 - DESTACADO -->
-      <div class="servicio-card servicio-card--featured">
-        <span class="servicio-card__num">02</span>
-        <span class="servicio-card__icon">🚀</span>
-        <h3 class="servicio-card__title">Marketing Digital Integral</h3>
-        <p class="servicio-card__desc">Estrategia completa que une todos los canales digitales para hacer crecer tu negocio de forma sostenible.</p>
-        <ul class="servicio-card__list">
-          <li>Plan estratégico 360°</li>
-          <li>Google Ads y Meta Ads</li>
-          <li>SEO y posicionamiento</li>
-          <li>Embudo de conversión</li>
-        </ul>
-        <span class="servicio-card__tag">⭐ Recomendado</span>
-      </div>
-
-      <!-- Servicio 3 -->
-      <div class="servicio-card">
-        <span class="servicio-card__num">03</span>
-        <span class="servicio-card__icon">🎥</span>
-        <h3 class="servicio-card__title">Creación de Contenido</h3>
-        <p class="servicio-card__desc">Producción de contenido audiovisual y gráfico que comunica el valor real de tu marca o proyecto artístico.</p>
-        <ul class="servicio-card__list">
-          <li>Fotografía y video profesional</li>
-          <li>Reels y TikToks virales</li>
-          <li>Diseño de marca visual</li>
-          <li>Guiones y storytelling</li>
-        </ul>
-        <span class="servicio-card__tag">Creativo</span>
-      </div>
-
-      <!-- Servicio 4 -->
-      <div class="servicio-card">
-        <span class="servicio-card__num">04</span>
-        <span class="servicio-card__icon">🎵</span>
-        <h3 class="servicio-card__title">Marketing para Músicos</h3>
-        <p class="servicio-card__desc">Hacemos crecer tu carrera musical con estrategias digitales diseñadas para artistas y bandas.</p>
-        <ul class="servicio-card__list">
-          <li>Estrategia de lanzamiento</li>
-          <li>Pitching en playlists</li>
-          <li>Promoción en Spotify y YouTube</li>
-          <li>Campañas de fanbase</li>
-        </ul>
-        <span class="servicio-card__tag">Artistas</span>
-      </div>
-
-      <!-- Servicio 5 -->
-      <div class="servicio-card">
-        <span class="servicio-card__num">05</span>
-        <span class="servicio-card__icon">🌐</span>
-        <h3 class="servicio-card__title">Diseño Web & Landing Pages</h3>
-        <p class="servicio-card__desc">Sitios web y páginas de aterrizaje optimizadas para convertir visitas en clientes reales.</p>
-        <ul class="servicio-card__list">
-          <li>Diseño moderno y responsive</li>
-          <li>Optimización de velocidad</li>
-          <li>Integración con redes y CRM</li>
-          <li>Analítica y seguimiento</li>
-        </ul>
-        <span class="servicio-card__tag">Web</span>
-      </div>
-
-      <!-- Servicio 6 -->
-      <div class="servicio-card">
-        <span class="servicio-card__num">06</span>
-        <span class="servicio-card__icon">📊</span>
-        <h3 class="servicio-card__title">Consultoría & Estrategia</h3>
-        <p class="servicio-card__desc">Analizamos tu negocio y diseñamos un plan digital a medida con objetivos claros y plazos reales.</p>
-        <ul class="servicio-card__list">
-          <li>Diagnóstico digital gratuito</li>
-          <li>Plan de acción 90 días</li>
-          <li>Benchmarking de competencia</li>
-          <li>Seguimiento mensual</li>
-        </ul>
-        <span class="servicio-card__tag">Consultoría</span>
-      </div>
-
-    </div>
-
-    <!-- CTA inferior -->
-    <div class="servicios__cta">
-      <div class="servicios__cta-text">
-        <h3>¿No sabes por dónde empezar?</h3>
-        <p>Agenda una consulta gratuita de 30 minutos y te orientamos sin compromiso.</p>
-      </div>
-      <a href="#contacto" class="btn-outline">Agendar Consulta Gratis →</a>
-    </div>
-
-  </div>
-</section>
 
 </body>
 </html>
