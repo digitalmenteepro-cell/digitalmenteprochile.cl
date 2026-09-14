@@ -1,398 +1,2133 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>REDES SOCIALES - Digitalmenteprochile.cl</title>
-  <link rel="stylesheet" href="styles.css" />
+
+  <meta charset="UTF-8">
+
+  <meta
+    name="viewport"
+    content="width=device-width, initial-scale=1.0"
+  >
+
+  <meta
+    name="robots"
+    content="noindex, nofollow"
+  >
+
+  <title>
+    Redes Sociales | Digitalmente Pro
+  </title>
+
+
   <style>
-    /* ============================
-       SECCIÓN: REDES SOCIALES
-       Archivo: redes-sociales.html
-       ============================ */
 
-    body { margin-top: 72px; }
+    /* =====================================================
+       DIGITALMENTE PRO
+       REDES SOCIALES
+       ===================================================== */
 
-    .redes {
-      padding: 88px 0;
-      background: var(--gris-claro);
+    :root {
+
+      --orange: #ff6a13;
+      --orange-dark: #ed5700;
+      --orange-light: #ff9557;
+
+      --cream: #fffaf6;
+      --cream-soft: #fff3eb;
+
+      --white: #ffffff;
+
+      --text: #141414;
+      --text-soft: #626262;
+
+      --border: #efdfd3;
+
+      --green: #0aa75b;
+
     }
 
-    .redes__layout {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 72px;
-      align-items: center;
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
     }
 
-    /* Columna texto */
-    .redes__text .section-subtitle {
-      margin-bottom: 32px;
+
+    html {
+      scroll-behavior: smooth;
     }
 
-    .redes__platforms {
-      display: flex;
-      flex-direction: column;
-      gap: 14px;
-      margin-bottom: 36px;
+
+    body {
+
+      font-family:
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        Arial,
+        sans-serif;
+
+      background:
+        var(--cream);
+
+      color:
+        var(--text);
+
+      overflow-x:
+        hidden;
+
     }
 
-    .platform-row {
-      display: flex;
-      align-items: center;
-      gap: 14px;
-      background: var(--blanco);
-      border-radius: 8px;
-      padding: 14px 18px;
-      border: 1.5px solid #E8E8E8;
-      transition: border-color 0.2s, box-shadow 0.2s;
+
+    a {
+      text-decoration: none;
+      color: inherit;
     }
 
-    .platform-row:hover {
-      border-color: var(--naranja);
-      box-shadow: 0 3px 14px rgba(255,107,0,0.1);
-    }
 
-    .platform-row__icon {
-      font-size: 24px;
-      width: 40px;
-      text-align: center;
-      flex-shrink: 0;
-    }
+    /* =====================================================
+       SECCIÓN
+       ===================================================== */
 
-    .platform-row__info {
-      flex: 1;
-    }
+    .social {
 
-    .platform-row__info strong {
-      display: block;
-      font-family: var(--font-display);
-      font-size: 14px;
-      font-weight: 700;
-      color: var(--negro);
-      margin-bottom: 2px;
-    }
+      position: relative;
 
-    .platform-row__info span {
-      font-size: 12px;
-      color: var(--gris-medio);
-    }
-
-    .platform-row__badge {
-      font-family: var(--font-display);
-      font-size: 11px;
-      font-weight: 700;
-      color: var(--naranja);
-      background: var(--naranja-suave);
-      padding: 4px 10px;
-      border-radius: 20px;
-    }
-
-    /* Columna visual derecha */
-    .redes__panel {
-      display: flex;
-      flex-direction: column;
-      gap: 20px;
-    }
-
-    /* Panel de estadísticas simulado */
-    .redes__stats-panel {
-      background: var(--blanco);
-      border-radius: 14px;
-      padding: 28px;
-      box-shadow: 0 6px 28px rgba(0,0,0,0.07);
-      border: 1.5px solid #E8E8E8;
-    }
-
-    .redes__stats-panel h4 {
-      font-family: var(--font-display);
-      font-size: 14px;
-      font-weight: 700;
-      color: var(--gris-medio);
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      margin-bottom: 20px;
-    }
-
-    .stats-row {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 16px;
-      margin-bottom: 20px;
-    }
-
-    .stat-box {
-      text-align: center;
-      background: var(--gris-claro);
-      border-radius: 8px;
-      padding: 16px 10px;
-    }
-
-    .stat-box__num {
-      font-family: var(--font-display);
-      font-size: 22px;
-      font-weight: 900;
-      color: var(--naranja);
-      display: block;
-    }
-
-    .stat-box__label {
-      font-size: 11px;
-      color: var(--gris-medio);
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 0.5px;
-      margin-top: 4px;
-      display: block;
-    }
-
-    /* Barra de crecimiento */
-    .growth-bars {
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-    }
-
-    .growth-bar {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-    }
-
-    .growth-bar__label {
-      font-size: 12px;
-      font-weight: 600;
-      color: var(--gris-oscuro);
-      width: 100px;
-      flex-shrink: 0;
-    }
-
-    .growth-bar__track {
-      flex: 1;
-      height: 8px;
-      background: #F0F0F0;
-      border-radius: 4px;
       overflow: hidden;
+
+      padding:
+        110px 0;
+
+      background:
+
+        radial-gradient(
+          circle at 8% 15%,
+          rgba(255,106,19,.09),
+          transparent 24%
+        ),
+
+        linear-gradient(
+          180deg,
+          #fffaf6 0%,
+          #fff4ed 100%
+        );
+
     }
 
-    .growth-bar__fill {
-      height: 100%;
-      background: var(--naranja);
-      border-radius: 4px;
-      transition: width 1s ease;
-    }
 
-    .growth-bar__val {
-      font-size: 12px;
-      font-weight: 700;
-      color: var(--negro);
-      width: 36px;
-      text-align: right;
-    }
+    .social::after {
 
-    /* Proceso de trabajo */
-    .redes__proceso {
-      background: var(--negro);
-      border-radius: 14px;
-      padding: 28px;
-    }
+      content: "";
 
-    .redes__proceso h4 {
-      font-family: var(--font-display);
-      font-size: 15px;
-      font-weight: 800;
-      color: var(--blanco);
-      margin-bottom: 20px;
-    }
+      position: absolute;
 
-    .proceso-steps {
-      display: flex;
-      flex-direction: column;
-      gap: 14px;
-    }
+      width: 480px;
+      height: 480px;
 
-    .proceso-step {
-      display: flex;
-      align-items: center;
-      gap: 14px;
-    }
+      right: -230px;
+      bottom: -220px;
 
-    .proceso-step__num {
-      width: 32px;
-      height: 32px;
-      background: var(--naranja);
       border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-family: var(--font-display);
-      font-size: 13px;
-      font-weight: 900;
-      color: var(--blanco);
-      flex-shrink: 0;
+
+      background:
+        rgba(255,106,19,.07);
+
+      filter:
+        blur(15px);
+
     }
 
-    .proceso-step p {
-      font-size: 13px;
-      color: rgba(255,255,255,0.8);
-      line-height: 1.4;
+
+    .social__container {
+
+      position: relative;
+
+      z-index: 2;
+
+      width:
+        min(
+          1180px,
+          calc(100% - 40px)
+        );
+
+      margin:
+        0 auto;
+
     }
 
-    @media (max-width: 860px) {
-      .redes__layout { grid-template-columns: 1fr; gap: 40px; }
+
+    .social__grid {
+
+      display: grid;
+
+      grid-template-columns:
+        .95fr 1.05fr;
+
+      gap:
+        75px;
+
+      align-items:
+        center;
+
     }
+
+
+    /* =====================================================
+       TEXTO
+       ===================================================== */
+
+    .social__eyebrow {
+
+      display:
+        inline-flex;
+
+      align-items:
+        center;
+
+      gap:
+        9px;
+
+      color:
+        var(--orange-dark);
+
+      font-size:
+        12px;
+
+      font-weight:
+        900;
+
+      letter-spacing:
+        2px;
+
+      text-transform:
+        uppercase;
+
+      margin-bottom:
+        18px;
+
+    }
+
+
+    .social__eyebrow::before {
+
+      content: "";
+
+      display: block;
+
+      width:
+        8px;
+
+      height:
+        8px;
+
+      border-radius:
+        50%;
+
+      background:
+        var(--orange);
+
+      box-shadow:
+        0 0 0 6px
+        rgba(255,106,19,.10);
+
+    }
+
+
+    .social__title {
+
+      max-width:
+        620px;
+
+      font-size:
+        clamp(
+          45px,
+          5.8vw,
+          72px
+        );
+
+      line-height:
+        .98;
+
+      letter-spacing:
+        -3.5px;
+
+      font-weight:
+        900;
+
+    }
+
+
+    .social__title span {
+
+      color:
+        var(--orange);
+
+    }
+
+
+    .social__description {
+
+      max-width:
+        580px;
+
+      margin-top:
+        24px;
+
+      color:
+        var(--text-soft);
+
+      font-size:
+        17px;
+
+      line-height:
+        1.72;
+
+    }
+
+
+    /* =====================================================
+       PLATAFORMAS
+       ===================================================== */
+
+    .social__platforms {
+
+      display:
+        grid;
+
+      gap:
+        10px;
+
+      margin-top:
+        33px;
+
+    }
+
+
+    .platform {
+
+      display:
+        flex;
+
+      align-items:
+        center;
+
+      gap:
+        14px;
+
+      padding:
+        14px 16px;
+
+      background:
+        rgba(255,255,255,.74);
+
+      border:
+        1px solid
+        var(--border);
+
+      border-radius:
+        16px;
+
+      transition:
+        transform .2s ease,
+        border-color .2s ease,
+        background .2s ease;
+
+    }
+
+
+    .platform:hover {
+
+      transform:
+        translateX(5px);
+
+      border-color:
+        #efc2a5;
+
+      background:
+        #ffffff;
+
+    }
+
+
+    .platform__icon {
+
+      width:
+        42px;
+
+      height:
+        42px;
+
+      display:
+        flex;
+
+      align-items:
+        center;
+
+      justify-content:
+        center;
+
+      flex-shrink:
+        0;
+
+      border-radius:
+        12px;
+
+      background:
+        #fff0e6;
+
+      color:
+        var(--orange);
+
+      font-size:
+        18px;
+
+      font-weight:
+        900;
+
+    }
+
+
+    .platform__info {
+
+      flex:
+        1;
+
+    }
+
+
+    .platform__info strong {
+
+      display:
+        block;
+
+      font-size:
+        14px;
+
+      margin-bottom:
+        3px;
+
+    }
+
+
+    .platform__info span {
+
+      display:
+        block;
+
+      color:
+        #7a7a7a;
+
+      font-size:
+        12px;
+
+      line-height:
+        1.4;
+
+    }
+
+
+    .platform__status {
+
+      display:
+        inline-flex;
+
+      align-items:
+        center;
+
+      min-height:
+        28px;
+
+      padding:
+        0 10px;
+
+      border-radius:
+        999px;
+
+      background:
+        #fff0e5;
+
+      color:
+        var(--orange-dark);
+
+      font-size:
+        10px;
+
+      font-weight:
+        800;
+
+      text-transform:
+        uppercase;
+
+      letter-spacing:
+        .5px;
+
+    }
+
+
+    /* =====================================================
+       BOTÓN
+       ===================================================== */
+
+    .social__action {
+
+      display:
+        inline-flex;
+
+      align-items:
+        center;
+
+      justify-content:
+        center;
+
+      min-height:
+        54px;
+
+      padding:
+        0 24px;
+
+      margin-top:
+        30px;
+
+      border-radius:
+        999px;
+
+      background:
+        var(--orange);
+
+      color:
+        #ffffff;
+
+      font-size:
+        14px;
+
+      font-weight:
+        800;
+
+      box-shadow:
+        0 13px 28px
+        rgba(255,106,19,.20);
+
+      transition:
+        transform .2s ease,
+        background .2s ease;
+
+    }
+
+
+    .social__action:hover {
+
+      transform:
+        translateY(-2px);
+
+      background:
+        var(--orange-dark);
+
+    }
+
+
+    /* =====================================================
+       PANEL DERECHO
+       ===================================================== */
+
+    .social__visual {
+
+      position:
+        relative;
+
+      min-height:
+        610px;
+
+    }
+
+
+    .social-dashboard {
+
+      position:
+        absolute;
+
+      top:
+        10px;
+
+      right:
+        0;
+
+      width:
+        min(
+          100%,
+          500px
+        );
+
+      padding:
+        22px;
+
+      border:
+        1px solid
+        var(--border);
+
+      border-radius:
+        32px;
+
+      background:
+        linear-gradient(
+          180deg,
+          #ffffff,
+          #fffaf7
+        );
+
+      box-shadow:
+
+        0 42px 85px
+        rgba(117,63,30,.13),
+
+        0 8px 28px
+        rgba(0,0,0,.035);
+
+    }
+
+
+    /* =====================================================
+       CABECERA DASHBOARD
+       ===================================================== */
+
+    .dashboard__header {
+
+      display:
+        flex;
+
+      align-items:
+        center;
+
+      justify-content:
+        space-between;
+
+      margin-bottom:
+        18px;
+
+    }
+
+
+    .dashboard__brand {
+
+      display:
+        flex;
+
+      align-items:
+        center;
+
+      gap:
+        10px;
+
+    }
+
+
+    .dashboard__logo {
+
+      width:
+        37px;
+
+      height:
+        37px;
+
+      object-fit:
+        cover;
+
+      border-radius:
+        10px;
+
+    }
+
+
+    .dashboard__brand strong {
+
+      display:
+        block;
+
+      font-size:
+        15px;
+
+    }
+
+
+    .dashboard__brand span {
+
+      display:
+        block;
+
+      color:
+        #898989;
+
+      font-size:
+        11px;
+
+      margin-top:
+        2px;
+
+    }
+
+
+    .dashboard__dots {
+
+      display:
+        flex;
+
+      gap:
+        6px;
+
+    }
+
+
+    .dashboard__dots i {
+
+      display:
+        block;
+
+      width:
+        7px;
+
+      height:
+        7px;
+
+      border-radius:
+        50%;
+
+      background:
+        #d7d1cd;
+
+    }
+
+
+    /* =====================================================
+       TARJETA PRINCIPAL
+       ===================================================== */
+
+    .dashboard__hero {
+
+      position:
+        relative;
+
+      overflow:
+        hidden;
+
+      padding:
+        27px;
+
+      border-radius:
+        24px;
+
+      color:
+        #ffffff;
+
+      background:
+
+        linear-gradient(
+          135deg,
+          var(--orange) 0%,
+          var(--orange-light) 100%
+        );
+
+    }
+
+
+    .dashboard__hero::after {
+
+      content: "";
+
+      position:
+        absolute;
+
+      width:
+        180px;
+
+      height:
+        180px;
+
+      right:
+        -60px;
+
+      top:
+        -65px;
+
+      border-radius:
+        50%;
+
+      background:
+        rgba(255,255,255,.14);
+
+    }
+
+
+    .dashboard__hero small {
+
+      position:
+        relative;
+
+      z-index:
+        2;
+
+      display:
+        block;
+
+      font-size:
+        11px;
+
+      font-weight:
+        800;
+
+      letter-spacing:
+        1.5px;
+
+      text-transform:
+        uppercase;
+
+      opacity:
+        .88;
+
+    }
+
+
+    .dashboard__hero h3 {
+
+      position:
+        relative;
+
+      z-index:
+        2;
+
+      max-width:
+        330px;
+
+      margin-top:
+        9px;
+
+      font-size:
+        30px;
+
+      line-height:
+        1.05;
+
+      letter-spacing:
+        -1px;
+
+    }
+
+
+    .dashboard__hero p {
+
+      position:
+        relative;
+
+      z-index:
+        2;
+
+      max-width:
+        340px;
+
+      margin-top:
+        11px;
+
+      color:
+        rgba(255,255,255,.9);
+
+      font-size:
+        13px;
+
+      line-height:
+        1.55;
+
+    }
+
+
+    /* =====================================================
+       CALENDARIO DE CONTENIDO
+       ===================================================== */
+
+    .content-calendar {
+
+      margin-top:
+        13px;
+
+      padding:
+        19px;
+
+      border:
+        1px solid
+        #f0e4da;
+
+      border-radius:
+        20px;
+
+      background:
+        #ffffff;
+
+    }
+
+
+    .content-calendar__header {
+
+      display:
+        flex;
+
+      justify-content:
+        space-between;
+
+      align-items:
+        center;
+
+      gap:
+        15px;
+
+      margin-bottom:
+        16px;
+
+    }
+
+
+    .content-calendar__header strong {
+
+      font-size:
+        14px;
+
+    }
+
+
+    .content-calendar__header span {
+
+      color:
+        var(--orange-dark);
+
+      background:
+        #fff0e6;
+
+      padding:
+        5px 9px;
+
+      border-radius:
+        999px;
+
+      font-size:
+        10px;
+
+      font-weight:
+        800;
+
+    }
+
+
+    .calendar {
+
+      display:
+        grid;
+
+      grid-template-columns:
+        repeat(7, 1fr);
+
+      gap:
+        7px;
+
+    }
+
+
+    .calendar span {
+
+      aspect-ratio:
+        1;
+
+      display:
+        flex;
+
+      align-items:
+        center;
+
+      justify-content:
+        center;
+
+      border-radius:
+        9px;
+
+      background:
+        #faf7f4;
+
+      color:
+        #888888;
+
+      font-size:
+        10px;
+
+      font-weight:
+        700;
+
+    }
+
+
+    .calendar span.active {
+
+      background:
+        #fff0e5;
+
+      color:
+        var(--orange-dark);
+
+      border:
+        1px solid
+        #ffd7bd;
+
+    }
+
+
+    .calendar span.featured {
+
+      background:
+        var(--orange);
+
+      color:
+        #ffffff;
+
+    }
+
+
+    /* =====================================================
+       TIPOS DE CONTENIDO
+       ===================================================== */
+
+    .content-types {
+
+      display:
+        grid;
+
+      grid-template-columns:
+        1fr 1fr;
+
+      gap:
+        10px;
+
+      margin-top:
+        13px;
+
+    }
+
+
+    .content-type {
+
+      padding:
+        15px;
+
+      background:
+        #ffffff;
+
+      border:
+        1px solid
+        #f0e4da;
+
+      border-radius:
+        17px;
+
+    }
+
+
+    .content-type small {
+
+      display:
+        block;
+
+      color:
+        #929292;
+
+      font-size:
+        10px;
+
+      margin-bottom:
+        5px;
+
+    }
+
+
+    .content-type strong {
+
+      display:
+        block;
+
+      font-size:
+        13px;
+
+    }
+
+
+    .content-type span {
+
+      display:
+        block;
+
+      margin-top:
+        5px;
+
+      color:
+        var(--green);
+
+      font-size:
+        10px;
+
+      font-weight:
+        700;
+
+    }
+
+
+    /* =====================================================
+       TARJETAS FLOTANTES
+       ===================================================== */
+
+    .social-floating {
+
+      position:
+        absolute;
+
+      padding:
+        14px 17px;
+
+      border:
+        1px solid
+        #eedfd4;
+
+      border-radius:
+        17px;
+
+      background:
+        rgba(255,255,255,.94);
+
+      backdrop-filter:
+        blur(15px);
+
+      -webkit-backdrop-filter:
+        blur(15px);
+
+      box-shadow:
+        0 18px 45px
+        rgba(80,40,20,.10);
+
+      animation:
+        floating
+        4s
+        ease-in-out
+        infinite;
+
+    }
+
+
+    .social-floating strong {
+
+      display:
+        block;
+
+      font-size:
+        13px;
+
+    }
+
+
+    .social-floating span {
+
+      display:
+        block;
+
+      margin-top:
+        3px;
+
+      color:
+        #777777;
+
+      font-size:
+        10px;
+
+    }
+
+
+    .social-floating--reels {
+
+      left:
+        -25px;
+
+      top:
+        145px;
+
+    }
+
+
+    .social-floating--stories {
+
+      right:
+        -16px;
+
+      bottom:
+        65px;
+
+      animation-delay:
+        1.4s;
+
+    }
+
+
+    @keyframes floating {
+
+      0%,
+      100% {
+
+        transform:
+          translateY(0);
+
+      }
+
+
+      50% {
+
+        transform:
+          translateY(-9px);
+
+      }
+
+    }
+
+
+    /* =====================================================
+       PROCESO
+       ===================================================== */
+
+    .social__process {
+
+      margin-top:
+        85px;
+
+      padding:
+        55px;
+
+      display:
+        grid;
+
+      grid-template-columns:
+        .78fr 1.22fr;
+
+      gap:
+        60px;
+
+      align-items:
+        center;
+
+      background:
+        #151515;
+
+      border-radius:
+        30px;
+
+      color:
+        #ffffff;
+
+      overflow:
+        hidden;
+
+      position:
+        relative;
+
+    }
+
+
+    .social__process::after {
+
+      content:
+        "SOCIAL";
+
+      position:
+        absolute;
+
+      right:
+        -30px;
+
+      bottom:
+        -65px;
+
+      color:
+        rgba(255,255,255,.035);
+
+      font-size:
+        150px;
+
+      line-height:
+        1;
+
+      font-weight:
+        900;
+
+      letter-spacing:
+        -9px;
+
+    }
+
+
+    .process__intro {
+
+      position:
+        relative;
+
+      z-index:
+        2;
+
+    }
+
+
+    .process__tag {
+
+      color:
+        #ff9759;
+
+      font-size:
+        11px;
+
+      font-weight:
+        900;
+
+      letter-spacing:
+        1.7px;
+
+      text-transform:
+        uppercase;
+
+    }
+
+
+    .process__intro h3 {
+
+      max-width:
+        390px;
+
+      margin-top:
+        12px;
+
+      font-size:
+        clamp(
+          31px,
+          4vw,
+          47px
+        );
+
+      line-height:
+        1.02;
+
+      letter-spacing:
+        -2px;
+
+    }
+
+
+    .process__steps {
+
+      position:
+        relative;
+
+      z-index:
+        2;
+
+      display:
+        grid;
+
+      gap:
+        0;
+
+      border-top:
+        1px solid
+        rgba(255,255,255,.12);
+
+    }
+
+
+    .process-step {
+
+      display:
+        grid;
+
+      grid-template-columns:
+        48px 1fr;
+
+      gap:
+        16px;
+
+      padding:
+        18px 0;
+
+      border-bottom:
+        1px solid
+        rgba(255,255,255,.12);
+
+    }
+
+
+    .process-step__number {
+
+      color:
+        var(--orange);
+
+      font-size:
+        13px;
+
+      font-weight:
+        900;
+
+    }
+
+
+    .process-step strong {
+
+      display:
+        block;
+
+      font-size:
+        14px;
+
+    }
+
+
+    .process-step p {
+
+      margin-top:
+        4px;
+
+      color:
+        #a9a9a9;
+
+      font-size:
+        12px;
+
+      line-height:
+        1.5;
+
+    }
+
+
+    /* =====================================================
+       RESPONSIVE
+       ===================================================== */
+
+    @media
+    (max-width: 960px) {
+
+
+      .social__grid {
+
+        grid-template-columns:
+          1fr;
+
+        gap:
+          60px;
+
+      }
+
+
+      .social__visual {
+
+        width:
+          min(100%, 600px);
+
+        margin:
+          0 auto;
+
+      }
+
+
+      .social-dashboard {
+
+        left:
+          50%;
+
+        right:
+          auto;
+
+        transform:
+          translateX(-50%);
+
+      }
+
+
+      .social__process {
+
+        grid-template-columns:
+          1fr;
+
+        gap:
+          35px;
+
+      }
+
+    }
+
+
+    @media
+    (max-width: 650px) {
+
+
+      .social {
+
+        padding:
+          78px 0;
+
+      }
+
+
+      .social__container {
+
+        width:
+          calc(100% - 28px);
+
+      }
+
+
+      .social__title {
+
+        font-size:
+          clamp(
+            42px,
+            13vw,
+            59px
+          );
+
+        letter-spacing:
+          -2.8px;
+
+      }
+
+
+      .social__description {
+
+        font-size:
+          16px;
+
+      }
+
+
+      .platform__status {
+
+        display:
+          none;
+
+      }
+
+
+      .social__action {
+
+        width:
+          100%;
+
+      }
+
+
+      .social__visual {
+
+        min-height:
+          550px;
+
+      }
+
+
+      .social-dashboard {
+
+        width:
+          96%;
+
+        padding:
+          15px;
+
+        border-radius:
+          25px;
+
+      }
+
+
+      .dashboard__hero {
+
+        padding:
+          23px;
+
+      }
+
+
+      .dashboard__hero h3 {
+
+        font-size:
+          25px;
+
+      }
+
+
+      .social-floating--reels {
+
+        display:
+          none;
+
+      }
+
+
+      .social-floating--stories {
+
+        right:
+          0;
+
+        bottom:
+          15px;
+
+      }
+
+
+      .social__process {
+
+        margin-top:
+          55px;
+
+        padding:
+          38px 25px;
+
+      }
+
+    }
+
   </style>
+
 </head>
+
+
 <body>
 
-<!-- ============================
-     REDES SOCIALES
-     ============================ -->
-<section class="redes section-pad" id="redes">
-  <div class="container">
 
-    <div class="redes__layout">
+  <!-- =====================================================
+       REDES SOCIALES
+       ===================================================== -->
 
-      <!-- Texto izquierdo -->
-      <div class="redes__text">
-        <div class="section-label">Redes Sociales</div>
-        <h2 class="section-title">Presencia digital<br><span>que genera impacto</span></h2>
-        <div class="orange-divider"></div>
-        <p class="section-subtitle">
-          Gestionamos tus cuentas con estrategia real: publicaciones pensadas para tu audiencia, diseño consistente con tu marca y resultados que puedes medir.
-        </p>
+  <section
+    class="social"
+    id="redes"
+  >
 
-        <!-- Plataformas -->
-        <div class="redes__platforms">
-          <div class="platform-row">
-            <div class="platform-row__icon">📸</div>
-            <div class="platform-row__info">
-              <strong>Instagram</strong>
-              <span>Feed, Stories, Reels y colaboraciones</span>
-            </div>
-            <span class="platform-row__badge">Activo</span>
+
+    <div class="social__container">
+
+
+      <div class="social__grid">
+
+
+        <!-- =================================================
+             INFORMACIÓN
+             ================================================= -->
+
+        <div class="social__copy">
+
+
+          <div class="social__eyebrow">
+
+            Redes Sociales
+
           </div>
-          <div class="platform-row">
-            <div class="platform-row__icon">📘</div>
-            <div class="platform-row__info">
-              <strong>Facebook</strong>
-              <span>Posts, Grupos y Facebook Ads</span>
+
+
+          <h1 class="social__title">
+
+            Presencia digital que se
+
+            <span>
+              siente profesional.
+            </span>
+
+          </h1>
+
+
+          <p class="social__description">
+
+            Creamos y gestionamos contenido para que tu empresa
+            mantenga una comunicación constante, coherente y
+            atractiva en sus redes sociales.
+
+          </p>
+
+
+          <!-- PLATAFORMAS -->
+
+          <div class="social__platforms">
+
+
+            <div class="platform">
+
+              <div class="platform__icon">
+                IG
+              </div>
+
+              <div class="platform__info">
+
+                <strong>
+                  Instagram
+                </strong>
+
+                <span>
+                  Feed, historias, reels y contenido de marca.
+                </span>
+
+              </div>
+
+              <div class="platform__status">
+                Social
+              </div>
+
             </div>
-            <span class="platform-row__badge">Activo</span>
-          </div>
-          <div class="platform-row">
-            <div class="platform-row__icon">🎵</div>
-            <div class="platform-row__info">
-              <strong>TikTok</strong>
-              <span>Videos virales y tendencias</span>
+
+
+            <div class="platform">
+
+              <div class="platform__icon">
+                FB
+              </div>
+
+              <div class="platform__info">
+
+                <strong>
+                  Facebook
+                </strong>
+
+                <span>
+                  Publicaciones, contenido y campañas digitales.
+                </span>
+
+              </div>
+
+              <div class="platform__status">
+                Social
+              </div>
+
             </div>
-            <span class="platform-row__badge">Activo</span>
-          </div>
-          <div class="platform-row">
-            <div class="platform-row__icon">💼</div>
-            <div class="platform-row__info">
-              <strong>LinkedIn</strong>
-              <span>B2B, marca empleadora y networking</span>
+
+
+            <div class="platform">
+
+              <div class="platform__icon">
+                TT
+              </div>
+
+              <div class="platform__info">
+
+                <strong>
+                  TikTok
+                </strong>
+
+                <span>
+                  Videos verticales y contenido pensado para alcance.
+                </span>
+
+              </div>
+
+              <div class="platform__status">
+                Video
+              </div>
+
             </div>
-            <span class="platform-row__badge">Activo</span>
-          </div>
-          <div class="platform-row">
-            <div class="platform-row__icon">▶️</div>
-            <div class="platform-row__info">
-              <strong>YouTube</strong>
-              <span>Canal, SEO de video y comunidad</span>
+
+
+            <div class="platform">
+
+              <div class="platform__icon">
+                YT
+              </div>
+
+              <div class="platform__info">
+
+                <strong>
+                  YouTube
+                </strong>
+
+                <span>
+                  Contenido audiovisual y presencia de marca.
+                </span>
+
+              </div>
+
+              <div class="platform__status">
+                Video
+              </div>
+
             </div>
-            <span class="platform-row__badge">Activo</span>
+
+
           </div>
+
+
+          <a
+            href="https://wa.me/56987689361"
+            target="_blank"
+            rel="noopener"
+            class="social__action"
+          >
+
+            Quiero mejorar mis redes →
+
+          </a>
+
+
         </div>
 
-        <a href="#contacto" class="btn-primary">Quiero gestionar mis redes →</a>
+
+        <!-- =================================================
+             PANEL VISUAL
+             ================================================= -->
+
+        <div class="social__visual">
+
+
+          <div class="social-dashboard">
+
+
+            <!-- CABECERA -->
+
+            <div class="dashboard__header">
+
+
+              <div class="dashboard__brand">
+
+                <img
+                  src="images/Logo.PNG"
+                  alt="Digitalmente Pro"
+                  class="dashboard__logo"
+                >
+
+
+                <div>
+
+                  <strong>
+                    Digitalmente Pro
+                  </strong>
+
+                  <span>
+                    Gestión de contenidos
+                  </span>
+
+                </div>
+
+              </div>
+
+
+              <div class="dashboard__dots">
+
+                <i></i>
+                <i></i>
+                <i></i>
+
+              </div>
+
+
+            </div>
+
+
+            <!-- PRINCIPAL -->
+
+            <div class="dashboard__hero">
+
+              <small>
+                SOCIAL MEDIA
+              </small>
+
+              <h3>
+                Contenido con estrategia y una identidad coherente.
+              </h3>
+
+              <p>
+                Planificamos publicaciones y formatos según
+                las necesidades de cada negocio.
+              </p>
+
+            </div>
+
+
+            <!-- CALENDARIO -->
+
+            <div class="content-calendar">
+
+
+              <div class="content-calendar__header">
+
+                <strong>
+                  Calendario de contenido
+                </strong>
+
+                <span>
+                  Planificado
+                </span>
+
+              </div>
+
+
+              <div class="calendar">
+
+                <span>1</span>
+                <span>2</span>
+                <span class="active">3</span>
+                <span>4</span>
+                <span class="featured">5</span>
+                <span>6</span>
+                <span>7</span>
+
+                <span class="active">8</span>
+                <span>9</span>
+                <span>10</span>
+                <span>11</span>
+                <span class="featured">12</span>
+                <span>13</span>
+                <span>14</span>
+
+              </div>
+
+
+            </div>
+
+
+            <!-- FORMATOS -->
+
+            <div class="content-types">
+
+
+              <div class="content-type">
+
+                <small>
+                  Formato
+                </small>
+
+                <strong>
+                  Reels / Video
+                </strong>
+
+                <span>
+                  ● Contenido vertical
+                </span>
+
+              </div>
+
+
+              <div class="content-type">
+
+                <small>
+                  Formato
+                </small>
+
+                <strong>
+                  Fotos / Feed
+                </strong>
+
+                <span>
+                  ● Identidad visual
+                </span>
+
+              </div>
+
+
+              <div class="content-type">
+
+                <small>
+                  Formato
+                </small>
+
+                <strong>
+                  Historias
+                </strong>
+
+                <span>
+                  ● Presencia constante
+                </span>
+
+              </div>
+
+
+              <div class="content-type">
+
+                <small>
+                  Estrategia
+                </small>
+
+                <strong>
+                  Campañas
+                </strong>
+
+                <span>
+                  ● Difusión digital
+                </span>
+
+              </div>
+
+
+            </div>
+
+
+          </div>
+
+
+          <!-- FLOTANTES -->
+
+          <div
+            class="
+              social-floating
+              social-floating--reels
+            "
+          >
+
+            <strong>
+              Reels
+            </strong>
+
+            <span>
+              Video para redes
+            </span>
+
+          </div>
+
+
+          <div
+            class="
+              social-floating
+              social-floating--stories
+            "
+          >
+
+            <strong>
+              Historias
+            </strong>
+
+            <span>
+              Presencia constante
+            </span>
+
+          </div>
+
+
+        </div>
+
+
       </div>
 
-      <!-- Panel visual derecho -->
-      <div class="redes__panel">
 
-        <!-- Panel de estadísticas -->
-        <div class="redes__stats-panel">
-          <h4>📊 Resultados promedio de clientes</h4>
-          <div class="stats-row">
-            <div class="stat-box">
-              <span class="stat-box__num">+340%</span>
-              <span class="stat-box__label">Alcance</span>
-            </div>
-            <div class="stat-box">
-              <span class="stat-box__num">+180%</span>
-              <span class="stat-box__label">Interacción</span>
-            </div>
-            <div class="stat-box">
-              <span class="stat-box__num">+90%</span>
-              <span class="stat-box__label">Seguidores</span>
-            </div>
-          </div>
+      <!-- =================================================
+           PROCESO
+           ================================================= -->
 
-          <div class="growth-bars">
-            <div class="growth-bar">
-              <span class="growth-bar__label">Instagram</span>
-              <div class="growth-bar__track">
-                <div class="growth-bar__fill" style="width: 88%;"></div>
-              </div>
-              <span class="growth-bar__val">88%</span>
-            </div>
-            <div class="growth-bar">
-              <span class="growth-bar__label">TikTok</span>
-              <div class="growth-bar__track">
-                <div class="growth-bar__fill" style="width: 75%;"></div>
-              </div>
-              <span class="growth-bar__val">75%</span>
-            </div>
-            <div class="growth-bar">
-              <span class="growth-bar__label">Facebook</span>
-              <div class="growth-bar__track">
-                <div class="growth-bar__fill" style="width: 65%;"></div>
-              </div>
-              <span class="growth-bar__val">65%</span>
-            </div>
-            <div class="growth-bar">
-              <span class="growth-bar__label">LinkedIn</span>
-              <div class="growth-bar__track">
-                <div class="growth-bar__fill" style="width: 60%;"></div>
-              </div>
-              <span class="growth-bar__val">60%</span>
-            </div>
-          </div>
+      <div class="social__process">
+
+
+        <div class="process__intro">
+
+
+          <span class="process__tag">
+
+            Nuestro proceso
+
+          </span>
+
+
+          <h3>
+
+            Contenido pensado antes de publicarlo.
+
+          </h3>
+
+
         </div>
 
-        <!-- Proceso de trabajo -->
-        <div class="redes__proceso">
-          <h4>Nuestro proceso de trabajo</h4>
-          <div class="proceso-steps">
-            <div class="proceso-step">
-              <div class="proceso-step__num">1</div>
-              <p>Auditoría de cuentas y diagnóstico de marca</p>
+
+        <div class="process__steps">
+
+
+          <article class="process-step">
+
+            <div class="process-step__number">
+              01
             </div>
-            <div class="proceso-step">
-              <div class="proceso-step__num">2</div>
-              <p>Definición de audiencia objetivo y tono de comunicación</p>
+
+            <div>
+
+              <strong>
+                Entendemos tu marca
+              </strong>
+
+              <p>
+                Revisamos tu negocio, identidad y público objetivo.
+              </p>
+
             </div>
-            <div class="proceso-step">
-              <div class="proceso-step__num">3</div>
-              <p>Calendario editorial mensual y producción de contenido</p>
+
+          </article>
+
+
+          <article class="process-step">
+
+            <div class="process-step__number">
+              02
             </div>
-            <div class="proceso-step">
-              <div class="proceso-step__num">4</div>
-              <p>Publicación, comunidad y respuesta activa</p>
+
+            <div>
+
+              <strong>
+                Planificamos el contenido
+              </strong>
+
+              <p>
+                Definimos temas, formatos y frecuencia de publicación.
+              </p>
+
             </div>
-            <div class="proceso-step">
-              <div class="proceso-step__num">5</div>
-              <p>Reporte de métricas y ajuste de estrategia</p>
+
+          </article>
+
+
+          <article class="process-step">
+
+            <div class="process-step__number">
+              03
             </div>
-          </div>
+
+            <div>
+
+              <strong>
+                Creamos y publicamos
+              </strong>
+
+              <p>
+                Diseñamos contenido visual coherente con la marca.
+              </p>
+
+            </div>
+
+          </article>
+
+
+          <article class="process-step">
+
+            <div class="process-step__number">
+              04
+            </div>
+
+            <div>
+
+              <strong>
+                Revisamos y mejoramos
+              </strong>
+
+              <p>
+                Analizamos el desempeño para ajustar la estrategia.
+              </p>
+
+            </div>
+
+          </article>
+
+
         </div>
+
 
       </div>
+
+
     </div>
-  </div>
-</section>
+
+
+  </section>
+
 
 </body>
 </html>
