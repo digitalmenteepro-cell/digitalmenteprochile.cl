@@ -20,7 +20,7 @@
   <meta property="og:locale" content="es_CL">
   <meta
     property="og:image"
-    content="https://raw.githubusercontent.com/digitalmenteepro-cell/digitalmenteprochile.cl/refs/heads/main/images/1920%20x%201080.png"
+    content="https://raw.githubusercontent.com/digitalmenteepro-cell/digitalmenteprochile.cl/refs/heads/main/images/Portada%202.0.png"
   >
 
   <link
@@ -32,13 +32,7 @@
   <link
     rel="preload"
     as="image"
-    href="https://raw.githubusercontent.com/digitalmenteepro-cell/digitalmenteprochile.cl/refs/heads/main/images/1920%20x%201080.png"
-  >
-  <link
-    rel="preload"
-    as="image"
-    href="https://raw.githubusercontent.com/digitalmenteepro-cell/digitalmenteprochile.cl/refs/heads/main/images/Portada%20m%C3%B3vil%20%E2%80%94%201080%20%C3%97%201350%20px.png"
-    media="(max-width: 760px)"
+    href="https://raw.githubusercontent.com/digitalmenteepro-cell/digitalmenteprochile.cl/refs/heads/main/images/Portada%202.0.png"
   >
 
 
@@ -2876,6 +2870,120 @@
       }
     }
 
+  
+
+    /* =====================================================
+       PORTADA 2.0 - IMAGEN COMPLETA, SIN TEXTO HTML EXTRA
+       ===================================================== */
+
+    .hero--image-only {
+      min-height: 0;
+      padding: 0;
+      background: #fffaf6;
+      overflow: hidden;
+    }
+
+    .hero--image-only::before,
+    .hero--image-only::after {
+      display: none !important;
+      content: none !important;
+    }
+
+    .hero-cover {
+      position: relative;
+      width: 100%;
+      margin: 0;
+      overflow: hidden;
+      background: #fffaf6;
+    }
+
+    .hero-cover__image {
+      display: block;
+      width: 100%;
+      height: auto;
+      max-width: none;
+      object-fit: contain;
+      object-position: center center;
+    }
+
+    .hero-cover__cta {
+      position: absolute;
+      left: 50%;
+      bottom: clamp(18px, 2.5vw, 34px);
+      z-index: 5;
+
+      min-height: 46px;
+      padding: 0 20px;
+
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+
+      transform: translateX(-50%);
+
+      border: 1px solid rgba(255,255,255,.45);
+      border-radius: 999px;
+
+      background: rgba(255,106,19,.90);
+      color: #ffffff;
+
+      backdrop-filter: blur(9px);
+      -webkit-backdrop-filter: blur(9px);
+
+      box-shadow: 0 12px 30px rgba(80,38,15,.20);
+
+      font-size: 13px;
+      font-weight: 850;
+      white-space: nowrap;
+
+      transition:
+        transform .2s ease,
+        background .2s ease,
+        box-shadow .2s ease;
+    }
+
+    .hero-cover__cta:hover {
+      transform: translateX(-50%) translateY(-2px);
+      background: rgba(233,86,0,.95);
+      box-shadow: 0 16px 34px rgba(80,38,15,.24);
+    }
+
+    @media (max-width: 760px) {
+      .hero-cover__image {
+        width: 100%;
+        height: auto;
+        object-fit: contain;
+      }
+
+      .hero-cover__cta {
+        bottom: 14px;
+        min-height: 42px;
+        max-width: calc(100% - 34px);
+        padding: 0 17px;
+        font-size: 11px;
+      }
+    }
+
+    @media (max-width: 390px) {
+      .hero-cover__cta {
+        min-height: 40px;
+        padding: 0 14px;
+        font-size: 10px;
+      }
+    }
+
+  
+    /* Seguridad: en Portada 2.0 nunca mostrar elementos del hero antiguo */
+    .hero--image-only .hero__copy,
+    .hero--image-only .hero__visual,
+    .hero--image-only .hero__badge,
+    .hero--image-only .hero__actions,
+    .hero--image-only .hero__chips,
+    .hero--image-only .hero__glass,
+    .hero--image-only .hero__float {
+      display: none !important;
+    }
+
   </style>
 
 
@@ -2992,79 +3100,35 @@
   <main>
 
     <!-- =====================================================
-         HERO
+         HERO / PORTADA 2.0
          ===================================================== -->
 
     <section
-      class="hero"
+      class="hero hero--image-only"
       id="inicio"
+      aria-label="Portada Digitalmente Pro"
     >
 
-      <div class="container hero__inner">
+      <div class="hero-cover">
 
-        <div class="hero__copy">
+        <img
+          src="https://raw.githubusercontent.com/digitalmenteepro-cell/digitalmenteprochile.cl/refs/heads/main/images/Portada%202.0.png"
+          alt="Digitalmente Pro"
+          class="hero-cover__image"
+          loading="eager"
+          fetchpriority="high"
+          decoding="async"
+        >
 
-          <div class="hero__badge">
-            Marketing · E-commerce · Desarrollo Web
-          </div>
+        <a
+          class="hero-cover__cta"
+          href="https://wa.me/56987689361?text=Hola%20%F0%9F%91%8B%20Vi%20la%20web%20de%20Digitalmente%20Pro%20y%20quiero%20hacer%20crecer%20mi%20negocio."
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Quiero hacer crecer mi negocio
+        </a>
 
-
-          <h1>
-            Hacemos crecer tu
-            <span>negocio digital</span>
-            con estrategia y contenido.
-          </h1>
-
-
-          <p>
-            Creamos una presencia digital profesional para que tu negocio
-            se vea mejor, conecte mejor y venda mejor.
-          </p>
-
-
-          <div class="hero__actions">
-
-            <a
-              class="btn-primary"
-              href="https://wa.me/56987689361?text=Hola%20%F0%9F%91%8B%20Vi%20la%20web%20de%20Digitalmente%20Pro%20y%20quiero%20hacer%20crecer%20mi%20negocio."
-              target="_blank"
-              rel="noopener"
-            >
-              Quiero hacer crecer mi negocio
-            </a>
-
-
-            <a
-              class="btn-secondary"
-              href="#servicios"
-            >
-              Ver servicios
-            </a>
-
-          </div>
-
-
-          <div class="hero__chips">
-            <span>Meta Ads</span>
-            <span>Google Ads</span>
-            <span>E-commerce</span>
-            <span>Redes Sociales</span>
-            <span>Contenido</span>
-          </div>
-
-        </div>
-
-
-        <div class="hero__visual hero__visual--mascot">
-
-          <img
-            src="https://raw.githubusercontent.com/digitalmenteepro-cell/digitalmenteprochile.cl/refs/heads/main/images/Portada%20m%C3%B3vil%20%E2%80%94%201080%20%C3%97%201350%20px.png"
-            alt="Digitalmente Pro - Mascota y portada principal"
-            class="hero__mascot-image"
-            loading="eager"
-          />
-
-        </div>
       </div>
 
     </section>
