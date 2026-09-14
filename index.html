@@ -1,1251 +1,4204 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 
   <title>Digitalmente Pro | Marketing Digital, E-commerce y Desarrollo Web</title>
 
   <meta
     name="description"
-    content="Digitalmente Pro impulsa negocios con marketing digital, e-commerce, desarrollo web, redes sociales y contenido audiovisual."
-  />
+    content="Digitalmente Pro impulsa negocios con marketing digital, e-commerce, desarrollo web, redes sociales y contenido audiovisual profesional en Chile."
+  >
 
-  <meta name="robots" content="index, follow" />
-  <meta name="theme-color" content="#ff6a13" />
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#ff6a13">
 
-  <meta property="og:title" content="Digitalmente Pro | Marketing Digital y E-commerce" />
-  <meta property="og:description" content="Marketing, publicidad, contenido y desarrollo web para empresas que quieren crecer." />
-  <meta property="og:type" content="website" />
-  <meta property="og:locale" content="es_CL" />
-  <meta property="og:image" content="images/Logo.PNG" />
+  <meta property="og:title" content="Digitalmente Pro | Marketing Digital, E-commerce y Desarrollo Web">
+  <meta property="og:description" content="Estrategia, publicidad, e-commerce, desarrollo web y contenido para negocios que quieren crecer en digital.">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="es_CL">
+  <meta
+    property="og:image"
+    content="https://raw.githubusercontent.com/digitalmenteepro-cell/digitalmenteprochile.cl/refs/heads/main/images/Banner%20horizontal%20web%2050%25%20OFF%20tienda%20de%20tecnolog%C3%ADa%20gradiente%20y%20moderno%20turquesa%20y%20azul.png"
+  >
 
-  <link rel="icon" type="image/png" href="images/Logo.PNG" />
+  <link
+    rel="icon"
+    type="image/png"
+    href="images/Logo.PNG"
+  >
+
+  <link
+    rel="preload"
+    as="image"
+    href="https://raw.githubusercontent.com/digitalmenteepro-cell/digitalmenteprochile.cl/refs/heads/main/images/Banner%20horizontal%20web%2050%25%20OFF%20tienda%20de%20tecnolog%C3%ADa%20gradiente%20y%20moderno%20turquesa%20y%20azul.png"
+  >
 
   <style>
-    :root{
-      --orange:#ff6a13;
-      --orange-dark:#f15800;
-      --orange-soft:#fff1e8;
-      --text:#141414;
-      --text-soft:#5b5b5b;
-      --line:#ece7e2;
-      --white:#ffffff;
-      --bg:#fffaf6;
-      --dark:#111111;
-      --green:#0aa75b;
+    :root {
+      --orange: #ff6a13;
+      --orange-dark: #e95600;
+      --orange-soft: #fff0e6;
+      --cream: #fffaf6;
+      --cream-2: #fff3eb;
+      --white: #ffffff;
+      --dark: #141414;
+      --dark-2: #1d1d1d;
+      --text: #151515;
+      --muted: #66615d;
+      --line: #efdfd3;
+      --green: #25d366;
+      --radius: 28px;
+      --shadow: 0 26px 60px rgba(92, 50, 25, .10);
+
+      --banner:
+        url("https://raw.githubusercontent.com/digitalmenteepro-cell/digitalmenteprochile.cl/refs/heads/main/images/Banner%20horizontal%20web%2050%25%20OFF%20tienda%20de%20tecnolog%C3%ADa%20gradiente%20y%20moderno%20turquesa%20y%20azul.png");
+
+      --offer:
+        url("https://raw.githubusercontent.com/digitalmenteepro-cell/digitalmenteprochile.cl/refs/heads/main/images/oferta%203.PNG");
     }
 
-    *{
-      margin:0;
-      padding:0;
-      box-sizing:border-box;
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
     }
 
-    html{
-      scroll-behavior:smooth;
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 84px;
     }
 
-    body{
-      font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;
-      background:var(--bg);
-      color:var(--text);
-      overflow-x:hidden;
+    body {
+      font-family:
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        Arial,
+        sans-serif;
+
+      background: var(--cream);
+      color: var(--text);
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
     }
 
-    a{
-      text-decoration:none;
-      color:inherit;
+    a {
+      color: inherit;
+      text-decoration: none;
     }
 
-    img{
-      max-width:100%;
-      display:block;
+    img {
+      display: block;
+      max-width: 100%;
     }
 
-    .container{
-      width:min(1180px, calc(100% - 40px));
-      margin:auto;
+    button,
+    input,
+    select,
+    textarea {
+      font: inherit;
     }
 
-    /* TOP BAR */
-
-    .topbar{
-      background:#1d1d1d;
-      color:#fff;
-      font-size:13px;
-      padding:10px 0;
+    button {
+      cursor: pointer;
     }
 
-    .topbar .container{
-      display:flex;
-      justify-content:center;
-      text-align:center;
-      line-height:1.45;
+    .container {
+      width: min(1180px, calc(100% - 40px));
+      margin-inline: auto;
     }
 
-    /* HEADER */
-
-    header{
-      position:sticky;
-      top:0;
-      z-index:1000;
-      background:rgba(255,250,246,.88);
-      backdrop-filter:blur(14px);
-      border-bottom:1px solid rgba(20,20,20,.06);
+    .section {
+      padding: 108px 0;
     }
 
-    .nav{
-      min-height:78px;
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:24px;
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      margin-bottom: 16px;
+
+      color: var(--orange-dark);
+      font-size: 11px;
+      font-weight: 900;
+      letter-spacing: 1.8px;
+      text-transform: uppercase;
     }
 
-    .brand{
-      display:flex;
-      align-items:center;
-      gap:12px;
-      font-weight:900;
-      font-size:20px;
-      letter-spacing:-.8px;
+    .eyebrow::before {
+      content: "";
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      background: var(--orange);
+      box-shadow: 0 0 0 6px rgba(255, 106, 19, .10);
     }
 
-    .brand-icon{
-      width:38px;
-      height:38px;
-      border-radius:10px;
-      object-fit:cover;
+    .section-title {
+      max-width: 800px;
+      font-size: clamp(42px, 5.5vw, 70px);
+      line-height: .98;
+      letter-spacing: -3.4px;
+      font-weight: 950;
     }
 
-    .brand span{
-      color:var(--orange);
+    .section-title span {
+      color: var(--orange);
     }
 
-    .nav-links{
-      display:flex;
-      align-items:center;
-      gap:28px;
-      color:#444;
-      font-size:15px;
+    .section-copy {
+      max-width: 610px;
+      color: var(--muted);
+      font-size: 17px;
+      line-height: 1.72;
     }
 
-    .nav-links a:hover{
-      color:var(--orange-dark);
+    .split-head {
+      display: grid;
+      grid-template-columns: 1.05fr .95fr;
+      gap: 56px;
+      align-items: end;
+      margin-bottom: 54px;
     }
 
-    .nav-cta{
-      background:var(--orange);
-      color:#fff !important;
-      padding:12px 20px;
-      border-radius:999px;
-      font-weight:800;
-      box-shadow:0 10px 24px rgba(255,106,19,.18);
+
+    /* =====================================================
+       TOP BAR
+       ===================================================== */
+
+    .topbar {
+      background: #151515;
+      color: #ffffff;
+      font-size: 12px;
     }
 
-    .menu-btn{
-      display:none;
-      border:none;
-      background:none;
-      font-size:26px;
-      color:var(--text);
-      cursor:pointer;
+    .topbar__inner {
+      min-height: 38px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
     }
 
-    /* HERO */
+    .topbar strong {
+      color: #ff985c;
+    }
 
-    .hero{
-      position:relative;
-      overflow:hidden;
-      padding:70px 0 85px;
+
+    /* =====================================================
+       NAV
+       ===================================================== */
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+
+      background: rgba(255, 250, 246, .91);
+      border-bottom: 1px solid rgba(20, 20, 20, .06);
+
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+    }
+
+    .nav {
+      min-height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 28px;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 11px;
+      flex-shrink: 0;
+    }
+
+    .brand img {
+      width: 41px;
+      height: 41px;
+      border-radius: 11px;
+      object-fit: cover;
+      box-shadow: 0 5px 16px rgba(255, 106, 19, .13);
+    }
+
+    .brand__name {
+      font-size: 19px;
+      font-weight: 950;
+      letter-spacing: -.8px;
+      line-height: 1;
+    }
+
+    .brand__name span {
+      color: var(--orange);
+    }
+
+    .nav__links {
+      display: flex;
+      align-items: center;
+      gap: 26px;
+      list-style: none;
+    }
+
+    .nav__links a {
+      font-size: 14px;
+      font-weight: 650;
+      color: #4e4946;
+      transition: color .2s ease;
+    }
+
+    .nav__links a:hover {
+      color: var(--orange-dark);
+    }
+
+    .nav__cta {
+      min-height: 46px;
+      padding: 0 20px;
+      border-radius: 999px;
+
+      display: inline-flex !important;
+      align-items: center;
+      justify-content: center;
+
+      background: var(--orange);
+      color: #ffffff !important;
+      font-weight: 850 !important;
+
+      box-shadow: 0 10px 24px rgba(255, 106, 19, .18);
+    }
+
+    .nav__toggle {
+      display: none;
+
+      width: 44px;
+      height: 44px;
+
+      border: 0;
+      border-radius: 12px;
+
+      background: rgba(255, 106, 19, .08);
+
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      gap: 5px;
+    }
+
+    .nav__toggle span {
+      width: 23px;
+      height: 2px;
+      border-radius: 999px;
+      background: var(--dark);
+      transition: .25s ease;
+    }
+
+    .nav__toggle.active span:nth-child(1) {
+      transform: translateY(7px) rotate(45deg);
+    }
+
+    .nav__toggle.active span:nth-child(2) {
+      opacity: 0;
+    }
+
+    .nav__toggle.active span:nth-child(3) {
+      transform: translateY(-7px) rotate(-45deg);
+    }
+
+
+    /* =====================================================
+       HERO
+       ===================================================== */
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+
       background:
-        radial-gradient(circle at 85% 20%, rgba(255,126,53,.18), transparent 25%),
-        radial-gradient(circle at 15% 80%, rgba(255,106,19,.10), transparent 25%),
+        radial-gradient(circle at 14% 20%, rgba(255,106,19,.13), transparent 24%),
         linear-gradient(180deg, #fffaf6 0%, #fff3eb 100%);
     }
 
-    .hero::before{
-      content:"";
-      position:absolute;
-      right:-140px;
-      top:40px;
-      width:520px;
-      height:520px;
-      border-radius:50%;
-      background:radial-gradient(circle, rgba(255,106,19,.26) 0%, rgba(255,106,19,.08) 45%, transparent 68%);
-      filter:blur(8px);
+    .hero__inner {
+      min-height: 720px;
+      padding: 82px 0 68px;
+
+      display: grid;
+      grid-template-columns: 1.02fr .98fr;
+      gap: 66px;
+      align-items: center;
     }
 
-    .hero-grid{
-      position:relative;
-      z-index:2;
-      display:grid;
-      grid-template-columns:1.05fr .95fr;
-      gap:55px;
-      align-items:center;
+    .hero__badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+
+      margin-bottom: 22px;
+      padding: 9px 14px;
+
+      border: 1px solid #f0d5c3;
+      border-radius: 999px;
+
+      background: rgba(255,255,255,.76);
+
+      color: #74472f;
+      font-size: 12px;
+      font-weight: 800;
     }
 
-    .hero-badge{
-      display:inline-flex;
-      align-items:center;
-      gap:8px;
-      padding:10px 14px;
-      border-radius:999px;
-      border:1px solid #f1d7c5;
-      background:rgba(255,255,255,.72);
-      color:#7a4a29;
-      font-size:13px;
-      margin-bottom:24px;
+    .hero__badge::before {
+      content: "";
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--orange);
+      box-shadow: 0 0 0 6px rgba(255,106,19,.10);
     }
 
-    .hero-badge i{
-      width:8px;
-      height:8px;
-      border-radius:50%;
-      background:var(--orange);
-      display:block;
+    .hero h1 {
+      max-width: 740px;
+      font-size: clamp(50px, 6.3vw, 82px);
+      line-height: .94;
+      letter-spacing: -4px;
+      font-weight: 950;
     }
 
-    h1{
-      font-size:clamp(48px, 6.6vw, 84px);
-      line-height:.95;
-      letter-spacing:-3.8px;
-      font-weight:950;
-      max-width:700px;
+    .hero h1 span {
+      color: var(--orange);
     }
 
-    h1 .accent{
-      color:var(--orange);
+    .hero__copy > p {
+      max-width: 610px;
+      margin-top: 24px;
+
+      color: #5e5956;
+      font-size: 18px;
+      line-height: 1.7;
     }
 
-    .hero p{
-      margin-top:24px;
-      max-width:620px;
-      color:var(--text-soft);
-      font-size:18px;
-      line-height:1.72;
-    }
-
-    .hero-actions{
-      display:flex;
-      flex-wrap:wrap;
-      gap:14px;
-      margin-top:34px;
+    .hero__actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 32px;
     }
 
     .btn-primary,
-    .btn-secondary{
-      min-height:54px;
-      padding:0 24px;
-      border-radius:999px;
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      font-weight:800;
-      transition:.22s ease;
+    .btn-secondary {
+      min-height: 54px;
+      padding: 0 23px;
+
+      border-radius: 999px;
+
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+
+      font-size: 14px;
+      font-weight: 850;
+
+      transition: .22s ease;
     }
 
-    .btn-primary{
-      background:var(--orange);
-      color:#fff;
-      box-shadow:0 12px 28px rgba(255,106,19,.22);
+    .btn-primary {
+      background: var(--orange);
+      color: #ffffff;
+      box-shadow: 0 13px 28px rgba(255, 106, 19, .22);
     }
 
-    .btn-primary:hover{
-      background:var(--orange-dark);
-      transform:translateY(-2px);
+    .btn-primary:hover {
+      background: var(--orange-dark);
+      transform: translateY(-2px);
     }
 
-    .btn-secondary{
-      background:#fff;
-      border:1px solid #eadfd7;
-      color:var(--text);
+    .btn-secondary {
+      border: 1px solid #ead9cc;
+      background: rgba(255,255,255,.86);
     }
 
-    .btn-secondary:hover{
-      background:#fff6f0;
+    .btn-secondary:hover {
+      background: #ffffff;
+      transform: translateY(-2px);
     }
 
-    .hero-mini{
-      display:flex;
-      flex-wrap:wrap;
-      gap:12px;
-      margin-top:28px;
+    .hero__chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 25px;
     }
 
-    .mini-pill{
-      padding:10px 13px;
-      border-radius:999px;
-      background:rgba(255,255,255,.76);
-      border:1px solid #efe1d6;
-      font-size:13px;
-      color:#735647;
-      font-weight:700;
+    .hero__chips span {
+      min-height: 34px;
+      padding: 0 12px;
+
+      border-radius: 999px;
+      border: 1px solid #eeded2;
+
+      background: rgba(255,255,255,.67);
+
+      display: inline-flex;
+      align-items: center;
+
+      color: #6e5749;
+      font-size: 11px;
+      font-weight: 800;
     }
 
-    /* HERO VISUAL */
-
-    .hero-visual{
-      position:relative;
-      min-height:530px;
+    .hero__visual {
+      position: relative;
+      min-height: 540px;
     }
 
-    .platform-card{
-      position:absolute;
-      inset:20px 0 0 35px;
-      background:linear-gradient(180deg,#ffffff 0%, #fff9f6 100%);
-      border:1px solid #f0e2d7;
-      border-radius:34px;
-      box-shadow:
-        0 40px 80px rgba(201,123,72,.12),
-        0 10px 28px rgba(0,0,0,.04);
-      overflow:hidden;
+    .hero__image {
+      position: absolute;
+      inset: 0;
+
+      border-radius: 34px;
+      overflow: hidden;
+
+      background:
+        linear-gradient(180deg, rgba(0,0,0,0) 35%, rgba(20,20,20,.28) 100%),
+        var(--banner) center / cover no-repeat;
+
+      border: 1px solid rgba(255,255,255,.72);
+      box-shadow: 0 38px 80px rgba(94, 48, 28, .15);
     }
 
-    .platform-top{
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-      padding:22px 24px 18px;
+    .hero__image::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(135deg, rgba(255,255,255,.10), transparent 40%);
+      pointer-events: none;
     }
 
-    .platform-brand{
-      display:flex;
-      align-items:center;
-      gap:10px;
-      font-weight:900;
-      font-size:18px;
-      letter-spacing:-.6px;
+    .hero__glass {
+      position: absolute;
+      left: 28px;
+      right: 28px;
+      bottom: 28px;
+
+      padding: 18px;
+
+      border-radius: 22px;
+      border: 1px solid rgba(255,255,255,.62);
+
+      background: rgba(255,255,255,.78);
+
+      backdrop-filter: blur(18px);
+      -webkit-backdrop-filter: blur(18px);
+
+      box-shadow: 0 22px 45px rgba(35,20,12,.12);
     }
 
-    .platform-brand .dot{
-      width:12px;
-      height:12px;
-      border-radius:50%;
-      background:var(--orange);
+    .hero__glass-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+      margin-bottom: 12px;
     }
 
-    .platform-menu{
-      display:flex;
-      gap:8px;
+    .hero__glass-brand {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 13px;
+      font-weight: 900;
     }
 
-    .platform-menu span{
-      width:8px;
-      height:8px;
-      border-radius:50%;
-      background:#d6d1cc;
+    .hero__glass-brand img {
+      width: 31px;
+      height: 31px;
+      border-radius: 9px;
+      object-fit: cover;
     }
 
-    .platform-content{
-      padding:0 24px 24px;
+    .hero__status {
+      padding: 6px 9px;
+      border-radius: 999px;
+      background: #eafff2;
+      color: #1a7d4a;
+      font-size: 9px;
+      font-weight: 900;
     }
 
-    .hero-panel{
-      background:linear-gradient(135deg,#ff6a13 0%, #ff9150 100%);
-      border-radius:28px;
-      padding:28px;
-      color:#fff;
-      position:relative;
-      overflow:hidden;
+    .hero__glass-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 8px;
     }
 
-    .hero-panel::after{
-      content:"";
-      position:absolute;
-      right:-50px;
-      top:-30px;
-      width:180px;
-      height:180px;
-      border-radius:50%;
-      background:rgba(255,255,255,.14);
+    .hero__mini {
+      padding: 11px;
+      border-radius: 14px;
+      background: rgba(255,255,255,.88);
+      border: 1px solid #f0e2d8;
     }
 
-    .panel-kicker{
-      font-size:12px;
-      letter-spacing:1.7px;
-      text-transform:uppercase;
-      opacity:.86;
-      margin-bottom:10px;
-      font-weight:700;
+    .hero__mini small {
+      display: block;
+      margin-bottom: 3px;
+      color: #96908c;
+      font-size: 9px;
     }
 
-    .panel-title{
-      font-size:30px;
-      line-height:1.05;
-      font-weight:900;
-      letter-spacing:-1px;
-      max-width:300px;
+    .hero__mini strong {
+      font-size: 12px;
     }
 
-    .panel-sub{
-      margin-top:10px;
-      max-width:290px;
-      font-size:14px;
-      line-height:1.55;
-      color:rgba(255,255,255,.9);
+    .hero__float {
+      position: absolute;
+      z-index: 3;
+
+      padding: 13px 15px;
+
+      border: 1px solid #eedfd4;
+      border-radius: 16px;
+
+      background: rgba(255,255,255,.92);
+
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+
+      box-shadow: 0 18px 40px rgba(70,35,18,.10);
+
+      animation: float 4s ease-in-out infinite;
     }
 
-    .stats-row{
-      margin-top:18px;
-      display:grid;
-      grid-template-columns:1fr 1fr;
-      gap:12px;
+    .hero__float strong {
+      display: block;
+      font-size: 13px;
     }
 
-    .stat-card{
-      background:#fff;
-      color:var(--text);
-      border-radius:20px;
-      padding:18px;
-      border:1px solid #f3e6dc;
+    .hero__float span {
+      color: #777777;
+      font-size: 10px;
     }
 
-    .stat-card small{
-      display:block;
-      color:#8e8e8e;
-      font-size:12px;
-      margin-bottom:7px;
+    .hero__float--ecom {
+      right: -15px;
+      top: 70px;
     }
 
-    .stat-card strong{
-      display:block;
-      font-size:18px;
-      letter-spacing:-.5px;
+    .hero__float--content {
+      left: -16px;
+      top: 180px;
+      animation-delay: 1.2s;
     }
 
-    .stat-card .green{
-      color:var(--green);
-      font-size:12px;
-      font-weight:700;
-      margin-top:6px;
-    }
-
-    .bars-box{
-      margin-top:14px;
-      background:#fff;
-      border:1px solid #f3e6dc;
-      border-radius:22px;
-      padding:18px;
-    }
-
-    .bars-title{
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-      margin-bottom:14px;
-      font-size:13px;
-      color:#666;
-      font-weight:700;
-    }
-
-    .bars{
-      height:130px;
-      display:flex;
-      align-items:flex-end;
-      gap:10px;
-    }
-
-    .bars span{
-      flex:1;
-      border-radius:12px 12px 4px 4px;
-      background:linear-gradient(180deg, #ffa169 0%, #ff6a13 100%);
-      animation:grow 2.5s ease-in-out infinite alternate;
-    }
-
-    .bars span:nth-child(1){height:35%}
-    .bars span:nth-child(2){height:52%;animation-delay:.2s}
-    .bars span:nth-child(3){height:44%;animation-delay:.4s}
-    .bars span:nth-child(4){height:68%;animation-delay:.6s}
-    .bars span:nth-child(5){height:61%;animation-delay:.8s}
-    .bars span:nth-child(6){height:82%;animation-delay:1s}
-
-    @keyframes grow{
-      to{
-        transform:scaleY(.88);
-        opacity:.72;
+    @keyframes float {
+      50% {
+        transform: translateY(-8px);
       }
     }
 
-    .floating{
-      position:absolute;
-      background:rgba(255,255,255,.92);
-      border:1px solid #f0dfd1;
-      box-shadow:0 25px 40px rgba(0,0,0,.06);
-      border-radius:18px;
-      padding:16px 18px;
+
+    /* =====================================================
+       TRUST STRIP
+       ===================================================== */
+
+    .brand-strip {
+      padding: 24px 0;
+      background: #fffdfb;
+      border-top: 1px solid var(--line);
+      border-bottom: 1px solid var(--line);
     }
 
-    .floating strong{
-      display:block;
-      font-size:15px;
-      margin-bottom:4px;
+    .brand-strip__inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 25px;
     }
 
-    .floating span{
-      color:#777;
-      font-size:12px;
-      line-height:1.45;
+    .brand-strip p {
+      max-width: 420px;
+      color: #6b6561;
+      font-size: 13px;
+      line-height: 1.55;
     }
 
-    .floating.one{
-      left:0;
-      top:82px;
+    .brand-strip__items {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+      gap: 16px;
+
+      font-size: 10px;
+      font-weight: 950;
+      letter-spacing: .8px;
     }
 
-    .floating.two{
-      right:-10px;
-      bottom:36px;
+
+    /* =====================================================
+       VISUAL BREAK
+       ===================================================== */
+
+    .visual-break {
+      padding: 58px 0;
+      background: #ffffff;
     }
 
-    .floating.three{
-      left:40px;
-      bottom:10px;
+    .visual-break__grid {
+      display: grid;
+      grid-template-columns: 1.18fr .82fr;
+      gap: 16px;
     }
 
-    /* TRUST STRIP */
+    .visual-tile {
+      position: relative;
+      min-height: 360px;
+      overflow: hidden;
 
-    .trust{
-      padding:28px 0;
-      border-top:1px solid var(--line);
-      border-bottom:1px solid var(--line);
-      background:#fffdfb;
+      border-radius: 28px;
+      border: 1px solid var(--line);
+
+      background: #eee;
+
+      box-shadow: 0 20px 45px rgba(76, 42, 24, .08);
     }
 
-    .trust-wrap{
-      display:grid;
-      grid-template-columns:1fr auto;
-      align-items:center;
-      gap:24px;
+    .visual-tile--main {
+      background:
+        linear-gradient(180deg, rgba(0,0,0,0) 20%, rgba(16,16,16,.72) 100%),
+        var(--offer) center / cover no-repeat;
     }
 
-    .trust-text{
-      color:#6b6b6b;
-      font-size:15px;
+    .visual-tile--side {
+      background:
+        linear-gradient(180deg, rgba(0,0,0,0) 20%, rgba(16,16,16,.64) 100%),
+        var(--banner) 72% center / cover no-repeat;
     }
 
-    .trust-items{
-      display:flex;
-      flex-wrap:wrap;
-      gap:18px;
-      color:#222;
-      font-size:13px;
-      font-weight:800;
+    .visual-tile__content {
+      position: absolute;
+      left: 25px;
+      right: 25px;
+      bottom: 24px;
+
+      z-index: 2;
+
+      color: #ffffff;
     }
 
-    /* COMMON */
+    .visual-tile__tag {
+      display: inline-flex;
+      padding: 6px 10px;
+      margin-bottom: 10px;
 
-    section{
-      padding:100px 0;
+      border-radius: 999px;
+
+      background: rgba(255,255,255,.15);
+
+      backdrop-filter: blur(8px);
+
+      font-size: 9px;
+      font-weight: 900;
+      text-transform: uppercase;
+      letter-spacing: 1px;
     }
 
-    .label{
-      color:var(--orange-dark);
-      font-size:12px;
-      letter-spacing:2px;
-      text-transform:uppercase;
-      font-weight:900;
-      margin-bottom:14px;
+    .visual-tile h2,
+    .visual-tile h3 {
+      max-width: 580px;
+      line-height: 1.02;
+      letter-spacing: -1.5px;
     }
 
-    h2{
-      font-size:clamp(34px, 4.6vw, 58px);
-      line-height:1.04;
-      letter-spacing:-2px;
-      max-width:760px;
+    .visual-tile h2 {
+      font-size: clamp(29px, 4vw, 44px);
     }
 
-    .intro{
-      margin-top:18px;
-      max-width:660px;
-      color:var(--text-soft);
-      font-size:17px;
-      line-height:1.7;
+    .visual-tile h3 {
+      font-size: clamp(24px, 3vw, 34px);
     }
 
-    /* SERVICES */
-
-    .services{
-      background:#fff;
+    .visual-tile p {
+      max-width: 520px;
+      margin-top: 8px;
+      color: rgba(255,255,255,.82);
+      font-size: 12px;
+      line-height: 1.55;
     }
 
-    .services-grid{
-      display:grid;
-      grid-template-columns:repeat(3,1fr);
-      gap:18px;
-      margin-top:50px;
+
+    /* =====================================================
+       SERVICES
+       ===================================================== */
+
+    #servicios {
+      background: #ffffff;
     }
 
-    .service-card{
-      background:linear-gradient(180deg,#ffffff 0%, #fff8f3 100%);
-      border:1px solid #f1e5db;
-      border-radius:24px;
-      padding:28px;
-      min-height:260px;
-      transition:.25s ease;
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
     }
 
-    .service-card:hover{
-      transform:translateY(-6px);
-      box-shadow:0 20px 36px rgba(233,146,88,.10);
-      border-color:#efc8ae;
+    .service-card {
+      position: relative;
+      min-height: 330px;
+      overflow: hidden;
+
+      padding: 28px;
+
+      border: 1px solid var(--line);
+      border-radius: 25px;
+
+      background: linear-gradient(180deg, #ffffff, #fff9f5);
+
+      display: flex;
+      flex-direction: column;
+
+      transition: .25s ease;
     }
 
-    .service-num{
-      color:var(--orange);
-      font-size:12px;
-      font-weight:900;
-      margin-bottom:46px;
+    .service-card:hover {
+      transform: translateY(-6px);
+      border-color: #efc4a7;
+      box-shadow: var(--shadow);
     }
 
-    .service-card h3{
-      font-size:22px;
-      margin-bottom:11px;
-      letter-spacing:-.6px;
+    .service-card::after {
+      content: "";
+      position: absolute;
+      width: 145px;
+      height: 145px;
+      right: -70px;
+      top: -70px;
+      border-radius: 50%;
+      background: rgba(255,106,19,.07);
     }
 
-    .service-card p{
-      color:var(--text-soft);
-      font-size:15px;
-      line-height:1.65;
+    .service-card--featured {
+      color: #ffffff;
+      border-color: transparent;
+      background: linear-gradient(135deg, var(--orange), #ff9557);
+      box-shadow: 0 20px 44px rgba(255,106,19,.18);
     }
 
-    /* PROCESS */
+    .service-card__icon {
+      position: relative;
+      z-index: 2;
 
-    .process{
-      background:var(--orange-soft);
+      width: 48px;
+      height: 48px;
+
+      margin-bottom: 34px;
+
+      border-radius: 15px;
+
+      background: var(--orange-soft);
+      color: var(--orange);
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      font-size: 13px;
+      font-weight: 950;
     }
 
-    .process-grid{
-      margin-top:52px;
-      display:grid;
-      grid-template-columns:.85fr 1.15fr;
-      gap:60px;
-      align-items:start;
+    .service-card--featured .service-card__icon {
+      background: rgba(255,255,255,.16);
+      color: #ffffff;
     }
 
-    .process-big{
-      font-size:clamp(74px, 10vw, 150px);
-      line-height:.82;
-      letter-spacing:-7px;
-      font-weight:950;
-      color:var(--orange);
+    .service-card__num {
+      position: absolute;
+      top: 28px;
+      right: 28px;
+      z-index: 2;
+
+      color: var(--orange);
+      font-size: 11px;
+      font-weight: 950;
     }
 
-    .steps{
-      background:#fff;
-      border:1px solid #f0dfd1;
-      border-radius:26px;
-      overflow:hidden;
+    .service-card--featured .service-card__num {
+      color: rgba(255,255,255,.86);
     }
 
-    .step{
-      display:grid;
-      grid-template-columns:64px 1fr;
-      gap:18px;
-      padding:24px 24px;
-      border-bottom:1px solid #f2e6dc;
+    .service-card h3 {
+      position: relative;
+      z-index: 2;
+
+      margin-bottom: 11px;
+
+      font-size: 23px;
+      line-height: 1.08;
+      letter-spacing: -.8px;
     }
 
-    .step:last-child{
-      border-bottom:none;
+    .service-card p {
+      position: relative;
+      z-index: 2;
+
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.65;
     }
 
-    .step-num{
-      color:var(--orange);
-      font-weight:900;
-      font-size:15px;
+    .service-card--featured p {
+      color: rgba(255,255,255,.90);
     }
 
-    .step h3{
-      font-size:20px;
-      margin-bottom:7px;
-      letter-spacing:-.5px;
+    .service-card__meta {
+      position: relative;
+      z-index: 2;
+
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+
+      margin-top: 18px;
     }
 
-    .step p{
-      color:var(--text-soft);
-      line-height:1.65;
-      font-size:15px;
+    .service-card__meta span {
+      padding: 6px 9px;
+      border-radius: 999px;
+
+      background: #fff1e8;
+      color: #a34e1b;
+
+      font-size: 9px;
+      font-weight: 850;
     }
 
-    /* CTA */
-
-    .cta-box{
-      background:linear-gradient(135deg,#1d1d1d 0%, #0f0f0f 100%);
-      color:#fff;
-      border-radius:32px;
-      padding:70px;
-      position:relative;
-      overflow:hidden;
+    .service-card--featured .service-card__meta span {
+      background: rgba(255,255,255,.14);
+      color: #ffffff;
     }
 
-    .cta-box::before{
-      content:"";
-      position:absolute;
-      width:260px;
-      height:260px;
-      border-radius:50%;
-      background:rgba(255,106,19,.22);
-      right:-80px;
-      top:-80px;
-      filter:blur(14px);
+    .service-card__link {
+      position: relative;
+      z-index: 2;
+
+      margin-top: auto;
+      padding-top: 22px;
+
+      color: var(--orange-dark);
+      font-size: 12px;
+      font-weight: 900;
     }
 
-    .cta-box h2{
-      position:relative;
-      z-index:2;
-      max-width:720px;
+    .service-card--featured .service-card__link {
+      color: #ffffff;
     }
 
-    .cta-box p{
-      position:relative;
-      z-index:2;
-      max-width:610px;
-      margin-top:18px;
-      color:#d4d4d4;
-      font-size:17px;
-      line-height:1.7;
+
+    /* =====================================================
+       IMAGE BAND
+       ===================================================== */
+
+    .image-band {
+      position: relative;
+      min-height: 440px;
+
+      display: flex;
+      align-items: center;
+
+      overflow: hidden;
+
+      background:
+        linear-gradient(90deg, rgba(14,14,14,.92) 0%, rgba(14,14,14,.70) 48%, rgba(14,14,14,.20) 100%),
+        var(--banner) center / cover no-repeat;
+
+      color: #ffffff;
     }
 
-    .cta-actions{
-      position:relative;
-      z-index:2;
-      display:flex;
-      flex-wrap:wrap;
-      gap:12px;
-      margin-top:28px;
+    .image-band__content {
+      position: relative;
+      z-index: 2;
+
+      max-width: 650px;
+
+      padding: 70px 0;
     }
 
-    .cta-main,
-    .cta-alt{
-      min-height:54px;
-      padding:0 24px;
-      border-radius:999px;
-      display:inline-flex;
-      align-items:center;
-      justify-content:center;
-      font-weight:800;
+    .image-band .eyebrow {
+      color: #ff9b61;
     }
 
-    .cta-main{
-      background:var(--orange);
-      color:#fff;
+    .image-band__content h2 {
+      font-size: clamp(38px, 5vw, 62px);
+      line-height: .99;
+      letter-spacing: -2.8px;
     }
 
-    .cta-alt{
-      background:transparent;
-      border:1px solid rgba(255,255,255,.18);
-      color:#fff;
+    .image-band__content p {
+      max-width: 540px;
+      margin-top: 16px;
+
+      color: #d3d3d3;
+      font-size: 15px;
+      line-height: 1.7;
     }
 
-    /* FOOTER */
-
-    footer{
-      padding:60px 0 30px;
+    .image-band__actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 24px;
     }
 
-    .footer-top{
-      display:flex;
-      justify-content:space-between;
-      gap:40px;
-      padding-bottom:34px;
-      border-bottom:1px solid var(--line);
+    .image-band__outline {
+      min-height: 50px;
+      padding: 0 20px;
+
+      border: 1px solid rgba(255,255,255,.17);
+      border-radius: 999px;
+
+      display: inline-flex;
+      align-items: center;
+
+      color: #ffffff;
+      font-size: 13px;
+      font-weight: 800;
     }
 
-    .footer-desc{
-      max-width:420px;
-      color:#686868;
-      margin-top:14px;
-      line-height:1.6;
-      font-size:14px;
+
+    /* =====================================================
+       REDES
+       ===================================================== */
+
+    #redes {
+      background: linear-gradient(180deg, #fffaf6, #fff3eb);
     }
 
-    .footer-links{
-      display:flex;
-      flex-wrap:wrap;
-      gap:20px;
-      align-self:flex-start;
-      font-size:14px;
-      color:#565656;
+    .social-grid {
+      display: grid;
+      grid-template-columns: .92fr 1.08fr;
+      gap: 66px;
+      align-items: center;
     }
 
-    .footer-links a:hover{
-      color:var(--orange-dark);
+    .social-list {
+      display: grid;
+      gap: 10px;
+      margin-top: 28px;
     }
 
-    .footer-bottom{
-      padding-top:24px;
-      display:flex;
-      justify-content:space-between;
-      gap:18px;
-      color:#7a7a7a;
-      font-size:13px;
+    .social-row {
+      display: flex;
+      align-items: center;
+      gap: 13px;
+
+      padding: 13px 14px;
+
+      border: 1px solid var(--line);
+      border-radius: 16px;
+
+      background: rgba(255,255,255,.78);
     }
 
-    /* MOBILE */
+    .social-row__icon {
+      width: 40px;
+      height: 40px;
 
-    @media (max-width: 960px){
-      .hero-grid,
-      .process-grid{
-        grid-template-columns:1fr;
+      border-radius: 12px;
+
+      background: var(--orange-soft);
+      color: var(--orange);
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      flex-shrink: 0;
+
+      font-size: 11px;
+      font-weight: 950;
+    }
+
+    .social-row strong {
+      display: block;
+      font-size: 13px;
+    }
+
+    .social-row span {
+      display: block;
+      margin-top: 2px;
+      color: #777777;
+      font-size: 11px;
+    }
+
+    .phone-stage {
+      position: relative;
+      min-height: 570px;
+    }
+
+    .phone {
+      position: absolute;
+      top: 0;
+      left: 50%;
+
+      width: 265px;
+      height: 540px;
+
+      transform: translateX(-50%);
+
+      padding: 11px;
+
+      border-radius: 38px;
+
+      background: #171717;
+
+      box-shadow: 0 35px 70px rgba(60,30,15,.20);
+    }
+
+    .phone__screen {
+      position: relative;
+      width: 100%;
+      height: 100%;
+
+      overflow: hidden;
+
+      border-radius: 29px;
+
+      background:
+        linear-gradient(180deg, rgba(0,0,0,.04), rgba(0,0,0,.22)),
+        var(--offer) center / cover no-repeat;
+    }
+
+    .phone__top {
+      position: absolute;
+      top: 12px;
+      left: 50%;
+      transform: translateX(-50%);
+
+      width: 82px;
+      height: 22px;
+
+      border-radius: 999px;
+
+      background: #111111;
+    }
+
+    .phone__caption {
+      position: absolute;
+      left: 15px;
+      right: 15px;
+      bottom: 16px;
+
+      padding: 14px;
+
+      border-radius: 18px;
+
+      background: rgba(255,255,255,.84);
+
+      backdrop-filter: blur(14px);
+
+      color: var(--text);
+    }
+
+    .phone__caption small {
+      display: block;
+      color: var(--orange);
+      font-size: 9px;
+      font-weight: 950;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    .phone__caption strong {
+      display: block;
+      margin-top: 5px;
+      font-size: 14px;
+      line-height: 1.3;
+    }
+
+    .phone-badge {
+      position: absolute;
+      z-index: 2;
+
+      padding: 12px 14px;
+
+      border: 1px solid #eedfd4;
+      border-radius: 16px;
+
+      background: rgba(255,255,255,.94);
+
+      box-shadow: 0 18px 38px rgba(70,35,18,.10);
+    }
+
+    .phone-badge strong {
+      display: block;
+      font-size: 12px;
+    }
+
+    .phone-badge span {
+      color: #777777;
+      font-size: 9px;
+    }
+
+    .phone-badge--left {
+      left: 15px;
+      top: 110px;
+    }
+
+    .phone-badge--right {
+      right: 0;
+      bottom: 90px;
+    }
+
+
+    /* =====================================================
+       CONTENT
+       ===================================================== */
+
+    #contenido {
+      background: #ffffff;
+    }
+
+    .content-grid {
+      display: grid;
+      grid-template-columns: 1.15fr .85fr;
+      gap: 16px;
+      margin-top: 46px;
+    }
+
+    .content-feature {
+      position: relative;
+      min-height: 500px;
+      overflow: hidden;
+
+      border-radius: 30px;
+      border: 1px solid var(--line);
+
+      background:
+        linear-gradient(180deg, rgba(0,0,0,0) 28%, rgba(15,15,15,.74) 100%),
+        var(--offer) center / cover no-repeat;
+
+      box-shadow: var(--shadow);
+    }
+
+    .content-feature__body {
+      position: absolute;
+      left: 28px;
+      right: 28px;
+      bottom: 26px;
+
+      z-index: 2;
+      color: #ffffff;
+    }
+
+    .content-feature__tag {
+      display: inline-flex;
+      padding: 6px 10px;
+      margin-bottom: 10px;
+
+      border-radius: 999px;
+
+      background: rgba(255,255,255,.16);
+
+      font-size: 9px;
+      font-weight: 900;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    .content-feature h3 {
+      max-width: 520px;
+      font-size: clamp(30px, 4vw, 44px);
+      line-height: 1.02;
+      letter-spacing: -1.6px;
+    }
+
+    .content-feature p {
+      max-width: 500px;
+      margin-top: 9px;
+
+      color: rgba(255,255,255,.84);
+      font-size: 12px;
+      line-height: 1.6;
+    }
+
+    .content-stack {
+      display: grid;
+      gap: 16px;
+    }
+
+    .content-mini {
+      position: relative;
+      min-height: 242px;
+      overflow: hidden;
+
+      border-radius: 25px;
+      border: 1px solid var(--line);
+    }
+
+    .content-mini--photo {
+      background:
+        linear-gradient(180deg, rgba(0,0,0,0) 30%, rgba(16,16,16,.68) 100%),
+        var(--banner) 70% center / cover no-repeat;
+    }
+
+    .content-mini--design {
+      background:
+        radial-gradient(circle at 75% 25%, rgba(255,255,255,.14), transparent 25%),
+        linear-gradient(135deg, #171717, #2a2a2a);
+    }
+
+    .content-mini__design-card {
+      position: absolute;
+      top: 24px;
+      right: 28px;
+
+      width: 130px;
+      height: 160px;
+
+      padding: 18px;
+
+      border-radius: 18px;
+
+      background: var(--orange);
+
+      color: #ffffff;
+
+      transform: rotate(4deg);
+
+      box-shadow: 0 20px 45px rgba(0,0,0,.24);
+    }
+
+    .content-mini__design-card small {
+      font-size: 8px;
+      font-weight: 850;
+      letter-spacing: 1px;
+    }
+
+    .content-mini__design-card strong {
+      display: block;
+      margin-top: 28px;
+      font-size: 21px;
+      line-height: .96;
+    }
+
+    .content-mini__body {
+      position: absolute;
+      left: 22px;
+      right: 22px;
+      bottom: 20px;
+
+      z-index: 2;
+      color: #ffffff;
+    }
+
+    .content-mini__body small {
+      display: block;
+      margin-bottom: 5px;
+      color: #ffb487;
+      font-size: 9px;
+      font-weight: 900;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+
+    .content-mini__body strong {
+      font-size: 21px;
+      line-height: 1.05;
+      letter-spacing: -.6px;
+    }
+
+
+    /* =====================================================
+       PROCESS
+       ===================================================== */
+
+    #proceso {
+      background: var(--orange-soft);
+    }
+
+    .process-head {
+      max-width: 760px;
+    }
+
+    .process-list {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+      margin-top: 46px;
+    }
+
+    .process-step {
+      min-height: 230px;
+      padding: 24px;
+
+      border: 1px solid #efdccc;
+      border-radius: 23px;
+
+      background: #ffffff;
+
+      display: flex;
+      flex-direction: column;
+    }
+
+    .process-step__num {
+      color: var(--orange);
+      font-size: 11px;
+      font-weight: 950;
+    }
+
+    .process-step h3 {
+      margin-top: 42px;
+      font-size: 20px;
+      line-height: 1.08;
+      letter-spacing: -.6px;
+    }
+
+    .process-step p {
+      margin-top: 9px;
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.6;
+    }
+
+    .process-step__line {
+      width: 48px;
+      height: 4px;
+      margin-top: auto;
+
+      border-radius: 999px;
+
+      background: var(--orange);
+    }
+
+
+    /* =====================================================
+       TRUST
+       ===================================================== */
+
+    #confianza {
+      background: #ffffff;
+    }
+
+    .trust-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin-top: 46px;
+    }
+
+    .trust-card {
+      min-height: 290px;
+      padding: 28px;
+
+      border: 1px solid var(--line);
+      border-radius: 25px;
+
+      background: linear-gradient(180deg, #ffffff, #fff9f5);
+
+      display: flex;
+      flex-direction: column;
+    }
+
+    .trust-card--featured {
+      color: #ffffff;
+      border-color: transparent;
+      background: linear-gradient(135deg, var(--orange), #ff9557);
+      box-shadow: 0 20px 44px rgba(255,106,19,.18);
+    }
+
+    .trust-card__num {
+      color: var(--orange);
+      font-size: 11px;
+      font-weight: 950;
+    }
+
+    .trust-card--featured .trust-card__num {
+      color: #ffffff;
+    }
+
+    .trust-card h3 {
+      margin-top: 48px;
+      font-size: 23px;
+      line-height: 1.08;
+      letter-spacing: -.8px;
+    }
+
+    .trust-card p {
+      margin-top: 10px;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.65;
+    }
+
+    .trust-card--featured p {
+      color: rgba(255,255,255,.90);
+    }
+
+    .trust-card__tag {
+      margin-top: auto;
+      padding-top: 20px;
+
+      color: var(--orange-dark);
+      font-size: 9px;
+      font-weight: 950;
+      letter-spacing: 1.1px;
+      text-transform: uppercase;
+    }
+
+    .trust-card--featured .trust-card__tag {
+      color: #ffffff;
+    }
+
+
+    /* =====================================================
+       CONTACT
+       ===================================================== */
+
+    #contacto {
+      background: linear-gradient(180deg, #fffaf6, #fff3eb);
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: .9fr 1.1fr;
+      gap: 64px;
+      align-items: start;
+    }
+
+    .contact-data {
+      display: grid;
+      gap: 10px;
+      margin-top: 30px;
+    }
+
+    .contact-item {
+      display: flex;
+      align-items: center;
+      gap: 13px;
+
+      padding: 13px 14px;
+
+      border: 1px solid var(--line);
+      border-radius: 16px;
+
+      background: rgba(255,255,255,.78);
+    }
+
+    .contact-item__icon {
+      width: 41px;
+      height: 41px;
+
+      flex-shrink: 0;
+
+      border-radius: 12px;
+
+      background: var(--orange-soft);
+      color: var(--orange);
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      font-size: 10px;
+      font-weight: 950;
+    }
+
+    .contact-item small {
+      display: block;
+      margin-bottom: 2px;
+
+      color: #999999;
+      font-size: 8px;
+      font-weight: 900;
+      letter-spacing: .8px;
+      text-transform: uppercase;
+    }
+
+    .contact-item a,
+    .contact-item span {
+      font-size: 12px;
+      font-weight: 750;
+    }
+
+    .contact-form {
+      padding: 35px;
+
+      border: 1px solid var(--line);
+      border-radius: 29px;
+
+      background: rgba(255,255,255,.94);
+
+      box-shadow: var(--shadow);
+    }
+
+    .contact-form h3 {
+      font-size: 31px;
+      line-height: 1.05;
+      letter-spacing: -1.2px;
+    }
+
+    .contact-form > p {
+      margin-top: 7px;
+      margin-bottom: 20px;
+
+      color: var(--muted);
+      font-size: 12px;
+      line-height: 1.6;
+    }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+
+    .form-group {
+      margin-bottom: 13px;
+    }
+
+    .form-group--full {
+      grid-column: 1 / -1;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 6px;
+
+      color: #555555;
+      font-size: 10px;
+      font-weight: 850;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+      width: 100%;
+
+      border: 1px solid #e8ded7;
+      border-radius: 13px;
+
+      background: #fffdfb;
+      color: var(--text);
+
+      outline: none;
+
+      transition: .2s ease;
+    }
+
+    .form-group input,
+    .form-group select {
+      height: 48px;
+      padding: 0 13px;
+    }
+
+    .form-group textarea {
+      min-height: 116px;
+      padding: 13px;
+      resize: vertical;
+    }
+
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+      border-color: #efb28b;
+      box-shadow: 0 0 0 4px rgba(255,106,19,.08);
+      background: #ffffff;
+    }
+
+    .form-submit {
+      width: 100%;
+      min-height: 54px;
+
+      border: 0;
+      border-radius: 999px;
+
+      background: var(--orange);
+      color: #ffffff;
+
+      font-size: 13px;
+      font-weight: 850;
+
+      box-shadow: 0 12px 28px rgba(255,106,19,.22);
+
+      transition: .2s ease;
+    }
+
+    .form-submit:hover {
+      background: var(--orange-dark);
+      transform: translateY(-2px);
+    }
+
+    .form-note {
+      margin-top: 10px;
+      text-align: center;
+      color: #999999;
+      font-size: 10px;
+      line-height: 1.5;
+    }
+
+
+    /* =====================================================
+       FOOTER
+       ===================================================== */
+
+    .footer {
+      position: relative;
+      overflow: hidden;
+
+      padding: 66px 0 0;
+
+      background: var(--dark);
+      color: #ffffff;
+    }
+
+    .footer::after {
+      content: "PRO";
+
+      position: absolute;
+      right: -40px;
+      top: 45px;
+
+      color: rgba(255,255,255,.025);
+
+      font-size: 270px;
+      font-weight: 950;
+      letter-spacing: -17px;
+      line-height: 1;
+    }
+
+    .footer__grid {
+      position: relative;
+      z-index: 2;
+
+      display: grid;
+      grid-template-columns: 1.55fr 1fr 1fr;
+      gap: 62px;
+
+      padding-bottom: 50px;
+    }
+
+    .footer__brand p {
+      max-width: 380px;
+      margin-top: 16px;
+
+      color: rgba(255,255,255,.52);
+      font-size: 12px;
+      line-height: 1.7;
+    }
+
+    .footer__actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 20px;
+    }
+
+    .footer__actions a {
+      min-height: 38px;
+      padding: 0 12px;
+
+      border: 1px solid rgba(255,255,255,.10);
+      border-radius: 999px;
+
+      background: rgba(255,255,255,.05);
+
+      display: inline-flex;
+      align-items: center;
+
+      color: rgba(255,255,255,.74);
+      font-size: 10px;
+      font-weight: 800;
+    }
+
+    .footer__col h3 {
+      margin-bottom: 18px;
+
+      font-size: 11px;
+      font-weight: 900;
+      letter-spacing: 1.3px;
+      text-transform: uppercase;
+    }
+
+    .footer__links,
+    .footer__contact {
+      display: grid;
+      gap: 11px;
+      list-style: none;
+    }
+
+    .footer__links a {
+      display: inline-flex;
+      gap: 7px;
+      color: rgba(255,255,255,.54);
+      font-size: 12px;
+    }
+
+    .footer__links a::before {
+      content: "→";
+      color: var(--orange);
+    }
+
+    .footer__contact small {
+      display: block;
+      margin-bottom: 2px;
+
+      color: rgba(255,255,255,.28);
+      font-size: 8px;
+      font-weight: 900;
+      letter-spacing: .8px;
+      text-transform: uppercase;
+    }
+
+    .footer__contact a,
+    .footer__contact span {
+      color: rgba(255,255,255,.62);
+      font-size: 12px;
+      line-height: 1.5;
+    }
+
+    .footer__bottom {
+      position: relative;
+      z-index: 2;
+
+      min-height: 70px;
+
+      border-top: 1px solid rgba(255,255,255,.08);
+
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+
+      color: rgba(255,255,255,.30);
+      font-size: 10px;
+    }
+
+
+    /* =====================================================
+       WHATSAPP
+       ===================================================== */
+
+    .whatsapp-floating {
+      position: fixed;
+      right: 23px;
+      bottom: 23px;
+      z-index: 1200;
+
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 10px;
+    }
+
+    .whatsapp-message {
+      position: relative;
+
+      max-width: 270px;
+      padding: 13px 38px 13px 15px;
+
+      border: 1px solid #eae1da;
+      border-radius: 17px 17px 5px 17px;
+
+      background: rgba(255,255,255,.96);
+
+      box-shadow: 0 18px 45px rgba(40,20,10,.12);
+
+      animation: messageIn .5s ease;
+    }
+
+    .whatsapp-message small {
+      display: block;
+      margin-bottom: 4px;
+
+      color: var(--orange);
+      font-size: 9px;
+      font-weight: 900;
+      letter-spacing: .8px;
+      text-transform: uppercase;
+    }
+
+    .whatsapp-message strong {
+      display: block;
+      font-size: 12px;
+    }
+
+    .whatsapp-message p {
+      margin-top: 4px;
+      color: #777777;
+      font-size: 10px;
+      line-height: 1.4;
+    }
+
+    .whatsapp-close {
+      position: absolute;
+      right: 7px;
+      top: 6px;
+
+      width: 22px;
+      height: 22px;
+
+      border: 0;
+      border-radius: 50%;
+
+      background: transparent;
+      color: #aaaaaa;
+
+      font-size: 16px;
+    }
+
+    .whatsapp-button {
+      width: 62px;
+      height: 62px;
+
+      border-radius: 50%;
+
+      background: var(--green);
+
+      display: flex;
+      align-items: center;
+      justify-content: center;
+
+      box-shadow: 0 12px 30px rgba(37,211,102,.38);
+
+      animation: wspPulse 2.8s infinite;
+    }
+
+    .whatsapp-button svg {
+      width: 34px;
+      height: 34px;
+      fill: #ffffff;
+    }
+
+    @keyframes messageIn {
+      from {
+        opacity: 0;
+        transform: translateY(10px);
       }
 
-      .hero-visual{
-        min-height:540px;
-      }
-
-      .services-grid{
-        grid-template-columns:1fr 1fr;
-      }
-
-      .trust-wrap{
-        grid-template-columns:1fr;
+      to {
+        opacity: 1;
+        transform: translateY(0);
       }
     }
 
-    @media (max-width: 760px){
-      .container{
-        width:min(100% - 28px, 1180px);
+    @keyframes wspPulse {
+      50% {
+        box-shadow:
+          0 14px 34px rgba(37,211,102,.48),
+          0 0 0 12px rgba(37,211,102,0);
+      }
+    }
+
+
+    /* =====================================================
+       TABLET
+       ===================================================== */
+
+    @media (max-width: 980px) {
+      .hero__inner,
+      .split-head,
+      .social-grid,
+      .contact-grid {
+        grid-template-columns: 1fr;
       }
 
-      .nav{
-        min-height:68px;
+      .hero__visual {
+        min-height: 510px;
+        width: min(100%, 650px);
+        margin-inline: auto;
       }
 
-      .menu-btn{
-        display:block;
+      .services-grid,
+      .trust-grid {
+        grid-template-columns: 1fr 1fr;
       }
 
-      .nav-links{
-        display:none;
-        position:absolute;
-        top:68px;
-        left:0;
-        width:100%;
-        background:#fffaf6;
-        border-bottom:1px solid #eee0d3;
-        flex-direction:column;
-        align-items:flex-start;
-        padding:22px 24px;
-        gap:18px;
+      .visual-break__grid {
+        grid-template-columns: 1fr;
       }
 
-      .nav-links.active{
-        display:flex;
+      .visual-tile--side {
+        min-height: 300px;
       }
 
-      h1{
-        letter-spacing:-2.5px;
+      .content-grid {
+        grid-template-columns: 1fr;
       }
 
-      .hero{
-        padding:46px 0 72px;
+      .process-list {
+        grid-template-columns: 1fr 1fr;
       }
 
-      .hero-visual{
-        min-height:480px;
+      .footer__grid {
+        grid-template-columns: 1.3fr 1fr;
       }
 
-      .platform-card{
-        inset:16px 0 0 12px;
+      .brand-strip__inner {
+        flex-direction: column;
+        align-items: flex-start;
       }
 
-      .floating.one{
-        left:4px;
-        top:28px;
+      .brand-strip__items {
+        justify-content: flex-start;
+      }
+    }
+
+
+    /* =====================================================
+       MOBILE - REDISEÑADO PRIMERO PARA CELULAR
+       ===================================================== */
+
+    @media (max-width: 760px) {
+      html {
+        scroll-padding-top: 72px;
       }
 
-      .floating.two{
-        right:0;
-        bottom:22px;
+      .container {
+        width: min(100% - 28px, 1180px);
       }
 
-      .floating.three{
-        display:none;
+      .section {
+        padding: 70px 0;
       }
 
-      .services-grid{
-        grid-template-columns:1fr;
+      .topbar {
+        display: none;
       }
 
-      .cta-box{
-        padding:42px 26px;
+      .site-header {
+        top: 0;
       }
 
-      .footer-top,
-      .footer-bottom{
-        flex-direction:column;
+      .nav {
+        min-height: 68px;
+      }
+
+      .brand img {
+        width: 36px;
+        height: 36px;
+      }
+
+      .brand__name {
+        font-size: 15px;
+      }
+
+      .nav__toggle {
+        display: flex;
+      }
+
+      .nav__links {
+        display: none;
+
+        position: absolute;
+        top: 68px;
+        left: 0;
+
+        width: 100%;
+
+        padding: 18px 14px 22px;
+
+        background: rgba(255,250,246,.98);
+        border-bottom: 1px solid #eadfd6;
+
+        flex-direction: column;
+        align-items: stretch;
+        gap: 4px;
+
+        box-shadow: 0 18px 30px rgba(50,25,10,.08);
+      }
+
+      .nav__links.open {
+        display: flex;
+      }
+
+      .nav__links li,
+      .nav__links a {
+        width: 100%;
+      }
+
+      .nav__links a {
+        display: block;
+        padding: 11px 4px;
+      }
+
+      .nav__cta {
+        margin-top: 5px;
+      }
+
+      .section-title {
+        font-size: clamp(37px, 11.5vw, 52px);
+        letter-spacing: -2.6px;
+      }
+
+      .section-copy {
+        font-size: 15px;
+        line-height: 1.65;
+      }
+
+      .split-head {
+        gap: 16px;
+        margin-bottom: 30px;
+      }
+
+      /* HERO MOBILE */
+
+      .hero__inner {
+        min-height: auto;
+        padding: 42px 0 34px;
+        gap: 28px;
+      }
+
+      .hero__badge {
+        margin-bottom: 17px;
+        font-size: 10px;
+      }
+
+      .hero h1 {
+        max-width: 100%;
+        font-size: clamp(42px, 12.5vw, 56px);
+        line-height: .96;
+        letter-spacing: -2.9px;
+      }
+
+      .hero__copy > p {
+        margin-top: 16px;
+        font-size: 15px;
+        line-height: 1.6;
+
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+      }
+
+      .hero__actions {
+        margin-top: 23px;
+        flex-direction: column;
+        gap: 9px;
+      }
+
+      .btn-primary,
+      .btn-secondary {
+        width: 100%;
+        min-height: 52px;
+      }
+
+      .hero__chips {
+        flex-wrap: nowrap;
+        overflow-x: auto;
+        padding-bottom: 5px;
+        margin-right: -14px;
+        scrollbar-width: none;
+      }
+
+      .hero__chips::-webkit-scrollbar {
+        display: none;
+      }
+
+      .hero__chips span {
+        flex: 0 0 auto;
+      }
+
+      .hero__visual {
+        min-height: 355px;
+        width: 100%;
+      }
+
+      .hero__image {
+        border-radius: 25px;
+        background-position: 67% center;
+      }
+
+      .hero__glass {
+        left: 12px;
+        right: 12px;
+        bottom: 12px;
+        padding: 13px;
+        border-radius: 18px;
+      }
+
+      .hero__glass-top {
+        margin-bottom: 9px;
+      }
+
+      .hero__glass-brand {
+        font-size: 11px;
+      }
+
+      .hero__glass-brand img {
+        width: 27px;
+        height: 27px;
+      }
+
+      .hero__status {
+        font-size: 8px;
+      }
+
+      .hero__glass-grid {
+        gap: 6px;
+      }
+
+      .hero__mini {
+        padding: 9px;
+        border-radius: 11px;
+      }
+
+      .hero__mini small {
+        font-size: 7px;
+      }
+
+      .hero__mini strong {
+        font-size: 9px;
+      }
+
+      .hero__float--content {
+        display: none;
+      }
+
+      .hero__float--ecom {
+        right: -4px;
+        top: 30px;
+        padding: 10px 12px;
+      }
+
+      .hero__float strong {
+        font-size: 11px;
+      }
+
+      .hero__float span {
+        font-size: 8px;
+      }
+
+      /* STRIP MOBILE */
+
+      .brand-strip {
+        padding: 18px 0;
+      }
+
+      .brand-strip__inner {
+        gap: 14px;
+      }
+
+      .brand-strip p {
+        font-size: 12px;
+      }
+
+      .brand-strip__items {
+        flex-wrap: nowrap;
+        width: 100%;
+        overflow-x: auto;
+        padding-bottom: 3px;
+        scrollbar-width: none;
+      }
+
+      .brand-strip__items::-webkit-scrollbar {
+        display: none;
+      }
+
+      .brand-strip__items span {
+        flex: 0 0 auto;
+      }
+
+      /* VISUAL BREAK MOBILE */
+
+      .visual-break {
+        padding: 34px 0;
+      }
+
+      .visual-break__grid {
+        display: flex;
+        overflow-x: auto;
+        gap: 12px;
+        padding-bottom: 5px;
+        scroll-snap-type: x mandatory;
+        scrollbar-width: none;
+      }
+
+      .visual-break__grid::-webkit-scrollbar {
+        display: none;
+      }
+
+      .visual-tile {
+        flex: 0 0 86%;
+        min-height: 330px;
+        scroll-snap-align: start;
+        border-radius: 23px;
+      }
+
+      .visual-tile__content {
+        left: 20px;
+        right: 20px;
+        bottom: 19px;
+      }
+
+      .visual-tile h2,
+      .visual-tile h3 {
+        font-size: 27px;
+      }
+
+      .visual-tile p {
+        font-size: 11px;
+      }
+
+      /* SERVICES MOBILE = CARRUSEL */
+
+      .services-grid {
+        display: flex;
+        gap: 12px;
+
+        overflow-x: auto;
+
+        margin-right: -14px;
+        padding-right: 14px;
+        padding-bottom: 8px;
+
+        scroll-snap-type: x mandatory;
+        scrollbar-width: none;
+      }
+
+      .services-grid::-webkit-scrollbar {
+        display: none;
+      }
+
+      .service-card {
+        flex: 0 0 82%;
+        min-height: 290px;
+        padding: 23px;
+
+        scroll-snap-align: start;
+      }
+
+      .service-card__icon {
+        width: 43px;
+        height: 43px;
+        margin-bottom: 28px;
+      }
+
+      .service-card__num {
+        top: 23px;
+        right: 23px;
+      }
+
+      .service-card h3 {
+        font-size: 22px;
+      }
+
+      .service-card p {
+        font-size: 12px;
+      }
+
+      .service-card__meta {
+        margin-top: 14px;
+      }
+
+      /* IMAGE BAND MOBILE */
+
+      .image-band {
+        min-height: 500px;
+
+        align-items: flex-end;
+
+        background:
+          linear-gradient(180deg, rgba(10,10,10,.08) 0%, rgba(10,10,10,.78) 67%, rgba(10,10,10,.96) 100%),
+          var(--banner) 70% center / cover no-repeat;
+      }
+
+      .image-band__content {
+        padding: 0 0 42px;
+      }
+
+      .image-band__content h2 {
+        font-size: 39px;
+        letter-spacing: -2.2px;
+      }
+
+      .image-band__content p {
+        font-size: 13px;
+
+        display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+      }
+
+      .image-band__actions {
+        flex-direction: column;
+      }
+
+      .image-band__actions a {
+        width: 100%;
+        justify-content: center;
+      }
+
+      /* SOCIAL MOBILE */
+
+      .social-grid {
+        gap: 35px;
+      }
+
+      .social-list {
+        grid-template-columns: 1fr 1fr;
+        gap: 8px;
+      }
+
+      .social-row {
+        align-items: flex-start;
+        padding: 11px;
+      }
+
+      .social-row__icon {
+        width: 34px;
+        height: 34px;
+        font-size: 9px;
+      }
+
+      .social-row strong {
+        font-size: 11px;
+      }
+
+      .social-row span {
+        font-size: 9px;
+        line-height: 1.35;
+      }
+
+      .phone-stage {
+        min-height: 475px;
+      }
+
+      .phone {
+        width: 220px;
+        height: 450px;
+        border-radius: 34px;
+      }
+
+      .phone__screen {
+        border-radius: 26px;
+      }
+
+      .phone-badge--left {
+        left: 0;
+        top: 80px;
+      }
+
+      .phone-badge--right {
+        right: 0;
+        bottom: 65px;
+      }
+
+      /* CONTENT MOBILE */
+
+      .content-grid {
+        gap: 12px;
+        margin-top: 30px;
+      }
+
+      .content-feature {
+        min-height: 390px;
+        border-radius: 24px;
+      }
+
+      .content-feature__body {
+        left: 20px;
+        right: 20px;
+        bottom: 20px;
+      }
+
+      .content-feature h3 {
+        font-size: 30px;
+      }
+
+      .content-stack {
+        display: flex;
+        overflow-x: auto;
+        gap: 12px;
+
+        margin-right: -14px;
+        padding-right: 14px;
+        padding-bottom: 5px;
+
+        scroll-snap-type: x mandatory;
+        scrollbar-width: none;
+      }
+
+      .content-stack::-webkit-scrollbar {
+        display: none;
+      }
+
+      .content-mini {
+        flex: 0 0 82%;
+        min-height: 250px;
+        scroll-snap-align: start;
+      }
+
+      /* PROCESS MOBILE */
+
+      .process-list {
+        display: flex;
+        overflow-x: auto;
+        gap: 11px;
+
+        margin-right: -14px;
+        padding-right: 14px;
+        padding-bottom: 6px;
+
+        scroll-snap-type: x mandatory;
+        scrollbar-width: none;
+      }
+
+      .process-list::-webkit-scrollbar {
+        display: none;
+      }
+
+      .process-step {
+        flex: 0 0 78%;
+        min-height: 210px;
+        scroll-snap-align: start;
+      }
+
+      .process-step h3 {
+        margin-top: 34px;
+      }
+
+      /* TRUST MOBILE */
+
+      .trust-grid {
+        display: flex;
+        overflow-x: auto;
+        gap: 11px;
+
+        margin-right: -14px;
+        padding-right: 14px;
+        padding-bottom: 6px;
+
+        scroll-snap-type: x mandatory;
+        scrollbar-width: none;
+      }
+
+      .trust-grid::-webkit-scrollbar {
+        display: none;
+      }
+
+      .trust-card {
+        flex: 0 0 82%;
+        min-height: 265px;
+        scroll-snap-align: start;
+      }
+
+      .trust-card h3 {
+        margin-top: 38px;
+      }
+
+      /* CONTACT MOBILE */
+
+      .contact-grid {
+        gap: 36px;
+      }
+
+      .contact-data {
+        margin-top: 22px;
+      }
+
+      .contact-form {
+        padding: 25px 19px;
+        border-radius: 23px;
+      }
+
+      .contact-form h3 {
+        font-size: 27px;
+      }
+
+      .form-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .form-group--full {
+        grid-column: auto;
+      }
+
+      /* FOOTER MOBILE */
+
+      .footer {
+        padding-top: 50px;
+      }
+
+      .footer__grid {
+        grid-template-columns: 1fr;
+        gap: 34px;
+      }
+
+      .footer__bottom {
+        padding: 20px 0;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+      }
+
+      /* WSP MOBILE */
+
+      .whatsapp-floating {
+        right: 14px;
+        bottom: calc(14px + env(safe-area-inset-bottom));
+      }
+
+      .whatsapp-button {
+        width: 56px;
+        height: 56px;
+      }
+
+      .whatsapp-button svg {
+        width: 31px;
+        height: 31px;
+      }
+
+      .whatsapp-message {
+        max-width: calc(100vw - 42px);
+      }
+    }
+
+
+    @media (max-width: 390px) {
+      .brand__name {
+        max-width: 125px;
+        line-height: 1.02;
+      }
+
+      .hero h1 {
+        font-size: 41px;
+      }
+
+      .hero__visual {
+        min-height: 330px;
+      }
+
+      .service-card,
+      .trust-card,
+      .process-step,
+      .content-mini {
+        flex-basis: 88%;
+      }
+    }
+
+
+    @media (prefers-reduced-motion: reduce) {
+      * {
+        scroll-behavior: auto !important;
+        animation: none !important;
+        transition: none !important;
       }
     }
   </style>
 
+
   <script type="application/ld+json">
   {
-    "@context":"https://schema.org",
-    "@type":"Organization",
-    "name":"Digitalmente Pro",
-    "url":"https://digitalmenteprochile.cl/",
-    "logo":"https://digitalmenteprochile.cl/images/Logo.PNG",
-    "email":"contacto@digitalmenteprochile.cl",
-    "telephone":"+56987689361",
-    "sameAs":[
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "name": "Digitalmente Pro",
+    "url": "https://digitalmenteprochile.cl/",
+    "logo": "https://digitalmenteprochile.cl/images/Logo.PNG",
+    "email": "contacto@digitalmenteprochile.cl",
+    "telephone": "+56987689361",
+    "areaServed": "Chile",
+    "sameAs": [
       "https://www.instagram.com/digitalmenteeprocl/"
     ]
   }
   </script>
 </head>
+
 <body>
 
+  <!-- =====================================================
+       HEADER
+       ===================================================== -->
+
   <div class="topbar">
-    <div class="container">
-      Impulsamos negocios con marketing digital, e-commerce, desarrollo web y contenido profesional.
+    <div class="container topbar__inner">
+      Marketing · E-commerce · Desarrollo Web ·
+      <strong>&nbsp;Contenido Digital</strong>
     </div>
   </div>
 
-  <header>
+
+  <header class="site-header">
+
     <div class="container nav">
-      <a href="#inicio" class="brand">
-        <img src="images/Logo.PNG" alt="Logo Digitalmente Pro" class="brand-icon">
-        DIGITALMENTE<span>PRO</span>
+
+      <a
+        href="#inicio"
+        class="brand"
+        aria-label="Digitalmente Pro - Inicio"
+      >
+        <img
+          src="images/Logo.PNG"
+          alt="Logo Digitalmente Pro"
+        >
+
+        <div class="brand__name">
+          DIGITALMENTE
+          <span>PRO</span>
+        </div>
       </a>
 
-      <nav class="nav-links" id="navLinks">
-        <a href="#servicios">Servicios</a>
-        <a href="#proceso">Cómo trabajamos</a>
-        <a href="https://www.instagram.com/digitalmenteeprocl/" target="_blank" rel="noopener">Instagram</a>
-        <a href="https://wa.me/56987689361" target="_blank" rel="noopener" class="nav-cta">Hablemos</a>
-      </nav>
 
-      <button class="menu-btn" onclick="toggleMenu()" aria-label="Abrir menú">☰</button>
+      <button
+        class="nav__toggle"
+        id="menuToggle"
+        type="button"
+        aria-label="Abrir menú"
+        aria-expanded="false"
+        aria-controls="navMenu"
+      >
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+
+      <ul
+        class="nav__links"
+        id="navMenu"
+      >
+        <li>
+          <a href="#servicios">Servicios</a>
+        </li>
+
+        <li>
+          <a href="#marketing">Marketing</a>
+        </li>
+
+        <li>
+          <a href="#redes">Redes</a>
+        </li>
+
+        <li>
+          <a href="#contenido">Contenido</a>
+        </li>
+
+        <li>
+          <a href="#proceso">Proceso</a>
+        </li>
+
+        <li>
+          <a
+            href="#contacto"
+            class="nav__cta"
+          >
+            Hablemos
+          </a>
+        </li>
+      </ul>
+
     </div>
+
   </header>
+
 
   <main>
 
-    <section class="hero" id="inicio">
-      <div class="container">
-        <div class="hero-grid">
+    <!-- =====================================================
+         HERO
+         ===================================================== -->
 
-          <div>
-            <div class="hero-badge">
-              <i></i>
-              Marketing · E-commerce · Desarrollo Web
-            </div>
+    <section
+      class="hero"
+      id="inicio"
+    >
 
-            <h1>
-              Hacemos crecer tu
-              <span class="accent">negocio digital</span>
-              con estrategia, contenido y resultados.
-            </h1>
+      <div class="container hero__inner">
 
-            <p>
-              Diseñamos soluciones para marcas y empresas que quieren verse más profesionales,
-              conectar mejor con sus clientes y vender más a través de internet.
-            </p>
+        <div class="hero__copy">
 
-            <div class="hero-actions">
-              <a href="https://wa.me/56987689361" target="_blank" rel="noopener" class="btn-primary">
-                Quiero hacer crecer mi negocio
-              </a>
-
-              <a href="#servicios" class="btn-secondary">
-                Ver servicios
-              </a>
-            </div>
-
-            <div class="hero-mini">
-              <div class="mini-pill">Publicidad Digital</div>
-              <div class="mini-pill">E-commerce</div>
-              <div class="mini-pill">Contenido</div>
-              <div class="mini-pill">Desarrollo Web</div>
-            </div>
+          <div class="hero__badge">
+            Marketing · E-commerce · Desarrollo Web
           </div>
 
-          <div class="hero-visual">
 
-            <div class="platform-card">
-              <div class="platform-top">
-                <div class="platform-brand">
-                  <span class="dot"></span>
-                  Digitalmente Pro
-                </div>
-                <div class="platform-menu">
-                  <span></span>
-                  <span></span>
-                  <span></span>
-                </div>
-              </div>
+          <h1>
+            Hacemos crecer tu
+            <span>negocio digital</span>
+            con estrategia y contenido.
+          </h1>
 
-              <div class="platform-content">
-                <div class="hero-panel">
-                  <div class="panel-kicker">Soluciones digitales</div>
-                  <div class="panel-title">
-                    Marketing que se ve. Estrategia que vende.
-                  </div>
-                  <div class="panel-sub">
-                    Campañas, contenido y desarrollo web pensados para empresas reales.
-                  </div>
-                </div>
 
-                <div class="stats-row">
-                  <div class="stat-card">
-                    <small>Publicidad</small>
-                    <strong>Meta Ads</strong>
-                    <div class="green">● Activo</div>
-                  </div>
+          <p>
+            Creamos una presencia digital profesional para que tu negocio
+            se vea mejor, conecte mejor y venda mejor.
+          </p>
 
-                  <div class="stat-card">
-                    <small>Búsqueda</small>
-                    <strong>Google Ads</strong>
-                    <div class="green">● Optimizado</div>
-                  </div>
-                </div>
 
-                <div class="bars-box">
-                  <div class="bars-title">
-                    <span>Crecimiento digital</span>
-                    <span>En desarrollo</span>
-                  </div>
+          <div class="hero__actions">
 
-                  <div class="bars">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                  </div>
-                </div>
-              </div>
-            </div>
+            <a
+              class="btn-primary"
+              href="https://wa.me/56987689361?text=Hola%20%F0%9F%91%8B%20Vi%20la%20web%20de%20Digitalmente%20Pro%20y%20quiero%20hacer%20crecer%20mi%20negocio."
+              target="_blank"
+              rel="noopener"
+            >
+              Quiero hacer crecer mi negocio
+            </a>
 
-            <div class="floating one">
-              <strong>Campañas</strong>
-              <span>Estrategia y conversión</span>
-            </div>
 
-            <div class="floating two">
-              <strong>E-commerce</strong>
-              <span>Tiendas y ventas online</span>
-            </div>
-
-            <div class="floating three">
-              <strong>Contenido</strong>
-              <span>Marca y comunicación</span>
-            </div>
+            <a
+              class="btn-secondary"
+              href="#servicios"
+            >
+              Ver servicios
+            </a>
 
           </div>
+
+
+          <div class="hero__chips">
+            <span>Meta Ads</span>
+            <span>Google Ads</span>
+            <span>E-commerce</span>
+            <span>Redes Sociales</span>
+            <span>Contenido</span>
+          </div>
+
         </div>
+
+
+        <div class="hero__visual">
+
+          <div
+            class="hero__image"
+            role="img"
+            aria-label="Digitalmente Pro - Marketing y crecimiento digital"
+          ></div>
+
+
+          <div class="hero__glass">
+
+            <div class="hero__glass-top">
+
+              <div class="hero__glass-brand">
+                <img
+                  src="images/Logo.PNG"
+                  alt=""
+                >
+                Digitalmente Pro
+              </div>
+
+              <span class="hero__status">
+                Estrategia activa
+              </span>
+
+            </div>
+
+
+            <div class="hero__glass-grid">
+
+              <div class="hero__mini">
+                <small>Publicidad</small>
+                <strong>Meta Ads</strong>
+              </div>
+
+              <div class="hero__mini">
+                <small>Búsqueda</small>
+                <strong>Google Ads</strong>
+              </div>
+
+              <div class="hero__mini">
+                <small>Comercio</small>
+                <strong>E-commerce</strong>
+              </div>
+
+            </div>
+
+          </div>
+
+
+          <div class="hero__float hero__float--ecom">
+            <strong>E-commerce</strong>
+            <span>Tiendas y ventas online</span>
+          </div>
+
+
+          <div class="hero__float hero__float--content">
+            <strong>Contenido</strong>
+            <span>Marca y comunicación</span>
+          </div>
+
+        </div>
+
       </div>
+
     </section>
 
-    <section class="trust">
-      <div class="container trust-wrap">
-        <div class="trust-text">
-          Soluciones pensadas para negocios que necesitan verse mejor, vender mejor y crecer con más claridad.
-        </div>
 
-        <div class="trust-items">
+    <!-- =====================================================
+         MARCAS / HERRAMIENTAS
+         ===================================================== -->
+
+    <div class="brand-strip">
+
+      <div class="container brand-strip__inner">
+
+        <p>
+          Herramientas y estrategias digitales pensadas
+          para negocios que quieren crecer de forma profesional.
+        </p>
+
+        <div class="brand-strip__items">
           <span>META ADS</span>
           <span>GOOGLE ADS</span>
-          <span>ECOMMERCE</span>
+          <span>E-COMMERCE</span>
           <span>SHOPIFY</span>
           <span>CONTENIDO</span>
         </div>
+
       </div>
+
+    </div>
+
+
+    <!-- =====================================================
+         BLOQUE VISUAL
+         ===================================================== -->
+
+    <section class="visual-break">
+
+      <div class="container visual-break__grid">
+
+        <article class="visual-tile visual-tile--main">
+
+          <div class="visual-tile__content">
+
+            <span class="visual-tile__tag">
+              Presencia digital
+            </span>
+
+            <h2>
+              Una marca se recuerda mejor cuando también se ve bien.
+            </h2>
+
+            <p>
+              Diseño, contenido y estrategia trabajando juntos
+              para comunicar de forma profesional.
+            </p>
+
+          </div>
+
+        </article>
+
+
+        <article class="visual-tile visual-tile--side">
+
+          <div class="visual-tile__content">
+
+            <span class="visual-tile__tag">
+              Estrategia
+            </span>
+
+            <h3>
+              No se trata solo de publicar.
+            </h3>
+
+            <p>
+              Se trata de construir una presencia digital coherente.
+            </p>
+
+          </div>
+
+        </article>
+
+      </div>
+
     </section>
 
-    <section class="services" id="servicios">
+
+    <!-- =====================================================
+         SERVICIOS
+         ===================================================== -->
+
+    <section
+      class="section"
+      id="servicios"
+    >
+
       <div class="container">
 
-        <div class="label">Servicios</div>
+        <div class="split-head">
 
-        <h2>
-          Todo lo que tu negocio necesita para avanzar en digital.
-        </h2>
+          <div>
 
-        <p class="intro">
-          Combinamos estrategia, publicidad, diseño y tecnología para ayudarte a construir una presencia digital más sólida.
-        </p>
+            <div class="eyebrow">
+              Servicios Digitalmente Pro
+            </div>
+
+            <h2 class="section-title">
+              Todo lo que tu negocio necesita para
+              <span>crecer en digital.</span>
+            </h2>
+
+          </div>
+
+
+          <p class="section-copy">
+            Estrategia, publicidad, contenido y tecnología
+            trabajando juntas para construir una presencia
+            digital más profesional.
+          </p>
+
+        </div>
+
 
         <div class="services-grid">
 
-          <article class="service-card">
-            <div class="service-num">01</div>
-            <h3>Publicidad Digital</h3>
-            <p>
-              Campañas orientadas a alcance, mensajes, tráfico y conversiones según el objetivo de tu empresa.
-            </p>
-          </article>
 
           <article class="service-card">
-            <div class="service-num">02</div>
+
+            <span class="service-card__num">01</span>
+
+            <div class="service-card__icon">
+              ADS
+            </div>
+
+            <h3>Marketing Digital</h3>
+
+            <p>
+              Campañas y acciones digitales para conectar
+              tu negocio con potenciales clientes.
+            </p>
+
+            <div class="service-card__meta">
+              <span>Meta Ads</span>
+              <span>Google Ads</span>
+            </div>
+
+            <a
+              class="service-card__link"
+              href="#marketing"
+            >
+              Conocer servicio →
+            </a>
+
+          </article>
+
+
+          <article class="service-card service-card--featured">
+
+            <span class="service-card__num">02</span>
+
+            <div class="service-card__icon">
+              SHOP
+            </div>
+
             <h3>E-commerce</h3>
+
             <p>
-              Creación y optimización de tiendas online enfocadas en mejorar la experiencia de compra.
+              Tiendas online profesionales pensadas
+              para facilitar la compra y mejorar la experiencia.
             </p>
+
+            <div class="service-card__meta">
+              <span>Shopify</span>
+              <span>Ventas online</span>
+            </div>
+
+            <a
+              class="service-card__link"
+              href="#contacto"
+            >
+              Quiero una tienda →
+            </a>
+
           </article>
 
+
           <article class="service-card">
-            <div class="service-num">03</div>
+
+            <span class="service-card__num">03</span>
+
+            <div class="service-card__icon">
+              WEB
+            </div>
+
             <h3>Desarrollo Web</h3>
+
             <p>
-              Sitios web modernos, rápidos y adaptados a dispositivos móviles para empresas y emprendimientos.
+              Sitios rápidos, modernos y adaptados
+              a celulares para empresas y emprendimientos.
             </p>
+
+            <div class="service-card__meta">
+              <span>Responsive</span>
+              <span>SEO base</span>
+            </div>
+
+            <a
+              class="service-card__link"
+              href="#contacto"
+            >
+              Cotizar web →
+            </a>
+
           </article>
 
+
           <article class="service-card">
-            <div class="service-num">04</div>
+
+            <span class="service-card__num">04</span>
+
+            <div class="service-card__icon">
+              AV
+            </div>
+
             <h3>Contenido Audiovisual</h3>
+
             <p>
-              Fotografía, reels y piezas visuales profesionales para redes sociales, campañas y marca.
+              Fotografía, reels y videos para redes sociales,
+              publicidad y comunicación de marca.
             </p>
+
+            <div class="service-card__meta">
+              <span>Reels</span>
+              <span>Fotografía</span>
+            </div>
+
+            <a
+              class="service-card__link"
+              href="#contenido"
+            >
+              Ver contenido →
+            </a>
+
           </article>
 
+
           <article class="service-card">
-            <div class="service-num">05</div>
+
+            <span class="service-card__num">05</span>
+
+            <div class="service-card__icon">
+              SM
+            </div>
+
             <h3>Redes Sociales</h3>
+
             <p>
-              Planificación, diseño y comunicación constante para mantener una presencia digital profesional.
+              Contenido y planificación para mantener
+              una presencia digital activa y coherente.
             </p>
+
+            <div class="service-card__meta">
+              <span>Instagram</span>
+              <span>Facebook</span>
+            </div>
+
+            <a
+              class="service-card__link"
+              href="#redes"
+            >
+              Ver redes →
+            </a>
+
           </article>
+
 
           <article class="service-card">
-            <div class="service-num">06</div>
+
+            <span class="service-card__num">06</span>
+
+            <div class="service-card__icon">
+              PRO
+            </div>
+
             <h3>Estrategia Digital</h3>
+
             <p>
-              Analizamos tu negocio y definimos el camino digital más adecuado según tus objetivos.
+              Analizamos tu negocio y definimos
+              qué herramientas tienen más sentido para tus objetivos.
             </p>
+
+            <div class="service-card__meta">
+              <span>Diagnóstico</span>
+              <span>Plan</span>
+            </div>
+
+            <a
+              class="service-card__link"
+              href="#contacto"
+            >
+              Conversemos →
+            </a>
+
           </article>
 
         </div>
-      </div>
-    </section>
-
-    <section class="process" id="proceso">
-      <div class="container">
-
-        <div class="label">Cómo trabajamos</div>
-
-        <h2>
-          Menos improvisación. Más estrategia.
-        </h2>
-
-        <p class="intro">
-          Cada proyecto se trabaja con una lógica simple: entender, diseñar, ejecutar y mejorar.
-        </p>
-
-        <div class="process-grid">
-          <div class="process-big">
-            PRO.
-          </div>
-
-          <div class="steps">
-            <div class="step">
-              <div class="step-num">01</div>
-              <div>
-                <h3>Entendemos tu negocio</h3>
-                <p>
-                  Revisamos qué haces, qué vendes y qué necesitas lograr para plantear una solución real.
-                </p>
-              </div>
-            </div>
-
-            <div class="step">
-              <div class="step-num">02</div>
-              <div>
-                <h3>Diseñamos la estrategia</h3>
-                <p>
-                  Elegimos las herramientas adecuadas: campañas, contenidos, sitio web o e-commerce.
-                </p>
-              </div>
-            </div>
-
-            <div class="step">
-              <div class="step-num">03</div>
-              <div>
-                <h3>Ejecutamos y optimizamos</h3>
-                <p>
-                  Implementamos, revisamos resultados y mejoramos la presencia digital para seguir creciendo.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
 
       </div>
+
     </section>
 
-    <section>
+
+    <!-- =====================================================
+         MARKETING VISUAL
+         ===================================================== -->
+
+    <section
+      class="image-band"
+      id="marketing"
+    >
+
       <div class="container">
-        <div class="cta-box">
+
+        <div class="image-band__content">
+
+          <div class="eyebrow">
+            Marketing Digital
+          </div>
+
           <h2>
-            Tu negocio puede verse mucho mejor en internet.
+            Publicidad con una idea clara:
+            llegar a la persona correcta.
           </h2>
 
           <p>
-            Cuéntanos tu idea o proyecto y conversemos sobre cómo ayudarte con marketing, e-commerce o desarrollo web.
+            Planificamos campañas según el objetivo de tu negocio,
+            el público que quieres alcanzar y la plataforma adecuada.
           </p>
 
-          <div class="cta-actions">
-            <a href="https://wa.me/56987689361" target="_blank" rel="noopener" class="cta-main">
-              Hablemos por WhatsApp
+          <div class="image-band__actions">
+
+            <a
+              class="btn-primary"
+              href="https://wa.me/56987689361?text=Hola%20%F0%9F%91%8B%20Me%20interesa%20el%20servicio%20de%20marketing%20digital%20de%20Digitalmente%20Pro."
+              target="_blank"
+              rel="noopener"
+            >
+              Quiero anunciar mi negocio
             </a>
 
-            <a href="mailto:contacto@digitalmenteprochile.cl" class="cta-alt">
-              Enviar correo
+            <a
+              class="image-band__outline"
+              href="#contacto"
+            >
+              Contar mi objetivo
             </a>
+
           </div>
+
         </div>
+
       </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         REDES SOCIALES
+         ===================================================== -->
+
+    <section
+      class="section"
+      id="redes"
+    >
+
+      <div class="container social-grid">
+
+        <div>
+
+          <div class="eyebrow">
+            Redes Sociales
+          </div>
+
+          <h2 class="section-title">
+            Presencia digital que se
+            <span>siente profesional.</span>
+          </h2>
+
+          <p
+            class="section-copy"
+            style="margin-top:18px"
+          >
+            Creamos y planificamos contenido para que
+            tu empresa mantenga una comunicación constante,
+            coherente y atractiva.
+          </p>
+
+
+          <div class="social-list">
+
+            <div class="social-row">
+              <div class="social-row__icon">IG</div>
+              <div>
+                <strong>Instagram</strong>
+                <span>Feed, historias y reels.</span>
+              </div>
+            </div>
+
+            <div class="social-row">
+              <div class="social-row__icon">FB</div>
+              <div>
+                <strong>Facebook</strong>
+                <span>Contenido y campañas.</span>
+              </div>
+            </div>
+
+            <div class="social-row">
+              <div class="social-row__icon">TT</div>
+              <div>
+                <strong>TikTok</strong>
+                <span>Video vertical.</span>
+              </div>
+            </div>
+
+            <div class="social-row">
+              <div class="social-row__icon">YT</div>
+              <div>
+                <strong>YouTube</strong>
+                <span>Contenido audiovisual.</span>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <div class="phone-stage">
+
+          <div class="phone">
+
+            <div class="phone__screen">
+
+              <div class="phone__top"></div>
+
+              <div class="phone__caption">
+
+                <small>
+                  Digitalmente Pro
+                </small>
+
+                <strong>
+                  Contenido pensado para conectar con personas reales.
+                </strong>
+
+              </div>
+
+            </div>
+
+          </div>
+
+
+          <div class="phone-badge phone-badge--left">
+            <strong>Reels</strong>
+            <span>Contenido vertical</span>
+          </div>
+
+
+          <div class="phone-badge phone-badge--right">
+            <strong>Historias</strong>
+            <span>Presencia constante</span>
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         CONTENIDO
+         ===================================================== -->
+
+    <section
+      class="section"
+      id="contenido"
+    >
+
+      <div class="container">
+
+        <div class="split-head">
+
+          <div>
+
+            <div class="eyebrow">
+              Contenido Audiovisual
+            </div>
+
+            <h2 class="section-title">
+              Haz que tu marca
+              <span>se vea profesional.</span>
+            </h2>
+
+          </div>
+
+
+          <p class="section-copy">
+            Fotografía, video y piezas visuales
+            pensadas para mostrar mejor tu negocio,
+            tus productos y tus servicios.
+          </p>
+
+        </div>
+
+
+        <div class="content-grid">
+
+
+          <article class="content-feature">
+
+            <div class="content-feature__body">
+
+              <span class="content-feature__tag">
+                Video · Fotografía
+              </span>
+
+              <h3>
+                Contenido que muestre el verdadero valor de tu negocio.
+              </h3>
+
+              <p>
+                Reels, fotografía, videos y piezas preparadas
+                para redes sociales y publicidad.
+              </p>
+
+            </div>
+
+          </article>
+
+
+          <div class="content-stack">
+
+
+            <article class="content-mini content-mini--photo">
+
+              <div class="content-mini__body">
+                <small>Fotografía</small>
+                <strong>Imagen profesional para tu marca.</strong>
+              </div>
+
+            </article>
+
+
+            <article class="content-mini content-mini--design">
+
+              <div class="content-mini__design-card">
+                <small>DIGITALMENTE PRO</small>
+                <strong>Diseño que comunica.</strong>
+              </div>
+
+              <div class="content-mini__body">
+                <small>Diseño</small>
+                <strong>Piezas visuales limpias y coherentes.</strong>
+              </div>
+
+            </article>
+
+          </div>
+
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         PROCESO
+         ===================================================== -->
+
+    <section
+      class="section"
+      id="proceso"
+    >
+
+      <div class="container">
+
+        <div class="process-head">
+
+          <div class="eyebrow">
+            Cómo trabajamos
+          </div>
+
+          <h2 class="section-title">
+            Menos improvisación.
+            <span>Más estrategia.</span>
+          </h2>
+
+        </div>
+
+
+        <div class="process-list">
+
+          <article class="process-step">
+            <span class="process-step__num">01</span>
+            <h3>Entendemos</h3>
+            <p>
+              Revisamos tu negocio, objetivos y lo que necesitas mejorar.
+            </p>
+            <div class="process-step__line"></div>
+          </article>
+
+
+          <article class="process-step">
+            <span class="process-step__num">02</span>
+            <h3>Planificamos</h3>
+            <p>
+              Elegimos las herramientas y definimos una estrategia clara.
+            </p>
+            <div class="process-step__line"></div>
+          </article>
+
+
+          <article class="process-step">
+            <span class="process-step__num">03</span>
+            <h3>Ejecutamos</h3>
+            <p>
+              Creamos, configuramos y ponemos la solución en marcha.
+            </p>
+            <div class="process-step__line"></div>
+          </article>
+
+
+          <article class="process-step">
+            <span class="process-step__num">04</span>
+            <h3>Mejoramos</h3>
+            <p>
+              Revisamos resultados y ajustamos lo necesario para avanzar.
+            </p>
+            <div class="process-step__line"></div>
+          </article>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         CONFIANZA
+         ===================================================== -->
+
+    <section
+      class="section"
+      id="confianza"
+    >
+
+      <div class="container">
+
+        <div class="split-head">
+
+          <div>
+
+            <div class="eyebrow">
+              Nuestra forma de trabajar
+            </div>
+
+            <h2 class="section-title">
+              Tu marca merece un trabajo
+              <span>bien pensado.</span>
+            </h2>
+
+          </div>
+
+
+          <p class="section-copy">
+            Cada empresa tiene necesidades distintas.
+            Por eso trabajamos con soluciones adaptadas
+            a cada proyecto.
+          </p>
+
+        </div>
+
+
+        <div class="trust-grid">
+
+          <article class="trust-card">
+            <span class="trust-card__num">01</span>
+            <h3>Comunicación clara.</h3>
+            <p>
+              Explicamos lo que hacemos de forma directa y comprensible.
+            </p>
+            <span class="trust-card__tag">Transparencia</span>
+          </article>
+
+
+          <article class="trust-card trust-card--featured">
+            <span class="trust-card__num">02</span>
+            <h3>Estrategia antes que moda.</h3>
+            <p>
+              Elegimos herramientas por utilidad, no solo porque estén de moda.
+            </p>
+            <span class="trust-card__tag">Estrategia</span>
+          </article>
+
+
+          <article class="trust-card">
+            <span class="trust-card__num">03</span>
+            <h3>Imagen profesional.</h3>
+            <p>
+              Cuidamos diseño, contenido y experiencia para construir confianza.
+            </p>
+            <span class="trust-card__tag">Calidad</span>
+          </article>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- =====================================================
+         CONTACTO
+         ===================================================== -->
+
+    <section
+      class="section"
+      id="contacto"
+    >
+
+      <div class="container contact-grid">
+
+        <div>
+
+          <div class="eyebrow">
+            Contacto
+          </div>
+
+          <h2 class="section-title">
+            Hablemos de tu
+            <span>próximo proyecto.</span>
+          </h2>
+
+          <p
+            class="section-copy"
+            style="margin-top:18px"
+          >
+            Cuéntanos qué quieres mejorar,
+            crear o potenciar en tu negocio.
+          </p>
+
+
+          <div class="contact-data">
+
+            <div class="contact-item">
+              <div class="contact-item__icon">WA</div>
+              <div>
+                <small>WhatsApp</small>
+                <a
+                  href="https://wa.me/56987689361"
+                  target="_blank"
+                  rel="noopener"
+                >
+                  +56 9 8768 9361
+                </a>
+              </div>
+            </div>
+
+
+            <div class="contact-item">
+              <div class="contact-item__icon">@</div>
+              <div>
+                <small>Correo</small>
+                <a href="mailto:contacto@digitalmenteprochile.cl">
+                  contacto@digitalmenteprochile.cl
+                </a>
+              </div>
+            </div>
+
+
+            <div class="contact-item">
+              <div class="contact-item__icon">IG</div>
+              <div>
+                <small>Instagram</small>
+                <a
+                  href="https://www.instagram.com/digitalmenteeprocl/"
+                  target="_blank"
+                  rel="noopener"
+                >
+                  @digitalmenteeprocl
+                </a>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+
+        <form
+          class="contact-form"
+          id="contactForm"
+        >
+
+          <h3>
+            ¿En qué podemos ayudarte?
+          </h3>
+
+          <p>
+            Completa estos datos y abriremos WhatsApp
+            con tu solicitud preparada.
+          </p>
+
+
+          <div class="form-grid">
+
+            <div class="form-group">
+              <label for="nombre">Nombre *</label>
+              <input
+                id="nombre"
+                type="text"
+                placeholder="Tu nombre"
+                required
+              >
+            </div>
+
+
+            <div class="form-group">
+              <label for="empresa">Empresa</label>
+              <input
+                id="empresa"
+                type="text"
+                placeholder="Nombre del negocio"
+              >
+            </div>
+
+
+            <div class="form-group">
+              <label for="email">Correo</label>
+              <input
+                id="email"
+                type="email"
+                placeholder="tu@correo.cl"
+              >
+            </div>
+
+
+            <div class="form-group">
+              <label for="telefono">WhatsApp</label>
+              <input
+                id="telefono"
+                type="tel"
+                placeholder="+56 9..."
+              >
+            </div>
+
+
+            <div class="form-group form-group--full">
+              <label for="servicio">Servicio de interés *</label>
+
+              <select
+                id="servicio"
+                required
+              >
+                <option value="">Selecciona una opción</option>
+                <option>Marketing Digital</option>
+                <option>E-commerce / Tienda Online</option>
+                <option>Desarrollo Web</option>
+                <option>Redes Sociales</option>
+                <option>Contenido Audiovisual</option>
+                <option>Meta Ads / Google Ads</option>
+                <option>Estrategia Digital</option>
+                <option>Otro</option>
+              </select>
+            </div>
+
+
+            <div class="form-group form-group--full">
+              <label for="mensaje">Cuéntanos brevemente *</label>
+
+              <textarea
+                id="mensaje"
+                placeholder="¿Qué necesitas mejorar o crear?"
+                required
+              ></textarea>
+            </div>
+
+          </div>
+
+
+          <button
+            class="form-submit"
+            type="submit"
+          >
+            Enviar solicitud por WhatsApp →
+          </button>
+
+
+          <p class="form-note">
+            La información se prepara en tu navegador
+            para enviarla directamente por WhatsApp.
+          </p>
+
+        </form>
+
+      </div>
+
     </section>
 
   </main>
 
-  <footer>
+
+  <!-- =====================================================
+       FOOTER
+       ===================================================== -->
+
+  <footer class="footer">
+
     <div class="container">
-      <div class="footer-top">
 
-        <div>
-          <div class="brand">
-            <img src="images/Logo.PNG" alt="Logo Digitalmente Pro" class="brand-icon">
-            DIGITALMENTE<span>PRO</span>
+      <div class="footer__grid">
+
+        <div class="footer__brand">
+
+          <a
+            href="#inicio"
+            class="brand"
+          >
+            <img
+              src="images/Logo.PNG"
+              alt="Logo Digitalmente Pro"
+            >
+
+            <div
+              class="brand__name"
+              style="color:#ffffff"
+            >
+              DIGITALMENTE
+              <span>PRO</span>
+            </div>
+          </a>
+
+
+          <p>
+            Marketing digital, e-commerce,
+            desarrollo web, redes sociales
+            y contenido audiovisual para negocios
+            que quieren avanzar en digital.
+          </p>
+
+
+          <div class="footer__actions">
+
+            <a
+              href="https://www.instagram.com/digitalmenteeprocl/"
+              target="_blank"
+              rel="noopener"
+            >
+              Instagram
+            </a>
+
+            <a
+              href="https://wa.me/56987689361"
+              target="_blank"
+              rel="noopener"
+            >
+              WhatsApp
+            </a>
+
           </div>
 
-          <div class="footer-desc">
-            Marketing digital, desarrollo web, e-commerce, redes sociales y contenido profesional para empresas y emprendimientos.
-          </div>
         </div>
 
-        <div class="footer-links">
-          <a href="#servicios">Servicios</a>
-          <a href="#proceso">Cómo trabajamos</a>
-          <a href="https://www.instagram.com/digitalmenteeprocl/" target="_blank" rel="noopener">Instagram</a>
-          <a href="https://wa.me/56987689361" target="_blank" rel="noopener">WhatsApp</a>
-          <a href="mailto:contacto@digitalmenteprochile.cl">Correo</a>
+
+        <div class="footer__col">
+
+          <h3>Servicios</h3>
+
+          <ul class="footer__links">
+            <li><a href="#marketing">Marketing Digital</a></li>
+            <li><a href="#servicios">E-commerce</a></li>
+            <li><a href="#servicios">Desarrollo Web</a></li>
+            <li><a href="#redes">Redes Sociales</a></li>
+            <li><a href="#contenido">Contenido Audiovisual</a></li>
+          </ul>
+
+        </div>
+
+
+        <div class="footer__col">
+
+          <h3>Contacto</h3>
+
+          <ul class="footer__contact">
+
+            <li>
+              <small>WhatsApp</small>
+              <a
+                href="https://wa.me/56987689361"
+                target="_blank"
+                rel="noopener"
+              >
+                +56 9 8768 9361
+              </a>
+            </li>
+
+            <li>
+              <small>Correo</small>
+              <a href="mailto:contacto@digitalmenteprochile.cl">
+                contacto@digitalmenteprochile.cl
+              </a>
+            </li>
+
+            <li>
+              <small>Instagram</small>
+              <a
+                href="https://www.instagram.com/digitalmenteeprocl/"
+                target="_blank"
+                rel="noopener"
+              >
+                @digitalmenteeprocl
+              </a>
+            </li>
+
+          </ul>
+
         </div>
 
       </div>
 
-      <div class="footer-bottom">
-        <div>© 2026 Digitalmente Pro</div>
-        <div>digitalmenteprochile.cl</div>
+
+      <div class="footer__bottom">
+
+        <span>
+          © 2026 Digitalmente Pro.
+          Todos los derechos reservados.
+        </span>
+
+        <span>
+          Marketing · E-commerce · Desarrollo · Contenido
+        </span>
+
       </div>
+
     </div>
+
   </footer>
 
-  <script>
-    function toggleMenu(){
-      document.getElementById("navLinks").classList.toggle("active");
-    }
 
-    document.querySelectorAll(".nav-links a").forEach(link => {
-      link.addEventListener("click", () => {
-        document.getElementById("navLinks").classList.remove("active");
-      });
-    });
+  <!-- =====================================================
+       WHATSAPP FLOTANTE
+       ===================================================== -->
+
+  <div class="whatsapp-floating">
+
+    <div
+      class="whatsapp-message"
+      id="whatsappMessage"
+    >
+
+      <button
+        class="whatsapp-close"
+        id="whatsappClose"
+        type="button"
+        aria-label="Cerrar mensaje"
+      >
+        ×
+      </button>
+
+      <small>
+        Digitalmente Pro
+      </small>
+
+      <strong>
+        Hola 👋 ¿En qué podemos ayudarte?
+      </strong>
+
+      <p>
+        Escríbenos directamente por WhatsApp.
+      </p>
+
+    </div>
+
+
+    <a
+      class="whatsapp-button"
+      href="https://wa.me/56987689361?text=Hola%20%F0%9F%91%8B%20Vi%20la%20p%C3%A1gina%20de%20Digitalmente%20Pro%20y%20me%20gustar%C3%ADa%20obtener%20m%C3%A1s%20informaci%C3%B3n."
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="Contactar por WhatsApp"
+    >
+
+      <svg
+        viewBox="0 0 24 24"
+        aria-hidden="true"
+      >
+        <path
+          d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"
+        />
+      </svg>
+
+    </a>
+
+  </div>
+
+
+  <!-- =====================================================
+       JAVASCRIPT
+       ===================================================== -->
+
+  <script>
+
+    const menuToggle =
+      document.getElementById(
+        "menuToggle"
+      );
+
+    const navMenu =
+      document.getElementById(
+        "navMenu"
+      );
+
+
+    menuToggle.addEventListener(
+      "click",
+      function () {
+
+        const open =
+          navMenu
+            .classList
+            .toggle(
+              "open"
+            );
+
+        menuToggle
+          .classList
+          .toggle(
+            "active",
+            open
+          );
+
+        menuToggle
+          .setAttribute(
+            "aria-expanded",
+            String(open)
+          );
+
+      }
+    );
+
+
+    document
+      .querySelectorAll(
+        "#navMenu a"
+      )
+      .forEach(
+        function (link) {
+
+          link.addEventListener(
+            "click",
+            function () {
+
+              navMenu
+                .classList
+                .remove(
+                  "open"
+                );
+
+              menuToggle
+                .classList
+                .remove(
+                  "active"
+                );
+
+              menuToggle
+                .setAttribute(
+                  "aria-expanded",
+                  "false"
+                );
+
+            }
+          );
+
+        }
+      );
+
+
+    window.addEventListener(
+      "resize",
+      function () {
+
+        if (
+          window.innerWidth > 760
+        ) {
+
+          navMenu
+            .classList
+            .remove(
+              "open"
+            );
+
+          menuToggle
+            .classList
+            .remove(
+              "active"
+            );
+
+          menuToggle
+            .setAttribute(
+              "aria-expanded",
+              "false"
+            );
+
+        }
+
+      }
+    );
+
+
+    document
+      .getElementById(
+        "whatsappClose"
+      )
+      .addEventListener(
+        "click",
+        function () {
+
+          document
+            .getElementById(
+              "whatsappMessage"
+            )
+            .style
+            .display =
+              "none";
+
+        }
+      );
+
+
+    document
+      .getElementById(
+        "contactForm"
+      )
+      .addEventListener(
+        "submit",
+        function (event) {
+
+          event.preventDefault();
+
+
+          const nombre =
+            document
+              .getElementById(
+                "nombre"
+              )
+              .value
+              .trim();
+
+
+          const empresa =
+            document
+              .getElementById(
+                "empresa"
+              )
+              .value
+              .trim();
+
+
+          const email =
+            document
+              .getElementById(
+                "email"
+              )
+              .value
+              .trim();
+
+
+          const telefono =
+            document
+              .getElementById(
+                "telefono"
+              )
+              .value
+              .trim();
+
+
+          const servicio =
+            document
+              .getElementById(
+                "servicio"
+              )
+              .value;
+
+
+          const mensaje =
+            document
+              .getElementById(
+                "mensaje"
+              )
+              .value
+              .trim();
+
+
+          let texto =
+            "Hola 👋 Vi la página de Digitalmente Pro y me gustaría solicitar información.\n\n";
+
+
+          texto +=
+            "Nombre: " +
+            nombre +
+            "\n";
+
+
+          if (empresa) {
+
+            texto +=
+              "Empresa: " +
+              empresa +
+              "\n";
+
+          }
+
+
+          if (email) {
+
+            texto +=
+              "Correo: " +
+              email +
+              "\n";
+
+          }
+
+
+          if (telefono) {
+
+            texto +=
+              "WhatsApp: " +
+              telefono +
+              "\n";
+
+          }
+
+
+          texto +=
+            "Servicio: " +
+            servicio +
+            "\n\n";
+
+
+          texto +=
+            "Mensaje:\n" +
+            mensaje;
+
+
+          const whatsappURL =
+            "https://wa.me/56987689361?text=" +
+            encodeURIComponent(
+              texto
+            );
+
+
+          window.open(
+            whatsappURL,
+            "_blank",
+            "noopener"
+          );
+
+        }
+      );
+
   </script>
+
 </body>
 </html>
