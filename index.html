@@ -2,1020 +2,1014 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>Digitalmente Pro | Marketing Digital, Publicidad y Desarrollo Web</title>
+  <title>Digitalmente Pro | Marketing Digital, E-commerce y Desarrollo Web</title>
 
   <meta
     name="description"
-    content="Digitalmente Pro ayuda a empresas y emprendimientos con desarrollo web, publicidad digital, redes sociales, creación de contenido audiovisual y estrategias de marketing."
+    content="Digitalmente Pro impulsa empresas con marketing digital, publicidad online, e-commerce, desarrollo web, redes sociales y contenido audiovisual."
   >
 
   <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#080808">
 
-  <meta name="theme-color" content="#ff5200">
+  <meta property="og:title" content="Digitalmente Pro | Marketing Digital y E-commerce">
+  <meta property="og:description" content="Marketing, publicidad, desarrollo web, e-commerce y contenido para marcas que quieren crecer.">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="es_CL">
+  <meta property="og:image" content="images/Logo.PNG">
 
-  <!-- REDES SOCIALES / GOOGLE -->
-  <meta property="og:title"
-        content="Digitalmente Pro | Marketing Digital y Desarrollo Web">
-
-  <meta property="og:description"
-        content="Desarrollo web, publicidad digital, contenido audiovisual, redes sociales y soluciones digitales para empresas y emprendimientos.">
-
-  <meta property="og:type"
-        content="website">
-
-  <meta property="og:locale"
-        content="es_CL">
-
-  <meta property="og:image"
-        content="images/Logo.PNG">
-
-  <!-- ICONO TEMPORAL -->
-  <link rel="icon"
-        type="image/png"
-        href="images/Logo.PNG">
+  <link rel="icon" type="image/png" href="images/Logo.PNG">
 
   <style>
-
-    :root {
-      --orange: #ff5200;
-      --orange-dark: #df4700;
-      --black: #080808;
-      --dark: #101010;
-      --dark-soft: #161616;
-      --white: #ffffff;
-      --gray: #a7a7a7;
-      --border: rgba(255,255,255,.10);
+    :root{
+      --orange:#ff4f00;
+      --orange2:#ff7a00;
+      --black:#070707;
+      --black2:#0c0c0c;
+      --card:#111111;
+      --card2:#151515;
+      --white:#ffffff;
+      --gray:#a4a4a4;
+      --line:rgba(255,255,255,.10);
     }
 
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
     }
 
-    html {
-      scroll-behavior: smooth;
+    html{
+      scroll-behavior:smooth;
     }
 
-    body {
-      font-family:
-        -apple-system,
-        BlinkMacSystemFont,
-        "Segoe UI",
-        Arial,
-        sans-serif;
-
-      background: var(--black);
-      color: var(--white);
-      line-height: 1.5;
-      overflow-x: hidden;
+    body{
+      font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;
+      background:var(--black);
+      color:var(--white);
+      overflow-x:hidden;
     }
 
-    a {
-      color: inherit;
-      text-decoration: none;
+    a{
+      color:inherit;
+      text-decoration:none;
     }
 
-    img {
-      max-width: 100%;
-      display: block;
+    .container{
+      width:min(1200px,calc(100% - 40px));
+      margin:auto;
     }
 
-    .container {
-      width: min(1180px, calc(100% - 40px));
-      margin: 0 auto;
+    /* HEADER */
+
+    header{
+      position:fixed;
+      z-index:1000;
+      top:0;
+      left:0;
+      width:100%;
+      background:rgba(7,7,7,.72);
+      backdrop-filter:blur(20px);
+      -webkit-backdrop-filter:blur(20px);
+      border-bottom:1px solid rgba(255,255,255,.07);
     }
 
-
-    /* =========================
-       HEADER
-    ========================= */
-
-    header {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-
-      z-index: 1000;
-
-      background: rgba(8,8,8,.88);
-
-      backdrop-filter: blur(18px);
-      -webkit-backdrop-filter: blur(18px);
-
-      border-bottom: 1px solid var(--border);
+    .nav{
+      height:76px;
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
     }
 
-    .nav {
-      min-height: 76px;
-
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-
-      gap: 30px;
+    .brand{
+      font-size:20px;
+      font-weight:900;
+      letter-spacing:-.7px;
     }
 
-    .brand {
-      font-size: 20px;
-      font-weight: 850;
-
-      letter-spacing: -.7px;
+    .brand span{
+      color:var(--orange);
     }
 
-    .brand span {
-      color: var(--orange);
+    .nav-links{
+      display:flex;
+      align-items:center;
+      gap:30px;
+      font-size:14px;
+      color:#d2d2d2;
     }
 
-    .nav-links {
-      display: flex;
-      align-items: center;
-
-      gap: 30px;
-
-      font-size: 14px;
-      color: #dedede;
+    .nav-links a{
+      transition:.2s;
     }
 
-    .nav-links a {
-      transition: .2s ease;
+    .nav-links a:hover{
+      color:#fff;
     }
 
-    .nav-links a:hover {
-      color: white;
+    .nav-cta{
+      background:#fff;
+      color:#090909 !important;
+      padding:11px 18px;
+      border-radius:100px;
+      font-weight:800;
     }
 
-    .nav-whatsapp {
-      background: var(--orange);
-
-      color: white !important;
-
-      padding: 11px 18px;
-
-      border-radius: 100px;
-
-      font-weight: 750;
+    .menu{
+      display:none;
+      border:0;
+      background:none;
+      color:white;
+      font-size:25px;
     }
 
-    .nav-whatsapp:hover {
-      background: var(--orange-dark);
+    /* HERO */
+
+    .hero{
+      min-height:100vh;
+      padding:150px 0 85px;
+      position:relative;
+      display:flex;
+      align-items:center;
+      overflow:hidden;
     }
 
-    .menu-button {
-      display: none;
-
-      background: transparent;
-
-      border: 0;
-
-      color: white;
-
-      font-size: 26px;
-
-      cursor: pointer;
+    .hero::before{
+      content:"";
+      position:absolute;
+      width:800px;
+      height:800px;
+      top:-280px;
+      right:-220px;
+      border-radius:50%;
+      background:
+        radial-gradient(circle,
+          rgba(255,79,0,.28) 0%,
+          rgba(255,79,0,.08) 38%,
+          transparent 70%);
+      filter:blur(15px);
     }
 
-
-    /* =========================
-       HERO
-    ========================= */
-
-    .hero {
-      min-height: 100vh;
-
-      display: flex;
-      align-items: center;
-
-      padding: 140px 0 90px;
-
-      position: relative;
-
-      overflow: hidden;
+    .hero::after{
+      content:"";
+      position:absolute;
+      width:500px;
+      height:500px;
+      left:-250px;
+      bottom:-250px;
+      border-radius:50%;
+      background:rgba(255,79,0,.08);
+      filter:blur(100px);
     }
 
-    .hero::before {
-      content: "";
-
-      position: absolute;
-
-      width: 700px;
-      height: 700px;
-
-      border-radius: 50%;
-
-      background: rgba(255,82,0,.12);
-
-      filter: blur(140px);
-
-      right: -250px;
-      top: 0;
-
-      pointer-events: none;
+    .hero-grid{
+      position:relative;
+      z-index:3;
+      display:grid;
+      grid-template-columns:1.15fr .85fr;
+      gap:70px;
+      align-items:center;
     }
 
-    .hero-grid {
-      display: grid;
-
-      grid-template-columns: 1.35fr .65fr;
-
-      gap: 70px;
-
-      align-items: center;
-
-      position: relative;
-
-      z-index: 2;
+    .eyebrow{
+      display:inline-flex;
+      align-items:center;
+      gap:9px;
+      padding:8px 13px;
+      border:1px solid var(--line);
+      border-radius:100px;
+      background:rgba(255,255,255,.035);
+      color:#ddd;
+      font-size:13px;
+      margin-bottom:28px;
     }
 
-    .badge {
-      display: inline-flex;
-      align-items: center;
-
-      gap: 9px;
-
-      border: 1px solid var(--border);
-
-      background: rgba(255,255,255,.04);
-
-      padding: 8px 14px;
-
-      border-radius: 100px;
-
-      color: #d6d6d6;
-
-      font-size: 13px;
-
-      margin-bottom: 26px;
+    .pulse{
+      width:8px;
+      height:8px;
+      background:var(--orange);
+      border-radius:50%;
+      box-shadow:0 0 0 7px rgba(255,79,0,.12);
     }
 
-    .badge-dot {
-      width: 8px;
-      height: 8px;
-
-      background: var(--orange);
-
-      border-radius: 50%;
+    h1{
+      font-size:clamp(57px,7vw,102px);
+      line-height:.91;
+      letter-spacing:-6px;
+      font-weight:950;
+      max-width:850px;
     }
 
-    h1 {
-      font-size: clamp(52px, 7vw, 92px);
-
-      line-height: .98;
-
-      letter-spacing: -5px;
-
-      max-width: 900px;
+    h1 .outline{
+      color:transparent;
+      -webkit-text-stroke:1.5px rgba(255,255,255,.55);
     }
 
-    h1 span {
-      color: var(--orange);
+    h1 .orange{
+      color:var(--orange);
     }
 
-    .hero-description {
-      color: var(--gray);
-
-      font-size: clamp(17px, 2vw, 20px);
-
-      max-width: 680px;
-
-      margin-top: 28px;
-
-      line-height: 1.65;
+    .hero-text{
+      color:var(--gray);
+      max-width:650px;
+      margin-top:30px;
+      font-size:18px;
+      line-height:1.7;
     }
 
-    .hero-buttons {
-      display: flex;
-      flex-wrap: wrap;
-
-      gap: 14px;
-
-      margin-top: 38px;
+    .hero-actions{
+      display:flex;
+      gap:13px;
+      flex-wrap:wrap;
+      margin-top:38px;
     }
 
-    .button-primary,
-    .button-secondary {
-
-      min-height: 54px;
-
-      display: inline-flex;
-
-      align-items: center;
-      justify-content: center;
-
-      padding: 0 24px;
-
-      border-radius: 12px;
-
-      font-weight: 750;
-
-      transition: .2s ease;
+    .btn-main,
+    .btn-second{
+      height:55px;
+      padding:0 24px;
+      border-radius:13px;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      font-weight:800;
+      transition:.25s;
     }
 
-    .button-primary {
-      background: var(--orange);
-
-      color: white;
+    .btn-main{
+      background:linear-gradient(135deg,var(--orange),var(--orange2));
+      box-shadow:0 10px 40px rgba(255,79,0,.22);
     }
 
-    .button-primary:hover {
-      background: var(--orange-dark);
-
-      transform: translateY(-2px);
+    .btn-main:hover{
+      transform:translateY(-3px);
+      box-shadow:0 18px 50px rgba(255,79,0,.30);
     }
 
-    .button-secondary {
-
-      border: 1px solid var(--border);
-
-      background: rgba(255,255,255,.035);
-
-      color: white;
+    .btn-second{
+      border:1px solid var(--line);
+      background:rgba(255,255,255,.03);
     }
 
-    .button-secondary:hover {
-
-      background: rgba(255,255,255,.08);
+    .btn-second:hover{
+      background:rgba(255,255,255,.08);
     }
 
+    /* DASHBOARD HERO */
 
-    /* LOGO HERO */
-
-    .hero-logo-wrap {
-
-      display: flex;
-
-      justify-content: flex-end;
+    .visual{
+      position:relative;
+      min-height:520px;
     }
 
-    .hero-logo {
-
-      width: 330px;
-
-      border-radius: 28px;
-
+    .dashboard{
+      position:absolute;
+      width:440px;
+      max-width:100%;
+      right:0;
+      top:25px;
+      background:linear-gradient(145deg,#151515,#0d0d0d);
+      border:1px solid rgba(255,255,255,.12);
+      border-radius:28px;
+      padding:22px;
       box-shadow:
-        0 30px 80px rgba(0,0,0,.45);
-
-      transform: rotate(1.5deg);
-
-      transition: .35s ease;
+        0 40px 100px rgba(0,0,0,.55),
+        0 0 80px rgba(255,79,0,.08);
+      transform:rotate(2deg);
     }
 
-    .hero-logo:hover {
-      transform:
-        rotate(0deg)
-        translateY(-6px);
+    .dash-top{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      margin-bottom:24px;
     }
 
-
-    /* =========================
-       SECCIONES
-    ========================= */
-
-    section {
-      padding: 110px 0;
+    .dash-title{
+      font-weight:800;
+      font-size:14px;
     }
 
-    .section-label {
-
-      color: var(--orange);
-
-      font-size: 13px;
-
-      text-transform: uppercase;
-
-      letter-spacing: 2px;
-
-      font-weight: 800;
-
-      margin-bottom: 14px;
+    .dots{
+      display:flex;
+      gap:5px;
     }
 
-    h2 {
-
-      font-size: clamp(36px, 5vw, 60px);
-
-      line-height: 1.05;
-
-      letter-spacing: -2.5px;
-
-      max-width: 780px;
+    .dots span{
+      width:7px;
+      height:7px;
+      border-radius:50%;
+      background:#3a3a3a;
     }
 
-    .section-intro {
-
-      color: var(--gray);
-
-      max-width: 670px;
-
-      font-size: 17px;
-
-      margin-top: 20px;
-
-      line-height: 1.7;
+    .metric-main{
+      background:#0a0a0a;
+      border:1px solid var(--line);
+      border-radius:20px;
+      padding:22px;
+      margin-bottom:14px;
     }
 
-
-    /* =========================
-       SERVICIOS
-    ========================= */
-
-    .services {
-
-      background: var(--dark);
+    .metric-label{
+      font-size:12px;
+      color:#999;
+      margin-bottom:8px;
     }
 
-    .services-grid {
-
-      display: grid;
-
-      grid-template-columns:
-        repeat(3, 1fr);
-
-      gap: 18px;
-
-      margin-top: 55px;
+    .metric-value{
+      font-size:35px;
+      font-weight:900;
+      letter-spacing:-2px;
     }
 
-    .service-card {
-
-      background: var(--dark-soft);
-
-      border:
-        1px solid var(--border);
-
-      padding: 32px;
-
-      border-radius: 20px;
-
-      min-height: 270px;
-
-      transition: .25s ease;
+    .metric-value span{
+      color:var(--orange);
+      font-size:16px;
+      letter-spacing:0;
+      margin-left:5px;
     }
 
-    .service-card:hover {
-
-      transform: translateY(-5px);
-
-      border-color:
-        rgba(255,82,0,.50);
+    .bars{
+      height:105px;
+      display:flex;
+      gap:8px;
+      align-items:flex-end;
+      margin-top:18px;
     }
 
-    .service-number {
-
-      color: var(--orange);
-
-      font-size: 13px;
-
-      font-weight: 800;
-
-      margin-bottom: 45px;
+    .bars div{
+      flex:1;
+      border-radius:8px 8px 3px 3px;
+      background:linear-gradient(to top,var(--orange),#ff934d);
+      opacity:.9;
+      animation:bars 2.5s ease-in-out infinite alternate;
     }
 
-    .service-card h3 {
+    .bars div:nth-child(1){height:35%}
+    .bars div:nth-child(2){height:48%;animation-delay:.2s}
+    .bars div:nth-child(3){height:60%;animation-delay:.4s}
+    .bars div:nth-child(4){height:45%;animation-delay:.6s}
+    .bars div:nth-child(5){height:73%;animation-delay:.8s}
+    .bars div:nth-child(6){height:92%;animation-delay:1s}
+    .bars div:nth-child(7){height:80%;animation-delay:1.2s}
 
-      font-size: 22px;
-
-      margin-bottom: 12px;
-
-      letter-spacing: -.6px;
+    @keyframes bars{
+      to{
+        transform:scaleY(.82);
+        opacity:.65;
+      }
     }
 
-    .service-card p {
-
-      color: var(--gray);
-
-      font-size: 15px;
-
-      line-height: 1.65;
+    .mini-grid{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:12px;
     }
 
-
-    /* =========================
-       FORMA DE TRABAJAR
-    ========================= */
-
-    .difference-grid {
-
-      display: grid;
-
-      grid-template-columns:
-        .85fr 1.15fr;
-
-      gap: 80px;
-
-      align-items: start;
-
-      margin-top: 55px;
+    .mini-card{
+      padding:17px;
+      background:#0c0c0c;
+      border:1px solid var(--line);
+      border-radius:17px;
     }
 
-    .difference-big {
-
-      font-size:
-        clamp(75px, 10vw, 145px);
-
-      font-weight: 900;
-
-      color: var(--orange);
-
-      letter-spacing: -8px;
-
-      line-height: .85;
+    .mini-card small{
+      color:#929292;
+      font-size:11px;
     }
 
-    .difference-text {
-
-      border-top:
-        1px solid var(--border);
+    .mini-card strong{
+      display:block;
+      margin-top:7px;
+      font-size:15px;
     }
 
-    .difference-item {
-
-      padding: 25px 0;
-
-      border-bottom:
-        1px solid var(--border);
+    .status{
+      color:#70ee9b;
+      font-size:11px;
+      margin-top:6px;
     }
 
-    .difference-item h3 {
-
-      font-size: 19px;
-
-      margin-bottom: 8px;
+    .float-card{
+      position:absolute;
+      background:rgba(18,18,18,.94);
+      backdrop-filter:blur(15px);
+      border:1px solid rgba(255,255,255,.12);
+      box-shadow:0 20px 60px rgba(0,0,0,.45);
+      border-radius:16px;
+      padding:15px 18px;
+      animation:float 4s ease-in-out infinite;
     }
 
-    .difference-item p {
-
-      color: var(--gray);
-
-      line-height: 1.65;
+    .float-card strong{
+      display:block;
+      font-size:14px;
     }
 
-
-    /* =========================
-       CONTACTO
-    ========================= */
-
-    .contact {
-
-      padding-top: 50px;
+    .float-card span{
+      display:block;
+      margin-top:4px;
+      font-size:11px;
+      color:#929292;
     }
 
-    .contact-box {
-
-      background: var(--orange);
-
-      border-radius: 28px;
-
-      padding: 70px;
-
-      position: relative;
-
-      overflow: hidden;
+    .fc1{
+      left:-30px;
+      top:80px;
     }
 
-    .contact-box h2 {
-
-      color: white;
-
-      max-width: 760px;
+    .fc2{
+      right:-15px;
+      bottom:45px;
+      animation-delay:1.3s;
     }
 
-    .contact-box p {
-
-      max-width: 640px;
-
-      margin-top: 20px;
-
-      font-size: 17px;
-
-      line-height: 1.6;
-
-      color: rgba(255,255,255,.88);
+    .fc3{
+      left:15px;
+      bottom:70px;
+      animation-delay:2.2s;
     }
 
-    .contact-buttons {
-
-      display: flex;
-
-      flex-wrap: wrap;
-
-      gap: 12px;
-
-      margin-top: 30px;
+    @keyframes float{
+      0%,100%{transform:translateY(0)}
+      50%{transform:translateY(-12px)}
     }
 
-    .contact-main {
+    /* TICKER */
 
-      background: white;
-
-      color: #111;
-
-      padding: 15px 23px;
-
-      border-radius: 12px;
-
-      font-weight: 800;
-
-      transition: .2s ease;
+    .ticker{
+      border-top:1px solid var(--line);
+      border-bottom:1px solid var(--line);
+      overflow:hidden;
+      background:#0b0b0b;
     }
 
-    .contact-main:hover {
-
-      transform: translateY(-2px);
+    .ticker-track{
+      width:max-content;
+      display:flex;
+      gap:55px;
+      padding:18px 0;
+      animation:ticker 28s linear infinite;
+      font-size:13px;
+      letter-spacing:2px;
+      font-weight:800;
+      color:#c7c7c7;
     }
 
-    .contact-secondary {
-
-      border:
-        1px solid rgba(255,255,255,.5);
-
-      color: white;
-
-      padding: 15px 23px;
-
-      border-radius: 12px;
-
-      font-weight: 700;
+    .ticker-track span::before{
+      content:"●";
+      color:var(--orange);
+      margin-right:20px;
     }
 
-
-    /* =========================
-       FOOTER
-    ========================= */
-
-    footer {
-
-      padding: 70px 0 35px;
+    @keyframes ticker{
+      from{transform:translateX(0)}
+      to{transform:translateX(-50%)}
     }
 
-    .footer-top {
+    /* COMMON */
 
-      display: flex;
-
-      justify-content:
-        space-between;
-
-      align-items: flex-start;
-
-      gap: 50px;
-
-      padding-bottom: 45px;
-
-      border-bottom:
-        1px solid var(--border);
+    section.content{
+      padding:115px 0;
     }
 
-    .footer-brand p {
-
-      color: var(--gray);
-
-      max-width: 420px;
-
-      margin-top: 14px;
-
-      font-size: 14px;
-
-      line-height: 1.6;
+    .label{
+      color:var(--orange);
+      font-size:12px;
+      letter-spacing:2.3px;
+      text-transform:uppercase;
+      font-weight:900;
+      margin-bottom:15px;
     }
 
-    .footer-links {
-
-      display: flex;
-
-      flex-wrap: wrap;
-
-      gap: 25px;
-
-      color: var(--gray);
-
-      font-size: 14px;
+    h2{
+      font-size:clamp(39px,5vw,64px);
+      line-height:1;
+      letter-spacing:-3px;
+      max-width:800px;
     }
 
-    .footer-links a:hover {
-
-      color: white;
+    .intro{
+      margin-top:22px;
+      max-width:650px;
+      color:var(--gray);
+      font-size:17px;
+      line-height:1.7;
     }
 
-    .footer-bottom {
+    /* SERVICES */
 
-      padding-top: 28px;
-
-      display: flex;
-
-      justify-content:
-        space-between;
-
-      gap: 20px;
-
-      color: #777;
-
-      font-size: 13px;
+    .services{
+      background:#0b0b0b;
     }
 
+    .service-grid{
+      margin-top:55px;
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:15px;
+    }
 
-    /* =========================
-       MOBILE
-    ========================= */
+    .service{
+      min-height:290px;
+      padding:28px;
+      background:linear-gradient(145deg,#131313,#0e0e0e);
+      border:1px solid var(--line);
+      border-radius:22px;
+      position:relative;
+      overflow:hidden;
+      transition:.3s;
+    }
 
-    @media (max-width: 900px) {
+    .service::before{
+      content:"";
+      position:absolute;
+      width:120px;
+      height:120px;
+      background:rgba(255,79,0,.13);
+      filter:blur(45px);
+      right:-30px;
+      top:-30px;
+    }
 
-      .hero-grid {
+    .service:hover{
+      transform:translateY(-7px);
+      border-color:rgba(255,79,0,.45);
+    }
 
-        grid-template-columns: 1fr;
+    .service-num{
+      color:var(--orange);
+      font-size:12px;
+      font-weight:900;
+      margin-bottom:65px;
+    }
 
-        gap: 55px;
+    .service h3{
+      font-size:22px;
+      letter-spacing:-.8px;
+      margin-bottom:12px;
+    }
+
+    .service p{
+      color:#999;
+      line-height:1.65;
+      font-size:14px;
+    }
+
+    /* METHOD */
+
+    .method{
+      display:grid;
+      grid-template-columns:.85fr 1.15fr;
+      gap:80px;
+      margin-top:60px;
+    }
+
+    .giant{
+      font-size:clamp(90px,13vw,180px);
+      font-weight:950;
+      line-height:.7;
+      letter-spacing:-12px;
+      color:var(--orange);
+    }
+
+    .steps{
+      border-top:1px solid var(--line);
+    }
+
+    .step{
+      display:grid;
+      grid-template-columns:55px 1fr;
+      gap:20px;
+      padding:25px 0;
+      border-bottom:1px solid var(--line);
+    }
+
+    .step-num{
+      color:var(--orange);
+      font-weight:900;
+    }
+
+    .step h3{
+      font-size:19px;
+      margin-bottom:7px;
+    }
+
+    .step p{
+      color:#999;
+      line-height:1.6;
+      font-size:14px;
+    }
+
+    /* CTA */
+
+    .cta-wrap{
+      padding:45px 0 110px;
+    }
+
+    .cta{
+      position:relative;
+      overflow:hidden;
+      padding:75px;
+      border-radius:30px;
+      background:
+        radial-gradient(circle at 90% 10%,#ff9a46 0%,transparent 35%),
+        linear-gradient(135deg,#ff4200,#ff6500);
+    }
+
+    .cta::after{
+      content:"PRO";
+      position:absolute;
+      right:-30px;
+      bottom:-70px;
+      font-size:220px;
+      font-weight:950;
+      color:rgba(255,255,255,.08);
+      letter-spacing:-15px;
+    }
+
+    .cta h2{
+      position:relative;
+      z-index:2;
+      max-width:730px;
+    }
+
+    .cta p{
+      position:relative;
+      z-index:2;
+      max-width:580px;
+      margin-top:20px;
+      line-height:1.65;
+      color:rgba(255,255,255,.88);
+    }
+
+    .cta-buttons{
+      position:relative;
+      z-index:2;
+      margin-top:30px;
+      display:flex;
+      flex-wrap:wrap;
+      gap:12px;
+    }
+
+    .cta-main{
+      padding:15px 23px;
+      border-radius:12px;
+      background:#fff;
+      color:#111;
+      font-weight:850;
+    }
+
+    .cta-alt{
+      padding:15px 23px;
+      border:1px solid rgba(255,255,255,.5);
+      border-radius:12px;
+      font-weight:800;
+    }
+
+    /* FOOTER */
+
+    footer{
+      padding:60px 0 30px;
+      border-top:1px solid var(--line);
+    }
+
+    .footer-top{
+      display:flex;
+      justify-content:space-between;
+      gap:40px;
+      padding-bottom:40px;
+    }
+
+    .footer-text{
+      max-width:400px;
+      color:#888;
+      font-size:14px;
+      line-height:1.6;
+      margin-top:13px;
+    }
+
+    .footer-links{
+      display:flex;
+      gap:25px;
+      flex-wrap:wrap;
+      color:#aaa;
+      font-size:14px;
+    }
+
+    .footer-bottom{
+      border-top:1px solid var(--line);
+      padding-top:25px;
+      display:flex;
+      justify-content:space-between;
+      gap:20px;
+      color:#666;
+      font-size:12px;
+    }
+
+    /* MOBILE */
+
+    @media(max-width:900px){
+
+      .hero-grid{
+        grid-template-columns:1fr;
       }
 
-      .hero-logo-wrap {
-
-        justify-content: center;
+      .visual{
+        min-height:490px;
       }
 
-      .hero-logo {
-
-        width: min(320px, 80vw);
+      .dashboard{
+        left:50%;
+        right:auto;
+        transform:translateX(-50%) rotate(1deg);
       }
 
-      .services-grid {
-
-        grid-template-columns:
-          1fr 1fr;
+      .service-grid{
+        grid-template-columns:1fr 1fr;
       }
 
+      .method{
+        grid-template-columns:1fr;
+        gap:50px;
+      }
     }
 
+    @media(max-width:700px){
 
-    @media (max-width: 720px) {
-
-      .container {
-
-        width:
-          min(100% - 28px, 1180px);
+      .container{
+        width:calc(100% - 28px);
       }
 
-      .nav {
-
-        min-height: 68px;
+      .nav{
+        height:68px;
       }
 
-      .menu-button {
-
-        display: block;
+      .menu{
+        display:block;
       }
 
-      .nav-links {
-
-        display: none;
-
-        position: absolute;
-
-        top: 68px;
-
-        left: 0;
-
-        width: 100%;
-
-        background: #0c0c0c;
-
-        flex-direction: column;
-
-        align-items: flex-start;
-
-        padding: 25px;
-
-        gap: 22px;
-
-        border-bottom:
-          1px solid var(--border);
+      .nav-links{
+        display:none;
+        position:absolute;
+        top:68px;
+        left:0;
+        width:100%;
+        padding:25px;
+        background:#0b0b0b;
+        border-bottom:1px solid var(--line);
+        flex-direction:column;
+        align-items:flex-start;
       }
 
-      .nav-links.active {
-
-        display: flex;
+      .nav-links.active{
+        display:flex;
       }
 
-      .hero {
-
-        min-height: auto;
-
-        padding:
-          135px 0 90px;
+      .hero{
+        padding-top:125px;
       }
 
-      h1 {
-
-        letter-spacing: -3px;
+      h1{
+        font-size:clamp(52px,16vw,75px);
+        letter-spacing:-4px;
       }
 
-      .services-grid {
-
-        grid-template-columns: 1fr;
+      .visual{
+        min-height:455px;
       }
 
-      .difference-grid {
-
-        grid-template-columns: 1fr;
-
-        gap: 45px;
+      .dashboard{
+        width:94%;
       }
 
-      .difference-big {
-
-        letter-spacing: -5px;
+      .fc1{
+        left:0;
       }
 
-      .contact-box {
+      .fc2{
+        right:0;
+      }
 
-        padding: 45px 27px;
+      .fc3{
+        display:none;
+      }
+
+      .service-grid{
+        grid-template-columns:1fr;
+      }
+
+      .giant{
+        letter-spacing:-7px;
+      }
+
+      .cta{
+        padding:45px 27px;
+      }
+
+      .cta::after{
+        font-size:130px;
       }
 
       .footer-top,
-      .footer-bottom {
-
-        flex-direction: column;
+      .footer-bottom{
+        flex-direction:column;
       }
-
     }
-
   </style>
 
-
-  <!-- DATOS DE LA EMPRESA PARA GOOGLE -->
-
   <script type="application/ld+json">
-
   {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-
-    "name": "Digitalmente Pro",
-
-    "url": "https://digitalmenteprochile.cl/",
-
-    "logo": "https://digitalmenteprochile.cl/images/Logo.PNG",
-
-    "email": "contacto@digitalmenteprochile.cl",
-
-    "telephone": "+56987689361",
-
-    "sameAs": [
+    "@context":"https://schema.org",
+    "@type":"Organization",
+    "name":"Digitalmente Pro",
+    "url":"https://digitalmenteprochile.cl/",
+    "logo":"https://digitalmenteprochile.cl/images/Logo.PNG",
+    "email":"contacto@digitalmenteprochile.cl",
+    "telephone":"+56987689361",
+    "sameAs":[
       "https://www.instagram.com/digitalmenteeprocl/"
     ]
   }
-
   </script>
-
 </head>
-
 
 <body>
 
-
 <header>
-
   <div class="container nav">
 
-    <a href="#inicio"
-       class="brand">
-
+    <a href="#inicio" class="brand">
       DIGITALMENTE<span>PRO</span>
-
     </a>
 
+    <nav class="nav-links" id="navLinks">
+      <a href="#servicios">Servicios</a>
+      <a href="#metodo">Cómo trabajamos</a>
 
-    <nav class="nav-links"
-         id="navLinks">
-
-      <a href="#servicios">
-        Servicios
-      </a>
-
-      <a href="#nosotros">
-        Nosotros
-      </a>
-
-      <a href="https://www.instagram.com/digitalmenteeprocl/"
-         target="_blank"
-         rel="noopener">
-
+      <a
+        href="https://www.instagram.com/digitalmenteeprocl/"
+        target="_blank"
+        rel="noopener">
         Instagram
-
       </a>
 
-      <a href="https://wa.me/56987689361"
-         target="_blank"
-         rel="noopener"
-         class="nav-whatsapp">
-
-        WhatsApp
-
+      <a
+        href="https://wa.me/56987689361"
+        target="_blank"
+        rel="noopener"
+        class="nav-cta">
+        Hablemos
       </a>
-
     </nav>
 
-
     <button
-      class="menu-button"
+      class="menu"
       onclick="toggleMenu()"
       aria-label="Abrir menú">
-
       ☰
-
     </button>
 
   </div>
-
 </header>
-
-
 
 <main>
 
+  <!-- HERO -->
 
-  <!-- ======================
-       PORTADA
-  ======================= -->
-
-  <section
-    class="hero"
-    id="inicio">
+  <section class="hero" id="inicio">
 
     <div class="container">
 
       <div class="hero-grid">
 
-
         <div>
 
-          <div class="badge">
-
-            <span class="badge-dot"></span>
-
-            Estrategia · Diseño · Publicidad
-
+          <div class="eyebrow">
+            <span class="pulse"></span>
+            Marketing · E-commerce · Desarrollo
           </div>
 
-
           <h1>
-
-            Hacemos que tu negocio se vea
-
-            <span>mejor.</span>
-
+            MARKETING
+            <span class="outline">QUE SE VE.</span>
+            <span class="orange">ESTRATEGIAS</span>
+            QUE VENDEN.
           </h1>
 
-
-          <p class="hero-description">
-
-            Ayudamos a empresas y emprendimientos
-            a construir una presencia digital
-            profesional mediante desarrollo web,
-            publicidad, redes sociales y contenido
-            audiovisual.
-
+          <p class="hero-text">
+            Creamos experiencias digitales, campañas, contenido y
+            soluciones e-commerce para marcas que quieren verse
+            profesionales, atraer clientes y crecer en internet.
           </p>
 
-
-          <div class="hero-buttons">
+          <div class="hero-actions">
 
             <a
               href="https://wa.me/56987689361"
               target="_blank"
               rel="noopener"
-              class="button-primary">
-
-              Hablemos por WhatsApp →
-
+              class="btn-main">
+              Quiero hacer crecer mi negocio →
             </a>
 
-
-            <a
-              href="#servicios"
-              class="button-secondary">
-
-              Ver servicios
-
+            <a href="#servicios" class="btn-second">
+              Explorar servicios
             </a>
 
           </div>
 
         </div>
 
+        <!-- VISUAL -->
 
-        <div class="hero-logo-wrap">
+        <div class="visual">
 
-          <img
-            src="images/Logo.PNG"
-            alt="Logo Digitalmente Pro"
-            class="hero-logo">
+          <div class="dashboard">
+
+            <div class="dash-top">
+              <div class="dash-title">
+                Digital Growth
+              </div>
+
+              <div class="dots">
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
+            </div>
+
+            <div class="metric-main">
+
+              <div class="metric-label">
+                CRECIMIENTO DIGITAL
+              </div>
+
+              <div class="metric-value">
+                ACTIVO
+                <span>↑</span>
+              </div>
+
+              <div class="bars">
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+                <div></div>
+              </div>
+
+            </div>
+
+            <div class="mini-grid">
+
+              <div class="mini-card">
+                <small>PUBLICIDAD</small>
+                <strong>Meta Ads</strong>
+                <div class="status">● En crecimiento</div>
+              </div>
+
+              <div class="mini-card">
+                <small>BÚSQUEDA</small>
+                <strong>Google Ads</strong>
+                <div class="status">● Optimizado</div>
+              </div>
+
+              <div class="mini-card">
+                <small>VENTAS</small>
+                <strong>E-commerce</strong>
+                <div class="status">● Online</div>
+              </div>
+
+              <div class="mini-card">
+                <small>MARCA</small>
+                <strong>Contenido</strong>
+                <div class="status">● Creando</div>
+              </div>
+
+            </div>
+
+          </div>
+
+          <div class="float-card fc1">
+            <strong>⚡ Campañas</strong>
+            <span>Estrategia + conversión</span>
+          </div>
+
+          <div class="float-card fc2">
+            <strong>🛒 E-commerce</strong>
+            <span>Experiencias que venden</span>
+          </div>
+
+          <div class="float-card fc3">
+            <strong>▶ Contenido</strong>
+            <span>Marca + comunicación</span>
+          </div>
 
         </div>
-
 
       </div>
 
@@ -1023,179 +1017,109 @@
 
   </section>
 
+  <!-- TICKER -->
 
+  <div class="ticker">
 
-  <!-- ======================
-       SERVICIOS
-  ======================= -->
+    <div class="ticker-track">
 
-  <section
-    class="services"
-    id="servicios">
+      <span>META ADS</span>
+      <span>GOOGLE ADS</span>
+      <span>E-COMMERCE</span>
+      <span>SHOPIFY</span>
+      <span>DESARROLLO WEB</span>
+      <span>CONTENIDO</span>
+      <span>REDES SOCIALES</span>
+      <span>ESTRATEGIA</span>
+
+      <span>META ADS</span>
+      <span>GOOGLE ADS</span>
+      <span>E-COMMERCE</span>
+      <span>SHOPIFY</span>
+      <span>DESARROLLO WEB</span>
+      <span>CONTENIDO</span>
+      <span>REDES SOCIALES</span>
+      <span>ESTRATEGIA</span>
+
+    </div>
+
+  </div>
+
+  <!-- SERVICIOS -->
+
+  <section class="content services" id="servicios">
 
     <div class="container">
 
-
-      <div class="section-label">
-
-        Lo que hacemos
-
+      <div class="label">
+        Servicios Digitalmente Pro
       </div>
 
-
       <h2>
-
-        Soluciones digitales pensadas para negocios reales.
-
+        Todo lo necesario para hacer crecer tu presencia digital.
       </h2>
 
-
-      <p class="section-intro">
-
-        Diseñamos soluciones digitales con un
-        objetivo claro: mejorar cómo tu empresa
-        se presenta, comunica y conecta con
-        potenciales clientes.
-
+      <p class="intro">
+        Combinamos estrategia, diseño, publicidad y tecnología para
+        construir soluciones digitales que realmente tengan sentido
+        para tu negocio.
       </p>
 
+      <div class="service-grid">
 
-
-      <div class="services-grid">
-
-
-        <article class="service-card">
-
-          <div class="service-number">
-            01
-          </div>
-
-          <h3>
-            Desarrollo Web
-          </h3>
-
+        <article class="service">
+          <div class="service-num">01</div>
+          <h3>Publicidad Digital</h3>
           <p>
-
-            Sitios modernos, rápidos y adaptados
-            a dispositivos móviles, pensados para
-            representar profesionalmente tu empresa.
-
+            Estrategia y gestión de campañas en plataformas digitales
+            para conectar tu negocio con nuevos clientes.
           </p>
-
         </article>
 
-
-
-        <article class="service-card">
-
-          <div class="service-number">
-            02
-          </div>
-
-          <h3>
-            Publicidad Digital
-          </h3>
-
+        <article class="service">
+          <div class="service-num">02</div>
+          <h3>E-commerce</h3>
           <p>
-
-            Configuración y administración de
-            campañas digitales orientadas a llegar
-            a personas realmente interesadas en
-            tus productos o servicios.
-
+            Creación y optimización de tiendas online enfocadas en
+            ofrecer una experiencia clara, rápida y profesional.
           </p>
-
         </article>
 
-
-
-        <article class="service-card">
-
-          <div class="service-number">
-            03
-          </div>
-
-          <h3>
-            Contenido Audiovisual
-          </h3>
-
+        <article class="service">
+          <div class="service-num">03</div>
+          <h3>Desarrollo Web</h3>
           <p>
-
-            Fotografía, reels y contenido profesional
-            desarrollado para redes sociales,
-            publicidad y comunicación empresarial.
-
+            Sitios web modernos, rápidos y adaptados a dispositivos
+            móviles para empresas y emprendimientos.
           </p>
-
         </article>
 
-
-
-        <article class="service-card">
-
-          <div class="service-number">
-            04
-          </div>
-
-          <h3>
-            Redes Sociales
-          </h3>
-
+        <article class="service">
+          <div class="service-num">04</div>
+          <h3>Contenido Audiovisual</h3>
           <p>
-
-            Estrategia y contenido orientado
-            a construir una presencia digital
-            constante, profesional y cercana.
-
+            Fotografía, video, reels y piezas visuales pensadas para
+            destacar tu marca en redes sociales y campañas.
           </p>
-
         </article>
 
-
-
-        <article class="service-card">
-
-          <div class="service-number">
-            05
-          </div>
-
-          <h3>
-            E-commerce
-          </h3>
-
+        <article class="service">
+          <div class="service-num">05</div>
+          <h3>Redes Sociales</h3>
           <p>
-
-            Creación y optimización de tiendas
-            online para ofrecer una experiencia
-            de compra sencilla y profesional.
-
+            Planificación, diseño y comunicación para mantener una
+            presencia digital profesional y activa.
           </p>
-
         </article>
 
-
-
-        <article class="service-card">
-
-          <div class="service-number">
-            06
-          </div>
-
-          <h3>
-            Estrategia Digital
-          </h3>
-
+        <article class="service">
+          <div class="service-num">06</div>
+          <h3>Estrategia Digital</h3>
           <p>
-
-            Analizamos las necesidades de cada
-            negocio y definimos las herramientas
-            digitales más adecuadas para sus
-            objetivos.
-
+            Analizamos tu negocio y seleccionamos las herramientas
+            digitales adecuadas para cada objetivo.
           </p>
-
         </article>
-
 
       </div>
 
@@ -1203,106 +1127,63 @@
 
   </section>
 
+  <!-- MÉTODO -->
 
-
-  <!-- ======================
-       NOSOTROS
-  ======================= -->
-
-  <section id="nosotros">
+  <section class="content" id="metodo">
 
     <div class="container">
 
-
-      <div class="section-label">
-
-        Nuestra forma de trabajar
-
+      <div class="label">
+        Cómo trabajamos
       </div>
-
 
       <h2>
-
-        Menos complicaciones.
-        Más soluciones.
-
+        No se trata de estar en internet. Se trata de hacerlo bien.
       </h2>
 
+      <div class="method">
 
-
-      <div class="difference-grid">
-
-
-        <div class="difference-big">
-
+        <div class="giant">
           PRO.
-
         </div>
 
+        <div class="steps">
 
-        <div class="difference-text">
+          <div class="step">
+            <div class="step-num">01</div>
 
-
-          <div class="difference-item">
-
-            <h3>
-
-              Estrategias aterrizadas
-
-            </h3>
-
-            <p>
-
-              Trabajamos pensando en objetivos
-              comerciales reales y en las
-              necesidades particulares de cada
-              negocio.
-
-            </p>
-
+            <div>
+              <h3>Entendemos tu negocio</h3>
+              <p>
+                Antes de crear una campaña o una página, entendemos qué
+                vendes, a quién quieres llegar y qué necesitas lograr.
+              </p>
+            </div>
           </div>
 
+          <div class="step">
+            <div class="step-num">02</div>
 
-
-          <div class="difference-item">
-
-            <h3>
-
-              Diseño profesional
-
-            </h3>
-
-            <p>
-
-              Una presencia digital limpia y
-              coherente ayuda a transmitir
-              confianza antes incluso de que
-              el cliente realice el primer contacto.
-
-            </p>
-
+            <div>
+              <h3>Diseñamos la estrategia</h3>
+              <p>
+                Elegimos plataformas, contenido, campañas y herramientas
+                según los objetivos reales de tu empresa.
+              </p>
+            </div>
           </div>
 
+          <div class="step">
+            <div class="step-num">03</div>
 
-
-          <div class="difference-item">
-
-            <h3>
-
-              Acompañamiento cercano
-
-            </h3>
-
-            <p>
-
-              Implementamos soluciones digitales
-              de manera clara, práctica y adaptada
-              a cada empresa.
-
-            </p>
-
+            <div>
+              <h3>Ejecutamos y mejoramos</h3>
+              <p>
+                Implementamos las soluciones y seguimos mejorándolas
+                para construir una presencia digital cada vez más sólida.
+              </p>
+            </div>
           </div>
-
 
         </div>
 
@@ -1312,61 +1193,39 @@
 
   </section>
 
+  <!-- CTA -->
 
-
-  <!-- ======================
-       CONTACTO
-  ======================= -->
-
-  <section
-    class="contact"
-    id="contacto">
+  <section class="cta-wrap" id="contacto">
 
     <div class="container">
 
-
-      <div class="contact-box">
-
+      <div class="cta">
 
         <h2>
-
-          ¿Tienes un negocio que quieres llevar al siguiente nivel?
-
+          Tu negocio puede verse mucho mejor en digital.
         </h2>
 
-
         <p>
-
-          Cuéntanos qué necesitas.
-          Podemos ayudarte a encontrar una solución
-          digital adecuada para tu empresa,
-          emprendimiento o proyecto.
-
+          Cuéntanos en qué estás trabajando y conversemos sobre
+          cómo podemos ayudarte con marketing, e-commerce,
+          publicidad o desarrollo web.
         </p>
 
-
-        <div class="contact-buttons">
-
+        <div class="cta-buttons">
 
           <a
             href="https://wa.me/56987689361"
             target="_blank"
             rel="noopener"
-            class="contact-main">
-
-            Hablar por WhatsApp →
-
+            class="cta-main">
+            Hablemos por WhatsApp →
           </a>
-
 
           <a
             href="mailto:contacto@digitalmenteprochile.cl"
-            class="contact-secondary">
-
+            class="cta-alt">
             Enviar correo
-
           </a>
-
 
         </div>
 
@@ -1376,142 +1235,97 @@
 
   </section>
 
-
 </main>
-
-
 
 <footer>
 
   <div class="container">
 
-
     <div class="footer-top">
 
-
-      <div class="footer-brand">
-
+      <div>
 
         <div class="brand">
-
           DIGITALMENTE<span>PRO</span>
-
         </div>
 
-
-        <p>
-
-          Desarrollo web, marketing digital,
-          publicidad y creación de contenido
-          para empresas y emprendimientos.
-
-        </p>
-
+        <div class="footer-text">
+          Marketing digital, e-commerce, publicidad,
+          desarrollo web y contenido para empresas
+          que quieren crecer.
+        </div>
 
       </div>
 
-
-
       <div class="footer-links">
-
 
         <a href="#servicios">
           Servicios
         </a>
 
-
         <a
           href="https://www.instagram.com/digitalmenteeprocl/"
           target="_blank"
           rel="noopener">
-
           Instagram
-
         </a>
-
-
-        <a href="mailto:contacto@digitalmenteprochile.cl">
-
-          Correo
-
-        </a>
-
 
         <a
           href="https://wa.me/56987689361"
           target="_blank"
           rel="noopener">
-
           WhatsApp
-
         </a>
 
+        <a href="mailto:contacto@digitalmenteprochile.cl">
+          Correo
+        </a>
 
       </div>
 
-
     </div>
-
-
 
     <div class="footer-bottom">
 
-
       <div>
-
         © 2026 Digitalmente Pro
-
       </div>
-
 
       <div>
-
         digitalmenteprochile.cl
-
       </div>
-
 
     </div>
-
 
   </div>
 
 </footer>
 
-
-
 <script>
 
-  function toggleMenu() {
-
+  function toggleMenu(){
     document
       .getElementById("navLinks")
       .classList
       .toggle("active");
-
   }
-
 
   document
     .querySelectorAll(".nav-links a")
     .forEach(link => {
 
-      link.addEventListener(
-        "click",
-        () => {
+      link.addEventListener("click",() => {
 
-          document
-            .getElementById("navLinks")
-            .classList
-            .remove("active");
+        document
+          .getElementById("navLinks")
+          .classList
+          .remove("active");
 
-        }
-      );
+      });
 
     });
 
 </script>
-
 
 </body>
 </html>
