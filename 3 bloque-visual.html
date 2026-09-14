@@ -1,0 +1,451 @@
+<style>
+  /* =====================================================
+     DIGITALMENTE PRO
+     3 BLOQUE VISUAL
+     ===================================================== */
+
+  .dp-visual-section {
+    width: 100%;
+    padding: 64px 0;
+    background: #ffffff;
+  }
+
+  .dp-visual-container {
+    width: min(1180px, calc(100% - 40px));
+    margin: 0 auto;
+  }
+
+  .dp-visual-grid {
+    display: grid;
+    grid-template-columns: 1.08fr 0.92fr;
+    gap: 18px;
+  }
+
+
+  /* =====================================================
+     TARJETAS
+     ===================================================== */
+
+  .dp-visual-card {
+    position: relative;
+
+    min-height: 410px;
+
+    border-radius: 30px;
+    overflow: hidden;
+
+    background: #171717;
+
+    box-shadow:
+      0 22px 50px rgba(60, 32, 18, 0.10);
+
+    isolation: isolate;
+
+    animation: dpVisualReveal .8s ease both;
+  }
+
+  .dp-visual-card:nth-child(2) {
+    animation-delay: .12s;
+  }
+
+
+  /* =====================================================
+     IMÁGENES
+     ===================================================== */
+
+  .dp-visual-card__image {
+    position: absolute;
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+
+    transition:
+      transform .7s cubic-bezier(.2,.7,.2,1);
+  }
+
+
+  /* Primera imagen */
+
+  .dp-visual-card--brand .dp-visual-card__image {
+    object-position: center center;
+  }
+
+
+  /* Segunda imagen */
+
+  .dp-visual-card--strategy .dp-visual-card__image {
+    object-position: center center;
+  }
+
+
+  /* =====================================================
+     OSCURECIDO PARA LEER EL TEXTO
+     ===================================================== */
+
+  .dp-visual-card::after {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    z-index: 1;
+
+    background:
+      linear-gradient(
+        180deg,
+        rgba(10,10,10,0.02) 20%,
+        rgba(10,10,10,0.08) 42%,
+        rgba(10,10,10,0.82) 100%
+      );
+
+    pointer-events: none;
+  }
+
+
+  /* =====================================================
+     CONTENIDO
+     ===================================================== */
+
+  .dp-visual-card__content {
+    position: absolute;
+
+    left: 28px;
+    right: 28px;
+    bottom: 26px;
+
+    z-index: 2;
+
+    color: #ffffff;
+  }
+
+  .dp-visual-card__tag {
+    display: inline-flex;
+    align-items: center;
+
+    min-height: 28px;
+    padding: 0 11px;
+
+    margin-bottom: 12px;
+
+    border: 1px solid rgba(255,255,255,.18);
+    border-radius: 999px;
+
+    background: rgba(255,255,255,.14);
+
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+
+    color: #ffffff;
+
+    font-family:
+      -apple-system,
+      BlinkMacSystemFont,
+      "Segoe UI",
+      Arial,
+      sans-serif;
+
+    font-size: 9px;
+    font-weight: 900;
+
+    letter-spacing: 1.2px;
+    text-transform: uppercase;
+  }
+
+  .dp-visual-card h2,
+  .dp-visual-card h3 {
+    margin: 0;
+
+    max-width: 560px;
+
+    font-family:
+      -apple-system,
+      BlinkMacSystemFont,
+      "Segoe UI",
+      Arial,
+      sans-serif;
+
+    color: #ffffff;
+
+    line-height: 1.02;
+
+    font-weight: 900;
+
+    letter-spacing: -1.6px;
+
+    text-wrap: balance;
+  }
+
+  .dp-visual-card h2 {
+    font-size: clamp(32px, 3.6vw, 48px);
+  }
+
+  .dp-visual-card h3 {
+    font-size: clamp(29px, 3.2vw, 42px);
+  }
+
+  .dp-visual-card p {
+    max-width: 520px;
+
+    margin: 10px 0 0;
+
+    color: rgba(255,255,255,.82);
+
+    font-family:
+      -apple-system,
+      BlinkMacSystemFont,
+      "Segoe UI",
+      Arial,
+      sans-serif;
+
+    font-size: 13px;
+    line-height: 1.55;
+  }
+
+
+  /* =====================================================
+     HOVER PC
+     ===================================================== */
+
+  @media (hover: hover) {
+
+    .dp-visual-card:hover .dp-visual-card__image {
+      transform: scale(1.035);
+    }
+
+  }
+
+
+  /* =====================================================
+     ANIMACIÓN DE ENTRADA
+     ===================================================== */
+
+  @keyframes dpVisualReveal {
+
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+  }
+
+
+  /* =====================================================
+     TABLET
+     ===================================================== */
+
+  @media (max-width: 900px) {
+
+    .dp-visual-grid {
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+    }
+
+    .dp-visual-card {
+      min-height: 370px;
+      border-radius: 25px;
+    }
+
+    .dp-visual-card__content {
+      left: 22px;
+      right: 22px;
+      bottom: 22px;
+    }
+
+  }
+
+
+  /* =====================================================
+     MÓVIL
+     ===================================================== */
+
+  @media (max-width: 650px) {
+
+    .dp-visual-section {
+      padding: 38px 0;
+    }
+
+    .dp-visual-container {
+      width: calc(100% - 28px);
+    }
+
+    .dp-visual-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 14px;
+    }
+
+    .dp-visual-card {
+      width: 100%;
+      min-height: 320px;
+
+      border-radius: 24px;
+
+      box-shadow:
+        0 16px 34px rgba(60,32,18,.10);
+    }
+
+    .dp-visual-card--brand {
+      min-height: 350px;
+    }
+
+    .dp-visual-card--strategy {
+      min-height: 310px;
+    }
+
+    .dp-visual-card__image {
+      object-fit: cover;
+    }
+
+    .dp-visual-card--brand .dp-visual-card__image {
+      object-position: center center;
+    }
+
+    .dp-visual-card--strategy .dp-visual-card__image {
+      object-position: center center;
+    }
+
+    .dp-visual-card__content {
+      left: 18px;
+      right: 18px;
+      bottom: 18px;
+    }
+
+    .dp-visual-card__tag {
+      min-height: 25px;
+      padding: 0 9px;
+
+      margin-bottom: 9px;
+
+      font-size: 8px;
+    }
+
+    .dp-visual-card h2 {
+      font-size: 29px;
+      letter-spacing: -1.2px;
+    }
+
+    .dp-visual-card h3 {
+      font-size: 27px;
+      letter-spacing: -1.1px;
+    }
+
+    .dp-visual-card p {
+      margin-top: 7px;
+
+      font-size: 11px;
+      line-height: 1.48;
+    }
+
+  }
+
+
+  /* =====================================================
+     ACCESIBILIDAD
+     ===================================================== */
+
+  @media (prefers-reduced-motion: reduce) {
+
+    .dp-visual-card,
+    .dp-visual-card__image {
+      animation: none !important;
+      transition: none !important;
+      transform: none !important;
+    }
+
+  }
+</style>
+
+
+<section
+  class="dp-visual-section"
+  aria-label="Soluciones digitales de Digitalmente Pro"
+>
+
+  <div class="dp-visual-container">
+
+    <div class="dp-visual-grid">
+
+
+      <!-- =================================================
+           TARJETA 1
+           ================================================= -->
+
+      <article class="dp-visual-card dp-visual-card--brand">
+
+        <img
+          class="dp-visual-card__image"
+          src="https://raw.githubusercontent.com/digitalmenteepro-cell/digitalmenteprochile.cl/refs/heads/main/images/Banner%20horizontal%20web%2050%25%20OFF%20tienda%20de%20tecnolog%C3%ADa%20gradiente%20y%20moderno%20turquesa%20y%20azul.png"
+          alt="Presencia digital y estrategia de marca"
+          loading="lazy"
+          decoding="async"
+        >
+
+        <div class="dp-visual-card__content">
+
+          <span class="dp-visual-card__tag">
+            Presencia digital
+          </span>
+
+          <h2>
+            Una marca se recuerda mejor cuando también se ve bien.
+          </h2>
+
+          <p>
+            Diseño, contenido y estrategia trabajando juntos
+            para comunicar de forma profesional.
+          </p>
+
+        </div>
+
+      </article>
+
+
+      <!-- =================================================
+           TARJETA 2
+           ================================================= -->
+
+      <article class="dp-visual-card dp-visual-card--strategy">
+
+        <img
+          class="dp-visual-card__image"
+          src="https://raw.githubusercontent.com/digitalmenteepro-cell/digitalmenteprochile.cl/refs/heads/main/images/1920%20x%201080.png"
+          alt="Estrategia digital para negocios"
+          loading="lazy"
+          decoding="async"
+        >
+
+        <div class="dp-visual-card__content">
+
+          <span class="dp-visual-card__tag">
+            Estrategia
+          </span>
+
+          <h3>
+            No se trata solo de publicar.
+          </h3>
+
+          <p>
+            Se trata de construir una presencia digital
+            coherente, profesional y pensada para crecer.
+          </p>
+
+        </div>
+
+      </article>
+
+
+    </div>
+
+  </div>
+
+</section>
