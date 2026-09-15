@@ -2984,6 +2984,1540 @@
       display: none !important;
     }
 
+  
+
+/* ===== ACTUALIZACIONES APROBADAS 1–4 ===== */
+/* =====================================================
+     DIGITALMENTE PRO — PORTADA
+     PC: imagen completa, centrada y ajustada al alto de pantalla
+     Móvil: mantiene el diseño actual que ya te gustó
+     ===================================================== */
+
+  .dp-hero {
+    width: 100%;
+    background: #fffaf6;
+  }
+
+  .dp-hero__wrap {
+    width: 100%;
+    overflow: hidden;
+  }
+
+  .dp-hero__media {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 24px 26px;
+  }
+
+  .dp-hero__frame {
+    position: relative;
+    display: inline-block;
+    max-width: 100%;
+  }
+
+  .dp-hero__image {
+    display: block;
+
+    /* PC: que la portada completa entre en pantalla */
+    width: auto;
+    max-width: 100%;
+    max-height: calc(100vh - 150px);
+    height: auto;
+
+    object-fit: contain;
+    object-position: center;
+
+    transform-origin: center center;
+
+    animation:
+      heroReveal 0.9s ease-out both,
+      heroFloatZoom 14s ease-in-out 1s infinite alternate;
+
+    will-change: transform, opacity;
+  }
+
+  .dp-hero__cta {
+    position: absolute;
+    right: clamp(14px, 2.2vw, 30px);
+    bottom: clamp(14px, 2vw, 26px);
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    min-height: 42px;
+    padding: 0 18px;
+
+    border: 1px solid rgba(255, 255, 255, 0.48);
+    border-radius: 999px;
+
+    background: rgba(255, 106, 19, 0.90);
+    color: #ffffff;
+
+    font-family:
+      -apple-system,
+      BlinkMacSystemFont,
+      "Segoe UI",
+      Arial,
+      sans-serif;
+
+    font-size: 13px;
+    font-weight: 800;
+    line-height: 1;
+    text-decoration: none;
+    white-space: nowrap;
+
+    box-shadow: 0 9px 22px rgba(75, 34, 12, 0.17);
+
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+
+    opacity: 0;
+
+    animation:
+      ctaReveal 0.8s ease-out 0.5s forwards,
+      ctaFloat 3.6s ease-in-out 1.5s infinite;
+
+    transition:
+      transform 0.2s ease,
+      background 0.2s ease,
+      box-shadow 0.2s ease;
+  }
+
+  .dp-hero__cta:hover {
+    background: #f45f08;
+    transform: translateY(-2px) scale(1.02);
+    box-shadow: 0 13px 28px rgba(75, 34, 12, 0.23);
+  }
+
+  .dp-hero__cta:focus-visible {
+    outline: 3px solid rgba(255,255,255,0.95);
+    outline-offset: 3px;
+  }
+
+  /* =====================================================
+     ANIMACIONES
+     ===================================================== */
+
+  @keyframes heroReveal {
+    from {
+      opacity: 0;
+      transform: scale(1.015) translateY(10px);
+    }
+
+    to {
+      opacity: 1;
+      transform: scale(1) translateY(0);
+    }
+  }
+
+  @keyframes heroFloatZoom {
+    0% {
+      transform: scale(1) translateY(0);
+    }
+
+    100% {
+      transform: scale(1.015) translateY(-3px);
+    }
+  }
+
+  @keyframes ctaReveal {
+    from {
+      opacity: 0;
+      transform: translateY(12px);
+    }
+
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes ctaFloat {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+
+    50% {
+      transform: translateY(-3px);
+    }
+  }
+
+  /* =====================================================
+     NOTEBOOK / TABLET GRANDE
+     ===================================================== */
+
+  @media (max-width: 1180px) and (min-width: 651px) {
+    .dp-hero__media {
+      padding: 16px 20px 22px;
+    }
+
+    .dp-hero__image {
+      max-height: calc(100vh - 135px);
+    }
+
+    .dp-hero__cta {
+      min-height: 40px;
+      padding: 0 16px;
+      font-size: 12.5px;
+    }
+  }
+
+  /* =====================================================
+     MÓVIL
+     Se mantiene grande como ya estaba, porque ahí te gustó.
+     ===================================================== */
+
+  @media (max-width: 650px) {
+    .dp-hero__media {
+      display: block;
+      padding: 0;
+    }
+
+    .dp-hero__frame {
+      display: block;
+      width: 100%;
+      max-width: none;
+    }
+
+    .dp-hero__image {
+      width: 100%;
+      max-width: none;
+      max-height: none;
+      height: auto;
+
+      animation:
+        heroReveal 0.8s ease-out both,
+        heroFloatZoom 12s ease-in-out 1s infinite alternate;
+    }
+
+    .dp-hero__cta {
+      right: 14px;
+      bottom: 14px;
+
+      min-height: 38px;
+      padding: 0 15px;
+
+      border-radius: 999px;
+
+      font-size: 11.5px;
+      font-weight: 800;
+
+      background: rgba(255, 106, 19, 0.88);
+
+      box-shadow:
+        0 7px 18px rgba(75, 34, 12, 0.16);
+    }
+  }
+
+  /* Teléfonos muy angostos */
+
+  @media (max-width: 380px) {
+    .dp-hero__cta {
+      right: 10px;
+      bottom: 10px;
+
+      min-height: 36px;
+      padding: 0 13px;
+
+      font-size: 10.5px;
+    }
+  }
+
+  /* =====================================================
+     ACCESIBILIDAD
+     ===================================================== */
+
+  @media (prefers-reduced-motion: reduce) {
+    .dp-hero__image,
+    .dp-hero__cta {
+      animation: none !important;
+      transition: none !important;
+      opacity: 1 !important;
+      transform: none !important;
+    }
+  }
+
+/* =====================================================
+   03 BLOQUE VISUAL — versión aprobada
+   ===================================================== */
+.dp-visual-section {
+  width: 100%;
+  padding: 64px 0;
+  background: #ffffff;
+}
+.dp-visual-container {
+  width: min(1180px, calc(100% - 40px));
+  margin: 0 auto;
+}
+.dp-visual-grid {
+  display: grid;
+  grid-template-columns: 1.08fr .92fr;
+  gap: 18px;
+}
+.dp-visual-card {
+  position: relative;
+  min-height: 410px;
+  border-radius: 30px;
+  overflow: hidden;
+  background: #171717;
+  box-shadow: 0 22px 50px rgba(60,32,18,.10);
+  isolation: isolate;
+  animation: dpVisualReveal .8s ease both;
+}
+.dp-visual-card:nth-child(2) { animation-delay: .12s; }
+.dp-visual-card__image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+  object-position: center;
+  transition: transform .7s cubic-bezier(.2,.7,.2,1);
+}
+.dp-visual-card::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(180deg,rgba(10,10,10,.02) 20%,rgba(10,10,10,.08) 42%,rgba(10,10,10,.82) 100%);
+  pointer-events: none;
+}
+.dp-visual-card__content {
+  position: absolute;
+  left: 28px;
+  right: 28px;
+  bottom: 26px;
+  z-index: 2;
+  color: #fff;
+}
+.dp-visual-card__tag {
+  display: inline-flex;
+  align-items: center;
+  min-height: 28px;
+  padding: 0 11px;
+  margin-bottom: 12px;
+  border: 1px solid rgba(255,255,255,.18);
+  border-radius: 999px;
+  background: rgba(255,255,255,.14);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  color: #fff;
+  font-size: 9px;
+  font-weight: 900;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+}
+.dp-visual-card h2,
+.dp-visual-card h3 {
+  margin: 0;
+  max-width: 560px;
+  color: #fff;
+  line-height: 1.02;
+  font-weight: 900;
+  letter-spacing: -1.6px;
+  text-wrap: balance;
+}
+.dp-visual-card h2 { font-size: clamp(32px,3.6vw,48px); }
+.dp-visual-card h3 { font-size: clamp(29px,3.2vw,42px); }
+.dp-visual-card p {
+  max-width: 520px;
+  margin: 10px 0 0;
+  color: rgba(255,255,255,.82);
+  font-size: 13px;
+  line-height: 1.55;
+}
+@media (hover:hover) {
+  .dp-visual-card:hover .dp-visual-card__image { transform: scale(1.035); }
+}
+@keyframes dpVisualReveal {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@media (max-width:900px) {
+  .dp-visual-grid { grid-template-columns: 1fr 1fr; gap: 14px; }
+  .dp-visual-card { min-height: 370px; border-radius: 25px; }
+  .dp-visual-card__content { left:22px; right:22px; bottom:22px; }
+}
+@media (max-width:650px) {
+  .dp-visual-section { padding: 38px 0; }
+  .dp-visual-container { width: calc(100% - 28px); }
+  .dp-visual-grid { grid-template-columns: 1fr; gap: 14px; }
+  .dp-visual-card { width:100%; min-height:320px; border-radius:24px; box-shadow:0 16px 34px rgba(60,32,18,.10); }
+  .dp-visual-card--brand { min-height:350px; }
+  .dp-visual-card--strategy { min-height:310px; }
+  .dp-visual-card__content { left:18px; right:18px; bottom:18px; }
+  .dp-visual-card__tag { min-height:25px; padding:0 9px; margin-bottom:9px; font-size:8px; }
+  .dp-visual-card h2 { font-size:29px; letter-spacing:-1.2px; }
+  .dp-visual-card h3 { font-size:27px; letter-spacing:-1.1px; }
+  .dp-visual-card p { margin-top:7px; font-size:11px; line-height:1.48; }
+}
+@media (prefers-reduced-motion:reduce) {
+  .dp-visual-card,.dp-visual-card__image { animation:none!important; transition:none!important; transform:none!important; }
+}
+
+
+.services {
+  --orange: #ff6a13;
+  --orange-dark: #ed5700;
+  --orange-light: #ff9557;
+  --cream: #fffaf6;
+  --cream-soft: #fff4ec;
+  --white: #ffffff;
+  --text: #141414;
+  --text-soft: #606060;
+  --border: #efdfd3;
+  --green: #0aa75b;
+  --amelia: url("https://raw.githubusercontent.com/digitalmenteepro-cell/digitalmenteprochile.cl/refs/heads/main/images/Amelia%20marketing.png");
+}
+
+.services {
+
+      position: relative;
+
+      overflow: hidden;
+
+      padding:
+        110px 0;
+
+      background:
+
+        radial-gradient(
+          circle at 92% 5%,
+          rgba(255,106,19,.08),
+          transparent 24%
+        ),
+
+        #ffffff;
+
+    }
+
+
+    .services__container {
+
+      width:
+        min(
+          1180px,
+          calc(100% - 40px)
+        );
+
+      margin:
+        0 auto;
+
+    }
+
+
+    /* =====================================================
+       CABECERA
+       ===================================================== */
+
+    .services__header {
+
+      position:
+        relative;
+
+      display:
+        grid;
+
+      grid-template-columns:
+        1.05fr .95fr;
+
+      gap:
+        60px;
+
+      align-items:
+        end;
+
+      margin-bottom:
+        58px;
+
+    }
+
+
+    .services__eyebrow {
+
+      display:
+        inline-flex;
+
+      align-items:
+        center;
+
+      gap:
+        9px;
+
+      margin-bottom:
+        17px;
+
+      color:
+        var(--orange-dark);
+
+      font-size:
+        12px;
+
+      font-weight:
+        900;
+
+      letter-spacing:
+        2px;
+
+      text-transform:
+        uppercase;
+
+    }
+
+
+    .services__eyebrow::before {
+
+      content: "";
+
+      width:
+        8px;
+
+      height:
+        8px;
+
+      border-radius:
+        50%;
+
+      background:
+        var(--orange);
+
+      box-shadow:
+        0 0 0 6px
+        rgba(255,106,19,.10);
+
+    }
+
+
+    .services__title {
+
+      max-width:
+        720px;
+
+      font-size:
+        clamp(
+          44px,
+          5.6vw,
+          70px
+        );
+
+      line-height:
+        .98;
+
+      letter-spacing:
+        -3.5px;
+
+      font-weight:
+        900;
+
+    }
+
+
+    .services__title span {
+
+      color:
+        var(--orange);
+
+    }
+
+
+    .services__description {
+
+      max-width:
+        520px;
+
+      color:
+        var(--text-soft);
+
+      font-size:
+        17px;
+
+      line-height:
+        1.75;
+
+      padding-bottom:
+        6px;
+
+    }
+
+
+
+    /* =====================================================
+       AMELIA — MASCOTA DE MARCA
+       ===================================================== */
+
+    .services__mascot {
+      position: absolute;
+      z-index: 1;
+      right: 30px;
+      top: -44px;
+      width: clamp(115px, 11vw, 175px);
+      height: auto;
+      display: block;
+
+      /* Integración limpia, sin caja ni fondo visual */
+      background: transparent !important;
+      border: 0 !important;
+      border-radius: 0 !important;
+      box-shadow: none !important;
+
+      /*
+        Si la imagen trae un fondo blanco o muy claro incorporado,
+        multiply hace que se funda visualmente con el fondo blanco
+        de la sección.
+      */
+      mix-blend-mode: multiply;
+
+      pointer-events: none;
+      user-select: none;
+      filter: drop-shadow(0 12px 18px rgba(80,40,18,.10));
+      transform-origin: center bottom;
+      animation: ameliaFloat 4.6s ease-in-out infinite;
+    }
+
+    .services__header > div,
+    .services__description {
+      position: relative;
+      z-index: 2;
+    }
+
+    @keyframes ameliaFloat {
+      0%, 100% {
+        transform: translateY(0) rotate(-1deg);
+      }
+
+      50% {
+        transform: translateY(-8px) rotate(1deg);
+      }
+    }
+
+    /* Amelia muy sutil dentro de cada tarjeta */
+    .service-card::before {
+      content: "";
+      position: absolute;
+      z-index: 1;
+      width: 112px;
+      height: 112px;
+      right: -14px;
+      bottom: -10px;
+      background-image: var(--amelia);
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: contain;
+      opacity: .055;
+      filter: grayscale(1);
+      transform: rotate(-4deg);
+      pointer-events: none;
+      transition: opacity .25s ease, transform .25s ease;
+    }
+
+    .service-card:hover::before {
+      opacity: .105;
+      transform: rotate(0deg) scale(1.06);
+    }
+
+    .service-card--featured::before {
+      opacity: .10;
+      filter: brightness(0) invert(1);
+    }
+
+    .service-card--featured:hover::before {
+      opacity: .17;
+    }
+
+    /* =====================================================
+       GRID
+       ===================================================== */
+
+    .services__grid {
+
+      display:
+        grid;
+
+      grid-template-columns:
+        repeat(3, 1fr);
+
+      gap:
+        18px;
+
+    }
+
+
+    /* =====================================================
+       TARJETA
+       ===================================================== */
+
+    .service-card {
+
+      position:
+        relative;
+
+      min-height:
+        340px;
+
+      padding:
+        30px;
+
+      display:
+        flex;
+
+      flex-direction:
+        column;
+
+      overflow:
+        hidden;
+
+      background:
+
+        linear-gradient(
+          180deg,
+          #ffffff 0%,
+          #fff9f5 100%
+        );
+
+      border:
+        1px solid
+        var(--border);
+
+      border-radius:
+        25px;
+
+      transition:
+        transform .25s ease,
+        border-color .25s ease,
+        box-shadow .25s ease;
+
+    }
+
+
+    .service-card::after {
+
+      content: "";
+
+      position:
+        absolute;
+
+      width:
+        150px;
+
+      height:
+        150px;
+
+      right:
+        -65px;
+
+      top:
+        -65px;
+
+      border-radius:
+        50%;
+
+      background:
+        rgba(255,106,19,.08);
+
+      transition:
+        transform .3s ease;
+
+    }
+
+
+    .service-card:hover {
+
+      transform:
+        translateY(-7px);
+
+      border-color:
+        #efc4a7;
+
+      box-shadow:
+        0 24px 45px
+        rgba(163,83,31,.10);
+
+    }
+
+
+    .service-card:hover::after {
+
+      transform:
+        scale(1.25);
+
+    }
+
+
+    /* =====================================================
+       DESTACADA
+       ===================================================== */
+
+    .service-card--featured {
+
+      color:
+        #ffffff;
+
+      background:
+
+        radial-gradient(
+          circle at 100% 0%,
+          rgba(255,255,255,.16),
+          transparent 32%
+        ),
+
+        linear-gradient(
+          135deg,
+          var(--orange) 0%,
+          var(--orange-light) 100%
+        );
+
+      border-color:
+        transparent;
+
+      box-shadow:
+        0 22px 45px
+        rgba(255,106,19,.18);
+
+    }
+
+
+    .service-card--featured::after {
+
+      background:
+        rgba(255,255,255,.12);
+
+    }
+
+
+    .service-card--featured:hover {
+
+      border-color:
+        transparent;
+
+      box-shadow:
+        0 30px 55px
+        rgba(255,106,19,.25);
+
+    }
+
+
+    /* =====================================================
+       PARTE SUPERIOR TARJETA
+       ===================================================== */
+
+    .service-card__top {
+
+      position:
+        relative;
+
+      z-index:
+        2;
+
+      display:
+        flex;
+
+      justify-content:
+        space-between;
+
+      align-items:
+        center;
+
+      margin-bottom:
+        44px;
+
+    }
+
+
+    .service-card__number {
+
+      color:
+        var(--orange);
+
+      font-size:
+        12px;
+
+      font-weight:
+        900;
+
+      letter-spacing:
+        1px;
+
+    }
+
+
+    .service-card--featured
+    .service-card__number {
+
+      color:
+        #ffffff;
+
+    }
+
+
+    .service-card__pill {
+
+      display:
+        inline-flex;
+
+      align-items:
+        center;
+
+      min-height:
+        29px;
+
+      padding:
+        0 11px;
+
+      border-radius:
+        999px;
+
+      background:
+        #fff1e7;
+
+      color:
+        var(--orange-dark);
+
+      font-size:
+        10px;
+
+      font-weight:
+        800;
+
+      letter-spacing:
+        .7px;
+
+      text-transform:
+        uppercase;
+
+    }
+
+
+    .service-card--featured
+    .service-card__pill {
+
+      background:
+        rgba(255,255,255,.17);
+
+      color:
+        #ffffff;
+
+    }
+
+
+    /* =====================================================
+       CONTENIDO
+       ===================================================== */
+
+    .service-card h3 {
+
+      position:
+        relative;
+
+      z-index:
+        2;
+
+      margin-bottom:
+        13px;
+
+      font-size:
+        24px;
+
+      line-height:
+        1.08;
+
+      letter-spacing:
+        -.8px;
+
+    }
+
+
+    .service-card__description {
+
+      position:
+        relative;
+
+      z-index:
+        2;
+
+      color:
+        var(--text-soft);
+
+      font-size:
+        14px;
+
+      line-height:
+        1.65;
+
+      margin-bottom:
+        23px;
+
+    }
+
+
+    .service-card--featured
+    .service-card__description {
+
+      color:
+        rgba(255,255,255,.88);
+
+    }
+
+
+    /* =====================================================
+       LISTA
+       ===================================================== */
+
+    .service-card__list {
+
+      position:
+        relative;
+
+      z-index:
+        2;
+
+      list-style:
+        none;
+
+      display:
+        grid;
+
+      gap:
+        9px;
+
+      margin-bottom:
+        27px;
+
+    }
+
+
+    .service-card__list li {
+
+      display:
+        flex;
+
+      gap:
+        9px;
+
+      align-items:
+        flex-start;
+
+      color:
+        #545454;
+
+      font-size:
+        13px;
+
+      line-height:
+        1.45;
+
+    }
+
+
+    .service-card__list li::before {
+
+      content:
+        "✓";
+
+      color:
+        var(--orange);
+
+      font-weight:
+        900;
+
+    }
+
+
+    .service-card--featured
+    .service-card__list li {
+
+      color:
+        rgba(255,255,255,.92);
+
+    }
+
+
+    .service-card--featured
+    .service-card__list li::before {
+
+      color:
+        #ffffff;
+
+    }
+
+
+    /* =====================================================
+       LINK
+       ===================================================== */
+
+    .service-card__link {
+
+      position:
+        relative;
+
+      z-index:
+        2;
+
+      margin-top:
+        auto;
+
+      display:
+        inline-flex;
+
+      align-items:
+        center;
+
+      gap:
+        8px;
+
+      color:
+        var(--orange-dark);
+
+      font-size:
+        13px;
+
+      font-weight:
+        800;
+
+    }
+
+
+    .service-card__link span {
+
+      transition:
+        transform .2s ease;
+
+    }
+
+
+    .service-card:hover
+    .service-card__link span {
+
+      transform:
+        translateX(4px);
+
+    }
+
+
+    .service-card--featured
+    .service-card__link {
+
+      color:
+        #ffffff;
+
+    }
+
+
+    /* =====================================================
+       CTA INFERIOR
+       ===================================================== */
+
+    .services__cta {
+
+      position:
+        relative;
+
+      overflow:
+        hidden;
+
+      margin-top:
+        55px;
+
+      padding:
+        55px;
+
+      display:
+        flex;
+
+      justify-content:
+        space-between;
+
+      align-items:
+        center;
+
+      gap:
+        40px;
+
+      background:
+        #151515;
+
+      color:
+        #ffffff;
+
+      border-radius:
+        30px;
+
+    }
+
+
+    .services__cta::after {
+
+      content:
+        "PRO";
+
+      position:
+        absolute;
+
+      right:
+        -20px;
+
+      bottom:
+        -75px;
+
+      color:
+        rgba(255,255,255,.045);
+
+      font-size:
+        190px;
+
+      font-weight:
+        900;
+
+      letter-spacing:
+        -12px;
+
+      line-height:
+        1;
+
+    }
+
+
+    .services__cta-content {
+
+      position:
+        relative;
+
+      z-index:
+        2;
+
+      max-width:
+        630px;
+
+    }
+
+
+    .services__cta-tag {
+
+      display:
+        inline-block;
+
+      margin-bottom:
+        12px;
+
+      color:
+        #ff9252;
+
+      font-size:
+        11px;
+
+      font-weight:
+        900;
+
+      letter-spacing:
+        1.8px;
+
+      text-transform:
+        uppercase;
+
+    }
+
+
+    .services__cta h3 {
+
+      font-size:
+        clamp(
+          30px,
+          4vw,
+          46px
+        );
+
+      line-height:
+        1.03;
+
+      letter-spacing:
+        -1.8px;
+
+    }
+
+
+    .services__cta p {
+
+      max-width:
+        560px;
+
+      margin-top:
+        13px;
+
+      color:
+        #bdbdbd;
+
+      font-size:
+        15px;
+
+      line-height:
+        1.65;
+
+    }
+
+
+    .services__cta-actions {
+
+      position:
+        relative;
+
+      z-index:
+        2;
+
+      flex-shrink:
+        0;
+
+    }
+
+
+    .services__cta-button {
+
+      min-height:
+        54px;
+
+      padding:
+        0 23px;
+
+      display:
+        inline-flex;
+
+      align-items:
+        center;
+
+      justify-content:
+        center;
+
+      border-radius:
+        999px;
+
+      background:
+        var(--orange);
+
+      color:
+        #ffffff;
+
+      font-size:
+        14px;
+
+      font-weight:
+        800;
+
+      transition:
+        transform .2s ease,
+        background .2s ease;
+
+    }
+
+
+    .services__cta-button:hover {
+
+      transform:
+        translateY(-2px);
+
+      background:
+        var(--orange-dark);
+
+    }
+
+
+    /* =====================================================
+       RESPONSIVE
+       ===================================================== */
+
+    @media
+    (max-width: 960px) {
+
+
+      .services__header {
+
+        grid-template-columns:
+          1fr;
+
+        gap:
+          20px;
+
+        padding-right:
+          145px;
+
+      }
+
+
+      .services__mascot {
+
+        right:
+          4px;
+
+        top:
+          -22px;
+
+        width:
+          128px;
+
+      }
+
+
+      .services__grid {
+
+        grid-template-columns:
+          1fr 1fr;
+
+      }
+
+
+      .services__cta {
+
+        flex-direction:
+          column;
+
+        align-items:
+          flex-start;
+
+      }
+
+    }
+
+
+    @media
+    (max-width: 650px) {
+
+
+      .services {
+
+        padding:
+          78px 0;
+
+      }
+
+
+      .services__container {
+
+        width:
+          calc(100% - 28px);
+
+      }
+
+
+      .services__header {
+
+        padding-right:
+          0;
+
+      }
+
+
+      .services__mascot {
+
+        position:
+          relative;
+
+        right:
+          auto;
+
+        top:
+          auto;
+
+        width:
+          118px;
+
+        margin:
+          -6px 0 12px auto;
+
+        background:
+          transparent !important;
+
+        box-shadow:
+          none !important;
+
+        mix-blend-mode:
+          multiply;
+
+      }
+
+
+      .services__title {
+
+        font-size:
+          clamp(
+            42px,
+            13vw,
+            57px
+          );
+
+        letter-spacing:
+          -2.8px;
+
+      }
+
+
+      .services__description {
+
+        font-size:
+          16px;
+
+      }
+
+
+      .services__grid {
+
+        grid-template-columns:
+          1fr;
+
+      }
+
+
+      .service-card {
+
+        min-height:
+          320px;
+
+      }
+
+
+      .services__cta {
+
+        margin-top:
+          38px;
+
+        padding:
+          38px 25px;
+
+      }
+
+
+      .services__cta-actions {
+
+        width:
+          100%;
+
+      }
+
+
+      .services__cta-button {
+
+        width:
+          100%;
+
+      }
+
+    }
+
+
+    @media
+    (prefers-reduced-motion: reduce) {
+
+      .services__mascot {
+        animation: none !important;
+      }
+
+      .service-card::before {
+        transition: none !important;
+      }
+
+    }
+
   </style>
 
 
@@ -3100,37 +4634,41 @@
   <main>
 
     <!-- =====================================================
-         HERO / PORTADA 2.0
+         HERO / PORTADA — ACTUALIZADA
          ===================================================== -->
 
-    <section
-      class="hero hero--image-only"
-      id="inicio"
-      aria-label="Portada Digitalmente Pro"
-    >
-
-      <div class="hero-cover">
-
-        <img
-          src="https://raw.githubusercontent.com/digitalmenteepro-cell/digitalmenteprochile.cl/refs/heads/main/images/Portada%202.0.png"
-          alt="Digitalmente Pro"
-          class="hero-cover__image"
-          loading="eager"
-          fetchpriority="high"
-          decoding="async"
-        >
-
-        <a
-          class="hero-cover__cta"
-          href="https://wa.me/56987689361?text=Hola%20%F0%9F%91%8B%20Vi%20la%20web%20de%20Digitalmente%20Pro%20y%20quiero%20hacer%20crecer%20mi%20negocio."
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Quiero hacer crecer mi negocio
-        </a>
-
+    <section class="dp-hero" aria-label="Digitalmente Pro">
+    
+      <div class="dp-hero__wrap">
+    
+        <div class="dp-hero__media">
+    
+          <div class="dp-hero__frame">
+    
+            <img
+              class="dp-hero__image"
+              src="https://raw.githubusercontent.com/digitalmenteepro-cell/digitalmenteprochile.cl/refs/heads/main/images/Portada%202.0.png"
+              alt="Digitalmente Pro - Haz que tu marca se haga escuchar"
+              loading="eager"
+              fetchpriority="high"
+            >
+    
+            <a
+              class="dp-hero__cta"
+              href="https://wa.me/56987689361?text=Hola%20%F0%9F%91%8B%20Quiero%20hacer%20crecer%20mi%20negocio%20con%20Digitalmente%20Pro."
+              target="_blank"
+              rel="noopener"
+              aria-label="Quiero hacer crecer mi negocio por WhatsApp"
+            >
+              Quiero hacer crecer mi negocio
+            </a>
+    
+          </div>
+    
+        </div>
+    
       </div>
-
+    
     </section>
 
 
@@ -3159,285 +4697,608 @@
 
     </div>
 
-
     <!-- =====================================================
-         BLOQUE VISUAL
+         BLOQUE VISUAL — ACTUALIZADO
          ===================================================== -->
 
-    <section class="visual-break">
-
-      <div class="container visual-break__grid">
-
-        <article class="visual-tile visual-tile--main">
-
-          <div class="visual-tile__content">
-
-            <span class="visual-tile__tag">
-              Presencia digital
-            </span>
-
-            <h2>
-              Una marca se recuerda mejor cuando también se ve bien.
-            </h2>
-
-            <p>
-              Diseño, contenido y estrategia trabajando juntos
-              para comunicar de forma profesional.
-            </p>
-
-          </div>
-
-        </article>
-
-
-        <article class="visual-tile visual-tile--side">
-
-          <div class="visual-tile__content">
-
-            <span class="visual-tile__tag">
-              Estrategia
-            </span>
-
-            <h3>
-              No se trata solo de publicar.
-            </h3>
-
-            <p>
-              Se trata de construir una presencia digital coherente.
-            </p>
-
-          </div>
-
-        </article>
-
+    <section class="dp-visual-section" aria-label="Soluciones digitales de Digitalmente Pro">
+      <div class="dp-visual-container">
+        <div class="dp-visual-grid">
+          <article class="dp-visual-card dp-visual-card--brand">
+            <img
+              class="dp-visual-card__image"
+              src="https://raw.githubusercontent.com/digitalmenteepro-cell/digitalmenteprochile.cl/refs/heads/main/images/Banner%20horizontal%20web%2050%25%20OFF%20tienda%20de%20tecnolog%C3%ADa%20gradiente%20y%20moderno%20turquesa%20y%20azul.png"
+              alt="Presencia digital y estrategia de marca"
+              loading="lazy"
+              decoding="async"
+            >
+            <div class="dp-visual-card__content">
+              <span class="dp-visual-card__tag">Presencia digital</span>
+              <h2>Una marca se recuerda mejor cuando también se ve bien.</h2>
+              <p>Diseño, contenido y estrategia trabajando juntos para comunicar de forma profesional.</p>
+            </div>
+          </article>
+    
+          <article class="dp-visual-card dp-visual-card--strategy">
+            <img
+              class="dp-visual-card__image"
+              src="https://raw.githubusercontent.com/digitalmenteepro-cell/digitalmenteprochile.cl/refs/heads/main/images/1920%20x%201080.png"
+              alt="Estrategia digital para negocios"
+              loading="lazy"
+              decoding="async"
+            >
+            <div class="dp-visual-card__content">
+              <span class="dp-visual-card__tag">Estrategia</span>
+              <h3>No se trata solo de publicar.</h3>
+              <p>Se trata de construir una presencia digital coherente, profesional y pensada para crecer.</p>
+            </div>
+          </article>
+        </div>
       </div>
-
     </section>
 
-
     <!-- =====================================================
-         SERVICIOS
+         SERVICIOS — ACTUALIZADOS CON AMELIA
          ===================================================== -->
 
     <section
-      class="section"
-      id="servicios"
-    >
-
-      <div class="container">
-
-        <div class="split-head">
-
-          <div>
-
-            <div class="eyebrow">
-              Servicios Digitalmente Pro
+        class="services"
+        id="servicios"
+      >
+    
+    
+        <div class="services__container">
+    
+    
+          <!-- =================================================
+               HEADER
+               ================================================= -->
+    
+          <div class="services__header">
+    
+    
+            <img
+              class="services__mascot"
+              src="https://raw.githubusercontent.com/digitalmenteepro-cell/digitalmenteprochile.cl/refs/heads/main/images/Amelia%20marketing.png"
+              alt=""
+              aria-hidden="true"
+              loading="lazy"
+              decoding="async"
+            >
+    
+    
+            <div>
+    
+    
+              <div class="services__eyebrow">
+    
+                Servicios Digitalmente Pro
+    
+              </div>
+    
+    
+              <h1 class="services__title">
+    
+                Todo lo que tu negocio necesita para
+    
+                <span>
+                  crecer en digital.
+                </span>
+    
+              </h1>
+    
+    
             </div>
-
-            <h2 class="section-title">
-              Todo lo que tu negocio necesita para
-              <span>crecer en digital.</span>
-            </h2>
-
+    
+    
+            <p class="services__description">
+    
+              Combinamos estrategia, publicidad, contenido
+              y tecnología para crear soluciones digitales
+              pensadas para necesidades comerciales reales.
+    
+            </p>
+    
+    
           </div>
-
-
-          <p class="section-copy">
-            Estrategia, publicidad, contenido y tecnología
-            trabajando juntas para construir una presencia
-            digital más profesional.
-          </p>
-
+    
+    
+          <!-- =================================================
+               TARJETAS
+               ================================================= -->
+    
+          <div class="services__grid">
+    
+    
+            <!-- 01 MARKETING DIGITAL -->
+    
+            <article class="service-card">
+    
+    
+              <div class="service-card__top">
+    
+                <span class="service-card__number">
+                  01
+                </span>
+    
+                <span class="service-card__pill">
+                  Publicidad
+                </span>
+    
+              </div>
+    
+    
+              <h3>
+                Marketing Digital
+              </h3>
+    
+    
+              <p class="service-card__description">
+    
+                Campañas publicitarias y estrategias digitales
+                orientadas a conectar tu empresa con potenciales clientes.
+    
+              </p>
+    
+    
+              <ul class="service-card__list">
+    
+                <li>
+                  Meta Ads
+                </li>
+    
+                <li>
+                  Google Ads
+                </li>
+    
+                <li>
+                  Campañas de alcance y mensajes
+                </li>
+    
+                <li>
+                  Análisis y optimización
+                </li>
+    
+              </ul>
+    
+    
+              <a
+                href="marketing.html"
+                class="service-card__link"
+              >
+    
+                Conocer servicio
+    
+                <span>
+                  →
+                </span>
+    
+              </a>
+    
+    
+            </article>
+    
+    
+            <!-- 02 E-COMMERCE -->
+    
+            <article
+              class="
+                service-card
+                service-card--featured
+              "
+            >
+    
+    
+              <div class="service-card__top">
+    
+                <span class="service-card__number">
+                  02
+                </span>
+    
+                <span class="service-card__pill">
+                  E-commerce
+                </span>
+    
+              </div>
+    
+    
+              <h3>
+                Tiendas Online
+              </h3>
+    
+    
+              <p class="service-card__description">
+    
+                Creamos y optimizamos tiendas online
+                para ofrecer una experiencia de compra
+                profesional, rápida y sencilla.
+    
+              </p>
+    
+    
+              <ul class="service-card__list">
+    
+                <li>
+                  Shopify
+                </li>
+    
+                <li>
+                  Diseño y estructura comercial
+                </li>
+    
+                <li>
+                  Optimización de experiencia de compra
+                </li>
+    
+                <li>
+                  Integraciones digitales
+                </li>
+    
+              </ul>
+    
+    
+              <a
+                href="#contacto"
+                class="service-card__link"
+              >
+    
+                Quiero una tienda online
+    
+                <span>
+                  →
+                </span>
+    
+              </a>
+    
+    
+            </article>
+    
+    
+            <!-- 03 DESARROLLO WEB -->
+    
+            <article class="service-card">
+    
+    
+              <div class="service-card__top">
+    
+                <span class="service-card__number">
+                  03
+                </span>
+    
+                <span class="service-card__pill">
+                  Web
+                </span>
+    
+              </div>
+    
+    
+              <h3>
+                Desarrollo Web
+              </h3>
+    
+    
+              <p class="service-card__description">
+    
+                Diseñamos sitios web modernos,
+                rápidos y adaptados a celulares
+                para empresas y emprendimientos.
+    
+              </p>
+    
+    
+              <ul class="service-card__list">
+    
+                <li>
+                  Landing pages
+                </li>
+    
+                <li>
+                  Sitios corporativos
+                </li>
+    
+                <li>
+                  Diseño responsive
+                </li>
+    
+                <li>
+                  Optimización SEO técnica
+                </li>
+    
+              </ul>
+    
+    
+              <a
+                href="#contacto"
+                class="service-card__link"
+              >
+    
+                Ver desarrollo web
+    
+                <span>
+                  →
+                </span>
+    
+              </a>
+    
+    
+            </article>
+    
+    
+            <!-- 04 CONTENIDO -->
+    
+            <article class="service-card">
+    
+    
+              <div class="service-card__top">
+    
+                <span class="service-card__number">
+                  04
+                </span>
+    
+                <span class="service-card__pill">
+                  Audiovisual
+                </span>
+    
+              </div>
+    
+    
+              <h3>
+                Contenido Audiovisual
+              </h3>
+    
+    
+              <p class="service-card__description">
+    
+                Creamos contenido visual profesional
+                pensado para redes sociales, campañas
+                y comunicación de marca.
+    
+              </p>
+    
+    
+              <ul class="service-card__list">
+    
+                <li>
+                  Fotografía profesional
+                </li>
+    
+                <li>
+                  Reels y videos
+                </li>
+    
+                <li>
+                  Contenido para campañas
+                </li>
+    
+                <li>
+                  Producción para redes sociales
+                </li>
+    
+              </ul>
+    
+    
+              <a
+                href="creacion-contenido.html"
+                class="service-card__link"
+              >
+    
+                Ver contenido
+    
+                <span>
+                  →
+                </span>
+    
+              </a>
+    
+    
+            </article>
+    
+    
+            <!-- 05 REDES -->
+    
+            <article class="service-card">
+    
+    
+              <div class="service-card__top">
+    
+                <span class="service-card__number">
+                  05
+                </span>
+    
+                <span class="service-card__pill">
+                  Social Media
+                </span>
+    
+              </div>
+    
+    
+              <h3>
+                Redes Sociales
+              </h3>
+    
+    
+              <p class="service-card__description">
+    
+                Ayudamos a mantener una presencia
+                digital constante, profesional
+                y coherente con tu negocio.
+    
+              </p>
+    
+    
+              <ul class="service-card__list">
+    
+                <li>
+                  Instagram
+                </li>
+    
+                <li>
+                  Facebook
+                </li>
+    
+                <li>
+                  Contenido y publicaciones
+                </li>
+    
+                <li>
+                  Gestión de campañas
+                </li>
+    
+              </ul>
+    
+    
+              <a
+                href="redes-sociales.html"
+                class="service-card__link"
+              >
+    
+                Ver redes sociales
+    
+                <span>
+                  →
+                </span>
+    
+              </a>
+    
+    
+            </article>
+    
+    
+            <!-- 06 ESTRATEGIA -->
+    
+            <article class="service-card">
+    
+    
+              <div class="service-card__top">
+    
+                <span class="service-card__number">
+                  06
+                </span>
+    
+                <span class="service-card__pill">
+                  Estrategia
+                </span>
+    
+              </div>
+    
+    
+              <h3>
+                Estrategia Digital
+              </h3>
+    
+    
+              <p class="service-card__description">
+    
+                Analizamos tu negocio y definimos
+                qué herramientas digitales tienen
+                más sentido para tus objetivos.
+    
+              </p>
+    
+    
+              <ul class="service-card__list">
+    
+                <li>
+                  Diagnóstico digital
+                </li>
+    
+                <li>
+                  Análisis de presencia online
+                </li>
+    
+                <li>
+                  Definición de objetivos
+                </li>
+    
+                <li>
+                  Plan de implementación
+                </li>
+    
+              </ul>
+    
+    
+              <a
+                href="#contacto"
+                class="service-card__link"
+              >
+    
+                Conversar sobre mi negocio
+    
+                <span>
+                  →
+                </span>
+    
+              </a>
+    
+    
+            </article>
+    
+    
+          </div>
+    
+    
+          <!-- =================================================
+               CTA
+               ================================================= -->
+    
+          <div class="services__cta">
+    
+    
+            <div class="services__cta-content">
+    
+    
+              <span class="services__cta-tag">
+    
+                ¿No sabes qué necesitas?
+    
+              </span>
+    
+    
+              <h3>
+    
+                Cuéntanos tu proyecto.
+                Nosotros te ayudamos a definir el camino.
+    
+              </h3>
+    
+    
+              <p>
+    
+                No todos los negocios necesitan las mismas herramientas.
+                Conversemos sobre tus objetivos y veamos qué solución
+                digital tiene más sentido para tu empresa.
+    
+              </p>
+    
+    
+            </div>
+    
+    
+            <div class="services__cta-actions">
+    
+    
+              <a
+                href="https://wa.me/56987689361"
+                target="_blank"
+                rel="noopener"
+                class="services__cta-button"
+              >
+    
+                Hablemos por WhatsApp →
+    
+              </a>
+    
+    
+            </div>
+    
+    
+          </div>
+    
+    
         </div>
-
-
-        <div class="services-grid">
-
-
-          <article class="service-card">
-
-            <span class="service-card__num">01</span>
-
-            <div class="service-card__icon">
-              ADS
-            </div>
-
-            <h3>Marketing Digital</h3>
-
-            <p>
-              Campañas y acciones digitales para conectar
-              tu negocio con potenciales clientes.
-            </p>
-
-            <div class="service-card__meta">
-              <span>Meta Ads</span>
-              <span>Google Ads</span>
-            </div>
-
-            <a
-              class="service-card__link"
-              href="#marketing"
-            >
-              Conocer servicio →
-            </a>
-
-          </article>
-
-
-          <article class="service-card service-card--featured">
-
-            <span class="service-card__num">02</span>
-
-            <div class="service-card__icon">
-              SHOP
-            </div>
-
-            <h3>E-commerce</h3>
-
-            <p>
-              Tiendas online profesionales pensadas
-              para facilitar la compra y mejorar la experiencia.
-            </p>
-
-            <div class="service-card__meta">
-              <span>Shopify</span>
-              <span>Ventas online</span>
-            </div>
-
-            <a
-              class="service-card__link"
-              href="#contacto"
-            >
-              Quiero una tienda →
-            </a>
-
-          </article>
-
-
-          <article class="service-card">
-
-            <span class="service-card__num">03</span>
-
-            <div class="service-card__icon">
-              WEB
-            </div>
-
-            <h3>Desarrollo Web</h3>
-
-            <p>
-              Sitios rápidos, modernos y adaptados
-              a celulares para empresas y emprendimientos.
-            </p>
-
-            <div class="service-card__meta">
-              <span>Responsive</span>
-              <span>SEO base</span>
-            </div>
-
-            <a
-              class="service-card__link"
-              href="#contacto"
-            >
-              Cotizar web →
-            </a>
-
-          </article>
-
-
-          <article class="service-card">
-
-            <span class="service-card__num">04</span>
-
-            <div class="service-card__icon">
-              AV
-            </div>
-
-            <h3>Contenido Audiovisual</h3>
-
-            <p>
-              Fotografía, reels y videos para redes sociales,
-              publicidad y comunicación de marca.
-            </p>
-
-            <div class="service-card__meta">
-              <span>Reels</span>
-              <span>Fotografía</span>
-            </div>
-
-            <a
-              class="service-card__link"
-              href="#contenido"
-            >
-              Ver contenido →
-            </a>
-
-          </article>
-
-
-          <article class="service-card">
-
-            <span class="service-card__num">05</span>
-
-            <div class="service-card__icon">
-              SM
-            </div>
-
-            <h3>Redes Sociales</h3>
-
-            <p>
-              Contenido y planificación para mantener
-              una presencia digital activa y coherente.
-            </p>
-
-            <div class="service-card__meta">
-              <span>Instagram</span>
-              <span>Facebook</span>
-            </div>
-
-            <a
-              class="service-card__link"
-              href="#redes"
-            >
-              Ver redes →
-            </a>
-
-          </article>
-
-
-          <article class="service-card">
-
-            <span class="service-card__num">06</span>
-
-            <div class="service-card__icon">
-              PRO
-            </div>
-
-            <h3>Estrategia Digital</h3>
-
-            <p>
-              Analizamos tu negocio y definimos
-              qué herramientas tienen más sentido para tus objetivos.
-            </p>
-
-            <div class="service-card__meta">
-              <span>Diagnóstico</span>
-              <span>Plan</span>
-            </div>
-
-            <a
-              class="service-card__link"
-              href="#contacto"
-            >
-              Conversemos →
-            </a>
-
-          </article>
-
-        </div>
-
-      </div>
-
-    </section>
+    
+    
+      </section>
 
 
     <!-- =====================================================
