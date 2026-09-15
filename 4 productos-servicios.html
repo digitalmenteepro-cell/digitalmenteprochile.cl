@@ -48,6 +48,9 @@
 
       --green: #0aa75b;
 
+      --amelia:
+        url("https://raw.githubusercontent.com/digitalmenteepro-cell/digitalmenteprochile.cl/refs/heads/main/images/Amelia%20marketing.png");
+
     }
 
 
@@ -132,6 +135,9 @@
        ===================================================== */
 
     .services__header {
+
+      position:
+        relative;
 
       display:
         grid;
@@ -257,6 +263,90 @@
 
     }
 
+
+
+    /* =====================================================
+       AMELIA — MASCOTA DE MARCA
+       ===================================================== */
+
+    .services__mascot {
+      position: absolute;
+      z-index: 1;
+      right: 30px;
+      top: -44px;
+      width: clamp(115px, 11vw, 175px);
+      height: auto;
+      display: block;
+
+      /* Integración limpia, sin caja ni fondo visual */
+      background: transparent !important;
+      border: 0 !important;
+      border-radius: 0 !important;
+      box-shadow: none !important;
+
+      /*
+        Si la imagen trae un fondo blanco o muy claro incorporado,
+        multiply hace que se funda visualmente con el fondo blanco
+        de la sección.
+      */
+      mix-blend-mode: multiply;
+
+      pointer-events: none;
+      user-select: none;
+      filter: drop-shadow(0 12px 18px rgba(80,40,18,.10));
+      transform-origin: center bottom;
+      animation: ameliaFloat 4.6s ease-in-out infinite;
+    }
+
+    .services__header > div,
+    .services__description {
+      position: relative;
+      z-index: 2;
+    }
+
+    @keyframes ameliaFloat {
+      0%, 100% {
+        transform: translateY(0) rotate(-1deg);
+      }
+
+      50% {
+        transform: translateY(-8px) rotate(1deg);
+      }
+    }
+
+    /* Amelia muy sutil dentro de cada tarjeta */
+    .service-card::before {
+      content: "";
+      position: absolute;
+      z-index: 1;
+      width: 112px;
+      height: 112px;
+      right: -14px;
+      bottom: -10px;
+      background-image: var(--amelia);
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: contain;
+      opacity: .055;
+      filter: grayscale(1);
+      transform: rotate(-4deg);
+      pointer-events: none;
+      transition: opacity .25s ease, transform .25s ease;
+    }
+
+    .service-card:hover::before {
+      opacity: .105;
+      transform: rotate(0deg) scale(1.06);
+    }
+
+    .service-card--featured::before {
+      opacity: .10;
+      filter: brightness(0) invert(1);
+    }
+
+    .service-card--featured:hover::before {
+      opacity: .17;
+    }
 
     /* =====================================================
        GRID
@@ -968,6 +1058,23 @@
         gap:
           20px;
 
+        padding-right:
+          145px;
+
+      }
+
+
+      .services__mascot {
+
+        right:
+          4px;
+
+        top:
+          -22px;
+
+        width:
+          128px;
+
       }
 
 
@@ -1008,6 +1115,43 @@
 
         width:
           calc(100% - 28px);
+
+      }
+
+
+      .services__header {
+
+        padding-right:
+          0;
+
+      }
+
+
+      .services__mascot {
+
+        position:
+          relative;
+
+        right:
+          auto;
+
+        top:
+          auto;
+
+        width:
+          118px;
+
+        margin:
+          -6px 0 12px auto;
+
+        background:
+          transparent !important;
+
+        box-shadow:
+          none !important;
+
+        mix-blend-mode:
+          multiply;
 
       }
 
@@ -1079,6 +1223,20 @@
 
     }
 
+
+    @media
+    (prefers-reduced-motion: reduce) {
+
+      .services__mascot {
+        animation: none !important;
+      }
+
+      .service-card::before {
+        transition: none !important;
+      }
+
+    }
+
   </style>
 
 </head>
@@ -1105,6 +1263,16 @@
            ================================================= -->
 
       <div class="services__header">
+
+
+        <img
+          class="services__mascot"
+          src="https://raw.githubusercontent.com/digitalmenteepro-cell/digitalmenteprochile.cl/refs/heads/main/images/Amelia%20marketing.png"
+          alt=""
+          aria-hidden="true"
+          loading="lazy"
+          decoding="async"
+        >
 
 
         <div>
