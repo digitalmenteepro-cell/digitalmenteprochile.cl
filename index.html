@@ -40,7 +40,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Londrina+Solid:wght@400&family=Outfit:wght@400;500;600;700&display=swap">
   </noscript>
 
-  <script>document.documentElement.classList.add("js");</script>
+  <script>(function(d){d.classList.add("js");if(!window.matchMedia("(prefers-reduced-motion: reduce)").matches)d.classList.add("motion");})(document.documentElement);</script>
 
   <style>
     /* =========================================================
@@ -1210,6 +1210,104 @@
     }
     .js .reveal.is-in { opacity: 1; transform: none; }
 
+    /* =========================================================
+       PORTADA ANIMADA (.motion = sin "reducir movimiento")
+       ========================================================= */
+    .motion .hero { overflow-x: clip; }
+    .hero__title .w { display: inline-block; white-space: nowrap; }
+    .hero__title .ch { display: inline-block; }
+
+    /* Cada letra llega volando desde su lado, girando y con desenfoque */
+    @keyframes dp-char {
+      0%   { opacity: 0; transform: translate3d(calc(var(--s) * 75vw), calc(var(--y, 0) * 1em), 0) rotate(calc(var(--s) * 40deg)) scale(.4); filter: blur(10px); }
+      55%  { opacity: 1; filter: blur(0); }
+      78%  { transform: translate3d(calc(var(--s) * -.08em), 0, 0) rotate(calc(var(--s) * -8deg)) scale(1.12); }
+      100% { opacity: 1; transform: none; filter: none; }
+    }
+    /* "escuchar" grita: ola de letras */
+    @keyframes dp-wave {
+      0%, 100% { transform: none; }
+      40% { transform: translateY(-.22em) scale(1.18) rotate(-4deg); }
+    }
+    @keyframes dp-draw { from { clip-path: inset(0 100% 0 0); } to { clip-path: inset(0 0 0 0); } }
+    @keyframes dp-from-l { from { opacity: 0; transform: translateX(-90px) skewX(12deg); } to { opacity: 1; transform: none; } }
+    @keyframes dp-from-r { from { opacity: 0; transform: translateX(90px) skewX(-12deg); } to { opacity: 1; transform: none; } }
+    @keyframes dp-pop {
+      0% { opacity: 0; transform: scale(.3); }
+      65% { opacity: 1; transform: scale(1.12); }
+      100% { opacity: 1; transform: none; }
+    }
+    @keyframes dp-blob { from { opacity: 0; transform: scale(0) rotate(-140deg); } to { opacity: 1; transform: none; } }
+    @keyframes dp-cat { from { transform: translateX(45%) rotate(14deg) scale(.7); } to { transform: none; } }
+    @keyframes dp-card-l { from { opacity: 0; transform: translateX(-160px) rotate(-14deg); } to { opacity: 1; transform: none; } }
+    @keyframes dp-card-r { from { opacity: 0; transform: translateX(160px) rotate(14deg); } to { opacity: 1; transform: none; } }
+    @keyframes dp-bob { from { translate: 0 0; } to { translate: 0 -10px; } }
+
+    .motion .hero__title.is-split .ch { opacity: 0; will-change: transform, opacity; }
+    /* Cuando el mensaje queda armado, "escuchar" hace la ola (y al pasar el mouse) */
+    .motion .hero__title.is-built .hand .ch,
+    .motion .hero__title.is-built:hover .hand .ch {
+      animation: dp-wave .5s ease-in-out both;
+      animation-delay: calc(var(--j) * 45ms);
+    }
+    .motion .hero__title.is-built:hover .hand .ch { animation-name: dp-wave2; }
+    @keyframes dp-wave2 {
+      0%, 100% { transform: none; }
+      40% { transform: translateY(-.22em) scale(1.18) rotate(4deg); }
+    }
+    /* El subrayado se dibuja con el scroll */
+    .motion .hero .hand::after { clip-path: inset(0 calc((1 - var(--u, 0)) * 100%) 0 0); }
+
+    /* Portada fija mientras se arma el mensaje */
+    .hero-pin__space { display: none; }
+    .motion .hero { position: sticky; top: var(--pin-top, 72px); z-index: 1; background: var(--canvas); }
+    .motion .hero-pin__space { display: block; height: 115vh; }
+    @media (max-width: 799px) { .motion .hero-pin__space { height: 95vh; } }
+    .motion .hero__blob { rotate: calc(var(--p, 0) * 160deg); }
+    .motion .hero__media { scale: calc(.92 + var(--p, 0) * .08); }
+
+    /* Aviso para bajar */
+    .scroll-hint { display: none; }
+    .motion .scroll-hint {
+      position: fixed;
+      left: 50%;
+      bottom: 22px;
+      z-index: 40;
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 10px 18px;
+      border-radius: var(--radius-pill);
+      background: var(--teal-deep, #0b2f31);
+      color: #fff;
+      font-size: 14px;
+      font-weight: 600;
+      box-shadow: var(--shadow-card-hover);
+      translate: -50% 0;
+      white-space: nowrap;
+      opacity: var(--hint, 1);
+      pointer-events: none;
+      transition: opacity .2s;
+      animation: dp-hint-in .6s cubic-bezier(.2,1.3,.3,1) 1.1s both;
+    }
+    .motion .scroll-hint b { display: inline-block; color: var(--orange); animation: dp-hint 1.1s ease-in-out infinite; }
+    @keyframes dp-hint { 50% { transform: translateY(5px); } }
+    @keyframes dp-hint-in { from { transform: translateY(40px) scale(.8); } to { transform: none; } }
+
+    .motion .hero__copy .eyebrow { animation: dp-from-l .6s cubic-bezier(.16,1,.3,1) both; }
+    .motion .hero__sub { animation: dp-from-r .7s cubic-bezier(.16,1,.3,1) .55s both; }
+    .motion .hero__copy .actions .btn { animation: dp-pop .55s cubic-bezier(.2,.8,.2,1) both; }
+    .motion .hero__copy .actions .btn--primary { animation-delay: .8s; }
+    .motion .hero__copy .actions .btn--secondary { animation-delay: .9s; }
+
+    .motion .hero__blob { transform-origin: 50% 55%; animation: dp-blob .8s cubic-bezier(.2,1.2,.3,1) .1s both; }
+    .motion .hero__media picture { animation: dp-cat .85s cubic-bezier(.2,1.15,.3,1) .25s both; }
+    .motion .float-card { animation: dp-card-l .6s cubic-bezier(.2,1.2,.3,1) both, dp-bob 3s ease-in-out infinite alternate; }
+    .motion .float-card--b { animation-name: dp-card-r, dp-bob; }
+    .motion .float-card--a { animation-delay: .7s, 1.4s; }
+    .motion .float-card--b { animation-delay: .85s, 1.9s; }
+    .motion .float-card--c { animation-delay: 1s, 2.4s; }
+
     @media (prefers-reduced-motion: reduce) {
       html { scroll-behavior: auto; }
       *, *::before, *::after { animation: none !important; transition: none !important; }
@@ -1318,6 +1416,7 @@
     <!-- =====================================================
          1. HERO
          ===================================================== -->
+    <div class="hero-pin" id="heroPin">
     <section class="hero" id="inicio" aria-labelledby="hero-title">
       <div class="container hero__grid">
 
@@ -1327,6 +1426,127 @@
           <h1 class="display hero__title" id="hero-title">
             Haz que tu marca <span class="accent">se haga <span class="hand">escuchar</span></span>.
           </h1>
+          <script>
+          (function () {
+            if (!document.documentElement.classList.contains("motion")) return;
+            var h = document.getElementById("hero-title");
+            h.setAttribute("aria-label", h.textContent.replace(/\s+/g, " ").trim());
+            var i = 0, w = 0;
+            function walk(node) {
+              Array.prototype.slice.call(node.childNodes).forEach(function (n) {
+                if (n.nodeType === 1) { walk(n); return; }
+                if (n.nodeType !== 3) return;
+                var frag = document.createDocumentFragment();
+                n.textContent.split(/(\s+)/).forEach(function (part) {
+                  if (!part) return;
+                  if (/^\s+$/.test(part)) { frag.appendChild(document.createTextNode(" ")); return; }
+                  var word = document.createElement("span");
+                  word.className = "w";
+                  word.setAttribute("aria-hidden", "true");
+                  var side = /^[.,!?]+$/.test(part) ? 1 : (w++ % 2 ? 1 : -1);
+                  for (var k = 0; k < part.length; k++) {
+                    var c = document.createElement("span");
+                    c.className = "ch";
+                    c.textContent = part[k];
+                    c.style.setProperty("--i", i++);
+                    c.style.setProperty("--s", side);
+                    c.style.setProperty("--y", ((k % 3) - 1) * 0.6);
+                    word.appendChild(c);
+                  }
+                  frag.appendChild(word);
+                });
+                n.parentNode.replaceChild(frag, n);
+              });
+            }
+            walk(h);
+            Array.prototype.forEach.call(h.querySelectorAll(".hand .ch"), function (c, j) { c.style.setProperty("--j", j); });
+            h.classList.add("is-split");
+
+            /* ---- El mensaje se arma con el scroll ---- */
+            var chars = Array.prototype.slice.call(h.querySelectorAll(".ch"));
+            var N = chars.length;
+            var seed = 7;
+            function rnd() { seed = (seed * 9301 + 49297) % 233280; return seed / 233280; }
+            var data = chars.map(function (c, k) {
+              var s = parseFloat(c.style.getPropertyValue("--s")) || 1;
+              return {
+                el: c, s: s,
+                u: rnd(),                            /* posición horizontal al azar dentro del área del título */
+                dx: 0,
+                y: (rnd() - 0.5) * 2.4,              /* en em */
+                r: (rnd() - 0.5) * 220,              /* grados */
+                sc: 0.55 + rnd() * 0.5,
+                ph: rnd() * 6.28,
+                start: (k / N) * 0.62
+              };
+            });
+            function ease(t) { return t < 0 ? 0 : t > 1 ? 1 : 1 - Math.pow(1 - t, 3); }
+            var p = 0, intro = 0, t0 = performance.now(), built = false, running = false;
+            var pin, space, header, hint, hero, vw = window.innerWidth;
+
+            function measure() {
+              vw = window.innerWidth;
+              var hh = header ? header.offsetHeight : 72;
+              hero.style.setProperty("--pin-top", hh + "px");
+              /* letras dispersas, pero siempre dentro de la pantalla y sobre el área del título */
+              var hr = h.getBoundingClientRect();
+              var lo = Math.max(8, hr.left - 8);
+              var hi = vw >= 800 ? Math.min(hr.left + hr.width * 1.15, vw * 0.6) : vw - 36;
+              data.forEach(function (d) {
+                var prev = d.el.style.transform; d.el.style.transform = "none";
+                var L = d.el.getBoundingClientRect().left;
+                d.el.style.transform = prev;
+                d.dx = lo + d.u * (hi - lo) - L;
+              });
+            }
+            function progress() {
+              var range = space.offsetHeight;
+              var start = pin.offsetTop - (header ? header.offsetHeight : 0);
+              return Math.min(Math.max((window.scrollY - start) / range, 0), 1);
+            }
+            function render(now) {
+              intro = Math.min((now - t0) / 1100, 1);
+              var ei = ease(intro);
+              var fs = parseFloat(getComputedStyle(h).fontSize);
+              for (var k = 0; k < N; k++) {
+                var d = data[k];
+                var e = ease((p - d.start) / 0.38);
+                var off = (1 - e) * (1 + 1.6 * (1 - ei));
+                var wob = (1 - e) * Math.sin(now / 700 + d.ph);
+                var x = d.dx * (1 - e) + d.s * vw * 0.9 * (1 - ei);
+                var y = (d.y * fs * off) + wob * 8;
+                d.el.style.transform = e >= 1 && ei >= 1 ? "" :
+                  "translate3d(" + x.toFixed(1) + "px," + y.toFixed(1) + "px,0) rotate(" + (d.r * off + wob * 10).toFixed(1) + "deg) scale(" + (1 - (1 - d.sc) * (1 - e)).toFixed(3) + ")";
+                d.el.style.opacity = (ei * (0.5 + 0.5 * e)).toFixed(3);
+              }
+              h.style.setProperty("--u", ease((p - 0.82) / 0.18).toFixed(3));
+              hero.style.setProperty("--p", p.toFixed(4));
+              hint.style.setProperty("--hint", Math.max(0, 1 - p * 6).toFixed(3));
+              var nowBuilt = p >= 0.995;
+              if (nowBuilt !== built) { built = nowBuilt; h.classList.toggle("is-built", built); }
+            }
+            function loop(now) {
+              p = progress();
+              render(now);
+              /* sigue animando mientras las letras flotan; se detiene cuando el mensaje está armado */
+              if (p < 1 || intro < 1) { requestAnimationFrame(loop); } else { running = false; }
+            }
+            function kick() { if (!running) { running = true; requestAnimationFrame(loop); } }
+
+            document.addEventListener("DOMContentLoaded", function () {
+              pin = document.getElementById("heroPin");
+              space = pin.querySelector(".hero-pin__space");
+              hint = document.getElementById("scrollHint");
+              hero = pin.querySelector(".hero");
+              header = document.getElementById("siteHeader");
+              measure();
+              t0 = performance.now();
+              kick();
+              window.addEventListener("scroll", kick, { passive: true });
+              window.addEventListener("resize", function () { measure(); kick(); });
+            });
+          })();
+          </script>
 
           <p class="body-lg hero__sub">
             Herramientas y estrategias digitales pensadas
@@ -1370,6 +1590,9 @@
 
       </div>
     </section>
+    <div class="hero-pin__space" aria-hidden="true"></div>
+    <div class="scroll-hint" id="scrollHint" aria-hidden="true">Desliza para armar el mensaje <b>↓</b></div>
+    </div>
 
     <!-- =====================================================
          2. MARQUEE DE HERRAMIENTAS
